@@ -1,0 +1,182 @@
+
+.reg_container{
+    height: 600px;
+}
+
+.navigation_bar ul{
+    
+    position: -webkit-sticky;
+    list-style-type:none;
+    margin: 0;
+    padding:0;
+    overflow: hidden;
+    background-color:transparent;
+    height: 50px;
+}
+
+
+/*links a list left to right*/
+
+.navigation_bar li{
+    float: left;
+    margin-left: 350px;
+   
+
+}
+
+/* set the links to inline  */
+.navigation_bar li a{
+    display:block;
+    color:white;
+    text-align: center;
+    padding :14px 16px;  
+    text-decoration: none;
+    height: 50px;
+    font-size: 20px;
+    
+    
+
+}
+
+.navigation_bar li a:hover , .dropdown:hover .dropbtn{
+    background-color:floralwhite;
+}
+
+.navigation_bar a.active{
+    background-color: turquoise;
+
+}
+
+/* links are set right to left */
+.navigation_bar-right{
+    float: right;
+    margin-right: 100px;
+   
+}
+
+
+
+
+/* form  container  */
+    
+
+ .formcontainer{   
+    border: 1px solid;
+    padding: 10px;
+    box-shadow: 5px 10px 8px 10px #888888;
+    
+    background: rgb(0, 0, 0); /* Fallback color */
+    background: rgba(0, 0, 0, 0.7); 
+    color: white;
+    width: 550px;
+    height: 480px;
+    margin-left: 500px;
+    
+}
+input[type=text], input[type=password],input[type=number],input[type=date] {
+   width: 45%;
+    padding: 6px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #ecebeb;
+
+  }
+  
+  input[type=text]:focus, input[type=password]:focus, input[type=date]:focus, input[type=number]:focus {
+    background-color: rgb(255, 255, 255);
+    outline: lightgreen;
+    
+  }
+ .formcontainer label{
+     font-size: 20px;
+     margin-left: 70px;
+ }
+
+ .formcontainer h2{
+     text-align: center;
+ }
+
+/* form ends here */
+
+
+
+
+.grid_container{
+    display: grid block;
+    grid-template-columns: auto auto auto auto;
+    background-color: white;
+    padding: 10px;
+    height: 400px;
+}
+
+.grid_container .grid{
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 22px;
+
+}
+.grid_id_1 {
+    margin-top: 100px;
+
+}
+
+.grid_id_1 .topic{
+    text-align: center;
+}
+
+.urgent_care_image {
+    position: relative;
+}
+.urgent_care_image  .text_block{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 500px;
+    height: 590px;
+    background-color:rgb(233, 239, 241)  /* Fallback color */
+   /* Black background with 0.5 opacity */
+    
+}
+.urgent_care_image p,h1,h2{
+    margin-left: 20px;
+}
+
+  
+  /* Create three equal columns that floats next to each other */
+ .services .column {
+      margin-top: 50px;
+    float: left;
+    width: 33.33%;
+    padding: 10px;
+    height: 500px;
+    column-gap: 10px; 
+    background-color:rgb(255, 255, 255);
+    /* Should be removed. Only for demonstration */
+   
+    box-sizing: border-box;
+    
+    border: 20px solid rgb(204, 204, 204);    
+     
+    
+  }
+  
+  /* Clear floats after the columns */
+.services  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+    background-color: white;
+  }
+
+
+  /* footer */
+
+  .registerfooter{
+      height: 180px;
+      background-color: rgb(56, 194, 240);
+  }
+
+  .registerfooter h2,p{
+      text-align: center;
+  }

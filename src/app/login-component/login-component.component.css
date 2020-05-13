@@ -1,0 +1,134 @@
+/* login  css part starts here */
+
+.login_container{
+   
+    height: 500px;
+
+   background-color: lightgray;
+    
+}
+.login_image{
+    float: left;
+}
+.login_container h1,h2{
+   text-align: center;
+}
+.form_container {
+    position: absolute;
+    height: 500px;
+    width: 100%;
+    right: 0;
+    margin: 20px;
+    max-width: 300px;
+    padding: 16px;
+    
+  }
+  
+  /* Full-width input fields */
+    input[type=text], input[type=password] {
+    width: 95%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+  }
+  
+  input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: lightgreen;
+    
+  }
+  
+  /* Set a style for the submit button */
+  .btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+    
+  }
+  .btn2 {
+    background-color: rgb(81, 151, 216);
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+    
+  }
+  
+  
+  .btn:hover {
+    opacity: 1;
+  }
+/* login css part ends here */
+
+
+
+
+
+  /* quality care part css starts here */
+.container_2{
+    height: 600px;
+    
+}
+.container_2 h1,h2,p {
+    text-align: center;
+
+}
+.container_2 p{
+    font-size: 20px;
+}
+.container_2 li{
+    list-style-type: none;
+}
+.container2image{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+    
+}
+
+
+
+/* join now button -big */
+.button_join{
+
+   display:flex;
+   align-items: center;
+   margin-left: 450px;
+   height: 90px;
+   width: 300px;
+   background-color: teal;
+   text-align: center;
+   border-radius: 12px;
+  
+}
+
+.button_join a {
+    
+    text-decoration: none;
+    margin-top: 5px;
+    margin-left: 70px;
+    font-size: 20px;
+    color: white;
+    
+  
+}
+/* quality dare part css ends here */
+
+
+/* millions of......... text part css stars here */
+.container_3{
+    margin-top: 40px;
+    height: 200px;
+    width: 100%;
+    background-color: lightslategray;
+    color: white;
+    text-align: center;
+}
