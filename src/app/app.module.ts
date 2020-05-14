@@ -9,6 +9,7 @@ import { MainNavigationBarComponent } from './main-navigation-bar/main-navigatio
 import { LoginComponentComponent } from './login-component/login-component.component';
 import { RegisterComponent } from './register/register.component';
 import { ContactusComponent } from './contactus/contactus.component';
+import { HowItWorksComponent } from './how-it-works/how-it-works.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ContactusComponent } from './contactus/contactus.component';
     MainNavigationBarComponent,
     LoginComponentComponent,
     RegisterComponent,
-    ContactusComponent
+    ContactusComponent,
+    HowItWorksComponent
   ],
   imports: [
     BrowserModule,

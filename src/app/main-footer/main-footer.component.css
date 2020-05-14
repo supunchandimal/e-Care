@@ -52,7 +52,9 @@
       margin-bottom: 10px;
       
   }
-
+  .footer_container .site_links a{
+    text-decoration: none;
+  }
   .footer_container .social_media_container{
     height: 200px;
     width: 100%;
