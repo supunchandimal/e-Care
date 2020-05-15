@@ -1,0 +1,90 @@
+
+.body{
+    background-color: rgb(243, 237, 237);
+    width: 20vw;
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+}
+.naviBar{
+    width: 20vw;
+    height: 100vh;
+    background-color: rgb(221, 224, 226);
+    align-items: flex-start;
+}
+#title{
+    width: 100%;
+    height: 100%;
+    display: block;
+    text-align: center;
+    
+}
+.margin{
+    height:100vh;
+    width: 0.01vw;
+    background-color: grey;
+}
+.naviButton{
+    width: 18vw;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    height: 20%;
+    align-self: center;
+    background-color:  rgb(221, 224, 226);
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: block;
+	font-size: 1.1em;
+	font-weight: bold;
+	text-transform: uppercase;
+	padding: 10px 15px;
+	margin: 20px auto;
+	color: #ccc;
+	background-color:rgb(221, 224, 226);
+	background: -webkit-linear-gradient(#888, #555);
+	background: linear-gradient(#888, #555);
+	border: 0 none;
+	text-shadow: 0 -1px 0 #000;	
+	cursor: pointer;
+}
+.naviButton:hover{
+    width: 18vw;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    height: 20%;
+    align-self: center;
+    background-color:  rgb(221, 224, 226);
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: block;
+	font-size: 1.1em;
+	font-weight: bold;
+	text-transform: uppercase;
+	padding: 10px 15px;
+	margin: 20px auto;
+	color: rgb(12, 12, 12);
+	background-color:rgb(221, 224, 226);
+	background: -webkit-linear-gradient(#888, #555);
+	background: linear-gradient(#888, #555);
+	border: 0 none;
+	text-shadow: 0 -1px 0 #000;	
+	cursor: pointer;
+}
+.logoBox{
+    height: 5%;
+    width: 100%;
+    padding-bottom: 10px;
+    z-index: 3;
+}
+.icn{
+    width: 2vw;
+    height: 100%;
+    align-self: center;
+}
+#icon{
+    width: 2vw;
+    height: 80%;
+    align-items: flex-start;
+}

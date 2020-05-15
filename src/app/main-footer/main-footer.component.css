@@ -1,0 +1,81 @@
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+  }
+  
+  /* Add a hover effect if you want */
+  .fa:hover {
+    opacity: 0.7;
+  }
+  
+  /* Set a specific color for each brand */
+  
+  /* Facebook */
+  .fa-facebook {
+    background: #3B5998;
+    color: white;
+  }
+  
+  /* Twitter */
+  .fa-twitter {
+    background: #55ACEE;
+    color: white;
+    
+  }
+  .fa-linkedin {
+    background: #007bb5;
+    color: white;
+  }
+  
+  .fa-youtube {
+    background: #bb0000;
+    color: white;
+  }
+  
+  .fa-instagram {
+    background: #125688;
+    color: white;
+  }
+
+  .footer_container .site_links{
+      width: 100%;
+      height: 300px;
+      font-size: 20px;
+  }
+
+  .footer_container .site_links li{
+     list-style-type: none;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      
+  }
+  .footer_container .site_links a{
+    text-decoration: none;
+  }
+  .footer_container .social_media_container{
+    height: 200px;
+    width: 100%;
+    background-color: tomato;
+    text-align: center;
+    
+  }
+  /* .footer_container .social_media_container .social_media_container_sub{
+    margin-top: 40px;
+  } */
+
+  .footer_container .footer_end{
+    height: 100px;
+    width: 100%;
+    background-color: black;
+    color: white ;
+  }
+
+  .footer_end .text_box{
+  
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 12px;
+  }

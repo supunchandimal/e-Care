@@ -1,0 +1,141 @@
+.howitworks_container_1{
+    display: block;
+    height:500px ;
+    float: left;
+    margin-top: 20px;
+    width: 700px;
+    background-color: wheat;
+    background-size: 700px 500px;
+}
+
+.howitworks_container_1 h1,h2{
+    text-align: center;
+}
+
+
+.howitworks_container_2{
+    display: inline-block;
+    height: 500px;
+    margin-top: 20px;
+   
+}
+.howitworks_container2 h1{
+    text-align: center;
+    font-size:40px    ;
+    color: blue;
+}
+
+.con2_sub2 {
+    text-align: center;
+    font-size: 25px;
+}
+
+
+.howitworks_container2 .sub_con h3{
+    text-align: center;
+    font-size: 30px;
+    color: blue;
+}
+
+.howitworks_container_1 .howitworkslink li{
+    list-style-type: none;
+}
+
+.btn1{
+    width: 200px;
+    height: 50px;
+    margin-left: 10%;
+    border-radius: 12px;
+    background-color: blue;
+    margin-top: 40px;
+    
+    
+}
+
+.btn1 a{
+    text-decoration: none;
+    color: white;
+}
+
+.howitworks_container2{
+
+    height: 400px;
+}
+.howitworks_container3{
+    height: 600px;
+    background-size: 1160px 800px;
+    
+}
+.container3_sub1{
+    display:inline-block;
+    height: 500px;
+    width: 700px;
+    margin-top: 40px;
+    background: transparent; /* Fallback color */
+    background: rgba(255, 255, 255, 0.65); 
+}
+.container3_sub1 {
+    text-align: center;
+}
+
+.con3_sub1_sub1{
+    display: block;
+    width: 700px;
+    height: 50px;
+    
+    background-color: blue;
+}
+
+.con3_sub1_sub1 h1{
+    text-align: center;
+    color: white;
+}
+.con3_sub1_sub2{
+    margin-top: 10px;
+}
+
+.con3_sub1_sub2 ul li{
+    text-align:left ;
+    margin-top: 5px;
+    margin-left: 40px;
+}
+
+.howitworks_container_4{
+    display:inline-block ;
+    margin-top: 45px;
+    height: 300px;
+    width: 1160px;
+    background-color: rgb(243, 240, 240);
+}
+
+.howitworks_container_4 h1{
+    
+    font-size: 45px;
+    color: blue;
+    text-align: center;
+    margin-top: 45px;
+}
+
+
+.con4_btn1{
+    width: 200px;
+    height: 80px;
+    float: left;
+    margin-left: 330px;
+    background-color: blue;
+    border-radius: 12px;
+}
+.con4_btn1 a ,.con4_btn2 a{
+    font-size: 30px;
+    text-decoration: none;
+}
+
+.con4_btn2{
+    width: 200px;
+    height: 80px;
+    float: right;
+   background-color: blue;
+    margin-right: 330px;
+    border-radius: 12px;
+}
+
