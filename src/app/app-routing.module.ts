@@ -4,8 +4,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { FirstPageComponent } from './first-page/first-page.component';
 import { pathToFileURL } from 'url';
-import { LoginComponentComponent } from './login-component/login-component.component';
-import { RegisterComponent } from './register/register.component';
+import { LoginComponentComponent } from './auth/login-component/login-component.component';
+import { RegisterComponent } from './auth/register/register.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { HowItWorksComponent } from './how-it-works/how-it-works.component';
 import { PatientHomeComponent } from './patient-home-navibar/patient-home.component';

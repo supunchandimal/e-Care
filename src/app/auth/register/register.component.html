@@ -15,40 +15,46 @@
         
         <div class="formcontainer">
             <h2>Join with us</h2>
-              <form action="">
+            <div class="col-12">
+              <div class="row" *ngIf="authError">
+                <div class="col-12 alert alert-danger">
+                  {{ authError?.message }}
+                </div>
+              </div> 
+              <form action="" #userRegForm="ngForm" (ngSubmit)="createUser(userRegForm)" >
                 <div class="">
                   <div >
                       <label for="firstname" >Firstname :   </label>
-                      <input type="text" placeholder="first name" name ="firstname"style="margin-left: 42px;" >
+                      <input ngModel #firstname="ngModel" name="firstName" type="text" class="form-control" id="firstName"style="margin-left: 42px;" >
 
                       <div >
                         <label for="secondname">Secondname : </label>
-                      <input type="text" placeholder="second name" name="secondname" style="margin-left: 20px;">
+                      <input ngModel #secondname="ngModel" name="secondName" type="text" class="form-control" id="secondName" value="" style="margin-left: 20px;">
                       
                       </div>
                   </div>
                   
                   <div class="">
                       <label for="email" >Email :</label>
-                      <input type="text" placeholder="email" name="email" style="margin-left: 80px;" >
+                      <input  ngModel #email="ngModel" type="email" class="form-control" placeholder="email" name="email" style="margin-left: 80px;" >
                   </div>
                   <div class="">
                       <label for="password">Password : </label>
-                      <input type="password" placeholder="password" name="password" style="margin-left: 45px;">
+                      <input ngModel #password="ngModel" name="password" type="password" class="form-control" style="margin-left: 45px;">
                   </div>
                   <div class="">
                       <label for="dateofbirth">Date of birth : </label>
-                      <input type="date" placeholder="mm/dd/yyyy" name="dateofbirth" style="margin-left: 22px;">
+                      <input ngModel #dob="ngModel" type="date" placeholder="mm/dd/yyyy" name="dob" class="form-control" id="dob" value="" style="margin-left: 22px;">
                   </div>
                   <div class="">
                       <label for="phoneno">Phone number : </label>
-                      <input type="number" name="phoneno" placeholder="phoneno" id="" style="margin-left: 5px;">
-
+                      <input ngModel #phone="ngModel" type="number" name="phone" placeholder="phoneno" id="phone"  class="form-control" value="" style="margin-left: 5px;">
+                     
                   </div>
                   
                   <div class="">
                       <label for="gender">Gender :  </label>
-                      <input type="text" name="gender" placeholder="gender" id="">
+                      <input ngModel #gender="ngModel" type="text" name="gender" placeholder="gender" id="gender" class="form-control" value="">
                   </div>
                   <input type="submit" name="submit" value="submit" id="" style="margin-left: 200px;">
                   

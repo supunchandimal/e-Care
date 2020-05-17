@@ -1,4 +1,6 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../auth/auth.service';
 
 @Component({
   selector: 'app-patient-default-page',
@@ -6,10 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./patient-default-page.component.css']
 })
 export class PatientDefaultPageComponent implements OnInit {
-
-  constructor() { }
+ user:firebase.User;
+  constructor(private auth:AuthService,private router:Router) { }
+    
 
   ngOnInit(): void {
+    this.auth.getUserState()
+      .subscribe(user =>{
+        this.user = user;
+      })
+  }
+
+  logout(){
+    this.auth.logout();
   }
 
 }
