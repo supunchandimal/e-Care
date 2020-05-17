@@ -42,6 +42,9 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
   providers: [
     AuthService
   ],
+  
+  
+ 
   bootstrap: [AppComponent]
 })
 export class AppModule { }
