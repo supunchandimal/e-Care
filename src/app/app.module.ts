@@ -1,3 +1,4 @@
+
 import { AuthService } from './auth/auth.service';
 import { environment } from './../environments/environment';
 import { BrowserModule } from '@angular/platform-browser';
@@ -17,6 +18,10 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { PagemenuComponent } from './patientpages/pagemenu/pagemenu.component';
+
+
+
 
 @NgModule({
   declarations: [
@@ -28,7 +33,9 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
     RegisterComponent,
     ContactusComponent,
     HowItWorksComponent,
-    routingComponents
+    routingComponents,
+    PagemenuComponent,
+    
   ],
   imports: [
     BrowserModule,

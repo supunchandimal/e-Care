@@ -1,0 +1,90 @@
+.margin{
+    height:100vh;
+    width: 100vw;
+    background-color: rgb(228, 41, 41);
+    opacity: 0;
+}
+.body{
+    background-color: rgb(243, 237, 237);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+}
+.naviBar{
+    width: 20vw;
+    height: 100vh;
+    background-color: rgb(221, 224, 226);
+    align-items: flex-start;
+}
+.details{
+    width: 100vw;
+    height: 30vh ;
+    background-color: rgb(197, 209, 209);
+    justify-content: space-between;
+    flex-direction: column;
+    display: flex;
+    position: relative;
+}
+.dot {
+    height: 75px;
+    width: 75px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    justify-content: flex-end;
+    display: flex;
+    position: relative;
+    bottom: -40px;
+    right: -40px;
+    border: 1px solid black;
+    
+  }
+
+  .addpoto{
+    display: inline-block;
+    justify-content: flex-start;
+    display: flex;
+    position: relative;
+    bottom: -10px;
+    right: -45px;
+    border: 1px solid black;
+    width: 5vw;
+    height: 3vh;
+    border-radius: 30%;
+    background-color: #bbb;
+  }
+
+  .btn-holder{
+    justify-content: flex-end;
+    display: flex;
+    position: relative;
+    bottom: 10px;
+    left: -650px;
+  }
+  .btn-group button {
+    background-color: rgb(197, 209, 209); /* Green background */
+    border: 1px solid rgb(197, 209, 209); /* Green border */
+    color: black; /* White text */
+    padding: 10px 24px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    float: left; /* Float the buttons side by side */
+    height: 5vh;
+    width: 15vw;
+  }
+  
+  .btn-group button:not(:last-child) {
+    border-right: none; /* Prevent double borders */
+  }
+  
+  /* Clear floats (clearfix hack) */
+  .btn-group:after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  /* Add a background color on hover */
+  .btn-group button:hover {
+    background-color: #374A56;
+  }

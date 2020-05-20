@@ -6,10 +6,14 @@
 <body class="body"> 
     <div>
         <app-patient-home></app-patient-home>
+       
     </div>
     <div class="margin">
         <img src="assets\images\patienthome.jpg" alt="wallpaper" class="wallpaper">
-        <button class="btn"  (click)="logout()">SignOut</button>
+        <p *ngIf="user" style="color: red;position: absolute;" >Logged in as: {{ user?.email }} - {{ user?.displayName }}</p>
+        <div>
+        <button *ngIf="user" class="btn" (click)="logout()">SignOut</button>
+        </div>
         <div  class="addr">
             <i class="fa fa-street-view" id="icon"></i>
             <label for="cars">Current Location:</label>

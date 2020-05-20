@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 
@@ -11,6 +11,8 @@ import { HowItWorksComponent } from './how-it-works/how-it-works.component';
 import { PatientHomeComponent } from './patient-home-navibar/patient-home.component';
 import { PatientDefaultPageComponent } from './patient-default-page/patient-default-page.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { HealthprofileComponent } from './patientpages/healthprofile/healthprofile.component';
+import { AppoinmentsComponent } from './patientpages/appoinments/appoinments.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'/home' ,pathMatch:'full'},
@@ -20,6 +22,8 @@ const routes: Routes = [
   {path:'contactus',component:ContactusComponent},
   {path:'howitworks', component:HowItWorksComponent},
   {path:'patientHome',component:PatientDefaultPageComponent},
+  {path:'healthprofile',component:HealthprofileComponent},
+  {path:'appoinments',component:AppoinmentsComponent},
   {path:"**",component:PageNotFoundComponent}
   
 ];
@@ -33,5 +37,8 @@ export const routingComponents = [
   PatientHomeComponent,
   PageNotFoundComponent,
   PatientDefaultPageComponent,
-  LoginComponentComponent
+  LoginComponentComponent,
+  HealthprofileComponent,
+  AppoinmentsComponent
+    
 ];
