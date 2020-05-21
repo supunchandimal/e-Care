@@ -13,10 +13,12 @@ import { RegisterComponent } from './auth/register/register.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { HowItWorksComponent } from './how-it-works/how-it-works.component';
 
+
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { WhatwetreatComponent } from './whatwetreat/whatwetreat.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
     RegisterComponent,
     ContactusComponent,
     HowItWorksComponent,
-    routingComponents
+    routingComponents,
+    WhatwetreatComponent
   ],
   imports: [
     BrowserModule,

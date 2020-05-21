@@ -11,6 +11,9 @@ import { HowItWorksComponent } from './how-it-works/how-it-works.component';
 import { PatientHomeComponent } from './patient-home-navibar/patient-home.component';
 import { PatientDefaultPageComponent } from './patient-default-page/patient-default-page.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { WhatwetreatComponent } from './whatwetreat/whatwetreat.component';
+
+
 
 const routes: Routes = [
   {path:'',redirectTo:'/home' ,pathMatch:'full'},
@@ -20,7 +23,9 @@ const routes: Routes = [
   {path:'contactus',component:ContactusComponent},
   {path:'howitworks', component:HowItWorksComponent},
   {path:'patientHome',component:PatientDefaultPageComponent},
-  {path:"**",component:PageNotFoundComponent}
+  {path:'whatwetreat', component:WhatwetreatComponent},
+  {path:"**",component:PageNotFoundComponent},
+  
   
 ];
  
