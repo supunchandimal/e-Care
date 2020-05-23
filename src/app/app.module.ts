@@ -17,6 +17,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
     RegisterComponent,
     ContactusComponent,
     HowItWorksComponent,
-    routingComponents
+    routingComponents,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
