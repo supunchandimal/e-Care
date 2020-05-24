@@ -1,5 +1,5 @@
 .box{
-    width: 100vw;
+    width: 80vw;
     height: 20vh;
     background-color: #2BA4B9;
     padding-left: 4px;
@@ -8,10 +8,12 @@
     flex-direction: column;
     display: flex;
     position: relative;
+    
+    
 }
 .dropdown {
     opacity: 1.5;
-    transform: translate(1620%, -125%);
+    transform: translate(1420%, -125%);
     -ms-transform: translate(-50%, -50%);
     background-color: rgb(238, 14, 14);
     color: white;
@@ -44,7 +46,7 @@
     display: flex;
     position: relative;
     bottom: 10px;
-    right: 350px;
+    right: 180px;
   }
   .btn-group button {
     background-color: #2BA4B9; /* Green background */

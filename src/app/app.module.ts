@@ -19,6 +19,10 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { PagemenuComponent } from './patientpages/pagemenu/pagemenu.component';
+import { HealthrecordsComponent } from './patientpages/healthrecords/healthrecords.component';
+import { MyprovidersComponent } from './patientpages/myproviders/myproviders.component';
+import { ConsultationhistoryComponent } from './patientpages/consultationhistory/consultationhistory.component';
+
 
 
 
@@ -35,6 +39,9 @@ import { PagemenuComponent } from './patientpages/pagemenu/pagemenu.component';
     HowItWorksComponent,
     routingComponents,
     PagemenuComponent,
+    HealthrecordsComponent,
+    MyprovidersComponent,
+    ConsultationhistoryComponent
     
   ],
   imports: [

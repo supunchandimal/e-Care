@@ -5,6 +5,7 @@
     height: 100vh;
     display: flex;
     overflow: hidden;
+    align-self: flex-start;
 }
 .naviBar{
     width: 20vw;

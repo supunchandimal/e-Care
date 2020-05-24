@@ -1,5 +1,7 @@
 <div class="box">
-    <h1 style="color: black;font-size: medium;">HEALTH PROFILE</h1>
+    <h1 *ngIf="parentData==1" style="color: black;font-size: medium;">HEALTH PROFILE</h1>
+    <h1 *ngIf="parentData==2" style="color: black;font-size: medium;">HEALTH RECORDS</h1>
+    <h1 *ngIf="parentData==3" style="color: black;font-size: medium;">MY PROVIDERS</h1>
     <div class="dropdown">
       <div style="padding-bottom: 5px;">
         <span style="font-size: x-large;align-items: center"></span>
@@ -10,10 +12,22 @@
       </div>
       <div class="btn-holder">
         <div class="btn-group" >
-          <button *ngIf="parentData==1">MY HEALTH</button>
-          <button>MY PROVIDERS</button>
+          <a routerLink = '/healthprofile'>
+          <button *ngIf="parentData==1" style="background-color: rgb(85, 70, 172);" disabled>MY HEALTH</button>
+          <button *ngIf="parentData==2">MY HEALTH</button>
+          <button *ngIf="parentData==3">MY HEALTH</button>
+          </a>
+          <a routerLink = '/myproviders'>
+            <button *ngIf="parentData==3" style="background-color: rgb(85, 70, 172);" disabled>MY PROVIDERS</button>
+            <button *ngIf="parentData==2">MY PROVIDERS</button>
+            <button *ngIf="parentData==1">MY PROVIDERS</button>
+          </a>
           <button>CONSULTATION HISTORY</button>
-          <button>HEALTH RECORDS</button>
+          <a routerLink = '/healthrecords'>
+          <button  *ngIf="parentData==1">HEALTH RECORDS</button>
+          <button  *ngIf="parentData==3">HEALTH RECORDS</button>
+          <button  *ngIf="parentData==2" style="background-color: rgb(85, 70, 172);">HEALTH RECORDS</button>
+          </a>
         </div>
       </div>
 </div>

@@ -1,15 +1,22 @@
 .margin{
-    height:100vh;
-    width: 100vw;
-    background-color: rgb(228, 41, 41);
-    opacity: 0;
+    height:300vh;
+    width: 80vw;
+    background-color: rgb(243, 237, 237);
+    opacity: 1;
+    display: inline-block;
+    display: flex;
+    position: relative;
+    bottom: -6px;
+    right: -250px;
+    border: 1px solid black;
 }
 .body{
     background-color: rgb(243, 237, 237);
     width: 100vw;
     height: 100vh;
     display: flex;
-    overflow: hidden;
+    bottom: -40px;
+    right: -300px;
 }
 .naviBar{
     width: 20vw;
@@ -18,13 +25,25 @@
     align-items: flex-start;
 }
 .details{
-    width: 100vw;
-    height: 30vh ;
-    background-color: rgb(197, 209, 209);
-    justify-content: space-between;
-    flex-direction: column;
+    display: inline-block;
     display: flex;
     position: relative;
+    bottom: -127.5px;
+    right: 693.8px;
+    opacity: 2;
+    width: 200%;
+    height: 30vh;
+    background-color: rgb(243, 237, 237);
+}
+.menu{
+  display: inline-block;
+  display: flex;
+  position: relative;
+  bottom: -127.5px;
+  right:500px;
+  width: 100vw;
+  height: 30vh;
+  background-color: black;
 }
 .dot {
     height: 75px;
@@ -43,13 +62,13 @@
 
   .addpoto{
     display: inline-block;
-    justify-content: flex-start;
+    justify-content: center;
     display: flex;
     position: relative;
-    bottom: -10px;
-    right: -45px;
+    bottom: -130px;
+    right: 40px;
     border: 1px solid black;
-    width: 5vw;
+    width: 7vw;
     height: 3vh;
     border-radius: 30%;
     background-color: #bbb;
@@ -59,18 +78,60 @@
     justify-content: flex-end;
     display: flex;
     position: relative;
-    bottom: 10px;
-    left: -650px;
+    bottom: -200.5px;
+    right:600px;
   }
   .btn-group button {
-    background-color: rgb(197, 209, 209); /* Green background */
-    border: 1px solid rgb(197, 209, 209); /* Green border */
+    background-color: rgb(243, 237, 237); /* Green background */
+    border: 1px solid rgb(243, 237, 237); /* Green border */
     color: black; /* White text */
     padding: 10px 24px; /* Some padding */
     cursor: pointer; /* Pointer/hand icon */
-    float: left; /* Float the buttons side by side */
-    height: 5vh;
+    float: right; /* Float the buttons side by side */
+    height: 15vh;
     width: 15vw;
+  }
+  .btn-group2 button{
+    background-color: rgb(243, 237, 237); /* Green background */
+    border: 1px solid rgb(243, 237, 237); /* Green border */
+    color: black; /* White text */
+    padding: 10px 24px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    float: right; /* Float the buttons side by side */
+    height: 15vh;
+    width: 15vw;
+    padding-left: 50%;
+    font-family: 'Squada One', cursive;
+    font-size: medium;
+  }
+  .dive{
+    justify-content: flex-end;
+    display: flex;
+    position: relative;
+    bottom: -320.5px;
+    right:1450px;
+    width: 80vw;
+    height: 1px;
+    background-color: black;
+    font-family: 'Squada One', cursive;
+    font-size: small;
+  }
+  .dive2{
+    justify-content: flex-end;
+    display: flex;
+    position: relative;
+    bottom: -320.5px;
+    right:1450px;
+    width: 80vw;
+    height: 1px;
+    font-family: 'Squada One', cursive;
+    font-size: small;
+  }
+  .formcontrol{
+    width: 10vw;
+    height: 3vh;
+    margin-top: 25px;
+    margin-left: -92px;
   }
   
   .btn-group button:not(:last-child) {
@@ -88,3 +149,19 @@
   .btn-group button:hover {
     background-color: #374A56;
   }
+  .btn-group button:not(:last-child) {
+    border-right: none; /* Prevent double borders */
+  }
+  
+  /* Clear floats (clearfix hack) */
+  .btn-group2:after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  /* Add a background color on hover */
+  .btn-group2 button:hover {
+    background-color: #374A56;
+  }
+  
+  
