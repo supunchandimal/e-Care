@@ -1,0 +1,23 @@
+.image_container_1{
+     
+        /* background: url(images/bg.jpg) no-repeat center center fixed;  */
+        /* -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover; */
+
+/* 
+        background: linear-gradient(angle, color-stop, color-stop);
+        background-size: cover;
+        height: 100%;
+        overflow: hidden; */
+/* 
+        height: 50%; */
+
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: opacity(0.5);
+}
+
