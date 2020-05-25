@@ -1,3 +1,4 @@
+import { DefaultDocModule } from './doctor/layouts/default-doc/default-doc.module';
 import { AuthService } from './auth/auth.service';
 import { environment } from './../environments/environment';
 import { BrowserModule } from '@angular/platform-browser';
@@ -17,6 +18,8 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -28,7 +31,10 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
     RegisterComponent,
     ContactusComponent,
     HowItWorksComponent,
-    routingComponents
+    routingComponents,
+
+    
+
   ],
   imports: [
     BrowserModule,
@@ -37,7 +43,8 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
     AngularFirestoreModule, // firestore
     AngularFireAuthModule, // auth
     AngularFireStorageModule, // storage
-    FormsModule
+    FormsModule, BrowserAnimationsModule,
+    DefaultDocModule
   ],
   providers: [
     AuthService
