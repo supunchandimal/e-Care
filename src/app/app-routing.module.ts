@@ -10,6 +10,11 @@ import { ContactusComponent } from './contactus/contactus.component';
 import { HowItWorksComponent } from './how-it-works/how-it-works.component';
 import { PatientHomeComponent } from './patient-home-navibar/patient-home.component';
 import { PatientDefaultPageComponent } from './patient-default-page/patient-default-page.component';
+import { DefaultDocComponent } from './doctor/layouts/default-doc/default-doc.component';
+import { DashboardDocComponent } from './doctor/modules/dashboard-doc/dashboard-doc.component';
+import { ContentDocComponent } from './doctor/modules/content-doc/content-doc.component';
+
+
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
@@ -20,7 +25,20 @@ const routes: Routes = [
   {path:'contactus',component:ContactusComponent},
   {path:'howitworks', component:HowItWorksComponent},
   {path:'patientHome',component:PatientDefaultPageComponent},
-  {path:"**",component:PageNotFoundComponent}
+
+  //doctor's modules
+
+  {path:'',component:DefaultDocComponent,
+  children: [{ path :'docHome', component:DashboardDocComponent},
+            { path : 'contentDoc' , component : ContentDocComponent}
+ ]
+},
+
+
+  {path:"**",component:PageNotFoundComponent},
+  
+
+
   
 ];
  
