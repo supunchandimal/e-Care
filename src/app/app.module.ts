@@ -1,3 +1,4 @@
+import { DefaultDocModule } from './doctor/layouts/default-doc/default-doc.module';
 import { AuthService } from './auth/auth.service';
 import { environment } from './../environments/environment';
 import { BrowserModule } from '@angular/platform-browser';
@@ -18,9 +19,14 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+
 import { WhatwetreatComponent } from './whatwetreat/whatwetreat.component';
 import { ForgotpassComponent } from './forgotpass/forgotpass.component';
 import { OurproviersComponent } from './ourproviers/ourproviers.component';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 
 @NgModule({
   declarations: [
@@ -33,9 +39,15 @@ import { OurproviersComponent } from './ourproviers/ourproviers.component';
     ContactusComponent,
     HowItWorksComponent,
     routingComponents,
+
     WhatwetreatComponent,
     ForgotpassComponent,
     OurproviersComponent
+
+
+    
+
+
   ],
   imports: [
     BrowserModule,
@@ -44,7 +56,8 @@ import { OurproviersComponent } from './ourproviers/ourproviers.component';
     AngularFirestoreModule, // firestore
     AngularFireAuthModule, // auth
     AngularFireStorageModule, // storage
-    FormsModule
+    FormsModule, BrowserAnimationsModule,
+    DefaultDocModule
   ],
   providers: [
     AuthService
