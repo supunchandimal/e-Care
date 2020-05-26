@@ -19,6 +19,8 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { WhatwetreatComponent } from './whatwetreat/whatwetreat.component';
+import { ForgotpassComponent } from './forgotpass/forgotpass.component';
+import { OurproviersComponent } from './ourproviers/ourproviers.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { WhatwetreatComponent } from './whatwetreat/whatwetreat.component';
     ContactusComponent,
     HowItWorksComponent,
     routingComponents,
-    WhatwetreatComponent
+    WhatwetreatComponent,
+    ForgotpassComponent,
+    OurproviersComponent
   ],
   imports: [
     BrowserModule,

@@ -12,7 +12,8 @@ import { PatientHomeComponent } from './patient-home-navibar/patient-home.compon
 import { PatientDefaultPageComponent } from './patient-default-page/patient-default-page.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { WhatwetreatComponent } from './whatwetreat/whatwetreat.component';
-
+import { ForgotpassComponent } from './forgotpass/forgotpass.component';
+import { OurproviersComponent } from './ourproviers/ourproviers.component';
 
 
 const routes: Routes = [
@@ -24,6 +25,8 @@ const routes: Routes = [
   {path:'howitworks', component:HowItWorksComponent},
   {path:'patientHome',component:PatientDefaultPageComponent},
   {path:'whatwetreat', component:WhatwetreatComponent},
+  {path:'forgotpass',component:ForgotpassComponent},
+  {path:'ourproviders',component:OurproviersComponent},
   {path:"**",component:PageNotFoundComponent},
   
   

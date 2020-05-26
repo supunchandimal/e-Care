@@ -45,6 +45,9 @@
       width: 100%;
       height: 300px;
       font-size: 20px;
+      text-align: center;
+      margin-top: 30px;
+      background-color: rgb(235, 235, 253);
   }
 
   .footer_container .site_links li{
@@ -54,7 +57,10 @@
       
   }
   .footer_container .site_links a{
+    display: block;
     text-decoration: none;
+   
+   
   }
   .footer_container .social_media_container{
     
