@@ -30,7 +30,8 @@ const routes: Routes = [
 
   {path:'',component:DefaultDocComponent,
   children: [{ path :'docHome', component:DashboardDocComponent},
-            { path : 'contentDoc' , component : ContentDocComponent}
+            { path : 'contentDoc' , component : ContentDocComponent},
+            {path:'tets',component:FirstPageComponent},
  ]
 },
 
