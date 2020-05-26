@@ -1,4 +1,6 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { AuthService } from 'src/app/auth/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-healthprofile',
@@ -7,11 +9,16 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 })
 export class HealthprofileComponent implements OnInit {
 
-  constructor() { }
-
- public flag =1;
+  user:firebase.User;
+  constructor(private auth:AuthService,private router:Router) { }
+    
+  public flag = 1;
 
   ngOnInit(): void {
+    this.auth.getUserState()
+      .subscribe(user =>{
+        this.user = user;
+      })
   }
 
 }

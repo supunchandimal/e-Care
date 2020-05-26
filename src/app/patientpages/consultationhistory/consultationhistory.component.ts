@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class ConsultationhistoryComponent implements OnInit {
 
   constructor() { }
-
+  public flag4 = 4;
   ngOnInit(): void {
   }
 

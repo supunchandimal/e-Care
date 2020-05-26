@@ -1,0 +1,34 @@
+<div class="card">
+    <div class="card-content">
+      <span class="card-title">Add Item</span>
+      <form (ngSubmit)="onSubmit()" class="col s6">
+        <div class="row">
+          <div class="input-field col s6">
+            <input type="text" placeholder="Allergie" [(ngModel)]="item.name" name="name">
+            <label>Allergie</label>
+          </div>
+          <div class="input-field col s6">
+            <input type="text" placeholder="Add Reaction" [(ngModel)]="item.reaction" name="description">
+            <label>Reaction</label>
+          </div>
+          <div class="input-field col s6">
+            <input type="text" placeholder="Add Source" [(ngModel)]="item.source" name="source">
+            <label>Source</label>
+          </div>
+          <input type="submit" value="Submit" class="btn">
+        </div>
+      </form>
+    </div>
+  </div>
+ 
+ <div *ngIf='allegs?.length >0 ;else noAllegs'>
+    <ul *ngFor ="let alleg of allegs" class="collection">
+        <li class="collection-item">
+            {{alleg.reaction}}
+        </li>
+    </ul>
+ </div>
+ <ng-template #noAllegs>
+     <hr>
+     <h5>You have no allergies</h5>
+ </ng-template>

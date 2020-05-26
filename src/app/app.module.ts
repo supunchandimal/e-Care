@@ -1,4 +1,4 @@
-
+import { ServiceService } from './patientpages/services/service.service';
 import { AuthService } from './auth/auth.service';
 import { environment } from './../environments/environment';
 import { BrowserModule } from '@angular/platform-browser';
@@ -22,6 +22,7 @@ import { PagemenuComponent } from './patientpages/pagemenu/pagemenu.component';
 import { HealthrecordsComponent } from './patientpages/healthrecords/healthrecords.component';
 import { MyprovidersComponent } from './patientpages/myproviders/myproviders.component';
 import { ConsultationhistoryComponent } from './patientpages/consultationhistory/consultationhistory.component';
+import { AllergierecordsComponent } from './patientpages/allergierecords/allergierecords.component';
 
 
 
@@ -41,7 +42,8 @@ import { ConsultationhistoryComponent } from './patientpages/consultationhistory
     PagemenuComponent,
     HealthrecordsComponent,
     MyprovidersComponent,
-    ConsultationhistoryComponent
+    ConsultationhistoryComponent,
+    AllergierecordsComponent
     
   ],
   imports: [
@@ -54,7 +56,8 @@ import { ConsultationhistoryComponent } from './patientpages/consultationhistory
     FormsModule
   ],
   providers: [
-    AuthService
+    AuthService,
+    ServiceService 
   ],
   
   

@@ -1,29 +1,114 @@
 .margin{
-    height:300vh;
-    width: 80vw;
-    background-color: rgb(243, 237, 237);
-    opacity: 1;
-    display: inline-block;
-    display: flex;
-    position: relative;
-    bottom: -6px;
-    right: -250px;
-    border: 1px solid black;
+ width: 80%;
+ height: 100%;
+ align-self: flex-start;
+ background-color: black;
+ display: flex;
+ overflow-x: hidden;
 }
 .body{
-    background-color: rgb(243, 237, 237);
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    bottom: -40px;
-    right: -300px;
+    display: flex; 
+    overflow-x: hidden;
+    
 }
 .naviBar{
-    width: 20vw;
-    height: 100vh;
-    background-color: rgb(221, 224, 226);
-    align-items: flex-start;
+  width: 22.5%;
+  height: 100%;
+  align-self: flex-start;
+  background-color: #888, #555;
 }
+.subnavibar{
+  position: fixed;
+  align-self: flex-start;
+  margin-left: -20px;
+  margin-top: -10px;
+}
+.bodyrest{
+  width: 78%;
+  height: 100%;
+  margin-left: 22%;
+  display: flex;   
+}
+.submenu{
+  width: 100%;
+  height: 35%;
+  margin-top: 50px;
+  color: #888, #555;
+  text-shadow: 0 -1px 0 #000;	
+  border-bottom: 1px solid black;
+  opacity: 0.5;
+}
+.photoholder{
+  margin-bottom: 70px;
+  margin-left: 20px;
+  width: 25vw;
+  height: 5vh;
+  align-self: center;
+}
+.addpoto{
+  border-radius: 50%;
+  height: 75px;
+  width: 75px;
+  background-color: #bbb;
+  margin-left: 50px;
+}
+.profilename{
+  display: flex;
+  align-self: center;
+  opacity: 1;
+  width: 100%;
+}
+.btn-holder{
+  justify-content:flex-end;
+  display: flex;
+  margin-top: -30px;
+  padding-right: 50px;
+}
+.btn-group button {
+  background-color: rgb(243, 237, 237); /* Green background */
+  border: 1px solid rgb(243, 237, 237); /* Green border */
+  color: black; /* White text */
+  padding: 10px 24px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+  height: 15vh;
+  width: 15vw;
+}
+.dive{
+  justify-content: flex-start;
+  display: flex;
+  width: 100%;
+  height: 5vh;
+  font-family: 'Squada One', cursive;
+  font-size: small;
+  align-self: flex-start;
+  padding-left: 10px;
+}
+.btn-holder2{
+  justify-content:flex-start;
+  display: flex;
+  margin-top: -30px;
+  padding-right: 20px;
+}
+.btn-group2 button{
+  background-color: rgb(243, 237, 237); /* Green background */
+  border: 1px solid black; /* Green border */
+  color: black; /* White text */
+  padding: 10px 24px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: right; /* Float the buttons side by side */
+  height: 5vh;
+  width: 5vw;
+  font-family: 'Squada One', cursive;
+  font-size: medium;
+  display: flex;
+  align-self: flex-end;
+  margin-top: 45%;
+  margin-left: 10%;
+  border-radius: 50%;
+  box-shadow: 2px black;
+}
+
 .details{
     display: inline-block;
     display: flex;
@@ -45,77 +130,11 @@
   height: 30vh;
   background-color: black;
 }
-.dot {
-    height: 75px;
-    width: 75px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    justify-content: flex-end;
-    display: flex;
-    position: relative;
-    bottom: -40px;
-    right: -40px;
-    border: 1px solid black;
-    
-  }
 
-  .addpoto{
-    display: inline-block;
-    justify-content: center;
-    display: flex;
-    position: relative;
-    bottom: -130px;
-    right: 40px;
-    border: 1px solid black;
-    width: 7vw;
-    height: 3vh;
-    border-radius: 30%;
-    background-color: #bbb;
-  }
 
-  .btn-holder{
-    justify-content: flex-end;
-    display: flex;
-    position: relative;
-    bottom: -200.5px;
-    right:600px;
-  }
-  .btn-group button {
-    background-color: rgb(243, 237, 237); /* Green background */
-    border: 1px solid rgb(243, 237, 237); /* Green border */
-    color: black; /* White text */
-    padding: 10px 24px; /* Some padding */
-    cursor: pointer; /* Pointer/hand icon */
-    float: right; /* Float the buttons side by side */
-    height: 15vh;
-    width: 15vw;
-  }
-  .btn-group2 button{
-    background-color: rgb(243, 237, 237); /* Green background */
-    border: 1px solid rgb(243, 237, 237); /* Green border */
-    color: black; /* White text */
-    padding: 10px 24px; /* Some padding */
-    cursor: pointer; /* Pointer/hand icon */
-    float: right; /* Float the buttons side by side */
-    height: 15vh;
-    width: 15vw;
-    padding-left: 50%;
-    font-family: 'Squada One', cursive;
-    font-size: medium;
-  }
-  .dive{
-    justify-content: flex-end;
-    display: flex;
-    position: relative;
-    bottom: -320.5px;
-    right:1450px;
-    width: 80vw;
-    height: 1px;
-    background-color: black;
-    font-family: 'Squada One', cursive;
-    font-size: small;
-  }
+
+
+
   .dive2{
     justify-content: flex-end;
     display: flex;

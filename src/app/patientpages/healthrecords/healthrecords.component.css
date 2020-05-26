@@ -17,6 +17,14 @@
     width: 90vw;
     height: 100vh;
     margin-left: 20%;
-    display: flex;
-    
+    display: flex;   
+}
+.submenu{
+    width: 80vw;
+    height: 15vh;
+    margin-top: -15px;
+    color: #888, #555;
+    text-shadow: 0 -1px 0 #000;	
+    border-bottom: 1px solid black;
+    opacity: 0.5;
 }
