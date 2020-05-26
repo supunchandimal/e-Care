@@ -12,7 +12,7 @@
 .contactus_container_1{
     display: inline-block;
     height: 550px;
-    width: 750px;
+    width: 65%;
     margin-left: 20px;
     
     background-color:#f2f2f2;
@@ -20,10 +20,14 @@
 
 }
 
+.contactus_container_1 h1{
+  color: blue ;
+}
+
 .contactus_container_2{
-    display: inline;
+    display: inline-block;
     height: 550px;
-    width: 300px;
+    width: 30%;
     float: right;
     margin-right: 20px;
     
@@ -32,6 +36,10 @@
 
 .contactus_container_2 p{
     margin-left: 15px;
+}
+
+.contactus_container_2 h2{
+  color: blue;
 }
 
 
@@ -96,5 +104,9 @@
     .col-25, .col-75, input[type=submit] {
       width: 100%;
       margin-top: 0;
+    }
+
+    .contactus_container_2{
+      float: left;
     }
   }

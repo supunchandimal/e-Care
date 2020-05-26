@@ -4,7 +4,7 @@
    
     height: 500px;
 
-   background-color: lightgray;
+   background-color: rgb(252, 252, 252);
     
 }
 .login_image{
@@ -13,15 +13,21 @@
 .login_container h1,h2{
    text-align: center;
 }
+.login_container h1{
+  color: rgb(0, 102, 255);
+}
 .form_container {
     position: absolute;
-    height: 500px;
-    width: 100%;
+    
+    width: 30%;
     right: 0;
     margin: 20px;
-    max-width: 300px;
+    
     padding: 16px;
     
+  }
+.form_container label {
+    color: rgb(216, 95, 25);
   }
   
   /* Full-width input fields */
@@ -94,6 +100,13 @@
     
 }
 
+.container_2 h1{
+  color: orange;
+}
+.container_2 h2{
+  color: blue;
+}
+
 
 
 /* join now button -big */
@@ -101,7 +114,7 @@
 
    display:flex;
    align-items: center;
-   margin-left: 450px;
+   margin-left: 45%;
    height: 90px;
    width: 300px;
    background-color: teal;

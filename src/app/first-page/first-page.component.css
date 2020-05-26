@@ -6,14 +6,17 @@
 
 .image_container_1 .text_block{
   position: absolute;
-  top: 100px;
-  left: 100px;
-  width: 350px;
+  
+  top: 4%;
+  left: 10%;
+  width: 35%;
+  
   background: rgb(0, 0, 0); /* Fallback color */
   background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
   color: #f1f1f1; /* Grey text */
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 10%;
+  padding-right: 10%;
+  font-size: 1.5vw;
 
 }
 
@@ -21,6 +24,20 @@
 #homeimage2{
     float: left;
 }
+
+
+.container1{
+    display: inline-block;
+    margin-top: 15px;
+    height: 600px;
+    width: 100%;
+    background-color: rgb(236, 236, 255);
+}
+
+.container1 h1{
+    color:  blue;
+}
+
 
 .grid_container{
     display: grid block;
@@ -42,24 +59,9 @@
 
 }
 
-.grid_id_1 .topic{
+.grid_id_1 #topic{
     text-align: center;
-}
-.urgent_care_image {
-    position: relative;
-}
-.urgent_care_image  .text_block{
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    width: 500px;
-    height: 590px;
-    background-color:rgb(233, 239, 241)  /* Fallback color */
-   /* Black background with 0.5 opacity */
-    
-}
-.urgent_care_image p,h1,h2{
-    margin-left: 20px;
+    color: blue;
 }
 
   
@@ -67,16 +69,16 @@
  .services .column {
       margin-top: 50px;
     float: left;
-    width: 33.33%;
+    width: 25%;
     padding: 10px;
     height: 500px;
     column-gap: 10px; 
-    background-color:rgb(255, 255, 255);
+    background-color:rgb(235, 235, 250);
     /* Should be removed. Only for demonstration */
    
     box-sizing: border-box;
     
-    border: 20px solid rgb(204, 204, 204);    
+    border: 10px solid white    ;    
      
     
   }
@@ -92,12 +94,21 @@
 .invite_class{
     height: 500px;
     width: 100%;
-    margin-top: 50 px;
+    margin-top: 25 px;
     font-size: 30px;
     
     text-align: center;
     
     background-color:rgb(231, 231, 216);
+}
+
+.services .column h2{
+    text-align: center;
+    color: blue;
+}
+
+.services .column p{
+    text-align: center;
 }
 .invite_class h1{
     margin-top: 100px;
@@ -107,3 +118,45 @@
 .invite_class h2{
     color: blue;
 }
+
+
+/* buttons */
+.button1{
+    padding: 8px 10px;
+    background-color: white;
+    margin-left: 30%;
+    border-radius: 8px;
+}
+
+.button1 a{
+    text-decoration:  none;
+}
+
+
+.button2{
+    padding: 10px 20px;
+    background-color: blue;
+    margin-left: 30%;
+    border-radius: 8px;
+}
+
+
+.button3{
+    padding: 15px 25px;
+    background-color: blue;
+    border-radius: 8px;
+    margin-left: 30%;
+    
+}
+#button4{
+    padding: 28px 35px;
+    border-radius: 10px;
+    background-color: blue; 
+    font-size: 20px;
+    
+}
+
+#button4 a{
+    text-decoration: none;
+}
+
