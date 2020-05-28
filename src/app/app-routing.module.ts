@@ -11,7 +11,16 @@ import { HowItWorksComponent } from './how-it-works/how-it-works.component';
 import { AdminComponent } from './admin/admin.component';
 import { PatientHomeComponent } from './patient-home-navibar/patient-home.component';
 import { PatientDefaultPageComponent } from './patient-default-page/patient-default-page.component';
+import { DefaultDocComponent } from './doctor/layouts/default-doc/default-doc.component';
+import { DashboardDocComponent } from './doctor/modules/dashboard-doc/dashboard-doc.component';
+import { ContentDocComponent } from './doctor/modules/content-doc/content-doc.component';
+
+
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { WhatwetreatComponent } from './whatwetreat/whatwetreat.component';
+import { ForgotpassComponent } from './forgotpass/forgotpass.component';
+import { OurproviersComponent } from './ourproviers/ourproviers.component';
+
 
 const routes: Routes = [
   {path:'',redirectTo:'/home' ,pathMatch:'full'},
@@ -22,7 +31,26 @@ const routes: Routes = [
   {path:'howitworks', component:HowItWorksComponent},
   {path:'admin', component:AdminComponent},
   {path:'patientHome',component:PatientDefaultPageComponent},
-  {path:"**",component:PageNotFoundComponent}
+
+  {path:'whatwetreat', component:WhatwetreatComponent},
+  {path:'forgotpass',component:ForgotpassComponent},
+  {path:'ourproviders',component:OurproviersComponent},
+  {path:"**",component:PageNotFoundComponent},
+  
+
+  //doctor's modules
+
+  {path:'',component:DefaultDocComponent,
+  children: [{ path :'docHome', component:DashboardDocComponent},
+            { path : 'contentDoc' , component : ContentDocComponent},
+            {path:'tets',component:FirstPageComponent},
+ ]
+},
+
+
+  {path:"**",component:PageNotFoundComponent},
+  
+
   
 ];
  

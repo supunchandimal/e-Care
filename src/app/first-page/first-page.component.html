@@ -1,6 +1,6 @@
 <app-main-navigation-bar></app-main-navigation-bar>
  <div class="image_container_1">
-      <img src="assets/images/homeimage1.jpg" alt="aneh manda" height="500" width="1160">
+      <img src="assets/images/homeimage1.jpg" alt="aneh manda" height=50% width=100%>
       <div class="text_block">
         <h3>No 1 online medicare site in Sri lanka</h3>
         <p>
@@ -14,12 +14,12 @@
         <br>
         <br>
         <br>
-        <button height="150" width="100"><b>Learn more</b></button>
+        <button  class="button1"><b><a href="" routerLink="/howitworks" routerLinckActive="active">Learn More</a></b></button>
       </p>
       </div>
       
-      <div  >
-        <p id="homeimage2"><img src="assets/images/homeimage2.png" alt="hfd" height="555" width="600"></p>  
+      <div class="container1" >
+        <p id="homeimage2"><img src="assets/images/homeimage2.png" alt="hfd" height=100% width="600"></p>  
   
         <br><br><br><br>
         <h1>Quality healthcare starts with quality doctors.</h1>
@@ -28,13 +28,13 @@
            Our doctors are board-certified and have an average of 15 years of experience.
         </p>
          
-        <button>learn more</button>
+        <button class="button2">learn more</button>
       </div>
     
        
   </div>
   <div class="grid_id_1">
-  <h2 class="topic" >What you get with Medicare</h2>
+  <h2 id="topic" >What you get with Medicare</h2>
   <div class="grid_container">
         
     <div class="grid">
@@ -58,39 +58,78 @@
     </div>
   </div>
   </div>
-  <div class="urgent_care_image">
-    <img src="assets/images/sickimage1.jpg" alt="aneh mand" height="600" width="1160">
-    <div class="text_block">
-      <div style="height: 60px; width: 350px;background-color: black;color: cornsilk; margin-top: 0px;"><h2>Urgent Care Visits</h2></div>
-      <h1> $85</h1>
-      <p>   or less depending on your insurance plan coverage terms.</p>
-      <h2> MDLIVE treats over 50 routine medical conditions:</h2>
-      kfsakldf
-      <br>
-      jklfsakl
-      <br>
-      kljlfsad
-      <br>
-    </div>
-  </div>
+  
   <div class="services">
     <div class="row">
       <div class="column">
-        <h2>Column 1</h2>
-        <p>Some text..</p>
-        <button>get started</button>
+        <h2>Urgent care visits </h2>
+        <p>Common cold</p>
+        <p>Allergies</p>
+        <p>Constipation</p>
+        <p>Cough</p>
+        <p>Diarrhea</p>
+        <p>Ear Problems</p>
+        <p>Fever</p>
+        <p>Headache</p>
+        <p>Nausea</p>
+        <p>And more...</p>
+        
+
+        <button class="button3">get started</button>
       </div>
       <div class="column">
-        <h2>Column 2</h2>
-        <p>Some text..</p>
-        <button>get started</button>
+        <h2>Counseling</h2>
+        <p> Addictions </p>
+        <p>Bipolar disorders</p>
+        <p>Depression</p>
+        <p>Eating disorders</p>
+        <p>LGBTQ support</p>
+        <p>Grief and loss</p>
+        <p>Men’s issues</p>
+        <p>Panic disorders</p>
+        <p>Stress</p>
+        <p>And more...</p>
+
+        
+
+        <button  class="button3">get started</button>
       </div>
       <div class="column" >
-        <h2>Column 3</h2>
-        <p>Some text.dsfdfffasfadsf <br>
-        <button>get started</button>
-      <br>
-    </p>
+        <h2>Psychiatry</h2>
+        <p>Addictions</p>
+        <p>Bipolar disorders</p> 
+        <p>Depression</p> 
+        <p>Eating disorders</p> 
+        <p>LGBTQ support</p> 
+        <p>Grief and loss</p> 
+        <p>Men’s issues</p> 
+        <p>Panic disorders</p>
+        <p>Stress</p>
+        <p>And more...</p>
+
+        <button class="button3">get started</button>
+      
+    
+      </div>
+      <div class="column" >
+        <h2>Dermatology</h2>
+        <p>Acne</p>
+        <p>Rashes</p>
+        <p>Suspicious spots</p>
+        <p>Moles</p>
+        <p>Warts</p>
+        <p>Psoriasis</p>
+        <p>Eczema</p>
+        <p>Insect bites</p>
+        <p>Alopecia</p>
+        <p>And more...</p>
+
+
+
+
+        <button class="button3">get started</button>
+      
+    
       </div>
     </div>
 </div>
@@ -98,7 +137,7 @@
   <div class="invite_class">
   <h1 >We’ve changed the way our 39 <br> million members can see a <br> doctor.  </h1>
   <h2>now its your turn</h2>
-  <button>get started </button>
+  <button id="button4"><a href="" routerLink="/joinnow" routerLinkActive="active">Get Started </a></button>
   
   </div>
   <app-main-footer></app-main-footer>
