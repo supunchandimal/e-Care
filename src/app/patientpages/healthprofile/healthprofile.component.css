@@ -8,8 +8,7 @@
 }
 .body{
     display: flex; 
-    overflow-x: hidden;
-    
+    overflow-x: hidden;   
 }
 .naviBar{
   width: 22.5%;

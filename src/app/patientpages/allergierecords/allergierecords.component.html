@@ -1,19 +1,19 @@
 <div class="card">
     <div class="card-content">
-      <span class="card-title">Add Item</span>
+      <span class="card-title">Do you have any allergies?</span>
       <form (ngSubmit)="onSubmit()" class="col s6">
-        <div class="row">
-          <div class="input-field col s6">
-            <input type="text" placeholder="Allergie" [(ngModel)]="item.name" name="name">
+        <div class="row" style="width: 500px;">
+          <div class="input-field">
             <label>Allergie</label>
+            <input type="text" placeholder="Allergie" [(ngModel)]="item.name" name="name" style="margin-left: 10px;">
           </div>
-          <div class="input-field col s6">
-            <input type="text" placeholder="Add Reaction" [(ngModel)]="item.reaction" name="description">
-            <label>Reaction</label>
+          <div class="input-field">
+            <label style="margin-top: 25px;">Reaction</label>
+            <input type="text" placeholder="Add Reaction" [(ngModel)]="item.reaction" name="description" style="margin-left: 6px;margin-top: 25px;">
           </div>
-          <div class="input-field col s6">
-            <input type="text" placeholder="Add Source" [(ngModel)]="item.source" name="source">
-            <label>Source</label>
+          <div class="input-field">
+            <label style="margin-top: 25px;">Source</label>
+            <input type="text" placeholder="Add Source" [(ngModel)]="item.source" name="source" style="margin-left: 18px;margin-top: 25px;">
           </div>
           <input type="submit" value="Submit" class="btn">
         </div>
@@ -23,9 +23,18 @@
  
  <div *ngIf='allegs?.length >0 ;else noAllegs'>
     <ul *ngFor ="let alleg of allegs" class="collection">
-        <li class="collection-item">
-            {{alleg.reaction}}
-        </li>
+      <table style="width:80%;margin-left: 5%;">
+        <tr>
+          <th>Allergie</th>
+          <th>Description</th>
+          <th>Source</th>
+        </tr>
+        <tr>
+          <td>{{alleg.name}}</td>
+          <td>{{alleg.reaction}}</td>
+          <td>{{alleg.source}}</td>
+        </tr>
+      </table>
     </ul>
  </div>
  <ng-template #noAllegs>

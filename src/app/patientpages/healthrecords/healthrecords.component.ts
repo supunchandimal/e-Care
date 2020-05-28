@@ -11,5 +11,15 @@ export class HealthrecordsComponent implements OnInit {
   public flag2 =2;
   ngOnInit(): void {
   }
+  public mark = 1;
 
+  onClickAlleg(){
+    this.mark=1;
+  }
+  onClickMedic(){
+    this.mark=2;
+  }
+  onClickRecord(){
+    this.mark=3;
+  }
 }

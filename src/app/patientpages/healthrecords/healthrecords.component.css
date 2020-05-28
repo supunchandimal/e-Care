@@ -1,5 +1,6 @@
 .body{
     display: flex;
+    overflow-x: hidden;
 }
 .navibar{
     width: 22.5vw;
@@ -14,10 +15,10 @@
     margin-top: -10px;
 }
 .bodyrest{
-    width: 90vw;
-    height: 100vh;
-    margin-left: 20%;
-    display: flex;   
+    width: 78%;
+    height: 100%;
+    margin-left: 21%;
+    display: flex;     
 }
 .submenu{
     width: 80vw;
@@ -27,4 +28,9 @@
     text-shadow: 0 -1px 0 #000;	
     border-bottom: 1px solid black;
     opacity: 0.5;
+}
+.btn{
+    font-size: 1em;
+    width: 15vw;
+    
 }

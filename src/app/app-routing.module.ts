@@ -1,3 +1,4 @@
+import { ConsultationhistoryComponent } from './patientpages/consultationhistory/consultationhistory.component';
 import { MyprovidersComponent } from './patientpages/myproviders/myproviders.component';
 import { HealthrecordsComponent } from './patientpages/healthrecords/healthrecords.component';
 import { NgModule, Component } from '@angular/core';
@@ -28,6 +29,7 @@ const routes: Routes = [
   {path:'appoinments',component:AppoinmentsComponent},
   {path:'healthrecords',component:HealthrecordsComponent},
   {path:'myproviders',component:MyprovidersComponent},
+  {path:'consultationhistory',component:ConsultationhistoryComponent},
   {path:"**",component:PageNotFoundComponent}
   
 ];

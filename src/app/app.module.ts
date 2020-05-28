@@ -23,6 +23,8 @@ import { HealthrecordsComponent } from './patientpages/healthrecords/healthrecor
 import { MyprovidersComponent } from './patientpages/myproviders/myproviders.component';
 import { ConsultationhistoryComponent } from './patientpages/consultationhistory/consultationhistory.component';
 import { AllergierecordsComponent } from './patientpages/allergierecords/allergierecords.component';
+import { MedicationComponent } from './patientpages/medication/medication.component';
+import { UploadrecordsComponent } from './patientpages/uploadrecords/uploadrecords.component';
 
 
 
@@ -43,7 +45,9 @@ import { AllergierecordsComponent } from './patientpages/allergierecords/allergi
     HealthrecordsComponent,
     MyprovidersComponent,
     ConsultationhistoryComponent,
-    AllergierecordsComponent
+    AllergierecordsComponent,
+    MedicationComponent,
+    UploadrecordsComponent
     
   ],
   imports: [
