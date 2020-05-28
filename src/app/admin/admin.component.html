@@ -1,8 +1,23 @@
 <app-main-navigation-bar></app-main-navigation-bar>
-<!-- <p>admin works!</p> -->
 
-<div class="image_container_1">
-    <!-- <img src="assets/images/wallpaper1.jpg" alt="wallpaper1" no-repeat center center fixed> -->
-    <img src="assets/images/wallpaper1.jpg" alt="wallpaper1" no-repeat center center fixed height="50%">
-  
-</div>
+<div id="img"> 
+    
+    <div id="sidebar" >
+
+        <div class="toggle-btn"  (click)="toggleCollapse()" >
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    <div *ngIf="isCollapsed">
+        <ul>
+            <li>Manage Patients</li>
+            <li>Manage Doctors</li>
+            <li>Notifications</li>
+            <li>Feedbacks</li>
+            <li>Payment details</li>
+            <li>Announcements</li>
+        </ul>
+    </div>
+    </div>
+</div> 

@@ -1,23 +1,48 @@
-.image_container_1{
-     
-        /* background: url(images/bg.jpg) no-repeat center center fixed;  */
-        /* -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover; */
-
-/* 
-        background: linear-gradient(angle, color-stop, color-stop);
-        background-size: cover;
-        height: 100%;
-        overflow: hidden; */
-/* 
-        height: 50%; */
-
-        /* Center and scale the image nicely */
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        filter: opacity(0.5);
+*{
+        margin: 0;
+        padding: 0;
 }
 
+
+#img{
+        width: 100%;
+        height: 100vh;
+        background-image: url('/assets/images/wallpaper1.jpg');
+        background-size: cover;
+        filter: opacity(0.7);
+}
+
+#sidebar{
+        position: absolute;
+        width:30%;
+        height: 100%;
+        /* left: -30%; */
+        background-color: black;
+    }
+
+#sidebar li{
+        color: white;
+        font-size: 30px;
+        padding: 30px;
+        border-bottom: 1px solid gray;
+        text-align: center;
+}
+
+.toggle-btn{
+        position: absolute;
+        left: 105%;
+        top: 15px;
+
+}
+
+.toggle-btn span{
+        display: block;
+        background-color: black;
+        width: 30px;
+        height: 5px;
+        margin: 3px;
+}
+
+#sidebar.active{
+        left: 0;
+}
