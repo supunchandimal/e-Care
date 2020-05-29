@@ -19,12 +19,15 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AdminComponent } from './admin/admin.component';
 
 import { WhatwetreatComponent } from './whatwetreat/whatwetreat.component';
 import { ForgotpassComponent } from './forgotpass/forgotpass.component';
 import { OurproviersComponent } from './ourproviers/ourproviers.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ManageDoctorComponent } from './manage-doctor/manage-doctor.component';
+import { ManagePatientComponent } from './manage-patient/manage-patient.component';
 
 
 
@@ -39,10 +42,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ContactusComponent,
     HowItWorksComponent,
     routingComponents,
+    AdminComponent,
 
     WhatwetreatComponent,
     ForgotpassComponent,
-    OurproviersComponent
+    OurproviersComponent,
+    ManageDoctorComponent,
+    ManagePatientComponent
 
 
     
