@@ -1,34 +1,41 @@
 <app-main-navigation-bar></app-main-navigation-bar>
 <div class="contactusimage" >
-    <img src="assets/images/contactuspic.jpg" alt="" height="360" width="100%" class="c_image">
+    <img src="assets/images/contactuspic.jpg" alt="" height="450" width="100%" class="c_image">
+</div>
+<div ><h1 style="color: blue;">{{succornot}}</h1>
 </div>
 
+
 <div class="contactus_container_1">
-    <h1>send us a message </h1>
+    <h1>Send us a message </h1>
     <div class="container">
-        <form action="/action_page.php">
+        <form action=""  #contactusform="ngForm"  (ngSubmit)="onsubmit(contactusform)">
         <div class="row">
           <div class="col-25">
             <label for="fname">First Name</label>
           </div>
           <div class="col-75">
-            <input type="text" id="fname" name="firstname" placeholder="Your name..">
+            <input type="text" id="fname" name="firstname" placeholder="Your name.." required #firstname="ngModel"  ngModel>
+            <div *ngIf="firstname.invalid && firstname.touched"><small style="color: red;">*required</small></div>
           </div>
         </div>
         <div class="row">
           <div class="col-25">
-            <label for="lname">Last Name</label>
+            <label for="lname"   class="form-control">Last Name</label>
           </div>
           <div class="col-75">
-            <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+            <input type="text" id="lname" name="lastname" placeholder="Your last name.."   #lastname="ngModel"  required ngModel>
+            <div *ngIf= "lastname.invalid && lastname.touched"><small style="color: red;"> *required</small></div>
+
           </div>
         </div>
         <div class="row">
             <div class="col-25">
-              <label for="email">Email</label>
+              <label for="email"  >Email</label>
             </div>
             <div class="col-75">
-              <input type="text" id="email" name="email" placeholder="Yor Email ..">
+              <input type="text" id="email" name="email" placeholder="Yor Email .."  #email="ngModel" required ngModel>
+              <div *ngIf="email.invalid && email.touched"><small style="color: red;">*required or wrong email pattern</small></div>
             </div>
           </div>
           <div class="row">
@@ -36,31 +43,24 @@
               <label for="phoneno">Phone no</label>
             </div>
             <div class="col-75">
-              <input type="text" id="phoneno" name="phoneno" placeholder="Your phone no ..">
+              <input type="text" id="phoneno" name="phoneno" placeholder="Your phone no .." #phoneno="ngModel" required ngModel>
+              <div *ngIf="phoneno.invalid && phoneno.touched"><small style="color: red;">*required and correct pattern needed</small></div>
             </div>
           </div>
-        <!-- <div class="row">
-          <div class="col-25">
-            <label for="country">Country</label>
-          </div>
-          <div class="col-75">
-            <select id="country" name="country">
-              <option value="australia">Australia</option>
-              <option value="canada">Canada</option>
-              <option value="usa">USA</option>
-            </select>
-          </div>
-        </div> -->
         <div class="row">
           <div class="col-25">
             <label for="subject">your query</label>
           </div>
           <div class="col-75">
-            <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+            <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px" #subject="ngModel" required  ngModel></textarea>
+            <div *ngIf ="subject.invalid && subject.touched"><small style="color: red;"> *required</small></div>
           </div>
         </div>
         <div class="row">
-          <input type="submit" value="Submit">
+          <input type="submit" value="Submit" [disabled]="contactusform.form.invalid"  >
+          <div *ngIf="contactusform.form.invalid && contactusform.form.touched" style="text-align: right; margin-right: 20%;">
+            <small style="color: red; ;">---------Their is error feild------------ </small>
+          </div>
         </div>
         </form>
       </div>

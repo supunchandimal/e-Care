@@ -9,10 +9,7 @@
     overflow: hidden;
     background: rgb(0, 0, 0); /* Fallback color */
     background: rgba(0, 0, 0, 0.5); 
-    height: 10%;
-}
-.navigation_bar ul a{
- font-size: 1.5vw;
+    height: 50px;
 }
 
 
@@ -31,7 +28,7 @@
     text-align: center;
     padding :14px 16px;  
     text-decoration: none;
-    height: 10%;
+    height: 50px;
 
     
 
@@ -58,7 +55,7 @@
 }
 
 .dropdown .dropbtn{
-    font-size: 1.5vw;
+    
     border: none;
     outline: none;
     color: white;

@@ -1,6 +1,6 @@
 .ourproviders_con1{
     height: 380px;
-    background-size: 100% 480px;
+    background-size: 100% 500px;
 }
 .ourproviders_con1 h1{
     font-size: 50px;
@@ -26,7 +26,7 @@
     color: blue;
 }
 .container_2 p{
-    font-size: 20px;
+   
 }
 .container_2 li{
     list-style-type: none;

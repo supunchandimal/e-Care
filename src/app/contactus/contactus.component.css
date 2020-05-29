@@ -11,7 +11,7 @@
 
 .contactus_container_1{
     display: inline-block;
-    height: 550px;
+    height: 600px;
     width: 65%;
     margin-left: 20px;
     
@@ -26,7 +26,7 @@
 
 .contactus_container_2{
     display: inline-block;
-    height: 550px;
+    height: 600px;
     width: 30%;
     float: right;
     margin-right: 20px;
@@ -53,8 +53,14 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     resize: vertical;
+    
   }
   
+.invalid input:invalid{
+    border-color: red;
+  }
+
+
   label {
     padding: 12px 12px 12px 0;
     display: inline-block;

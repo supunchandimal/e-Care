@@ -43,7 +43,7 @@ const routes: Routes = [
   {path:'whatwetreat', component:WhatwetreatComponent},
   {path:'forgotpass',component:ForgotpassComponent},
   {path:'ourproviders',component:OurproviersComponent},
-  {path:"**",component:PageNotFoundComponent},
+ 
   
 
   //doctor's modules
