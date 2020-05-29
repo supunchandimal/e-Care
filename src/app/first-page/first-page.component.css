@@ -9,14 +9,14 @@
   
   top: 4%;
   left: 10%;
-  width: 35%;
+  width: 25%;
   
   background: rgb(0, 0, 0); /* Fallback color */
   background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
   color: #f1f1f1; /* Grey text */
-  padding-left: 10%;
-  padding-right: 10%;
-  font-size: 1.5vw;
+  padding-left: 5%;
+  padding-right: 5%;
+  
 
 }
 
@@ -40,22 +40,21 @@
 
 
 .grid_container{
-    display: grid block;
-    grid-template-columns: auto auto auto auto;
-    background-color: white;
-    padding: 10px;
-    height: 400px;
+    display:block;
+    height: 300px;
 }
 
 .grid_container .grid{
-    background-color: rgba(255, 255, 255, 0.8);
+    width: 25%;
+    float: left;
+    background-color:white;
     text-align: center;
     padding: 20px 0;
-    font-size: 22px;
+    
 
 }
 .grid_id_1 {
-    margin-top: 200px;
+    margin-top: 50px;
 
 }
 
@@ -67,7 +66,7 @@
   
   /* Create three equal columns that floats next to each other */
  .services .column {
-      margin-top: 50px;
+     
     float: left;
     width: 25%;
     padding: 10px;
@@ -92,10 +91,9 @@
   }
 
 .invite_class{
-    height: 500px;
+    display: block;
+    height: 400px;
     width: 100%;
-    margin-top: 25 px;
-    font-size: 30px;
     
     text-align: center;
     
@@ -111,8 +109,12 @@
     text-align: center;
 }
 .invite_class h1{
-    margin-top: 100px;
+    display: block;
+   
     color: rgb(216, 161, 42);
+    font-size: 40px;
+    margin-top: 50px;
+    padding: 10px;
     
 }
 .invite_class h2{
