@@ -26,6 +26,8 @@ import { ForgotpassComponent } from './forgotpass/forgotpass.component';
 import { OurproviersComponent } from './ourproviers/ourproviers.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ManageDoctorComponent } from './manage-doctor/manage-doctor.component';
+import { ManagePatientComponent } from './manage-patient/manage-patient.component';
 
 
 
@@ -44,7 +46,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
     WhatwetreatComponent,
     ForgotpassComponent,
-    OurproviersComponent
+    OurproviersComponent,
+    ManageDoctorComponent,
+    ManagePatientComponent
 
 
     

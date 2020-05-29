@@ -13,19 +13,24 @@
 }
 
 #sidebar{
-        position: absolute;
-        width:30%;
-        height: 100%;
+        position: fixed;
+        width:20%;
+        height: 75%;
         /* left: -30%; */
         background-color: black;
     }
 
 #sidebar li{
         color: white;
-        font-size: 30px;
+        font-size: 100%;
         padding: 30px;
         border-bottom: 1px solid gray;
         text-align: center;
+}
+
+#sidebar li a{
+        text-decoration: none;
+        color: white;
 }
 
 .toggle-btn{
@@ -46,3 +51,14 @@
 #sidebar.active{
         left: 0;
 }
+
+
+/* @media screen and (max-width: 700px) {
+        #sidebar {
+          width: 100%;
+          height: auto;
+          position: relative;
+        }
+        #sidebar a {float: left;}
+        div.content {margin-left: 0;}
+      } */

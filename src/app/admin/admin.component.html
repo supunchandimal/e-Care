@@ -1,7 +1,7 @@
 <app-main-navigation-bar></app-main-navigation-bar>
 
 <div id="img"> 
-    
+     
     <div id="sidebar" >
 
         <div class="toggle-btn"  (click)="toggleCollapse()" >
@@ -11,8 +11,9 @@
         </div>
     <div *ngIf="isCollapsed">
         <ul>
-            <li>Manage Patients</li>
-            <li>Manage Doctors</li>
+            <!-- <li  href="" routerLink="/manage-doctor" routerLinkActive="active">Manage Doctors</li> -->
+            <li><a routerLink="../manage-doctor">Manage Doctors</a></li>
+            <li><a routerLink="../manage-patient">Manage Patients</a></li> 
             <li>Notifications</li>
             <li>Feedbacks</li>
             <li>Payment details</li>

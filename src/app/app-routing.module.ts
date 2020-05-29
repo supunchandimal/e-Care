@@ -20,7 +20,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { WhatwetreatComponent } from './whatwetreat/whatwetreat.component';
 import { ForgotpassComponent } from './forgotpass/forgotpass.component';
 import { OurproviersComponent } from './ourproviers/ourproviers.component';
-
+import { ManageDoctorComponent } from './manage-doctor/manage-doctor.component';
+import { ManagePatientComponent } from './manage-patient/manage-patient.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'/home' ,pathMatch:'full'},
@@ -29,7 +30,14 @@ const routes: Routes = [
   {path:'joinnow', component:RegisterComponent},
   {path:'contactus',component:ContactusComponent},
   {path:'howitworks', component:HowItWorksComponent},
-  {path:'admin', component:AdminComponent},
+  {path:'admin', component:AdminComponent,
+  children:[
+      { path:'manage-doctor', component: ManageDoctorComponent},
+      { path:'manage-patient', component: ManagePatientComponent}
+    ]
+  },
+  {path:'manage-doctor', component: ManageDoctorComponent},
+  { path:'manage-patient', component: ManagePatientComponent},
   {path:'patientHome',component:PatientDefaultPageComponent},
 
   {path:'whatwetreat', component:WhatwetreatComponent},

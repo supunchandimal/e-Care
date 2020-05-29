@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute,Router} from '@angular/router';
 
 @Component({
   selector: 'app-admin',
@@ -6,21 +7,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
-  // sidebar: any;
-isCollapsed : boolean = false;
-  constructor() { }
 
+isCollapsed : boolean = true;
+  constructor(private route: ActivatedRoute, private router: Router) { }
+
+  toggleCollapse(){
+    this.isCollapsed= !this.isCollapsed;
+  }
+
+  showdoctors(){
+    this.router.navigate(['manage-doctor'], {relativeTo: this.route});
+  }
+  
   ngOnInit(): void {
   }
 
 
-  // togglemenu(){
-  //   document.getElementById('sidebar').classList.toggle('active');
-  // }
-//   toggleClick() {
-//     this.sidebar.toggle();
-// }
-toggleCollapse(){
-  this.isCollapsed= !this.isCollapsed;
-}
+
 }
