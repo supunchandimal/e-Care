@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ContactusService } from 'src/services/shared/contactus.service';
+import { Contactmessages } from 'src/services/shared/contactmessages';
+import { element } from 'protractor';
 
 @Component({
   selector: 'app-contactus',
@@ -7,9 +10,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactusComponent implements OnInit {
 
-  constructor() { }
+
+    message= new Contactmessages();
+    succornot:string;
+    errormsg="";
+  constructor(private add : ContactusService ) { 
+
+    
+  }
 
   ngOnInit(): void {
+  }
+
+
+  onsubmit(contactusform){
+      // console.log(contactusform.value);
+       this.message = contactusform.value;
+       this.add.addmessage(this.message);
+       this.succornot="succesfully sent the msg we will contact you  as soon as posible thank for your time";
+       contactusform.reset();
+      
   }
 
 }

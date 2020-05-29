@@ -120,18 +120,18 @@ input[type=text], input[type=password],input[type=number],input[type=date],input
 
 
 .grid_container{
-    display: grid block;
-    grid-template-columns: auto auto auto auto;
-    background-color: white;
-    padding: 10px;
-    height: 400px;
+    display:block;
+    height: 300px;
+    
 }
 
 .grid_container .grid{
-    background-color: rgba(255, 255, 255, 0.8);
+    width: 25%;
+    float: left;
+    background-color: white;
     text-align: center;
     padding: 20px 0;
-    font-size: 22px;
+    
 
 }
 .grid_id_1 {
@@ -141,6 +141,7 @@ input[type=text], input[type=password],input[type=number],input[type=date],input
 
 .grid_id_1 .topic{
     text-align: center;
+    color: blue;
 }
 
 .urgent_care_image {
@@ -151,7 +152,7 @@ input[type=text], input[type=password],input[type=number],input[type=date],input
     top: 5px;
     right: 5px;
     width: 500px;
-    height: 590px;
+  ;
     background-color:rgb(233, 239, 241)  /* Fallback color */
    /* Black background with 0.5 opacity */
     
