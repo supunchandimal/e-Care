@@ -1,4 +1,5 @@
 import { ServiceService } from './patientpages/services/service.service';
+import { DefaultDocModule } from './doctor/layouts/default-doc/default-doc.module';
 import { AuthService } from './auth/auth.service';
 import { environment } from './../environments/environment';
 import { BrowserModule } from '@angular/platform-browser';
@@ -13,7 +14,6 @@ import { LoginComponentComponent } from './auth/login-component/login-component.
 import { RegisterComponent } from './auth/register/register.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { HowItWorksComponent } from './how-it-works/how-it-works.component';
-
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
@@ -27,6 +27,15 @@ import { MedicationComponent } from './patientpages/medication/medication.compon
 import { UploadrecordsComponent } from './patientpages/uploadrecords/uploadrecords.component';
 
 
+import { AdminComponent } from './admin/admin.component';
+
+import { WhatwetreatComponent } from './whatwetreat/whatwetreat.component';
+import { ForgotpassComponent } from './forgotpass/forgotpass.component';
+import { OurproviersComponent } from './ourproviers/ourproviers.component';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ManageDoctorComponent } from './manage-doctor/manage-doctor.component';
+import { ManagePatientComponent } from './manage-patient/manage-patient.component';
 
 
 
@@ -47,8 +56,13 @@ import { UploadrecordsComponent } from './patientpages/uploadrecords/uploadrecor
     ConsultationhistoryComponent,
     AllergierecordsComponent,
     MedicationComponent,
-    UploadrecordsComponent
-    
+    UploadrecordsComponent,
+    AdminComponent,
+    WhatwetreatComponent,
+    ForgotpassComponent,
+    OurproviersComponent,
+    ManageDoctorComponent,
+    ManagePatientComponent
   ],
   imports: [
     BrowserModule,
@@ -57,15 +71,13 @@ import { UploadrecordsComponent } from './patientpages/uploadrecords/uploadrecor
     AngularFirestoreModule, // firestore
     AngularFireAuthModule, // auth
     AngularFireStorageModule, // storage
-    FormsModule
+    FormsModule, BrowserAnimationsModule,
+    DefaultDocModule
   ],
   providers: [
     AuthService,
     ServiceService 
   ],
-  
-  
- 
   bootstrap: [AppComponent]
 })
 export class AppModule { }

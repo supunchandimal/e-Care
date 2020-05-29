@@ -1,11 +1,16 @@
+.sla{
+    height: 100%;
+    width: 100%;
+}
+
 .howitworks_container_1{
     display: block;
-    height:500px ;
+    height:100% ;
     float: left;
     margin-top: 20px;
-    width: 700px;
+    width:  100%;
     background-color: wheat;
-    background-size: 700px 500px;
+    background-size:100% 100%;
 }
 
 .howitworks_container_1 h1,h2{
@@ -15,7 +20,7 @@
 
 .howitworks_container_2{
     display: inline-block;
-    height: 500px;
+    height: 400px;
     margin-top: 20px;
    
 }
@@ -63,8 +68,8 @@
 }
 .howitworks_container3{
     height: 600px;
-    background-size: 1160px 800px;
-    
+    background-size: 100% 100%;
+    min-height: 500px;    
 }
 .container3_sub1{
     display:inline-block;
@@ -103,8 +108,8 @@
 .howitworks_container_4{
     display:inline-block ;
     margin-top: 45px;
-    height: 300px;
-    width: 1160px;
+    height: 50%;
+    width: 100%;
     background-color: rgb(243, 240, 240);
 }
 
@@ -121,7 +126,7 @@
     width: 200px;
     height: 80px;
     float: left;
-    margin-left: 330px;
+    margin-left:30%;
     background-color: blue;
     border-radius: 12px;
 }
@@ -135,7 +140,7 @@
     height: 80px;
     float: right;
    background-color: blue;
-    margin-right: 330px;
+    margin-right: 30%;
     border-radius: 12px;
 }
 

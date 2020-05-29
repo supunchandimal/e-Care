@@ -24,31 +24,32 @@
               <form action="" #userRegForm="ngForm" (ngSubmit)="createUser(userRegForm)" >
                 <div class="">
                   <div >
-                      <label for="firstname" >Firstname :   </label>
-                      <input ngModel #firstname="ngModel" name="firstName" type="text" class="form-control" id="firstName"style="margin-left: 42px;" >
-
-                      <div >
-                        <label for="secondname">Secondname : </label>
-                      <input ngModel #secondname="ngModel" name="secondName" type="text" class="form-control" id="secondName" value="" style="margin-left: 20px;">
+                    <div class="row">
+                      <label for="firstname" >Firstname:</label>
+                      <input ngModel #firstname="ngModel" name="firstName" type="text" class="form-control" id="firstName" >
+                    </div>
+                      <div class="row">
+                        <label for="secondname">Secondname:</label>
+                      <input ngModel #secondname="ngModel" name="secondName" type="text" class="form-control" id="secondName" value="" >
                       
                       </div>
                   </div>
                   
                   <div class="">
-                      <label for="email" >Email :</label>
-                      <input  ngModel #email="ngModel" type="email" class="form-control" placeholder="email" name="email" style="margin-left: 80px;" >
+                      <label for="email" >Email:</label>
+                      <input  ngModel #email="ngModel" type="email" class="form-control" placeholder="email" name="email"  >
                   </div>
                   <div class="">
-                      <label for="password">Password : </label>
-                      <input ngModel #password="ngModel" name="password" type="password" class="form-control" style="margin-left: 45px;">
+                      <label for="password">Password: </label>
+                      <input ngModel #password="ngModel" name="password" type="password" class="form-control">
                   </div>
                   <div class="">
                       <label for="dateofbirth">Date of birth : </label>
-                      <input ngModel #dob="ngModel" type="date" placeholder="mm/dd/yyyy" name="dob" class="form-control" id="dob" value="" style="margin-left: 22px;">
+                      <input ngModel #dob="ngModel" type="date" placeholder="mm/dd/yyyy" name="dob" class="form-control" id="dob" value="" >
                   </div>
                   <div class="">
                       <label for="phoneno">Phone number : </label>
-                      <input ngModel #phone="ngModel" type="number" name="phone" placeholder="phoneno" id="phone"  class="form-control" value="" style="margin-left: 5px;">
+                      <input ngModel #phone="ngModel" type="number" name="phone" placeholder="phoneno" id="phone"  class="form-control" value="" >
                      
                   </div>
                   
@@ -56,7 +57,7 @@
                       <label for="gender">Gender :  </label>
                       <input ngModel #gender="ngModel" type="text" name="gender" placeholder="gender" id="gender" class="form-control" value="">
                   </div>
-                  <input type="submit" name="submit" value="submit" id="" style="margin-left: 200px;">
+                  <input type="submit" name="submit" value="submit" id="" >
                   
                   </div>
               </form>
@@ -92,43 +93,81 @@
     </div>
     </div>
 
-    <div class="urgent_care_image">
-        <img src="assets/images/littelegirl.jpg" alt="aneh mand" height="600" width="1160">
-        <div class="text_block">
-          <div style="height: 60px; width: 350px;background-color: black;color: cornsilk; margin-top: 0px;"><h2>Urgent Care Visits</h2></div>
-          <h1> $85</h1>
-          <p>   or less depending on your insurance plan coverage terms.</p>
-          <h2> MDLIVE treats over 50 routine medical conditions:</h2>
-          kfsakldf
-          <br>
-          jklfsakl
-          <br>
-          kljlfsad
-          <br>
+    
+    <div class="services">
+      <div class="row">
+        <div class="column">
+          <h2>Urgent care visits </h2>
+          <p>Common cold</p>
+          <p>Allergies</p>
+          <p>Constipation</p>
+          <p>Cough</p>
+          <p>Diarrhea</p>
+          <p>Ear Problems</p>
+          <p>Fever</p>
+          <p>Headache</p>
+          <p>Nausea</p>
+          <p>And more...</p>
+          
+  
+          <button class="button3">get started</button>
+        </div>
+        <div class="column">
+          <h2>Counseling</h2>
+          <p> Addictions </p>
+          <p>Bipolar disorders</p>
+          <p>Depression</p>
+          <p>Eating disorders</p>
+          <p>LGBTQ support</p>
+          <p>Grief and loss</p>
+          <p>Men’s issues</p>
+          <p>Panic disorders</p>
+          <p>Stress</p>
+          <p>And more...</p>
+  
+          
+  
+          <button  class="button3">get started</button>
+        </div>
+        <div class="column" >
+          <h2>Psychiatry</h2>
+          <p>Addictions</p>
+          <p>Bipolar disorders</p> 
+          <p>Depression</p> 
+          <p>Eating disorders</p> 
+          <p>LGBTQ support</p> 
+          <p>Grief and loss</p> 
+          <p>Men’s issues</p> 
+          <p>Panic disorders</p>
+          <p>Stress</p>
+          <p>And more...</p>
+  
+          <button class="button3">get started</button>
+        
+      
+        </div>
+        <div class="column" >
+          <h2>Dermatology</h2>
+          <p>Acne</p>
+          <p>Rashes</p>
+          <p>Suspicious spots</p>
+          <p>Moles</p>
+          <p>Warts</p>
+          <p>Psoriasis</p>
+          <p>Eczema</p>
+          <p>Insect bites</p>
+          <p>Alopecia</p>
+          <p>And more...</p>
+  
+  
+  
+  
+          <button class="button3">get started</button>
+        
+      
         </div>
       </div>
-      <div class="services">
-        <div class="row">
-          <div class="column">
-            <h2>Column 1</h2>
-            <p>Some text..</p>
-            <button>get started</button>
-          </div>
-          <div class="column">
-            <h2>Column 2</h2>
-            <p>Some text..</p>
-            <button>get started</button>
-          </div>
-          <div class="column" >
-            <h2>Column 3</h2>
-            <p>Some text.dsfdfffasfadsf <br>
-            <button>get started</button>
-          <br>
-        </p>
-          </div>
-        </div>
-    </div>
-
+  </div>
     <div class="registerfooter">
       <h2>MDLIVE</h2>
       <P> <small>download_app_android

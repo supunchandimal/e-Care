@@ -1,7 +1,7 @@
 <app-main-navigation-bar></app-main-navigation-bar>
 
 <div class="login_container">
-    <img src="assets/images/login_image.jpg" alt="" height="500" width="800" class="login_image" >
+    <img src="assets/images/patienthome.jpg" alt="" height=100% width=65% class="login_image" >
     <div class="form_container">
         <form action="" #loginForm="ngForm" (ngSubmit)="login(loginForm)">
             <h1>login</h1>
@@ -19,7 +19,7 @@
 
             <button type="submit" class="btn">login</button>
         </form>
-        <span class="psw">Forgot <a href="#">password? </a></span>
+        <span class="psw">Forgot <a href="" routerLink="/forgotpass" routerLinkActive="active">password? </a></span>
         <h2>new to medicare?</h2>
         <button class="btn2"  > <a href="" routerLink="/joinnow" routerLinkActive="active"> join now</a></button>
 
@@ -28,7 +28,7 @@
 
 
 <div class="container_2" >
-    <h1>Quality care. Quality doctors.</h1><br><br>
+    <h1>Quality care. Quality doctors.</h1><br>
   <div  style="float: left; width: 33.33%;" >
     <ul>
         <h2>Experience</h2><br>
