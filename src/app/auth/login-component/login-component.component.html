@@ -3,13 +3,16 @@
 <div class="login_container">
     <img src="assets/images/patienthome.jpg" alt="" height=100% width=65% class="login_image" >
     <div class="form_container">
-        <form action="" >
-            <h1>Login</h1>
+        <form action="" #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+            <h1>login</h1>
+            <div class="row" *ngIf="authError">
+                <div class="col-12 alert alert-danger">{{ authError?.message }}</div>
+              </div>
             <label for="email"> <b>Email</b> </label>
-            <input type="text" placeholder="Enter Email" name="email" required>
+            <input ngModel #email="ngModel" name="email" type="text" class="form-control"  placeholder="Enter Email" required>
                
             <label for="password"> <b>password</b></label>
-            <input type="password" placeholder="Enter password" name="password" required >
+            <input ngModel #password="ngModel" name="password" type="password"  class="form-control" placeholder="Enter password"  required >
             <label>
                 <input type="checkbox" checked="checked" name="remember"> Remember me
             </label>

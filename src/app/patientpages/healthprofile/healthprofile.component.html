@@ -1,0 +1,93 @@
+
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Squada+One&display=swap" rel="stylesheet">
+    </head>
+    <body class="body">
+        <div class="navibar">
+             <app-patient-home class="subnavibar"></app-patient-home>
+        </div>
+        <div class="bodyrest">
+            <div style="align-self: flex-start;"> 
+                <app-pagemenu [parentData]="flag"></app-pagemenu>
+                <div class="submenu">
+                   <div class="photoholder">
+                        <button class="addpoto">
+                            <div > 
+                              <i class="fa fa-user" id="icon" style="width: 2vw;height: 100%;" ></i>
+                            </div>
+                        </button> 
+                        <div class="profilename">
+                            <h1 *ngIf="user">{{ user?.displayName }}</h1>
+                        </div>
+                   </div>
+                   <div class="btn-holder">
+                    <div class="btn-group" >
+                      <button >MY HEALTH HISTORY</button>
+                      <button >MY BEHAVIOURAL HISTORY</button>
+                      <button >MY FAMILY HISTORY</button>
+                    </div>
+                   </div>
+                </div>
+                 <div class="dive">
+                    <h1>Do you have any allergies or drug sensivities?</h1>
+                </div>
+                 <div class="btn-holder2">
+                    <div class="btn-group2 button">
+                        <button style="color: green;">yes</button><button style="color: red;">no</button>
+                    </div> 
+                 </div>
+                 <div class="dive">
+                    <h1>Are you currently taking any medication?</h1>
+                </div>
+                 <div class="btn-holder2">
+                    <div class="btn-group2 button">
+                        <button style="color: green;">yes</button><button style="color: red;">no</button>
+                    </div> 
+                 </div>
+                 <div class="dive">
+                    <h1>Do you have any health conditions?</h1>
+                </div>
+                 <div class="btn-holder2">
+                    <div class="btn-group2 button">
+                        <button style="color: green;">yes</button><button style="color: red;">no</button>
+                    </div> 
+                 </div>
+                 <div class="dive">
+                    <h1>Have you ever had any surgeries or medical procedures?</h1>
+                </div>
+                 <div class="btn-holder2">
+                    <div class="btn-group2 button">
+                        <button style="color: green;">yes</button><button style="color: red;">no</button>
+                    </div> 
+                 </div>
+                 <div class="bmi">
+                    <div class="dive">
+                        <h1>Enter your Details</h1>
+                    </div>
+                    <div style="padding-top: 3%;padding-left: 20%;">
+                        <label style="font-family: Arial, Helvetica, sans-serif;">
+                            Current Body Weight(kg):
+                        </label>
+                        <input type="text" name="current body weight" >
+                    </div>
+                    <div style="padding-top: 3%;padding-left: 20%;">
+                        <label style="font-family: Arial, Helvetica, sans-serif;">
+                            Current Height(cm):
+                        </label>
+                        <input type="text" name="current Height" >
+                    </div>
+                    <div style="padding-top: 3%;padding-left: 20%;">
+                        <label style="font-family: Arial, Helvetica, sans-serif;">
+                            BMI :
+                        </label>
+                        <input type="text" name="current BMI" >
+                    </div>
+                    <div >
+
+                    </div>
+                 </div>
+            </div>
+            
+        </div>
+     </body>

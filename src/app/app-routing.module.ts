@@ -1,4 +1,7 @@
-import { NgModule } from '@angular/core';
+import { ConsultationhistoryComponent } from './patientpages/consultationhistory/consultationhistory.component';
+import { MyprovidersComponent } from './patientpages/myproviders/myproviders.component';
+import { HealthrecordsComponent } from './patientpages/healthrecords/healthrecords.component';
+import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 
@@ -17,6 +20,8 @@ import { ContentDocComponent } from './doctor/modules/content-doc/content-doc.co
 
 
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { HealthprofileComponent } from './patientpages/healthprofile/healthprofile.component';
+import { AppoinmentsComponent } from './patientpages/appoinments/appoinments.component';
 import { WhatwetreatComponent } from './whatwetreat/whatwetreat.component';
 import { ForgotpassComponent } from './forgotpass/forgotpass.component';
 import { OurproviersComponent } from './ourproviers/ourproviers.component';
@@ -39,7 +44,11 @@ const routes: Routes = [
   {path:'manage-doctor', component: ManageDoctorComponent},
   { path:'manage-patient', component: ManagePatientComponent},
   {path:'patientHome',component:PatientDefaultPageComponent},
-
+  {path:'healthprofile',component:HealthprofileComponent},
+  {path:'appoinments',component:AppoinmentsComponent},
+  {path:'healthrecords',component:HealthrecordsComponent},
+  {path:'myproviders',component:MyprovidersComponent},
+  {path:'consultationhistory',component:ConsultationhistoryComponent},
   {path:'whatwetreat', component:WhatwetreatComponent},
   {path:'forgotpass',component:ForgotpassComponent},
   {path:'ourproviders',component:OurproviersComponent},
@@ -71,5 +80,8 @@ export const routingComponents = [
   PatientHomeComponent,
   PageNotFoundComponent,
   PatientDefaultPageComponent,
-  LoginComponentComponent
+  LoginComponentComponent,
+  HealthprofileComponent,
+  AppoinmentsComponent
+    
 ];

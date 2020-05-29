@@ -1,0 +1,36 @@
+.body{
+    display: flex;
+    overflow-x: hidden;
+}
+.navibar{
+    width: 22.5vw;
+    height: 100vh;
+    align-self: flex-start;
+    background-color: #888, #555;
+}
+.subnavibar{
+    position: fixed;
+    align-self: flex-start;
+    margin-left: -20px;
+    margin-top: -10px;
+}
+.bodyrest{
+    width: 78%;
+    height: 100%;
+    margin-left: 21%;
+    display: flex;     
+}
+.submenu{
+    width: 80vw;
+    height: 15vh;
+    margin-top: -15px;
+    color: #888, #555;
+    text-shadow: 0 -1px 0 #000;	
+    border-bottom: 1px solid black;
+    opacity: 0.5;
+}
+.btn{
+    font-size: 1em;
+    width: 15vw;
+    
+}

@@ -5,7 +5,8 @@
     </head>
 <body class="body"> 
     <div class="naviBar">
-        <div class="logoBox"><h1 id="title"> <b>
+        
+        <div class="logoBox"><a routerLink='/patientHome'><h1 id="title"> <b>
             <span style='color: gray'>E</span>
             <span style='color: gray'>-</span>
             <span style='color: orangered'>C</span>
@@ -13,14 +14,16 @@
             <span style='color: orangered'>r</span>
             <span style='color: orangered'>e</span> 
             </b>
-         </h1>
+         </h1></a>
         </div>
         <div>
-            <button class="naviButton">
+            <a routerLink = '/appoinments'>
+            <button class="naviButton"> 
                 <div class="icn"> 
                     <i class="fa fa-calendar" id="icon"></i>
                 </div>Appoinments
             </button>
+            </a>
         </div>
         <div>
             <button class="naviButton">
@@ -31,12 +34,14 @@
             </button>
         </div>
         <div> 
+            <a routerLink = '/healthprofile'>
             <button class="naviButton">
                 <div class="icn"> 
                     <i class="fa fa-file" id="icon"></i>
                 </div>
                 Health Profile
             </button>
+            </a>
         </div>
         <div>
             <button  class="naviButton">

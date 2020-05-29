@@ -1,3 +1,4 @@
+import { ServiceService } from './patientpages/services/service.service';
 import { DefaultDocModule } from './doctor/layouts/default-doc/default-doc.module';
 import { AuthService } from './auth/auth.service';
 import { environment } from './../environments/environment';
@@ -13,12 +14,19 @@ import { LoginComponentComponent } from './auth/login-component/login-component.
 import { RegisterComponent } from './auth/register/register.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { HowItWorksComponent } from './how-it-works/how-it-works.component';
-
-
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { PagemenuComponent } from './patientpages/pagemenu/pagemenu.component';
+import { HealthrecordsComponent } from './patientpages/healthrecords/healthrecords.component';
+import { MyprovidersComponent } from './patientpages/myproviders/myproviders.component';
+import { ConsultationhistoryComponent } from './patientpages/consultationhistory/consultationhistory.component';
+import { AllergierecordsComponent } from './patientpages/allergierecords/allergierecords.component';
+import { MedicationComponent } from './patientpages/medication/medication.component';
+import { UploadrecordsComponent } from './patientpages/uploadrecords/uploadrecords.component';
+
+
 import { AdminComponent } from './admin/admin.component';
 
 import { WhatwetreatComponent } from './whatwetreat/whatwetreat.component';
@@ -42,18 +50,19 @@ import { ManagePatientComponent } from './manage-patient/manage-patient.componen
     ContactusComponent,
     HowItWorksComponent,
     routingComponents,
+    PagemenuComponent,
+    HealthrecordsComponent,
+    MyprovidersComponent,
+    ConsultationhistoryComponent,
+    AllergierecordsComponent,
+    MedicationComponent,
+    UploadrecordsComponent,
     AdminComponent,
-
     WhatwetreatComponent,
     ForgotpassComponent,
     OurproviersComponent,
     ManageDoctorComponent,
     ManagePatientComponent
-
-
-    
-
-
   ],
   imports: [
     BrowserModule,
@@ -66,11 +75,9 @@ import { ManagePatientComponent } from './manage-patient/manage-patient.componen
     DefaultDocModule
   ],
   providers: [
-    AuthService
+    AuthService,
+    ServiceService 
   ],
-  
-  
- 
   bootstrap: [AppComponent]
 })
 export class AppModule { }

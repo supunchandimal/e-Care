@@ -1,0 +1,22 @@
+.body{
+    display: flex;
+    overflow-x: hidden;
+}
+.navibar{
+    width: 22.5vw;
+    height: 100vh;
+    align-self: flex-start;
+    background-color: #888, #555;
+}
+.subnavibar{
+    position: fixed;
+    align-self: flex-start;
+    margin-left: -20px;
+    margin-top: -10px;
+}
+.bodyrest{
+    width: 78%;
+    height: 100%;
+    margin-left: 21%;
+    display: flex;     
+}

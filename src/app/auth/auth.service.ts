@@ -29,16 +29,27 @@ export class AuthService {
           this.newUser = user;
           console.log(userCredential);
           userCredential.user.updateProfile({
-              displayName:user.firstName + ' ' + user.secondName
+              displayName:user.firstName 
           });
           
           this.insertUserData(userCredential)
             .then(()=>{
-              this.router.navigate(['/patientHome']);
+              this.router.navigate(['/login']);
             });
         })
         .catch( error =>{
           this.eventAuthError.next(error);
+        })
+    }
+    login( email: string, password: string) {
+      this.afAuth.signInWithEmailAndPassword(email, password)
+        .catch(error => {
+          this.eventAuthError.next(error);
+        })
+        .then(userCredential => {
+          if(userCredential) {
+            this.router.navigate(['/patientHome']);
+          }
         })
     }
 
@@ -52,6 +63,7 @@ export class AuthService {
         gender:this.newUser.gender,
         phone:this.newUser.phone,
       })
+
     }
     logout(){
       return this.afAuth.signOut();

@@ -1,0 +1,185 @@
+.margin{
+ width: 80%;
+ height: 100%;
+ align-self: flex-start;
+ background-color: black;
+ display: flex;
+ overflow-x: hidden;
+}
+.body{
+    display: flex; 
+    overflow-x: hidden;   
+}
+.naviBar{
+  width: 22.5%;
+  height: 100%;
+  align-self: flex-start;
+  background-color: #888, #555;
+}
+.subnavibar{
+  position: fixed;
+  align-self: flex-start;
+  margin-left: -20px;
+  margin-top: -10px;
+}
+.bodyrest{
+  width: 78%;
+  height: 100%;
+  margin-left: 22%;
+  display: flex;   
+}
+.submenu{
+  width: 100%;
+  height: 35%;
+  margin-top: 50px;
+  color: #888, #555;
+  text-shadow: 0 -1px 0 #000;	
+  border-bottom: 1px solid black;
+  opacity: 0.5;
+}
+.photoholder{
+  margin-bottom: 70px;
+  margin-left: 20px;
+  width: 25vw;
+  height: 5vh;
+  align-self: center;
+}
+.addpoto{
+  border-radius: 50%;
+  height: 75px;
+  width: 75px;
+  background-color: #bbb;
+  margin-left: 50px;
+}
+.profilename{
+  display: flex;
+  align-self: center;
+  opacity: 1;
+  width: 100%;
+}
+.btn-holder{
+  justify-content:flex-end;
+  display: flex;
+  margin-top: -30px;
+  padding-right: 50px;
+}
+.btn-group button {
+  background-color: rgb(243, 237, 237); /* Green background */
+  border: 1px solid rgb(243, 237, 237); /* Green border */
+  color: black; /* White text */
+  padding: 10px 24px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+  height: 15vh;
+  width: 15vw;
+}
+.dive{
+  justify-content: flex-start;
+  display: flex;
+  width: 100%;
+  height: 5vh;
+  font-family: 'Squada One', cursive;
+  font-size: small;
+  align-self: flex-start;
+  padding-left: 10px;
+}
+.btn-holder2{
+  justify-content:flex-start;
+  display: flex;
+  margin-top: -30px;
+  padding-right: 20px;
+}
+.btn-group2 button{
+  background-color: rgb(243, 237, 237); /* Green background */
+  border: 1px solid black; /* Green border */
+  color: black; /* White text */
+  padding: 10px 24px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: right; /* Float the buttons side by side */
+  height: 5vh;
+  width: 5vw;
+  font-family: 'Squada One', cursive;
+  font-size: medium;
+  display: flex;
+  align-self: flex-end;
+  margin-top: 45%;
+  margin-left: 10%;
+  border-radius: 50%;
+  box-shadow: 2px black;
+}
+
+.details{
+    display: inline-block;
+    display: flex;
+    position: relative;
+    bottom: -127.5px;
+    right: 693.8px;
+    opacity: 2;
+    width: 200%;
+    height: 30vh;
+    background-color: rgb(243, 237, 237);
+}
+.menu{
+  display: inline-block;
+  display: flex;
+  position: relative;
+  bottom: -127.5px;
+  right:500px;
+  width: 100vw;
+  height: 30vh;
+  background-color: black;
+}
+
+
+
+
+
+  .dive2{
+    justify-content: flex-end;
+    display: flex;
+    position: relative;
+    bottom: -320.5px;
+    right:1450px;
+    width: 80vw;
+    height: 1px;
+    font-family: 'Squada One', cursive;
+    font-size: small;
+  }
+  .formcontrol{
+    width: 10vw;
+    height: 3vh;
+    margin-top: 25px;
+    margin-left: -92px;
+  }
+  
+  .btn-group button:not(:last-child) {
+    border-right: none; /* Prevent double borders */
+  }
+  
+  /* Clear floats (clearfix hack) */
+  .btn-group:after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  /* Add a background color on hover */
+  .btn-group button:hover {
+    background-color: #374A56;
+  }
+  .btn-group button:not(:last-child) {
+    border-right: none; /* Prevent double borders */
+  }
+  
+  /* Clear floats (clearfix hack) */
+  .btn-group2:after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  /* Add a background color on hover */
+  .btn-group2 button:hover {
+    background-color: #374A56;
+  }
+  
+  
