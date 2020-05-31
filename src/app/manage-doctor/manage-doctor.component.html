@@ -1,1 +1,140 @@
-<p>manage-doctor works!</p>
+<nav class="navbar navbar-dark" style="color: gray;">
+
+</nav>
+
+<div class="container">
+    <div class="row justify-content-center p-2">
+        <h1>Doctor details</h1>
+    </div>
+    <div class="form-group">
+        <input type="text" class="form-control" [(ngModel)]="fullName" placeholder="Enter Name">
+    </div>
+    <div class="form-group">
+        <input type="number" class="form-control" [(ngModel)]="age" placeholder="Enter Age">
+    </div>
+    <div class="form-group">
+        <input type="text" class="form-control" [(ngModel)]="city" placeholder="Enter city">
+    </div>
+    <div class="form-group">
+        <button class="btn btn-primary" (click)="CreateRecord()" [disabled]="!fullName || !age || !city">Create Doctor</button>
+    </div>
+   
+    <!-- <div class="form-group">
+        <h4><b>{{message}}</b></h4>
+    </div> -->
+    <div class="row p-2">
+        <div class="col-md-12 p-2 justify-content-center">
+          <h4>All Doctor Data</h4>
+        </div>
+
+        <div class="col-md-3"  *ngFor="let item of doctor">
+
+
+            <div class="card" *ngIf="!item.isedit; else elseBlock">
+                <div class="card-body">
+                    <div class="card-title">
+                    Name: {{item.fullName}}
+                    </div>
+
+                <div class="card-subtitle">
+                    Age: {{item.age}}
+                </div>
+
+                <div class="card-text">
+                    City: {{item.city}}
+                 </div>
+
+                 <span>
+                    <a  (click)="EditRecord(item)" class="btn btn-primary btn-xs">Edit Doctor</a>
+                    <a  (click)= "DeleteDoctor(item.id)" class="btn btn-danger btn-xs">Delete Doctor</a>
+                </span>
+                </div>
+            </div>
+        
+<ng-template #elseBlock>
+<div class="card">
+    <div class="card-body">
+        <div class="card-title">
+            Edit
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <div class="col-md-12">
+                    <input type="text" [(ngModel)]="item.editname" class="form-control">
+                </div>
+                <div class="col-md-12">
+                    <input type="number" [(ngModel)]="item.editage" class="form-control">
+                </div>
+                <div class="col-md-12">
+                    <input type="text" [(ngModel)]="item.editcity" class="form-control">
+                </div>
+            </div>
+        </div>
+        <a  class="btn btn-danger btn-xs" (click)="item.isedit = false">Cancel</a>
+        <a  class="btn btn-primary btn-xs" (click)="UpdateRecord(item)">Update</a>
+   
+
+    </div>
+</div>
+</ng-template>
+
+    </div>
+
+</div>
+
+</div>
+
+
+
+
+
+<!-- <p>manage-doctor works!</p> -->
+<!-- <mat-slider min="1" max="100" step="1" value="1"></mat-slider> -->
+<!-- <div class="container">
+    <mat-toolbar>
+        <span class="fill-remaining-space"></span>
+        <span>Add Doctors</span>
+        <span class="fill-remaining-space"></span>
+    </mat-toolbar>
+</div>
+
+<form [formGroup]="DoctorService.form" class="normal-form">
+    <mat-grid-list col="2" rowHeight="300px">
+       
+            <div class="controles-container"> -->
+                <!-- <input type="hidden" formControlName="$key"> -->
+                <!-- <mat-form-field appearance="none">
+                    <mat-label>Full Name</mat-label>
+                    <input  formControlName="fullName" matInput placeholder="Full Name">
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Email</mat-label>
+                    <input  formControlName="email" matInput placeholder="Email">
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Mobile</mat-label>
+                    <input  formControlName="mobile" matInput placeholder="Mobile">
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>City</mat-label>
+                    <input  formControlName="city" matInput placeholder="City">
+                </mat-form-field>
+            </div>
+    
+    </mat-grid-list>
+</form> -->
+<!-- <form [formGroup]="DoctorService.form" class="normal-form">
+    <mat-grid-list col="2" rowHeight="300px">
+        <mat-grid-title>
+            <div class="controles-container">
+                <input type="hidden" formControlName="$key">
+                <mat-form-field>
+                    <input  formControlName="fullName" matInput placeholder="Full Name">
+                </mat-form-field>
+            </div>
+        </mat-grid-title>
+    </mat-grid-list>
+</form> -->
