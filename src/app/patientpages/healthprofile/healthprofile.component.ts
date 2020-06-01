@@ -20,5 +20,16 @@ export class HealthprofileComponent implements OnInit {
         this.user = user;
       })
   }
+  public mark = 1;
+
+  onClickhealth(){
+    this.mark=1;
+  }
+  onClickbehavirol(){
+    this.mark=2;
+  }
+  onClickfamily(){
+    this.mark=3;
+  }
 
 }

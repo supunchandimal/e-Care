@@ -36,6 +36,8 @@ import { OurproviersComponent } from './ourproviers/ourproviers.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ManageDoctorComponent } from './manage-doctor/manage-doctor.component';
 import { ManagePatientComponent } from './manage-patient/manage-patient.component';
+import { BehaviorhistoryComponent } from './patientpages/behaviorhistory/behaviorhistory.component';
+import { FamilyhistoryComponent } from './patientpages/familyhistory/familyhistory.component';
 
 
 
@@ -62,7 +64,9 @@ import { ManagePatientComponent } from './manage-patient/manage-patient.componen
     ForgotpassComponent,
     OurproviersComponent,
     ManageDoctorComponent,
-    ManagePatientComponent
+    ManagePatientComponent,
+    BehaviorhistoryComponent,
+    FamilyhistoryComponent
   ],
   imports: [
     BrowserModule,
