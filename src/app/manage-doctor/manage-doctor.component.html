@@ -1,13 +1,30 @@
-<nav class="navbar navbar-dark" style="color: gray;">
+<!-- <nav class="nav">
+eCare
+</nav> -->
+<!-- <nav class="navbar navbar-light bg-light">
+    <span class="navbar-brand mb-0 h1 text-cent">eCare</span>
+  </nav> -->
 
-</nav>
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span>eCare</span>
+    </mat-toolbar-row>
+</mat-toolbar>
 
+  
 <div class="container">
-    <div class="row justify-content-center p-2">
-        <h1>Doctor details</h1>
+ 
+    <div  class="row justify-content-center p-2">
+        <h1>Doctor Details</h1>
     </div>
     <div class="form-group">
         <input type="text" class="form-control" [(ngModel)]="fullName" placeholder="Enter Name">
+    </div>
+    <div class="form-group">
+        <input type="email" class="form-control" [(ngModel)]="email" placeholder="Enter email">
+    </div>
+    <div class="form-group">
+        <input type="email" class="form-control" [(ngModel)]="nic" placeholder="Enter NIC">
     </div>
     <div class="form-group">
         <input type="number" class="form-control" [(ngModel)]="age" placeholder="Enter Age">
@@ -15,10 +32,45 @@
     <div class="form-group">
         <input type="text" class="form-control" [(ngModel)]="city" placeholder="Enter city">
     </div>
-    <div class="form-group">
-        <button class="btn btn-primary" (click)="CreateRecord()" [disabled]="!fullName || !age || !city">Create Doctor</button>
+    <!-- <div class="form-group">
+        <input type="select" class="form-control" [(ngModel)]="gender">
     </div>
-   
+     -->
+     <div class="form-group">
+        <label for="select" class="form-control" >Gender
+        <select id="select" [(ngModel)]="gender" >     
+            <option *ngFor = "let g of genderList"
+             [value] = "g"> {{g}} 
+            </option>
+          </select>
+        </label>
+      </div>
+
+    <div class="form-group">
+        <!-- <input type="text" class="form-control" [(ngModel)]="speciality" placeholder="Specialised in.."> -->
+        
+        <label for="select" class="form-control" >Specialised in..
+        <select  id="select" [(ngModel)]="speciality"> 
+            <option option value="" selected="selected" hidden="hidden">Select an Option </option> 
+            <option value="Practiced Physician">Practiced Physician</option> 
+            <option value="Pediatricians">Pediatricians </option> 
+            <option value="Geriatricians">Geriatricians</option> 
+            <option value="Cardiologists">Cardiologists</option> 
+            <option value="Allergists">Allergists</option> 
+            <option value="Dermatologists">Dermatologists</option> 
+            <option value="Ophthalmologists">Ophthalmologists</option> 
+            <option value="Gastroenterologists">Gastroenterologists</option> 
+            <option value="Nephrologists">Nephrologists</option> 
+            <option value="Otolaryngologists">Otolaryngologists</option> 
+            <option value="Other">Other..</option> 
+        </select> 
+        </label>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-primary" (click)="CreateRecord()" [disabled]="!fullName || !nic || !email">Create Doctor</button>
+    </div>
+ 
+ 
     <!-- <div class="form-group">
         <h4><b>{{message}}</b></h4>
     </div> -->
@@ -32,17 +84,33 @@
 
             <div class="card" *ngIf="!item.isedit; else elseBlock">
                 <div class="card-body">
-                    <div class="card-title">
+                <div class="card-title">
                     Name: {{item.fullName}}
-                    </div>
+                </div>
 
-                <div class="card-subtitle">
+                <div class="card-text">
+                    Email: {{item.email}}
+                </div>
+
+                <div class="card-text">
+                    NIC: {{item.nic}}
+                 </div>
+
+                 <div class="card-text">
                     Age: {{item.age}}
                 </div>
 
                 <div class="card-text">
                     City: {{item.city}}
-                 </div>
+                </div>
+
+                <div class="card-text">
+                    Gender: {{item.gender}}
+                </div>
+
+                <div class="card-text">
+                    Speciality: {{item.speciality}}
+                </div>
 
                  <span>
                     <a  (click)="EditRecord(item)" class="btn btn-primary btn-xs">Edit Doctor</a>
@@ -50,7 +118,7 @@
                 </span>
                 </div>
             </div>
-        
+                 
 <ng-template #elseBlock>
 <div class="card">
     <div class="card-body">
@@ -60,14 +128,19 @@
         <div class="row">
             <div class="form-group">
                 <div class="col-md-12">
-                    <input type="text" [(ngModel)]="item.editname" class="form-control">
+                    <input type="text" [(ngModel)]="item.editname" class="form-control" placeholder="Full Name">
                 </div>
                 <div class="col-md-12">
-                    <input type="number" [(ngModel)]="item.editage" class="form-control">
+                    <input type="text" [(ngModel)]="item.editnic" class="form-control" placeholder="NIC">
                 </div>
                 <div class="col-md-12">
-                    <input type="text" [(ngModel)]="item.editcity" class="form-control">
+                    <input type="number" [(ngModel)]="item.editage" class="form-control" placeholder="Age">
                 </div>
+                <div class="col-md-12">
+                    <input type="text" [(ngModel)]="item.editcity" class="form-control" placeholder="City">
+                </div>
+              
+                
             </div>
         </div>
         <a  class="btn btn-danger btn-xs" (click)="item.isedit = false">Cancel</a>

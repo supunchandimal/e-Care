@@ -18,3 +18,17 @@ form.normal-form{
 } */
 
 @import "~bootstrap/dist/css/bootstrap.css";
+
+.nav{
+    width: 100%;
+    color: blueviolet;
+}
+
+.navbar-brand mb-0 h1{
+    color: crimson;
+}
+
+.mat-toolbar.mat-primary {
+    background: grey;
+    color: #fff;
+  }
