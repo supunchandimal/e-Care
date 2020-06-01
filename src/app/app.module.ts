@@ -25,6 +25,7 @@ import { ConsultationhistoryComponent } from './patientpages/consultationhistory
 import { AllergierecordsComponent } from './patientpages/allergierecords/allergierecords.component';
 import { MedicationComponent } from './patientpages/medication/medication.component';
 import { UploadrecordsComponent } from './patientpages/uploadrecords/uploadrecords.component';
+import {MatButtonModule} from '@angular/material/button';
 
 
 import { WhatwetreatComponent } from './whatwetreat/whatwetreat.component';
@@ -78,9 +79,10 @@ import { ManageDoctorService } from 'src/services/shared/manage-doctor.service';
     AngularFireStorageModule, // storage
     FormsModule, BrowserAnimationsModule,
     DefaultDocModule,
+    MatButtonModule
     MatSliderModule,
     MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [
     AuthService,
