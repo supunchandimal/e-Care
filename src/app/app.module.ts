@@ -79,7 +79,7 @@ import { ManageDoctorService } from 'src/services/shared/manage-doctor.service';
     AngularFireStorageModule, // storage
     FormsModule, BrowserAnimationsModule,
     DefaultDocModule,
-    MatButtonModule
+    MatButtonModule,
     MatSliderModule,
     MaterialModule,
     ReactiveFormsModule,
