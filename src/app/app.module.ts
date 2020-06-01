@@ -4,7 +4,7 @@ import { AuthService } from './auth/auth.service';
 import { environment } from './../environments/environment';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule }   from '@angular/forms';
+import { FormsModule,ReactiveFormsModule }   from '@angular/forms';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FirstPageComponent } from './first-page/first-page.component';
@@ -27,8 +27,6 @@ import { MedicationComponent } from './patientpages/medication/medication.compon
 import { UploadrecordsComponent } from './patientpages/uploadrecords/uploadrecords.component';
 
 
-import { AdminComponent } from './admin/admin.component';
-
 import { WhatwetreatComponent } from './whatwetreat/whatwetreat.component';
 import { ForgotpassComponent } from './forgotpass/forgotpass.component';
 import { OurproviersComponent } from './ourproviers/ourproviers.component';
@@ -39,7 +37,10 @@ import { ManagePatientComponent } from './manage-patient/manage-patient.componen
 import { BehaviorhistoryComponent } from './patientpages/behaviorhistory/behaviorhistory.component';
 import { FamilyhistoryComponent } from './patientpages/familyhistory/familyhistory.component';
 
-
+import { AdminComponent } from './admin/admin.component';
+import { MatSliderModule } from '@angular/material/slider';
+import { MaterialModule } from './material/material.module';
+import { ManageDoctorService } from 'src/services/shared/manage-doctor.service';
 
 @NgModule({
   declarations: [
@@ -76,11 +77,15 @@ import { FamilyhistoryComponent } from './patientpages/familyhistory/familyhisto
     AngularFireAuthModule, // auth
     AngularFireStorageModule, // storage
     FormsModule, BrowserAnimationsModule,
-    DefaultDocModule
+    DefaultDocModule,
+    MatSliderModule,
+    MaterialModule,
+    ReactiveFormsModule
   ],
   providers: [
     AuthService,
-    ServiceService 
+    ServiceService ,
+    ManageDoctorService
   ],
   bootstrap: [AppComponent]
 })
