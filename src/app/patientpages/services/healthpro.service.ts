@@ -1,19 +1,19 @@
-import { Alleg } from './../../models/allergie';
+import { Rec } from './../../models/healthpro';
+import { map } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import {Observable} from 'rxjs';
-import { map } from 'rxjs/operators';
 import { AngularFireAuth } from '@angular/fire/auth';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ServiceService {
+export class HealthproService {
   private authState: Observable<firebase.User>;
-  AllegCollection: AngularFirestoreCollection<Alleg>;
-  Allegs:Observable<Alleg[]>;
+  RecCollection: AngularFirestoreCollection<Rec>;
+  Recs:Observable<Rec[]>;
   public currentUser: firebase.User;
-  constructor(private afAuth:AngularFireAuth,public afsal:AngularFirestore) {
+  constructor(private afAuth:AngularFireAuth,public afsal:AngularFirestore) { 
     this.authState = this.afAuth.authState;
 
     this.authState.subscribe(user => {
@@ -29,11 +29,11 @@ export class ServiceService {
     err => {
       console.log('Please try again')
     });
-    this.AllegCollection = this.afsal.collection('Allegs');
+    this.RecCollection = this.afsal.collection('Healthpro');
 
-    this.Allegs=this.afsal.collection('Allegs').snapshotChanges().pipe(map(changes => {
+    this.Recs=this.afsal.collection('Healthpro').snapshotChanges().pipe(map(changes => {
       return changes.map(a=>{
-        const data = a.payload.doc.data() as Alleg
+        const data = a.payload.doc.data() as Rec
         data.id = a.payload.doc.id;
         return data;
       });
@@ -41,11 +41,13 @@ export class ServiceService {
    }
 
    getAlegs(){
-    return this.afsal.collection('Allegs', ref => ref.where('id', '==', this.currentUser.uid));
+     return this.afsal.collection('Healthpro');
    }
-
-   addItem(item:Alleg){
-    return this.AllegCollection.add(item);
-  }
    
-}
+   addItem(item:Rec){
+    return this.RecCollection.doc(`${this.currentUser.uid}`).set(item);
+  }
+  }
+
+ 
+

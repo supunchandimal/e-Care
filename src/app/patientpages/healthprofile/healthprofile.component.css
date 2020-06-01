@@ -102,10 +102,20 @@
   font-size: medium;
   display: flex;
   align-self: flex-end;
-  margin-top: 45%;
+  margin-top: 35%;
   margin-left: 10%;
-  border-radius: 50%;
+  border-radius: 0%;
   box-shadow: 2px black;
+}
+.btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 15%;
+  opacity: 0.9;
+  
 }
 
 .details{

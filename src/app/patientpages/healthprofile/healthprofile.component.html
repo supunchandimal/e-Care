@@ -11,6 +11,7 @@
             <div style="align-self: flex-start;"> 
                 <app-pagemenu [parentData]="flag"></app-pagemenu>
                 <div class="submenu">
+                 
                    <div class="photoholder">
                         <button class="addpoto">
                             <div > 
@@ -29,12 +30,12 @@
                     </div>
                    </div>
                 </div>
-                 <div class="dive">
-                    <h1>Do you have any allergies or drug sensivities?</h1>
+                 <div class="dive" *ngIf='recs?.length >0 ;'>
+                    <h1 >Do you have any allergies or drug sensivities?</h1>
                 </div>
-                 <div class="btn-holder2">
+                 <div class="btn-holder2" >
                     <div class="btn-group2 button">
-                        <button style="color: green;">yes</button><button style="color: red;">no</button>
+                        <button style="color: green;" (click)=" onClickYesAlleg()">yes</button><button style="color: red;"(click)=" onClickNoAlleg()">no</button>
                     </div> 
                  </div>
                  <div class="dive">
@@ -42,7 +43,7 @@
                 </div>
                  <div class="btn-holder2">
                     <div class="btn-group2 button">
-                        <button style="color: green;">yes</button><button style="color: red;">no</button>
+                        <button style="color: green;" (click)=" onClickYesMed()">yes</button><button style="color: red;" (click)=" onClickNoMed()">no</button>
                     </div> 
                  </div>
                  <div class="dive">
@@ -50,7 +51,7 @@
                 </div>
                  <div class="btn-holder2">
                     <div class="btn-group2 button">
-                        <button style="color: green;">yes</button><button style="color: red;">no</button>
+                        <button style="color: green;" (click)=" onClickYesCond()">yes</button><button style="color: red;" (click)=" onClickNoCond()">no</button>
                     </div> 
                  </div>
                  <div class="dive">
@@ -58,36 +59,44 @@
                 </div>
                  <div class="btn-holder2">
                     <div class="btn-group2 button">
-                        <button style="color: green;">yes</button><button style="color: red;">no</button>
+                        <button style="color: green;" (click)=" onClickYesOpo()">yes</button><button style="color: red;" (click)=" onClickNoOpo()">no</button>
                     </div> 
                  </div>
                  <div class="bmi">
                     <div class="dive">
                         <h1>Enter your Details</h1>
                     </div>
+                    <form action="" #bmiForm="ngForm" (ngSubmit)="calc(bmiForm)">
                     <div style="padding-top: 3%;padding-left: 20%;">
-                        <label style="font-family: Arial, Helvetica, sans-serif;">
+                        <label style="font-family: Arial, Helvetica, sans-serif;padding-right: 17px;">
                             Current Body Weight(kg):
                         </label>
-                        <input type="text" name="current body weight" >
+                        <input  ngModel #weight="ngModel" name="weight" type="text" class="form-control"  placeholder="Enter weight"  >
                     </div>
                     <div style="padding-top: 3%;padding-left: 20%;">
-                        <label style="font-family: Arial, Helvetica, sans-serif;">
+                        <label style="font-family: Arial, Helvetica, sans-serif;padding-right: 50px;">
                             Current Height(cm):
                         </label>
-                        <input type="text" name="current Height" >
+                        <input  ngModel #height="ngModel" name="height" type="text" class="form-control"  placeholder="Enter Height"  >
                     </div>
-                    <div style="padding-top: 3%;padding-left: 20%;">
-                        <label style="font-family: Arial, Helvetica, sans-serif;">
-                            BMI :
+                    <div style="padding-top: 3%;padding-left: 30%;">
+                        <button type="submit" class="btn">Calculate</button>
+                    </div>
+                    <div style="padding-top: 2%;padding-left: 20%;">
+                        <label style="font-family: Arial, Helvetica, sans-serif;padding-right: 140px;">
+                            BMI :{{bmi| number:'1.0-1'}} 
                         </label>
-                        <input type="text" name="current BMI" >
+                        <div>
+                            <p *ngIf="bmi<=18.5" style="color: red;"><b>YOU ARE UNDERWEIGHT</b></p>
+                            <p *ngIf="bmi>18.5 && bmi<=24.9" style="color: green;"><b>YOU ARE HEALTHY</b></p>
+                            <p *ngIf="bmi>24.9 && bmi<=29.9" style="color: yellow;"><b>YOU ARE SLIGHTLY OVERWEIGHT</b></p>
+                            <p *ngIf="bmi>29.9" style="color: red;"><b>YOU ARE UNDERWEIGHT</b>></p>
+                        </div>
                     </div>
+                    </form>
                     <div >
-
                     </div>
                  </div>
             </div>
-            
         </div>
      </body>

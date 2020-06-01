@@ -25,6 +25,7 @@ import { ConsultationhistoryComponent } from './patientpages/consultationhistory
 import { AllergierecordsComponent } from './patientpages/allergierecords/allergierecords.component';
 import { MedicationComponent } from './patientpages/medication/medication.component';
 import { UploadrecordsComponent } from './patientpages/uploadrecords/uploadrecords.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 import { AdminComponent } from './admin/admin.component';
@@ -72,7 +73,8 @@ import { ManagePatientComponent } from './manage-patient/manage-patient.componen
     AngularFireAuthModule, // auth
     AngularFireStorageModule, // storage
     FormsModule, BrowserAnimationsModule,
-    DefaultDocModule
+    DefaultDocModule,
+    MatProgressSpinnerModule
   ],
   providers: [
     AuthService,
