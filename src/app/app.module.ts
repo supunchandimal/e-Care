@@ -4,7 +4,7 @@ import { AuthService } from './auth/auth.service';
 import { environment } from './../environments/environment';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule }   from '@angular/forms';
+import { FormsModule,ReactiveFormsModule }   from '@angular/forms';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FirstPageComponent } from './first-page/first-page.component';
@@ -28,8 +28,6 @@ import { UploadrecordsComponent } from './patientpages/uploadrecords/uploadrecor
 import {MatButtonModule} from '@angular/material/button';
 
 
-import { AdminComponent } from './admin/admin.component';
-
 import { WhatwetreatComponent } from './whatwetreat/whatwetreat.component';
 import { ForgotpassComponent } from './forgotpass/forgotpass.component';
 import { OurproviersComponent } from './ourproviers/ourproviers.component';
@@ -37,8 +35,13 @@ import { OurproviersComponent } from './ourproviers/ourproviers.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ManageDoctorComponent } from './manage-doctor/manage-doctor.component';
 import { ManagePatientComponent } from './manage-patient/manage-patient.component';
+import { BehaviorhistoryComponent } from './patientpages/behaviorhistory/behaviorhistory.component';
+import { FamilyhistoryComponent } from './patientpages/familyhistory/familyhistory.component';
 
-
+import { AdminComponent } from './admin/admin.component';
+import { MatSliderModule } from '@angular/material/slider';
+import { MaterialModule } from './material/material.module';
+import { ManageDoctorService } from 'src/services/shared/manage-doctor.service';
 
 @NgModule({
   declarations: [
@@ -63,7 +66,9 @@ import { ManagePatientComponent } from './manage-patient/manage-patient.componen
     ForgotpassComponent,
     OurproviersComponent,
     ManageDoctorComponent,
-    ManagePatientComponent
+    ManagePatientComponent,
+    BehaviorhistoryComponent,
+    FamilyhistoryComponent
   ],
   imports: [
     BrowserModule,
@@ -75,10 +80,14 @@ import { ManagePatientComponent } from './manage-patient/manage-patient.componen
     FormsModule, BrowserAnimationsModule,
     DefaultDocModule,
     MatButtonModule
+    MatSliderModule,
+    MaterialModule,
+    ReactiveFormsModule,
   ],
   providers: [
     AuthService,
-    ServiceService 
+    ServiceService ,
+    ManageDoctorService
   ],
   bootstrap: [AppComponent]
 })
