@@ -1,10 +1,11 @@
+import { Ppic } from './../../models/propic';
 import { Rec } from './../../models/healthpro';
 import { map } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
+import { AngularFirestore, AngularFirestoreCollection,} from '@angular/fire/firestore';
 import {Observable} from 'rxjs';
 import { AngularFireAuth } from '@angular/fire/auth';
-
+import * as firebase from 'firebase';
 @Injectable({
   providedIn: 'root'
 })
@@ -47,7 +48,9 @@ export class HealthproService {
    addItem(item:Rec){
     return this.RecCollection.doc(`${this.currentUser.uid}`).set(item);
   }
-  }
+   
+}
+
 
  
 

@@ -26,12 +26,11 @@
                   <div >
                     <div class="row">
                       <label for="firstname" >Firstname:</label>
-                      <input ngModel #firstname="ngModel" name="firstName" type="text" class="form-control" id="firstName" >
+                      <input ngModel #firstname="ngModel" name="firstName" type="text" class="form-control" id="firstName" placeholder="FirstName">
                     </div>
                       <div class="row">
-                        <label for="secondname">Secondname:</label>
-                      <input ngModel #secondname="ngModel" name="secondName" type="text" class="form-control" id="secondName" value="" >
-                      
+                        <label for="secondname">Lastname:</label>
+                      <input ngModel #secondname="ngModel" name="secondName" type="text" class="form-control" id="secondName" value="" placeholder="LastName" >
                       </div>
                   </div>
                   
@@ -41,7 +40,7 @@
                   </div>
                   <div class="">
                       <label for="password">Password: </label>
-                      <input ngModel #password="ngModel" name="password" type="password" class="form-control">
+                      <input ngModel #password="ngModel" name="password" type="password" class="form-control"  placeholder="Paasword">
                   </div>
                   <div class="">
                       <label for="dateofbirth">Date of birth : </label>
@@ -49,16 +48,16 @@
                   </div>
                   <div class="">
                       <label for="phoneno">Phone number : </label>
-                      <input ngModel #phone="ngModel" type="number" name="phone" placeholder="phoneno" id="phone"  class="form-control" value="" >
+                      <input ngModel #phone="ngModel" type="number" name="phone" placeholder="PhoneNo" id="phone"  class="form-control" value="" >
                      
                   </div>
                   
                   <div class="">
-                      <label for="gender">Gender :  </label>
-                      <input ngModel #gender="ngModel" type="text" name="gender" placeholder="gender" id="gender" class="form-control" value="">
+                    <label for="gender">Gender :  </label>
+                    <input ngModel #gender="ngModel" type="text" name="gender" placeholder="gender" id="gender" class="form-control" value="">
                   </div>
                   <input type="submit" name="submit" value="submit" id="" >
-                  
+                    
                   </div>
               </form>
     </div>

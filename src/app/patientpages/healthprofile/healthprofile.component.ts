@@ -5,7 +5,7 @@ import { HealthproService } from './../services/healthpro.service';
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { AuthService } from 'src/app/auth/auth.service';
 import { Router } from '@angular/router';
-
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-healthprofile',
@@ -79,4 +79,5 @@ public  bmi: number;
     this.item.operations = 'No';
     this.service.addItem(this.item);
   }
+ 
 }
