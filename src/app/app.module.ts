@@ -25,6 +25,7 @@ import { ConsultationhistoryComponent } from './patientpages/consultationhistory
 import { AllergierecordsComponent } from './patientpages/allergierecords/allergierecords.component';
 import { MedicationComponent } from './patientpages/medication/medication.component';
 import { UploadrecordsComponent } from './patientpages/uploadrecords/uploadrecords.component';
+import {MatButtonModule} from '@angular/material/button';
 
 
 import { WhatwetreatComponent } from './whatwetreat/whatwetreat.component';
@@ -34,6 +35,8 @@ import { OurproviersComponent } from './ourproviers/ourproviers.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ManageDoctorComponent } from './manage-doctor/manage-doctor.component';
 import { ManagePatientComponent } from './manage-patient/manage-patient.component';
+import { BehaviorhistoryComponent } from './patientpages/behaviorhistory/behaviorhistory.component';
+import { FamilyhistoryComponent } from './patientpages/familyhistory/familyhistory.component';
 
 import { AdminComponent } from './admin/admin.component';
 import { MatSliderModule } from '@angular/material/slider';
@@ -63,7 +66,9 @@ import { ManageDoctorService } from 'src/services/shared/manage-doctor.service';
     ForgotpassComponent,
     OurproviersComponent,
     ManageDoctorComponent,
-    ManagePatientComponent
+    ManagePatientComponent,
+    BehaviorhistoryComponent,
+    FamilyhistoryComponent
   ],
   imports: [
     BrowserModule,
@@ -74,9 +79,10 @@ import { ManageDoctorService } from 'src/services/shared/manage-doctor.service';
     AngularFireStorageModule, // storage
     FormsModule, BrowserAnimationsModule,
     DefaultDocModule,
+    MatButtonModule,
     MatSliderModule,
     MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [
     AuthService,

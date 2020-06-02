@@ -23,12 +23,23 @@
                    </div>
                    <div class="btn-holder">
                     <div class="btn-group" >
-                      <button >MY HEALTH HISTORY</button>
-                      <button >MY BEHAVIOURAL HISTORY</button>
-                      <button >MY FAMILY HISTORY</button>
+                        <button *ngIf="mark==2" class="btn" (click)='onClickhealth()'>MY HEALTH HISTORY</button>
+                        <button *ngIf="mark==1" class="btn" (click)='onClickhealth()' style="background-color: rebeccapurple;">MY HEALTH HISTORY</button>
+                        <button *ngIf="mark==3" class="btn" (click)='onClickhealth()'>MY HEALTH HISTORY</button>
+
+                        <button *ngIf="mark==1" class="btn" (click)='onClickbehavirol()'>MY BEHAVIROL HISTORY</button>
+                        <button *ngIf="mark==2" class="btn" (click)='onClickbehavirol()' style="background-color: rebeccapurple;">MY BEHAVIROL History</button>
+                        <button *ngIf="mark==3" class="btn" (click)='onClickbehavirol()'>MY BEHAVIROL History</button>
+
+                        <button *ngIf="mark==1" class="btn" (click)='onClickfamily()'>MY FAMILY HISTORY</button>
+                        <button *ngIf="mark==2" class="btn" (click)='onClickfamily()'>MY FAMILY HISTORY</button>
+                        <button *ngIf="mark==3" class="btn" (click)='onClickfamily()' style="background-color: rebeccapurple;">MY FAMILY HISTORY</button>
                     </div>
+
                    </div>
+
                 </div>
+                <div  *ngIf="mark==1">
                  <div class="dive">
                     <h1>Do you have any allergies or drug sensivities?</h1>
                 </div>
@@ -83,10 +94,17 @@
                         </label>
                         <input type="text" name="current BMI" >
                     </div>
-                    <div >
-
-                    </div>
+                    
                  </div>
+                </div>
+
+                <div *ngIf="mark==2">
+                    <app-behaviorhistory></app-behaviorhistory>
+                </div>
+                <div *ngIf="mark==3">
+                    <app-familyhistory></app-familyhistory>
+                </div>
+
             </div>
             
         </div>
