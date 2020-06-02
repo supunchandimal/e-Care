@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 export class HealthprofileComponent implements OnInit {
 
   user:firebase.User;
+  id:string;
   constructor(private auth:AuthService,private router:Router) { }
     
   public flag = 1;
@@ -19,6 +20,9 @@ export class HealthprofileComponent implements OnInit {
       .subscribe(user =>{
         this.user = user;
       })
+
+    
+      
   }
 
 }

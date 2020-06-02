@@ -19,7 +19,7 @@ export class AllergierecordsComponent implements OnInit {
 
   ngOnInit(): void {
     this.serviceService.getAlegs().subscribe(allegs =>{
-        //console.log(allegs);
+       // console.log(allegs);
         this.allegs= allegs;
     });
   }

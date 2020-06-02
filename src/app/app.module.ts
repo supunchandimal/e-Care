@@ -36,6 +36,10 @@ import { OurproviersComponent } from './ourproviers/ourproviers.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ManageDoctorComponent } from './manage-doctor/manage-doctor.component';
 import { ManagePatientComponent } from './manage-patient/manage-patient.component';
+import { AdminFeedbacksComponent } from './admin-feedbacks/admin-feedbacks.component';
+import { DropzoneDirective } from './patientpages/patientfiles/dropzone.directive';
+import { UploaderComponent } from './patientpages/patientfiles/uploader/uploader.component';
+import { UploadTaskComponent } from './patientpages/patientfiles/upload-task/upload-task.component';
 
 
 
@@ -62,7 +66,11 @@ import { ManagePatientComponent } from './manage-patient/manage-patient.componen
     ForgotpassComponent,
     OurproviersComponent,
     ManageDoctorComponent,
-    ManagePatientComponent
+    ManagePatientComponent,
+    AdminFeedbacksComponent,
+    DropzoneDirective,
+    UploaderComponent,
+    UploadTaskComponent
   ],
   imports: [
     BrowserModule,
