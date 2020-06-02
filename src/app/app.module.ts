@@ -37,8 +37,15 @@ import { OurproviersComponent } from './ourproviers/ourproviers.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ManageDoctorComponent } from './manage-doctor/manage-doctor.component';
 import { ManagePatientComponent } from './manage-patient/manage-patient.component';
+
+import { AdminFeedbacksComponent } from './admin-feedbacks/admin-feedbacks.component';
+import { DropzoneDirective } from './patientpages/patientfiles/dropzone.directive';
+import { UploaderComponent } from './patientpages/patientfiles/uploader/uploader.component';
+import { UploadTaskComponent } from './patientpages/patientfiles/upload-task/upload-task.component';
+
 import { BehaviorhistoryComponent } from './patientpages/behaviorhistory/behaviorhistory.component';
 import { FamilyhistoryComponent } from './patientpages/familyhistory/familyhistory.component';
+
 
 import { AdminComponent } from './admin/admin.component';
 import { MatSliderModule } from '@angular/material/slider';
@@ -70,10 +77,13 @@ import { ManageDoctorService } from 'src/services/shared/manage-doctor.service';
     OurproviersComponent,
     ManageDoctorComponent,
     ManagePatientComponent,
+
+    AdminFeedbacksComponent,
+    DropzoneDirective,
+    UploaderComponent,
+    UploadTaskComponent,
     BehaviorhistoryComponent,
     FamilyhistoryComponent,
-
-
   ],
   imports: [
     BrowserModule,

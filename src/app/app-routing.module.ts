@@ -23,6 +23,9 @@ import { ForgotpassComponent } from './forgotpass/forgotpass.component';
 import { OurproviersComponent } from './ourproviers/ourproviers.component';
 import { ManageDoctorComponent } from './manage-doctor/manage-doctor.component';
 import { ManagePatientComponent } from './manage-patient/manage-patient.component';
+import { AdminFeedbacksComponent } from './admin-feedbacks/admin-feedbacks.component';
+import { UploaderComponent } from './patientpages/patientfiles/uploader/uploader.component';
+
 
   //doctor's component
 import { DefaultDocComponent } from './doctor/layouts/default-doc/default-doc.component';
@@ -48,7 +51,8 @@ const routes: Routes = [
   {path:'admin', component:AdminComponent,
   children:[
       { path:'manage-doctor', component: ManageDoctorComponent},
-      { path:'manage-patient', component: ManagePatientComponent}
+      { path:'manage-patient', component: ManagePatientComponent},
+    
     ]
   },
   {path:'manage-doctor', component: ManageDoctorComponent},
@@ -62,7 +66,10 @@ const routes: Routes = [
   {path:'whatwetreat', component:WhatwetreatComponent},
   {path:'forgotpass',component:ForgotpassComponent},
   {path:'ourproviders',component:OurproviersComponent},
- 
+  
+  {path:'adminfeedbacks', component:AdminFeedbacksComponent},
+  {path:'patientupload',component:UploaderComponent},
+
   
 
   //doctor's paths
