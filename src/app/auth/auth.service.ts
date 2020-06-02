@@ -3,6 +3,8 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
+import { PatientDefaultPageComponent } from '../patient-default-page/patient-default-page.component';
+import { strict } from 'assert';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +14,6 @@ export class AuthService {
   private eventAuthError = new BehaviorSubject<string>("");
   eventAuthError$ = this.eventAuthError.asObservable();
   newUser: any;
-  
  
   constructor(
     private afAuth:AngularFireAuth,
@@ -29,7 +30,7 @@ export class AuthService {
           this.newUser = user;
           console.log(userCredential);
           userCredential.user.updateProfile({
-              displayName:user.firstName 
+              displayName:user.firstName,
           });
           
           this.insertUserData(userCredential)
@@ -68,4 +69,5 @@ export class AuthService {
     logout(){
       return this.afAuth.signOut();
     }
+
 }
