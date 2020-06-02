@@ -12,6 +12,15 @@ export class UpdateProfileService {
     return this.fireservice.collection('temp').add(Record);
   }
 
+  getAllDoctor (){
+    return this.fireservice.collection('temp').snapshotChanges();
+  }
+
+  updateDoctor (recordid, record){
+    this.fireservice.doc('temp/' + recordid).update(record);
+     
+  }
+
 
   }
 

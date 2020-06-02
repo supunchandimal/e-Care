@@ -1,5 +1,7 @@
 import { ServiceService } from './patientpages/services/service.service';
 import { DefaultDocModule } from './doctor/layouts/default-doc/default-doc.module';
+import { DefaultAdminModule } from './admin02/layouts/default-admin/default-admin.module';
+
 import { AuthService } from './auth/auth.service';
 import { environment } from './../environments/environment';
 import { BrowserModule } from '@angular/platform-browser';
@@ -50,6 +52,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MaterialModule } from './material/material.module';
 import { ManageDoctorService } from 'src/services/shared/manage-doctor.service';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -80,8 +83,7 @@ import { ManageDoctorService } from 'src/services/shared/manage-doctor.service';
     UploaderComponent,
     UploadTaskComponent,
     BehaviorhistoryComponent,
-    FamilyhistoryComponent
-
+    FamilyhistoryComponent,
   ],
   imports: [
     BrowserModule,
@@ -96,6 +98,7 @@ import { ManageDoctorService } from 'src/services/shared/manage-doctor.service';
     MatSliderModule,
     MaterialModule,
     ReactiveFormsModule,
+    DefaultAdminModule
   ],
   providers: [
     AuthService,
