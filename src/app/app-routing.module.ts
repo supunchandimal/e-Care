@@ -89,6 +89,7 @@ const routes: Routes = [
   children: [{ path :'adminHome', component:DashboardAdminComponent},
             { path : 'manageDoctor' , component : ManageDoctorComponent},
             {path:'managePatient',component:ManagePatientComponent},
+            {path:'feedbacks',component:AdminFeedbacksComponent},
            
  ]
 },
