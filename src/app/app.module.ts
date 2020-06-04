@@ -51,6 +51,7 @@ import { AdminComponent } from './admin/admin.component';
 import { MatSliderModule } from '@angular/material/slider';
 import { MaterialModule } from './material/material.module';
 import { ManageDoctorService } from 'src/services/shared/manage-doctor.service';
+import { AdminAnnouncementComponent } from './admin-announcement/admin-announcement.component';
 
 
 @NgModule({
@@ -84,6 +85,7 @@ import { ManageDoctorService } from 'src/services/shared/manage-doctor.service';
     UploadTaskComponent,
     BehaviorhistoryComponent,
     FamilyhistoryComponent,
+    AdminAnnouncementComponent,
   ],
   imports: [
     BrowserModule,

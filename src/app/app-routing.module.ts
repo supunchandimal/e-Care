@@ -24,6 +24,7 @@ import { OurproviersComponent } from './ourproviers/ourproviers.component';
 import { ManageDoctorComponent } from './manage-doctor/manage-doctor.component';
 import { ManagePatientComponent } from './manage-patient/manage-patient.component';
 import { AdminFeedbacksComponent } from './admin-feedbacks/admin-feedbacks.component';
+import { AdminAnnouncementComponent } from './admin-announcement/admin-announcement.component';
 import { UploaderComponent } from './patientpages/patientfiles/uploader/uploader.component';
 
 
@@ -40,6 +41,7 @@ import { DefaultAdminComponent } from './admin02/layouts/default-admin/default-a
 
 
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { from } from 'rxjs';
 
 const routes: Routes = [
   {path:'',redirectTo:'/home' ,pathMatch:'full'},
@@ -52,11 +54,12 @@ const routes: Routes = [
   children:[
       { path:'manage-doctor', component: ManageDoctorComponent},
       { path:'manage-patient', component: ManagePatientComponent},
-    
+      { path:'admin-announcement', component: AdminAnnouncementComponent},
     ]
   },
   {path:'manage-doctor', component: ManageDoctorComponent},
   { path:'manage-patient', component: ManagePatientComponent},
+  { path:'admin-announcement', component: AdminAnnouncementComponent},
   {path:'patientHome',component:PatientDefaultPageComponent},
   {path:'healthprofile',component:HealthprofileComponent},
   {path:'appoinments',component:AppoinmentsComponent},

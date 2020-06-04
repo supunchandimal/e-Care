@@ -1,17 +1,11 @@
 
-
 <div id="img"> 
      
     <div id="sidebar">
  
-        <!-- <div class="toggle-btn"  (click)="toggleCollapse()" >
-            <span></span>
-            <span></span>
-            <span></span>
-        </div> -->
-    <div *ngIf="isCollapsed">
+    <div>
         <ul>
-            <!-- <li  href="" routerLink="/manage-doctor" routerLinkActive="active">Manage Doctors</li> -->
+            
             <li><a routerLink="../manage-doctor">Manage Doctors</a></li>
             <li><a routerLink="../manage-patient">Manage Patients</a></li> 
             <li>Notifications</li>
@@ -20,6 +14,10 @@
             <li><a routerLink="../admin-announcement">Announcements</a></li>
         </ul>
     </div>
+    </div>
+
+    <div  class="row justify-content-center p-2">
+        <h1>Announcements</h1>
     </div>
 
 </div> 
