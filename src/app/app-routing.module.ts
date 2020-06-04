@@ -23,6 +23,9 @@ import { ForgotpassComponent } from './forgotpass/forgotpass.component';
 import { OurproviersComponent } from './ourproviers/ourproviers.component';
 import { ManageDoctorComponent } from './manage-doctor/manage-doctor.component';
 import { ManagePatientComponent } from './manage-patient/manage-patient.component';
+import { AdminFeedbacksComponent } from './admin-feedbacks/admin-feedbacks.component';
+import { UploaderComponent } from './patientpages/patientfiles/uploader/uploader.component';
+
 
   //doctor's component
 import { DefaultDocComponent } from './doctor/layouts/default-doc/default-doc.component';
@@ -30,6 +33,10 @@ import { DashboardDocComponent } from './doctor/modules/dashboard-doc/dashboard-
 import { ContentDocComponent } from './doctor/modules/content-doc/content-doc.component';
 import { UpdateAccountDocComponent } from './doctor/modules/update-account-doc/update-account-doc.component';
 import { AppointmentDocComponent } from './doctor/modules/appointment-doc/appointment-doc.component';
+ 
+  //admin's new component
+import { DashboardAdminComponent } from './admin02/modules/dashboard-admin/dashboard-admin.component';
+import { DefaultAdminComponent } from './admin02/layouts/default-admin/default-admin.component';
 
 
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -44,7 +51,8 @@ const routes: Routes = [
   {path:'admin', component:AdminComponent,
   children:[
       { path:'manage-doctor', component: ManageDoctorComponent},
-      { path:'manage-patient', component: ManagePatientComponent}
+      { path:'manage-patient', component: ManagePatientComponent},
+    
     ]
   },
   {path:'manage-doctor', component: ManageDoctorComponent},
@@ -58,7 +66,10 @@ const routes: Routes = [
   {path:'whatwetreat', component:WhatwetreatComponent},
   {path:'forgotpass',component:ForgotpassComponent},
   {path:'ourproviders',component:OurproviersComponent},
- 
+  
+  {path:'adminfeedbacks', component:AdminFeedbacksComponent},
+  {path:'patientupload',component:UploaderComponent},
+
   
 
   //doctor's paths
@@ -68,6 +79,18 @@ const routes: Routes = [
             { path : 'contentDoc' , component : ContentDocComponent},
             {path:'updateAccount',component:UpdateAccountDocComponent},
             {path:'appointments',component:AppointmentDocComponent},
+ ]
+},
+
+
+  //admin's new paths
+
+  {path:'',component:DefaultAdminComponent,
+  children: [{ path :'adminHome', component:DashboardAdminComponent},
+            { path : 'manageDoctor' , component : ManageDoctorComponent},
+            {path:'managePatient',component:ManagePatientComponent},
+            {path:'feedbacks',component:AdminFeedbacksComponent},
+           
  ]
 },
 

@@ -21,12 +21,17 @@ export class ContactusService {
   
     this.message= message;
     
+  
+    
     this.db.collection("contactus_messages").add({
       firstname: message.firstname,
       lastname: message.lastname,
       email:message.email,
       phoneno: message.phoneno,
-      subject:message.subject
+      subject:message.subject,
+      mark:message.mark,
+      date:message.date,
+      delete_or_not:message.delete_or_not
     }).then(()=>{
       console.log("kljfsalkf");
       this.router.navigate(['/contactus']);
