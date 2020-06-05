@@ -1,2 +1,44 @@
 
 
+
+
+.form-group{
+    /* background-color: blue; */
+}
+
+.form-control{
+    height: 200px;
+    width: 1000px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+
+section {
+    display: table;
+    margin: 10px;
+    margin-bottom: 60px;
+  }
+  
+  
+  
+  .example-button-row {
+    display: table-cell;
+  }
+  
+  .example-button-row button {
+    display: table-cell;
+    margin-right: 10px;
+  }
+  
+  .example-flex-container {
+    display: flex;
+    justify-content: space-between;
+    width: 580px;
+  }
+  
+  .example-button-container {
+    display: flex;
+    justify-content: center;
+    width: 500px;
+  }
