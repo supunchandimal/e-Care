@@ -1,0 +1,48 @@
+
+<div id="img"> 
+     
+    <div id="sidebar" >
+
+        <!-- <div class="toggle-btn"  (click)="toggleCollapse()" >
+            <span></span>
+            <span></span>
+            <span></span>
+        </div> -->
+    <div *ngIf="isCollapsed">
+        <ul>
+            <!-- <li  href="" routerLink="/manage-doctor" routerLinkActive="active">Manage Doctors</li> -->
+            <li><a routerLink="../manage-doctor">Manage Doctors</a></li>
+            <li><a routerLink="../manage-patient">Manage Patients</a></li> 
+            <li>Notifications</li>
+            <li><a href="" routerLink="../adminfeedbacks" routerLinkActive="active">Feedbacks</a></li>
+            <li>Payment details</li>
+            <li>Announcements</li>
+        </ul>
+    </div>
+    </div>
+
+    <div class="markallordelete">
+        <button class="markall">Mark All</button>
+        <button class="deleteall" (click)="ondeleteall()">Delete All</button>
+    </div>
+
+    <div class ="feedback_con2 " *ngFor="let sc of contactmessages ; let i = index" >
+        <br>
+
+        
+        <div class="veiw_name"> Name: {{sc.firstname}}  {{ sc.lastname}}</div>
+        <button class="delete" (click)="ondelete(sc.key)"> Delete</button>
+        <button class="processed" (click)="onupdate(sc.key)" >processed</button>
+        <br>
+        <div class="view_email">Email : {{sc.email}}</div>
+        <br>
+        <div class="view_phoneno">Contact no : {{sc.phoneno}}</div>
+        <br>
+        <div class="view_subject">Subject :  {{sc.subject}} </div>
+        <br>
+        
+    
+    
+    </div>
+</div> 
+

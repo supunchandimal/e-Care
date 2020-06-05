@@ -14,6 +14,7 @@ export class ContactusComponent implements OnInit {
     message= new Contactmessages();
     succornot:string;
     errormsg="";
+    
   constructor(private add : ContactusService ) { 
 
     
@@ -25,7 +26,12 @@ export class ContactusComponent implements OnInit {
 
   onsubmit(contactusform){
       // console.log(contactusform.value);
+      var date = new Date();
        this.message = contactusform.value;
+       this.message.mark=0;
+       this.message.delete_or_not=0;
+       this.message.date= date;
+       
        this.add.addmessage(this.message);
        this.succornot="succesfully sent the msg we will contact you  as soon as posible thank for your time";
        contactusform.reset();

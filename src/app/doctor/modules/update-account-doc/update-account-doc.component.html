@@ -1,0 +1,77 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+<div class="container">
+    <b><h1><label for="">Update Account Details</label></h1></b>
+    <div class="form-group">
+        
+        <div class="form-group">
+        <input type="string" class="form-control" [(ngModel)]="doctorFirstName" placeholder="First Name">
+        </div>
+
+        <div class="form-group">
+        <input type="string" class="form-control" [(ngModel)]="doctorLastName" placeholder="Last Name">
+        </div>
+
+        <div class="form-group">
+            <input type="string" class="form-control" [(ngModel)]="doctorEmail" placeholder="Email">
+        </div>
+    
+
+        <button class="btn btn-primary btn-sm" (click)="createDoctor()">Update Details</button>
+
+    </div>
+  <div class="form-group">
+    <h4><b>{{message}}</b></h4>
+  </div>
+<hr>
+  <b><h1><label for="">Change Password</label></h1></b>
+    <div class="form-group">
+        
+        <div class="form-group">
+        <input type="password" class="form-control" placeholder="Current Password">
+        </div>
+
+        <div class="form-group">
+        <input type="password" class="form-control" [(ngModel)]="doctorLastName" placeholder="New Password">
+        </div>
+
+        <button class="btn btn-primary btn-sm">Change Password</button>
+
+    </div>
+
+
+<!-- 
+    <div class="card" *ngFor = "let item of doctor">
+      doctorFirstName : {{item.doctorFirstName}}
+      doctorLastName : {{item.doctorLastName}}
+      doctorEmail : {{item.doctorEmail}}
+    </div>
+</div>
+
+
+    <div class="row p-2">
+      <div class="col-md-12 p-2 justify-content-center">
+        <h4>All Doctors</h4>
+      </div>
+      <div class="col-md-3" *ngFor = "let item of doctor">
+        <div class="card">
+          <div class="card-body">
+            <div class="card title">
+              doctorFirstName : {{item.doctorFirstName}}
+            </div>
+            <div class="card-subtitle">
+              doctorLastName : {{item.doctorLastName}}
+            </div>
+            <div class="card-text">
+              doctorEmail : {{item.doctorEmail}}
+            </div>
+            <a href="#" class="btn btn-primary">Edit</a>
+          </div>
+        </div>
+      </div> -->
+
+    </div>
+
+
+

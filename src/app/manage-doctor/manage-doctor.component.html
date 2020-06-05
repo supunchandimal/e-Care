@@ -38,7 +38,7 @@ eCare
      -->
      <div class="form-group">
         <label for="select" class="form-control" >Gender
-        <select id="select" [(ngModel)]="gender" >     
+        <select id="select1" [(ngModel)]="gender" >    
             <option *ngFor = "let g of genderList"
              [value] = "g"> {{g}} 
             </option>
@@ -50,8 +50,8 @@ eCare
         <!-- <input type="text" class="form-control" [(ngModel)]="speciality" placeholder="Specialised in.."> -->
         
         <label for="select" class="form-control" >Specialised in..
-        <select  id="select" [(ngModel)]="speciality"> 
-            <option option value="" selected="selected" hidden="hidden">Select an Option </option> 
+        <select  id="select2" [(ngModel)]="speciality"> 
+            <option value="" selected="selected" hidden="hidden">Select an Option </option> 
             <option value="Practiced Physician">Practiced Physician</option> 
             <option value="Pediatricians">Pediatricians </option> 
             <option value="Geriatricians">Geriatricians</option> 
@@ -67,14 +67,15 @@ eCare
         </label>
     </div>
     <div class="form-group">
-        <button class="btn btn-primary" (click)="CreateRecord()" [disabled]="!fullName || !nic || !email">Create Doctor</button>
+        <button class="btn btn-primary" (click)="CreateRecord()" [disabled]="!fullName || !nic || !email || !speciality" >Create Doctor</button>
     </div>
  
 </div>
+<div class="form-group">
+    <h4><b class="alert alert-success" role="alert">{{message}}</b></h4>
 </div>
-    <!-- <div class="form-group">
-        <h4><b>{{message}}</b></h4>
-    </div> -->
+</div>
+   
     <div class="row p-2">
         <div class="col-md-12 p-2 justify-content-center">
           <h4>All Doctor Data</h4>
@@ -114,8 +115,8 @@ eCare
                 </div>
 
                  <span>
-                    <a  (click)="EditRecord(item)" class="btn btn-primary btn-xs">Edit Doctor</a>
-                    <a  (click)= "DeleteDoctor(item.id)" class="btn btn-danger btn-xs">Delete Doctor</a>
+                    <a  (click)="EditRecord(item)" class="btn btn-primary btn-xs" style="color: white;">Edit Doctor</a>
+                    <a  (click)= "DeleteDoctor(item.id)" class="btn btn-danger btn-xs" style="color: white;">Delete Doctor</a>
                 </span>
                 </div>
             </div>

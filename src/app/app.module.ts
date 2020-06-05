@@ -1,5 +1,7 @@
 import { ServiceService } from './patientpages/services/service.service';
 import { DefaultDocModule } from './doctor/layouts/default-doc/default-doc.module';
+import { DefaultAdminModule } from './admin02/layouts/default-admin/default-admin.module';
+
 import { AuthService } from './auth/auth.service';
 import { environment } from './../environments/environment';
 import { BrowserModule } from '@angular/platform-browser';
@@ -25,6 +27,7 @@ import { ConsultationhistoryComponent } from './patientpages/consultationhistory
 import { AllergierecordsComponent } from './patientpages/allergierecords/allergierecords.component';
 import { MedicationComponent } from './patientpages/medication/medication.component';
 import { UploadrecordsComponent } from './patientpages/uploadrecords/uploadrecords.component';
+import {MatButtonModule} from '@angular/material/button';
 
 
 import { WhatwetreatComponent } from './whatwetreat/whatwetreat.component';
@@ -34,8 +37,15 @@ import { OurproviersComponent } from './ourproviers/ourproviers.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ManageDoctorComponent } from './manage-doctor/manage-doctor.component';
 import { ManagePatientComponent } from './manage-patient/manage-patient.component';
+
+import { AdminFeedbacksComponent } from './admin-feedbacks/admin-feedbacks.component';
+import { DropzoneDirective } from './patientpages/patientfiles/dropzone.directive';
+import { UploaderComponent } from './patientpages/patientfiles/uploader/uploader.component';
+import { UploadTaskComponent } from './patientpages/patientfiles/upload-task/upload-task.component';
+
 import { BehaviorhistoryComponent } from './patientpages/behaviorhistory/behaviorhistory.component';
 import { FamilyhistoryComponent } from './patientpages/familyhistory/familyhistory.component';
+
 
 import { AdminComponent } from './admin/admin.component';
 import { MatSliderModule } from '@angular/material/slider';
@@ -43,6 +53,8 @@ import { MaterialModule } from './material/material.module';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
 import { ManageDoctorService } from 'src/services/shared/manage-doctor.service';
+import { AdminAnnouncementComponent } from './admin-announcement/admin-announcement.component';
+
 
 @NgModule({
   declarations: [
@@ -68,8 +80,14 @@ import { ManageDoctorService } from 'src/services/shared/manage-doctor.service';
     OurproviersComponent,
     ManageDoctorComponent,
     ManagePatientComponent,
+
+    AdminFeedbacksComponent,
+    DropzoneDirective,
+    UploaderComponent,
+    UploadTaskComponent,
     BehaviorhistoryComponent,
-    FamilyhistoryComponent
+    FamilyhistoryComponent,
+    AdminAnnouncementComponent,
   ],
   imports: [
     BrowserModule,
@@ -80,11 +98,17 @@ import { ManageDoctorService } from 'src/services/shared/manage-doctor.service';
     AngularFireStorageModule, // storage
     FormsModule, BrowserAnimationsModule,
     DefaultDocModule,
+    MatButtonModule,
     MatSliderModule,
     MaterialModule,
+<<<<<<< HEAD
     MatFormFieldModule,
     MatButtonModule,
     ReactiveFormsModule
+=======
+    ReactiveFormsModule,
+    DefaultAdminModule
+>>>>>>> 9916b57ea0a3d37ea934f21029c0c41f971e5032
   ],
   providers: [
     AuthService,
