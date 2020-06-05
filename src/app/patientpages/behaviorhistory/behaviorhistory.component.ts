@@ -10,7 +10,6 @@ export class BehaviorhistoryComponent implements OnInit {
   constructor() { }
   
   
-
   ngOnInit(): void {
 
   }

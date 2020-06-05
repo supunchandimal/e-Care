@@ -50,6 +50,8 @@ import { FamilyhistoryComponent } from './patientpages/familyhistory/familyhisto
 import { AdminComponent } from './admin/admin.component';
 import { MatSliderModule } from '@angular/material/slider';
 import { MaterialModule } from './material/material.module';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatButtonModule} from '@angular/material/button';
 import { ManageDoctorService } from 'src/services/shared/manage-doctor.service';
 import { AdminAnnouncementComponent } from './admin-announcement/admin-announcement.component';
 
@@ -99,8 +101,14 @@ import { AdminAnnouncementComponent } from './admin-announcement/admin-announcem
     MatButtonModule,
     MatSliderModule,
     MaterialModule,
+<<<<<<< HEAD
+    MatFormFieldModule,
+    MatButtonModule,
+    ReactiveFormsModule
+=======
     ReactiveFormsModule,
     DefaultAdminModule
+>>>>>>> 9916b57ea0a3d37ea934f21029c0c41f971e5032
   ],
   providers: [
     AuthService,
