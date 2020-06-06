@@ -1,20 +1,81 @@
-<!-- <nav class="nav">
-eCare
-</nav> -->
-<!-- <nav class="navbar navbar-light bg-light">
-    <span class="navbar-brand mb-0 h1 text-cent">eCare</span>
-  </nav> -->
 
   <mat-toolbar color="primary">
     <mat-toolbar-row>
       <span>eCare</span>
-    </mat-toolbar-row>
+    </mat-toolbar-row> 
 </mat-toolbar>
 
 <div id="img"> 
+    <section class="details">
+        <h1 class="title">Doctor Details</h1>
+    
 <div class="container">
- 
-    <div  class="row justify-content-center p-2">
+    <!-- <div  class="row justify-content-center p-2">
+        <h1>Doctor Details</h1>
+    </div> -->
+    <div class="doc-form row">
+        <div class="form-field col-lg-6">
+            <input type="text" id="name" class="form-control input-text" [(ngModel)]="fullName">
+            <label for="name" class="label">Full Name</label>
+           
+        </div>
+        <div class="form-field col-lg-6">
+            <input type="email" id="email" class="form-control input-text" [(ngModel)]="email">
+            <label for="email" class="label">Email</label>
+        </div>
+        <div class="form-field col-lg-6">
+            <input type="text" id="nic" class="form-control input-text" [(ngModel)]="nic">
+            <label for="nic" class="label">NIC</label>
+        </div>
+        <div class="form-field col-lg-6">
+            <input type="number" id="age" class="form-control input-text" [(ngModel)]="age" >
+            <label for="age" class="label">Age</label>
+        </div>
+        <div class="form-field col-lg-6">
+            <input type="text" id="city" class="form-control input-text" [(ngModel)]="city">
+            <label for="city" class="label">City</label>
+        </div>
+      
+        <div class="form-field col-lg-6 input-text" >
+        <div class="form-group">
+            <label for="select" class="form-control" >Gender
+            <select id="select1" [(ngModel)]="gender" >    
+                <option *ngFor = "let g of genderList"
+                 [value] = "g"> {{g}} 
+                </option>
+              </select>
+            </label>
+          </div>
+          </div>
+        
+    <div class="form-field col-lg-6">      
+    <div class="form-group">
+        <label for="select" class="form-control" >Specialised in..
+        <select  id="select2" [(ngModel)]="speciality"> 
+            <option value="" selected="selected" hidden="hidden">Select an Option </option> 
+            <option value="Practiced Physician">Practiced Physician</option> 
+            <option value="Pediatricians">Pediatricians </option> 
+            <option value="Geriatricians">Geriatricians</option> 
+            <option value="Cardiologists">Cardiologists</option> 
+            <option value="Allergists">Allergists</option> 
+            <option value="Dermatologists">Dermatologists</option> 
+            <option value="Ophthalmologists">Ophthalmologists</option> 
+            <option value="Gastroenterologists">Gastroenterologists</option> 
+            <option value="Nephrologists">Nephrologists</option> 
+            <option value="Otolaryngologists">Otolaryngologists</option> 
+            <option value="Other">Other..</option> 
+        </select> 
+        </label>
+    </div>
+    </div>
+        <div class="form-field col-lg-12"> 
+        <div class="form-group">
+            <button class="submit-btn" type="submit" (click)="CreateRecord()" [disabled]="!fullName || !nic || !email || !speciality" >Create Doctor</button>
+        </div>
+        </div>
+</div>
+
+    <!-- <div  class="row justify-content-center p-2">
         <h1>Doctor Details</h1>
     </div>
     <div class="form-group">
@@ -32,22 +93,18 @@ eCare
     <div class="form-group">
         <input type="text" class="form-control" [(ngModel)]="city" placeholder="Enter city">
     </div>
-    <!-- <div class="form-group">
-        <input type="select" class="form-control" [(ngModel)]="gender">
-    </div>
-     -->
+
      <div class="form-group">
         <label for="select" class="form-control" >Gender
         <select id="select1" [(ngModel)]="gender" >    
             <option *ngFor = "let g of genderList"
-             [value] = "g"> {{g}} 
+             [value] = "g"> {{g}}  
             </option>
           </select>
         </label>
       </div>
 
     <div class="form-group">
-        <!-- <input type="text" class="form-control" [(ngModel)]="speciality" placeholder="Specialised in.."> -->
         
         <label for="select" class="form-control" >Specialised in..
         <select  id="select2" [(ngModel)]="speciality"> 
@@ -68,12 +125,13 @@ eCare
     </div>
     <div class="form-group">
         <button class="btn btn-primary" (click)="CreateRecord()" [disabled]="!fullName || !nic || !email || !speciality" >Create Doctor</button>
-    </div>
+    </div> -->
  
 </div>
-<div class="form-group">
+<!-- <div class="form-group">
     <h4><b class="alert alert-success" role="alert">{{message}}</b></h4>
-</div>
+</div> -->
+</section>
 </div>
    
     <div class="row p-2">
