@@ -6,6 +6,7 @@
 </mat-toolbar>
 
 <div id="img"> 
+ 
     <section class="details">
         <h1 class="title">Doctor Details</h1>
     
@@ -38,7 +39,7 @@
       
         <div class="form-field col-lg-6 input-text" >
         <div class="form-group">
-            <label for="select" class="form-control" >Gender
+            <label for="select" class="form-control label-select" >Gender
             <select id="select1" [(ngModel)]="gender" >    
                 <option *ngFor = "let g of genderList"
                  [value] = "g"> {{g}} 
@@ -50,7 +51,7 @@
         
     <div class="form-field col-lg-6">      
     <div class="form-group">
-        <label for="select" class="form-control" >Specialised in..
+        <label for="select" class="form-control label-select" >Specialised in..
         <select  id="select2" [(ngModel)]="speciality"> 
             <option value="" selected="selected" hidden="hidden">Select an Option </option> 
             <option value="Practiced Physician">Practiced Physician</option> 

@@ -19,6 +19,12 @@ form.normal-form{
 
 @import "~bootstrap/dist/css/bootstrap.css";
 
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
 .mat-toolbar.mat-primary {
     background: grey;
     color: #fff;
@@ -93,6 +99,7 @@ form.normal-form{
     color: black;
     line-height: 26px;
     font-weight: 400;
+    background: transparent;
 }
 
 .doc-form .input-text:focus +label,
@@ -130,4 +137,10 @@ form.normal-form{
     border: none;
     width: 200px;
     cursor: pointer;
+}
+
+.label-select{
+    background: transparent; 
+    color: black;
+    border-color: transparent;
 }
