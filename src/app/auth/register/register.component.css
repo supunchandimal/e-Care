@@ -84,7 +84,7 @@ input[type=text], input[type=password],input[type=number],input[type=date],input
     float: right;
     margin-right: 10%;
     border-radius: 5px;
-    
+    height: 20vh;
 
   }
   input[type=submit]{

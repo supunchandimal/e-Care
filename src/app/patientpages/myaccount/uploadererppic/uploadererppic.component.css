@@ -1,0 +1,53 @@
+.dropzone { 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; 
+    width:40% ;
+    font-weight: 200;
+    height: 20%;
+    border: 2px dashed #f16624;
+    border-radius: 5px;
+    background: white;
+    margin-left: 30%;
+   
+  
+  
+  }
+
+  .hovering{
+    border: 2px solid #f16624;
+    color: #dadada !important;
+  }
+
+  .dropzone   .file-label {
+    font-size: 1.2em;
+}
+  
+  progress::-webkit-progress-value {
+    transition: width 0.1s ease;
+  }
+
+  .body{
+    display: flex; 
+    overflow-x: hidden; 
+    margin-top: 2px;  
+}
+.naviBar{
+  width: 22.5%;
+  height: 100%;
+  align-self: flex-start;
+  background-color: #888, #555;
+}
+.subnavibar{
+  position: fixed;
+  align-self: flex-start;
+  margin-left: -20px;
+  margin-top: -10px;
+}
+.bodyrest{
+  width: 78%;
+  height: 100%;
+  margin-left: 20%;
+  display: flex;   
+}

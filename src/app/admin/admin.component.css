@@ -14,8 +14,9 @@
 
 #sidebar{
         position: fixed;
+        display: block;
         width:20%;
-        height: 75%;
+        height: 100%;
         /* left: -30%; */
         background-color: black;
     }

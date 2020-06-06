@@ -1,10 +1,9 @@
+import { MyaccountComponent } from './patientpages/myaccount/myaccount.component';
 import { ConsultationhistoryComponent } from './patientpages/consultationhistory/consultationhistory.component';
 import { MyprovidersComponent } from './patientpages/myproviders/myproviders.component';
 import { HealthrecordsComponent } from './patientpages/healthrecords/healthrecords.component';
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
-
 import { FirstPageComponent } from './first-page/first-page.component';
 import { pathToFileURL } from 'url';
 import { LoginComponentComponent } from './auth/login-component/login-component.component';
@@ -14,12 +13,6 @@ import { HowItWorksComponent } from './how-it-works/how-it-works.component';
 import { AdminComponent } from './admin/admin.component';
 import { PatientHomeComponent } from './patient-home-navibar/patient-home.component';
 import { PatientDefaultPageComponent } from './patient-default-page/patient-default-page.component';
-import { DefaultDocComponent } from './doctor/layouts/default-doc/default-doc.component';
-import { DashboardDocComponent } from './doctor/modules/dashboard-doc/dashboard-doc.component';
-import { ContentDocComponent } from './doctor/modules/content-doc/content-doc.component';
-
-
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HealthprofileComponent } from './patientpages/healthprofile/healthprofile.component';
 import { AppoinmentsComponent } from './patientpages/appoinments/appoinments.component';
 import { WhatwetreatComponent } from './whatwetreat/whatwetreat.component';
@@ -27,6 +20,19 @@ import { ForgotpassComponent } from './forgotpass/forgotpass.component';
 import { OurproviersComponent } from './ourproviers/ourproviers.component';
 import { ManageDoctorComponent } from './manage-doctor/manage-doctor.component';
 import { ManagePatientComponent } from './manage-patient/manage-patient.component';
+import { AdminFeedbacksComponent } from './admin-feedbacks/admin-feedbacks.component';
+import { UploaderComponent } from './patientpages/patientfiles/uploader/uploader.component';
+
+
+  //doctor's component
+import { DefaultDocComponent } from './doctor/layouts/default-doc/default-doc.component';
+import { DashboardDocComponent } from './doctor/modules/dashboard-doc/dashboard-doc.component';
+import { ContentDocComponent } from './doctor/modules/content-doc/content-doc.component';
+import { UpdateAccountDocComponent } from './doctor/modules/update-account-doc/update-account-doc.component';
+import { AppointmentDocComponent } from './doctor/modules/appointment-doc/appointment-doc.component';
+
+
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'/home' ,pathMatch:'full'},
@@ -38,7 +44,8 @@ const routes: Routes = [
   {path:'admin', component:AdminComponent,
   children:[
       { path:'manage-doctor', component: ManageDoctorComponent},
-      { path:'manage-patient', component: ManagePatientComponent}
+      { path:'manage-patient', component: ManagePatientComponent},
+    
     ]
   },
   {path:'manage-doctor', component: ManageDoctorComponent},
@@ -52,15 +59,19 @@ const routes: Routes = [
   {path:'whatwetreat', component:WhatwetreatComponent},
   {path:'forgotpass',component:ForgotpassComponent},
   {path:'ourproviders',component:OurproviersComponent},
- 
+  {path:'myaccount',component:MyaccountComponent},
+  {path:'adminfeedbacks', component:AdminFeedbacksComponent},
+  {path:'patientupload',component:UploaderComponent},
+
   
 
-  //doctor's modules
+  //doctor's paths
 
   {path:'',component:DefaultDocComponent,
   children: [{ path :'docHome', component:DashboardDocComponent},
             { path : 'contentDoc' , component : ContentDocComponent},
-            {path:'tets',component:FirstPageComponent},
+            {path:'updateAccount',component:UpdateAccountDocComponent},
+            {path:'appointments',component:AppointmentDocComponent},
  ]
 },
 

@@ -1,0 +1,63 @@
+/* @import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+div.container{
+    margin: 20px 40px;
+}
+
+.fill-remaining-space{
+    flex: 5 1 10;
+}
+
+form.normal-form{
+    margin: 10px;
+}
+
+.controles-container{
+    width: 100%;
+    padding: 5%;
+} */
+
+@import "~bootstrap/dist/css/bootstrap.css";
+
+.nav{
+    width: 100%;
+    color: blueviolet;
+}
+
+.navbar-brand mb-0 h1{
+    color: crimson;
+}
+
+.mat-toolbar.mat-primary {
+    background: grey;
+    color: #fff;
+  }
+
+  
+#img{
+    width: 100%;
+    height: 100vh;
+    background-image: url('/assets/images/wallpaper 2.jpg');
+    background-size: cover;
+    /* filter: opacity(0.7); */
+}
+
+h1{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+input[type=text] {
+    color: red;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+
+   /* input[type=text]{
+       color: red;
+   } */

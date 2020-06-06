@@ -7,12 +7,14 @@ import { AuthService } from 'src/app/auth/auth.service';
 import { Router } from '@angular/router';
 import * as _ from 'lodash';
 
+
 @Component({
   selector: 'app-healthprofile',
   templateUrl: './healthprofile.component.html',
   styleUrls: ['./healthprofile.component.css']
 })
 export class HealthprofileComponent implements OnInit {
+  changingimg:boolean;
   files : FileList;
   upload : Ppic;
   item:Rec={
@@ -23,6 +25,7 @@ export class HealthprofileComponent implements OnInit {
   }
   recs: Rec[];
   user:firebase.User;
+id:string;
   constructor(private auth:AuthService,private router:Router,private service:HealthproService) { }
     
   public flag = 1;
@@ -41,6 +44,17 @@ export class HealthprofileComponent implements OnInit {
 public  bmi: number;
   calc(frm){
     this.bmi=frm.value.weight/((frm.value.height/100)*(frm.value.height/100));
+      }
+  public mark = 1;
+
+  onClickhealth(){
+    this.mark=1;
+  }
+  onClickbehavirol(){
+    this.mark=2;
+  }
+  onClickfamily(){
+    this.mark=3;
   }
 
   onClickYesAlleg(){
@@ -79,5 +93,7 @@ public  bmi: number;
     this.item.operations = 'No';
     this.service.addItem(this.item);
   }
- 
+  changingImage(){
+    this.changingimg = !this.changingimg;
+  }
 }

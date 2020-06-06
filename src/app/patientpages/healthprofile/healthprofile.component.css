@@ -8,7 +8,8 @@
 }
 .body{
     display: flex; 
-    overflow-x: hidden;   
+    overflow-x: hidden; 
+    margin-top: 2px;  
 }
 .naviBar{
   width: 22.5%;
@@ -25,7 +26,7 @@
 .bodyrest{
   width: 78%;
   height: 100%;
-  margin-left: 22%;
+  margin-left: 20%;
   display: flex;   
 }
 .submenu{
@@ -56,6 +57,7 @@
   align-self: center;
   opacity: 1;
   width: 100%;
+  padding-top: 20px;
 }
 .btn-holder{
   justify-content:flex-end;
