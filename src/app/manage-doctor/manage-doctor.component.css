@@ -120,7 +120,8 @@ form.normal-form{
 
 .submit-btn{
     display: inline-block;
-    background-image: linear-gradient(125deg, #a72879,#064497);
+    /* background-image: linear-gradient(125deg, #a72879,#064497); */
+    background-image: linear-gradient(125deg,#595e64, #79bbc0, #595e64);
     color: #fff;
     text-transform: uppercase;
     letter-spacing: 2px;
