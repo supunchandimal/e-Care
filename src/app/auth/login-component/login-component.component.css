@@ -9,6 +9,7 @@
 }
 .login_image{
     float: left;
+    filter: opacity(0.8);
 }
 .login_container h1,h2{
    text-align: center;
