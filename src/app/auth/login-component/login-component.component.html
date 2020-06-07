@@ -6,7 +6,7 @@
         <form action="" #loginForm="ngForm" (ngSubmit)="login(loginForm)">
             <h1>login</h1>
             <div class="row" *ngIf="authError">
-                <div class="col-12 alert alert-danger">{{ authError?.message }}</div>
+                <div class="col-12 alert alert-danger">{{ authError }}</div>
               </div>
             <label for="email"> <b>Email</b> </label>
             <input ngModel #email="ngModel" name="email" type="text" class="form-control"  placeholder="Enter Email" required>

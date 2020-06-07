@@ -1,3 +1,5 @@
+
+
 <div class="reg_container" style="background-image: url(assets/images/signupimage.jpg);">
    
     <div class="navigation_bar">  
@@ -26,38 +28,44 @@
                   <div >
                     <div class="row">
                       <label for="firstname" >Firstname:</label>
-                      <input ngModel #firstname="ngModel" name="firstName" type="text" class="form-control" id="firstName" >
+                      <input ngModel #firstname="ngModel" name="firstName" type="text" class="form-control" id="firstName" required >
                     </div>
                       <div class="row">
                         <label for="secondname">Secondname:</label>
-                      <input ngModel #secondname="ngModel" name="secondName" type="text" class="form-control" id="secondName" value="" >
+                      <input ngModel #secondname="ngModel" name="secondName" type="text" class="form-control" id="secondName" value=""  required>
                       
                       </div>
                   </div>
                   
                   <div class="">
                       <label for="email" >Email:</label>
-                      <input  ngModel #email="ngModel" type="email" class="form-control" placeholder="email" name="email"  >
+                      <input  ngModel #email="ngModel" type="email" class="form-control" placeholder="email" name="email" 
+                      pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                      required>
                   </div>
                   <div class="">
                       <label for="password">Password: </label>
-                      <input ngModel #password="ngModel" name="password" type="password" class="form-control">
+                      <input ngModel #password="ngModel" name="password" type="password" class="form-control"  minlength="6" required>
                   </div>
                   <div class="">
                       <label for="dateofbirth">Date of birth : </label>
-                      <input ngModel #dob="ngModel" type="date" placeholder="mm/dd/yyyy" name="dob" class="form-control" id="dob" value="" >
+                      <input ngModel #dob="ngModel" type="date" placeholder="mm/dd/yyyy" name="dob" class="form-control" id="dob" value="" max="2020-01-01" required >
                   </div>
                   <div class="">
                       <label for="phoneno">Phone number : </label>
-                      <input ngModel #phone="ngModel" type="number" name="phone" placeholder="phoneno" id="phone"  class="form-control" value="" >
+                      <input ngModel #phone="ngModel" type="tel" name="phone" placeholder="phoneno" id="phone"  class="form-control" value="" required pattern="[0][0-9]{9}" >
                      
                   </div>
                   
                   <div class="">
                       <label for="gender">Gender :  </label>
-                      <input ngModel #gender="ngModel" type="text" name="gender" placeholder="gender" id="gender" class="form-control" value="">
+                      <select ngModel name="gender"  id="gender" #gender="ngModel" required>
+                          <option value="male">male</option>
+                          <option value="female">female</option>
+
+                      </select>
                   </div>
-                  <input type="submit" name="submit" value="submit" id="" >
+                  <input type="submit" name="submit" value="submit" id="" [disabled]="userRegForm.form.invalid"  >
                   
                   </div>
               </form>

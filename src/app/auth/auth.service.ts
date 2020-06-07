@@ -5,6 +5,8 @@ import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { PatientDefaultPageComponent } from '../patient-default-page/patient-default-page.component';
 import { strict } from 'assert';
+import { map } from 'rxjs/operators';
+import { analytics } from 'firebase';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +16,7 @@ export class AuthService {
   private eventAuthError = new BehaviorSubject<string>("");
   eventAuthError$ = this.eventAuthError.asObservable();
   newUser: any;
- 
+fuck :any;
   constructor(
     private afAuth:AngularFireAuth,
     private db:AngularFirestore,
@@ -35,6 +37,9 @@ export class AuthService {
           
           this.insertUserData(userCredential)
             .then(()=>{
+              console.log(this.newUser.gender);
+              this.newUser=null;
+              userCredential=null;
               this.router.navigate(['/login']);
             });
         })
@@ -42,18 +47,7 @@ export class AuthService {
           this.eventAuthError.next(error);
         })
     }
-    login( email: string, password: string) {
-      this.afAuth.signInWithEmailAndPassword(email, password)
-        .catch(error => {
-          this.eventAuthError.next(error);
-        })
-        .then(userCredential => {
-          if(userCredential) {
-            this.router.navigate(['/patientHome']);
-          }
-        })
-    }
-
+ 
     insertUserData(userCredential:firebase.auth.UserCredential){
       return this.db.doc(`Users/${userCredential.user.uid}`).set({
         email:this.newUser.email,
@@ -63,6 +57,7 @@ export class AuthService {
         dob:this.newUser.dob,
         gender:this.newUser.gender,
         phone:this.newUser.phone,
+        role:"patient"
       })
 
     }

@@ -1,8 +1,5 @@
+<h1>file upload </h1>
 
-<div style="align-self: flex-start ; width: 22.5vw;">
-<app-patient-home></app-patient-home>
-</div>
-<div>
 
 <div class="dropzone" 
     appDropzone
@@ -11,7 +8,7 @@
      [class.hovering]="isHovering">
 
 
-     <h3>AngularFire Drop Zone</h3>
+     
      <p>Drag and Drop a File</p>
      <input type="file" placeholder="choosefile" (change)="onDrop($event.target.files)">
 </div>
@@ -25,4 +22,3 @@
 
 
 
-</div>
