@@ -6,9 +6,8 @@
 
 .image_container_1 .text_block{
   position: absolute;
-  
-  top: 4%;
-  left: 10%;
+  top: 12%;
+  left: 18%;
   width: 25%;
   
   background: rgb(0, 0, 0); /* Fallback color */
