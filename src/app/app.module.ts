@@ -27,7 +27,6 @@ import { ConsultationhistoryComponent } from './patientpages/consultationhistory
 import { AllergierecordsComponent } from './patientpages/allergierecords/allergierecords.component';
 import { MedicationComponent } from './patientpages/medication/medication.component';
 import { UploadrecordsComponent } from './patientpages/uploadrecords/uploadrecords.component';
-import {MatButtonModule} from '@angular/material/button';
 
 
 import { WhatwetreatComponent } from './whatwetreat/whatwetreat.component';
@@ -101,14 +100,10 @@ import { AdminAnnouncementComponent } from './admin-announcement/admin-announcem
     MatButtonModule,
     MatSliderModule,
     MaterialModule,
-<<<<<<< HEAD
     MatFormFieldModule,
     MatButtonModule,
-    ReactiveFormsModule
-=======
     ReactiveFormsModule,
-    DefaultAdminModule
->>>>>>> 9916b57ea0a3d37ea934f21029c0c41f971e5032
+    DefaultAdminModule,
   ],
   providers: [
     AuthService,

@@ -1,2 +1,20 @@
-<p>dashboard-doc works!</p>
-<mat-spinner value="23" ></mat-spinner>
+<div>
+    <app-widget-area></app-widget-area>
+</div>
+<br>
+<mat-divider></mat-divider><br>
+
+<div fxLayout="row" fxLayoutAlign = "space-between center" fxLayoutGap = "20px" class="stat-cards">
+    <mat-card fxFlex="23">
+        <app-widget-card label="New Users" total="18k" percentage="50"></app-widget-card>
+    </mat-card>
+    <mat-card fxFlex="23">
+        <app-widget-card label="New Doctors" total="500" percentage="50"></app-widget-card>    
+    </mat-card>
+    <mat-card fxFlex="23">
+        <app-widget-card label="Your Patients" total="89" percentage="50"></app-widget-card>    
+    </mat-card>
+    <mat-card fxFlex="23">
+        <app-widget-card label="Your Income" total="20k" percentage="50"></app-widget-card>    
+    </mat-card>
+</div>
