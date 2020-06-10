@@ -13,6 +13,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatListModule} from '@angular/material/list';
 import { AreaComponent } from './widgets/area/area.component';
 import { HighchartsChartModule } from 'highcharts-angular';
+import { CardComponent } from './widgets/card/card.component';
 
 
 
@@ -22,7 +23,8 @@ import { HighchartsChartModule } from 'highcharts-angular';
     HeaderComponent,
     SidebarComponent,
     FooterComponent,
-    AreaComponent
+    AreaComponent,
+    CardComponent
   ],
   imports: [
     CommonModule,
@@ -41,7 +43,7 @@ import { HighchartsChartModule } from 'highcharts-angular';
     SidebarComponent,
     FooterComponent,
     AreaComponent,
-    
+    CardComponent,
   ]
 })
 export class SharedModule { }
