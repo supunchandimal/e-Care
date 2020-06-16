@@ -32,16 +32,16 @@
                    <div class="btn-holder">
                     <div class="btn-group" >
                         <button *ngIf="mark==2" class="btn" (click)='onClickhealth()'>MY HEALTH HISTORY</button>
-                        <button *ngIf="mark==1" class="btn" (click)='onClickhealth()' style="background-color: rebeccapurple;">MY HEALTH HISTORY</button>
+                        <button *ngIf="mark==1" class="btn" (click)='onClickhealth()' style="background-color: blueviolet;">MY HEALTH HISTORY</button>
                         <button *ngIf="mark==3" class="btn" (click)='onClickhealth()'>MY HEALTH HISTORY</button>
 
                         <button *ngIf="mark==1" class="btn" (click)='onClickbehavirol()'>MY BEHAVIROL HISTORY</button>
-                        <button *ngIf="mark==2" class="btn" (click)='onClickbehavirol()' style="background-color: rebeccapurple;">MY BEHAVIROL History</button>
+                        <button *ngIf="mark==2" class="btn" (click)='onClickbehavirol()' style="background-color: blueviolet;">MY BEHAVIROL History</button>
                         <button *ngIf="mark==3" class="btn" (click)='onClickbehavirol()'>MY BEHAVIROL History</button>
 
                         <button *ngIf="mark==1" class="btn" (click)='onClickfamily()'>MY FAMILY HISTORY</button>
                         <button *ngIf="mark==2" class="btn" (click)='onClickfamily()'>MY FAMILY HISTORY</button>
-                        <button *ngIf="mark==3" class="btn" (click)='onClickfamily()' style="background-color: re;">MY FAMILY HISTORY</button>
+                        <button *ngIf="mark==3" class="btn" (click)='onClickfamily()' style="background-color: blueviolet;">MY FAMILY HISTORY</button>
                     </div>
 
                    </div>
@@ -49,7 +49,7 @@
                 </div>
                 <div  *ngIf="mark==1">
                  <div class="dive">
-                    <h1>Do you have any allergies or drug sensivities?</h1>
+                    <h2>Do you have any allergies or drug sensivities?</h2>
                 </div>
                  <div class="btn-holder2" >
                     <div class="btn-group2 button">
@@ -57,7 +57,7 @@
                     </div> 
                  </div>
                  <div class="dive">
-                    <h1>Are you currently taking any medication?</h1>
+                    <h2>Are you currently taking any medication?</h2>
                 </div>
                  <div class="btn-holder2">
                     <div class="btn-group2 button">
@@ -65,7 +65,7 @@
                     </div> 
                  </div>
                  <div class="dive">
-                    <h1>Do you have any health conditions?</h1>
+                    <h2>Do you have any health conditions?</h2>
                 </div>
                  <div class="btn-holder2">
                     <div class="btn-group2 button">
@@ -73,7 +73,7 @@
                     </div> 
                  </div>
                  <div class="dive">
-                    <h1>Have you ever had any surgeries or medical procedures?</h1>
+                    <h2>Have you ever had any surgeries or medical procedures?</h2>
                 </div>
                  <div class="btn-holder2">
                     <div class="btn-group2 button">
@@ -86,7 +86,7 @@
                     </div>
                     <form action="" #bmiForm="ngForm" (ngSubmit)="calc(bmiForm)">
                     <div style="padding-top: 3%;padding-left: 20%;">
-                        <label style="font-family: Arial, Helvetica, sans-serif;padding-right: 17px;">
+                        <label style="font-family: Arial, Helvetica, sans-serif;padding-right: 17px;" >
                             Current Body Weight(kg):
                         </label>
                         <input  ngModel #weight="ngModel" name="weight" type="text" class=""  placeholder="Enter weight"  >
