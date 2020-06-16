@@ -27,11 +27,8 @@ export class LoginserviceService {
       .then(userCredential => {
         if(userCredential) {
           this.afAuth.authState.subscribe(user=>{
-            
-            
             this.db.collection("Users").doc(`${user.uid}`).valueChanges().subscribe(
               data=>{
-              
                 if(data != null){
                   if(data['role']=="admin"){
                     this.router.navigate(['/admin']);

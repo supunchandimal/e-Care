@@ -50,21 +50,23 @@
     background-color: #4CAF50;
     color: white;
     padding: 16px 20px;
-    border: none;
-    cursor: pointer;
+   border-radius: 5px;
     width: 100%;
-    opacity: 0.9;
+    
     
   }
   .btn2 {
     background-color: rgb(81, 151, 216);
     color: white;
     padding: 16px 20px;
-    border: none;
-    cursor: pointer;
+    border-radius: 5px;
     width: 100%;
-    opacity: 0.9;
+ 
     
+  }
+
+  .btn2 a{
+    text-decoration: none;
   }
   
   
@@ -101,6 +103,8 @@
 
 .container_2 h1{
   color: orange;
+  margin-top: 5%;
+  font-size: 30px;
 }
 .container_2 h2{
   color: blue;
@@ -125,8 +129,9 @@
 .button_join a {
     
     text-decoration: none;
+    text-align: center;
     margin-top: 5px;
-    margin-left: 70px;
+    margin-left: 35%;
     font-size: 20px;
     color: white;
     

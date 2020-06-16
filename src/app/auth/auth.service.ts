@@ -30,14 +30,14 @@ fuck :any;
       this.afAuth.createUserWithEmailAndPassword(user.email,user.password)
         .then(userCredential =>{
           this.newUser = user;
-          console.log(userCredential);
+          // console.log(userCredential);
           userCredential.user.updateProfile({
               displayName:user.firstName,
           });
           
           this.insertUserData(userCredential)
             .then(()=>{
-              console.log(this.newUser.gender);
+             // console.log(this.newUser.gender);
               this.newUser=null;
               userCredential=null;
               this.router.navigate(['/login']);
