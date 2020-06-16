@@ -1,0 +1,21 @@
+<body class="body">
+    <div class="bodyrest">
+        <div style="align-self: flex-start;">   
+            <div>
+                <div class="dropzone" 
+                    appDropzone
+                     (hovered)="toggleHover($event)"
+                     (dropped)="onDrop($event)"
+                     [class.hovering]="isHovering">
+                     <input type="file" placeholder="Select ProPic" (change)="onDrop($event.target.files)">
+                </div>
+  
+                <div *ngFor="let file of files" style="display: inline-block; margin-left: 30vw;">
+                    <app-ppic [file]="file"></app-ppic>
+                </div>
+  
+                </div>
+
+        </div>
+    </div>
+ </body>

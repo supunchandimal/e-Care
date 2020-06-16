@@ -1,24 +1,37 @@
-<h1>file upload </h1>
 
+<body class="body">
+    <div class="navibar">
+         <app-patient-home class="subnavibar"></app-patient-home>
+    </div>
+    <div class="bodyrest">
+        <div style="align-self: flex-start;"> 
+            <app-pagemenu ></app-pagemenu>
+            <div>
 
-<div class="dropzone" 
-    appDropzone
-     (hovered)="toggleHover($event)"
-     (dropped)="onDrop($event)"
-     [class.hovering]="isHovering">
+                <div class="dropzone" 
+                    appDropzone
+                     (hovered)="toggleHover($event)"
+                     (dropped)="onDrop($event)"
+                     [class.hovering]="isHovering">
+                
+                
+                     <h3>AngularFire Drop Zone</h3>
+                     <p>Drag and Drop a File</p>
+                     <input type="file" placeholder="choosefile" (change)="onDrop($event.target.files)">
+                </div>
+                
+                
+                
+                
+                <div *ngFor="let file of files" style="display: inline-block; margin-left: 30vw;">
+                    <app-upload-task [file]="file"></app-upload-task>
+                </div>
+                
+                
+                
+                </div>
 
-
-     
-     <p>Drag and Drop a File</p>
-     <input type="file" placeholder="choosefile" (change)="onDrop($event.target.files)">
-</div>
-
-
-
-
-<div *ngFor="let file of files" style="display: inline-block; margin-left: 30vw;">
-    <app-upload-task [file]="file"></app-upload-task>
-</div>
-
-
+        </div>
+    </div>
+ </body>
 

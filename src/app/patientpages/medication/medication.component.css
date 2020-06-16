@@ -1,0 +1,61 @@
+.card{
+    width: 100%;
+    display: flex;
+    align-self:center;
+    margin-left: 20%;
+    margin-top: 5%;
+    height: 40vh;
+    margin-bottom: 5%;
+}
+.card-title{
+    align-self: flex-start;
+    width: 500px; 
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+    color: white;
+}
+
+.card-content {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 60%;
+    align-self: center;
+    display: flex;
+    height: 40vh;
+    align-items: center;
+    background-image: url("../../../assets/images/allegback.jpg");
+    background-position:center;
+  	background-repeat:no-repeat;
+  	background-size:cover;
+    color: white;
+  }
+  .input-field{
+      width: 100px;
+      align-self: center;
+      display: flex;
+  }
+  .btn{
+      margin-left: 15%;
+      margin-top: 4%;
+      width: 20%;
+      height: 15%;
+      color: black;
+  }
+  .collection-item{
+      width: 80%;
+      height: 100%;
+      border: 2px solid black;
+      margin-top: 25px;
+  }
+  table, th, td {
+    border: 1px solid black;
+  }
+  .null{
+      font-size: xx-large;
+      display: flex;
+      align-self: center;
+      opacity: 0.5;
+      margin-top: 10%;
+      margin-left: 30%;
+  }

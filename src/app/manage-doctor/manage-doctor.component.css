@@ -19,14 +19,11 @@ form.normal-form{
 
 @import "~bootstrap/dist/css/bootstrap.css";
 
-.nav{
-    width: 100%;
-    color: blueviolet;
+*{
+    margin: 0;
+    padding: 0;
 }
 
-.navbar-brand mb-0 h1{
-    color: crimson;
-}
 
 .mat-toolbar.mat-primary {
     background: grey;
@@ -39,15 +36,14 @@ form.normal-form{
     height: 100vh;
     background-image: url('/assets/images/wallpaper 2.jpg');
     background-size: cover;
-    /* filter: opacity(0.7); */
 }
 
-h1{
+/* h1{
     font-family: 'Times New Roman', Times, serif;
-}
+} */
 
-input[type=text] {
-    color: red;
+/* input {
+    color:black;
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -55,9 +51,96 @@ input[type=text] {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-  }
+  } */
   
 
    /* input[type=text]{
        color: red;
    } */
+
+.details{
+    max-width: 800px;
+    margin: auto auto;
+    position: relative;
+    box-shadow: 0 10px 30px 0px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+
+.title{
+    text-transform: capitalize;
+    text-align: center;
+    letter-spacing: 3px;
+    font-size: 3em;
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 48px;
+    padding-bottom: 20px;
+    color: #5543ca;
+    background: linear-gradient(to bottom, #333, #333 50%, #eee 75%, #333 75%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* -webkit-background-clip: text; */
+
+}
+
+.doc-form .form-field{
+    position: relative;
+    margin: 32px 0;
+}
+/* input{
+    padding:2px 2px;
+} */
+.doc-form .input-text{
+    display: block;
+    width: 100%;
+    height: 23px;
+    border-width: 0 0 1px 0;
+    border-color: grey;
+    font-size: 15px;
+    color: black;
+    line-height: 26px;
+    font-weight: 400;
+    background: transparent;
+}
+
+.doc-form .input-text:focus +label,
+.doc-form .input-text.not-empty + .label{
+    transform: translateY(-15px);
+}
+
+/* .doc-form .input-text:focus{
+    outline: none;
+} */
+
+.doc-form .label{
+    position: absolute;
+    left: 20px;
+    bottom: 11px;
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 400;
+    color: black;
+    cursor: text;
+    text-transform: capitalize;
+    transition: transform 0.2s ease-in-out;
+
+}
+
+.submit-btn{
+    display: inline-block;
+    /* background-image: linear-gradient(125deg, #a72879,#064497); */
+    background-image: linear-gradient(125deg,#595e64, #79bbc0, #595e64);
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 16px;
+    padding: 8px 16px;
+    border: none;
+    width: 200px;
+    cursor: pointer;
+}
+
+.label-select{
+    background: transparent; 
+    color: black;
+    border-color: transparent;
+}

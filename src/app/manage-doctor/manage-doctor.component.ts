@@ -17,6 +17,7 @@ export class ManageDoctorComponent implements OnInit {
   city:string;
   gender:string;
   speciality:string;
+  message:string;
 
   constructor(public DoctorService: ManageDoctorService ) { }
 
@@ -60,6 +61,8 @@ CreateRecord(){
     this.age=undefined;
     this.city="";
     this.gender="";
+    console.log(res);
+        this.message = "New doctor added";
   }).catch(error=>{
     console.log(error);
   });

@@ -2,29 +2,30 @@
 
 <div class="reg_container" style="background-image: url(assets/images/signupimage.jpg);">
    
-    <div class="navigation_bar">  
-      <ul>
+  <div class="navigation_bar">  
+    <ul>
 
-        <li><a href="">MDCARE</a></li>
-  
-        <div class="navigation_bar-right">
-          <li><a routerLink="/login" routerLinkActive="active">login</a></li>
-          
-        </div>
-      </ul>
-    </div>
-    
+      <li><a href="">eCare</a></li>
+
+      <div class="navigation_bar-right">
+        <li><a routerLink="/login" routerLinkActive="active">login</a></li>
         
-        <div class="formcontainer">
-            <h2>Join with us</h2>
-            <div class="col-12">
-              <div class="row" *ngIf="authError">
-                <div class="col-12 alert alert-danger">
-                  {{ authError?.message }}
-                </div>
-              </div> 
-              <form action="" #userRegForm="ngForm" (ngSubmit)="createUser(userRegForm)" >
-                <div class="">
+      </div>
+    </ul>
+  </div>
+  
+      
+      <div class="formcontainer">
+          <h2>Join with us</h2>
+          <div class="col-12">
+            <div class="row" *ngIf="authError">
+              <div class="col-12 alert alert-danger">
+                {{ authError?.message }}
+              </div>
+            </div> 
+            <form action="" #userRegForm="ngForm" (ngSubmit)="createUser(userRegForm)" >
+              <div class="">
+                <div >
                   <div >
                     <div class="row">
                       <label for="firstname" >Firstname:</label>
@@ -67,122 +68,123 @@
                   </div>
                   <input type="submit" name="submit" value="submit" id="" [disabled]="userRegForm.form.invalid"  >
                   
-                  </div>
-              </form>
-    </div>
 
-      
+                </div>
+            </form>
+  </div>
+
+    
 
 </div>
 
 <div class="grid_id_1">
-    <h1 class="topic" >What you get with Medicare</h1>
-    <div class="grid_container">
-          
-      <div class="grid">
-        <img src="assets/images/1.jpg" alt="" height="100" width="150">
-        <br>
-        <p>Visit a doctor, counselor, psychiatrist or dermatologist by mobile app, video or phone.</p>
-       </div>
-      <div class="grid">
-        <img src="assets/images/2.jpg" alt="" height="100" width="150">
-        <p>Visits are convenient, private and secure. Protection of your personal information is our priority. </p>
-      </div>
-      <div class="grid">
-        <img src="assets/images/3.jpg" alt=""height="100" width="150">
-        <br>
-        <p>Avoid the inconvenience and high costs of going to the emergency room or urgent care center.</p>
-      </div>
-      <div class="grid">
-        <img src="assets/images/4.jpg" alt=""height="100" width="150">
-        <br>
-        <p>  Prescriptions can be sent directly to your local pharmacy if medically necessary.</p>
-      </div>
-    </div>
-    </div>
-
-    
-    <div class="services">
-      <div class="row">
-        <div class="column">
-          <h2>Urgent care visits </h2>
-          <p>Common cold</p>
-          <p>Allergies</p>
-          <p>Constipation</p>
-          <p>Cough</p>
-          <p>Diarrhea</p>
-          <p>Ear Problems</p>
-          <p>Fever</p>
-          <p>Headache</p>
-          <p>Nausea</p>
-          <p>And more...</p>
-          
-  
-          <button class="button3">get started</button>
-        </div>
-        <div class="column">
-          <h2>Counseling</h2>
-          <p> Addictions </p>
-          <p>Bipolar disorders</p>
-          <p>Depression</p>
-          <p>Eating disorders</p>
-          <p>LGBTQ support</p>
-          <p>Grief and loss</p>
-          <p>Men’s issues</p>
-          <p>Panic disorders</p>
-          <p>Stress</p>
-          <p>And more...</p>
-  
-          
-  
-          <button  class="button3">get started</button>
-        </div>
-        <div class="column" >
-          <h2>Psychiatry</h2>
-          <p>Addictions</p>
-          <p>Bipolar disorders</p> 
-          <p>Depression</p> 
-          <p>Eating disorders</p> 
-          <p>LGBTQ support</p> 
-          <p>Grief and loss</p> 
-          <p>Men’s issues</p> 
-          <p>Panic disorders</p>
-          <p>Stress</p>
-          <p>And more...</p>
-  
-          <button class="button3">get started</button>
+  <h1 class="topic" >What you get with Medicare</h1>
+  <div class="grid_container">
         
-      
-        </div>
-        <div class="column" >
-          <h2>Dermatology</h2>
-          <p>Acne</p>
-          <p>Rashes</p>
-          <p>Suspicious spots</p>
-          <p>Moles</p>
-          <p>Warts</p>
-          <p>Psoriasis</p>
-          <p>Eczema</p>
-          <p>Insect bites</p>
-          <p>Alopecia</p>
-          <p>And more...</p>
-  
-  
-  
-  
-          <button class="button3">get started</button>
-        
-      
-        </div>
-      </div>
+    <div class="grid">
+      <img src="assets/images/1.jpg" alt="" height="100" width="150">
+      <br>
+      <p>Visit a doctor, counselor, psychiatrist or dermatologist by mobile app, video or phone.</p>
+     </div>
+    <div class="grid">
+      <img src="assets/images/2.jpg" alt="" height="100" width="150">
+      <p>Visits are convenient, private and secure. Protection of your personal information is our priority. </p>
+    </div>
+    <div class="grid">
+      <img src="assets/images/3.jpg" alt=""height="100" width="150">
+      <br>
+      <p>Avoid the inconvenience and high costs of going to the emergency room or urgent care center.</p>
+    </div>
+    <div class="grid">
+      <img src="assets/images/4.jpg" alt=""height="100" width="150">
+      <br>
+      <p>  Prescriptions can be sent directly to your local pharmacy if medically necessary.</p>
+    </div>
   </div>
-    <div class="registerfooter">
-      <h2>MDLIVE</h2>
-      <P> <small>download_app_android
-        MDLIVE
-        Facebook Twitter LinkedIn YouTube Google+ Instagram
-        Copyright © 2020 MDLIVE Inc. All Rights Reserved. Copyright © 2020 MDLIVE Medical Group, PA. All Rights Reserved.
-        MDLIVE Medical Group, PA provides the clinical services for MDLIVE. MDLIVE Medical Group, PA is an independent entity. For more information, please click here.
-        ® MDLIVE is a registered trademark of MDLIVE Inc., All Rights Reserved. </small> </P>
+  </div>
 
+  
+  <div class="services">
+    <div class="row">
+      <div class="column">
+        <h2>Urgent care visits </h2>
+        <p>Common cold</p>
+        <p>Allergies</p>
+        <p>Constipation</p>
+        <p>Cough</p>
+        <p>Diarrhea</p>
+        <p>Ear Problems</p>
+        <p>Fever</p>
+        <p>Headache</p>
+        <p>Nausea</p>
+        <p>And more...</p>
+        
+
+        <button class="button3">get started</button>
+      </div>
+      <div class="column">
+        <h2>Counseling</h2>
+        <p> Addictions </p>
+        <p>Bipolar disorders</p>
+        <p>Depression</p>
+        <p>Eating disorders</p>
+        <p>LGBTQ support</p>
+        <p>Grief and loss</p>
+        <p>Men’s issues</p>
+        <p>Panic disorders</p>
+        <p>Stress</p>
+        <p>And more...</p>
+
+        
+
+        <button  class="button3">get started</button>
+      </div>
+      <div class="column" >
+        <h2>Psychiatry</h2>
+        <p>Addictions</p>
+        <p>Bipolar disorders</p> 
+        <p>Depression</p> 
+        <p>Eating disorders</p> 
+        <p>LGBTQ support</p> 
+        <p>Grief and loss</p> 
+        <p>Men’s issues</p> 
+        <p>Panic disorders</p>
+        <p>Stress</p>
+        <p>And more...</p>
+
+        <button class="button3">get started</button>
+      
+    
+      </div>
+      <div class="column" >
+        <h2>Dermatology</h2>
+        <p>Acne</p>
+        <p>Rashes</p>
+        <p>Suspicious spots</p>
+        <p>Moles</p>
+        <p>Warts</p>
+        <p>Psoriasis</p>
+        <p>Eczema</p>
+        <p>Insect bites</p>
+        <p>Alopecia</p>
+        <p>And more...</p>
+
+
+
+
+        <button class="button3">get started</button>
+      
+    
+      </div>
     </div>
+</div>
+  <div class="registerfooter">
+    <h2>MDLIVE</h2>
+    <P> <small>download_app_android
+      MDLIVE
+      Facebook Twitter LinkedIn YouTube Google+ Instagram
+      Copyright © 2020 MDLIVE Inc. All Rights Reserved. Copyright © 2020 MDLIVE Medical Group, PA. All Rights Reserved.
+      MDLIVE Medical Group, PA provides the clinical services for MDLIVE. MDLIVE Medical Group, PA is an independent entity. For more information, please click here.
+      ® MDLIVE is a registered trademark of MDLIVE Inc., All Rights Reserved. </small> </P>
+
+  </div>
