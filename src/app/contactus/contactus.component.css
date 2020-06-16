@@ -74,13 +74,14 @@
     border-radius: 4px;
     cursor: pointer;
     float: right;
+    margin-right: 10%;
   }
   
   input[type=submit]:hover {
     background-color: #45a049;
   }
   
-  .container {
+  .container_form {
     border-radius: 5px;
     background-color: #f2f2f2;
     padding: 20px;
@@ -88,7 +89,7 @@
   
   .col-25 {
     float: left;
-    width: 25%;
+    width: 16%;
     margin-top: 6px;
   }
   

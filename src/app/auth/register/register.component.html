@@ -15,7 +15,7 @@
   </div>
   
       
-      <div class="formcontainer">
+    <div class="formcontainer">
           <h2>Join with us</h2>
           <div class="col-12">
             <div class="row" *ngIf="authError">
@@ -24,14 +24,14 @@
               </div>
             </div> 
             <form action="" #userRegForm="ngForm" (ngSubmit)="createUser(userRegForm)" >
-              <div class="">
-                <div >
+              
+               
                   <div >
-                    <div class="row">
+                    <div class="">
                       <label for="firstname" >Firstname:</label>
                       <input ngModel #firstname="ngModel" name="firstName" type="text" class="form-control" id="firstName" required >
                     </div>
-                      <div class="row">
+                      <div class="">
                         <label for="secondname">Secondname:</label>
                       <input ngModel #secondname="ngModel" name="secondName" type="text" class="form-control" id="secondName" value=""  required>
                       
@@ -69,7 +69,7 @@
                   <input type="submit" name="submit" value="submit" id="" [disabled]="userRegForm.form.invalid"  >
                   
 
-                </div>
+                
             </form>
   </div>
 
