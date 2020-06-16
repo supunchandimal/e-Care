@@ -1,6 +1,8 @@
 import { AccountService } from './patientpages/services/account.service';
 import { ServiceService } from './patientpages/services/service.service';
 import { DefaultDocModule } from './doctor/layouts/default-doc/default-doc.module';
+import { DefaultAdminModule } from './admin02/layouts/default-admin/default-admin.module';
+
 import { AuthService } from './auth/auth.service';
 import { environment } from './../environments/environment';
 import { BrowserModule } from '@angular/platform-browser';
@@ -34,6 +36,7 @@ import {
 } from "@angular/fire/storage";
 import { ImageCropperModule,} from 'ngx-image-cropper';
 
+
 import { WhatwetreatComponent } from './whatwetreat/whatwetreat.component';
 import { ForgotpassComponent } from './forgotpass/forgotpass.component';
 import { OurproviersComponent } from './ourproviers/ourproviers.component';
@@ -54,10 +57,14 @@ import { FamilyhistoryComponent } from './patientpages/familyhistory/familyhisto
 import { AdminComponent } from './admin/admin.component';
 import { MatSliderModule } from '@angular/material/slider';
 import { MaterialModule } from './material/material.module';
+import {MatFormFieldModule} from '@angular/material/form-field';
+
 import { ManageDoctorService } from 'src/services/shared/manage-doctor.service';
 import { MyaccountComponent } from './patientpages/myaccount/myaccount.component';
 import { PpicComponent } from './patientpages/myaccount/ppic/ppic.component';
 import { UploadererppicComponent } from './patientpages/myaccount/uploadererppic/uploadererppic.component';
+import { AdminAnnouncementComponent } from './admin-announcement/admin-announcement.component';
+
 
 @NgModule({
   declarations: [
@@ -92,8 +99,9 @@ import { UploadererppicComponent } from './patientpages/myaccount/uploadererppic
     FamilyhistoryComponent,
     MyaccountComponent,
     PpicComponent,
-    UploadererppicComponent
+    UploadererppicComponent,
 
+    AdminAnnouncementComponent,
   ],
   imports: [
     BrowserModule,
@@ -108,8 +116,11 @@ import { UploadererppicComponent } from './patientpages/myaccount/uploadererppic
     MatButtonModule,
     MatSliderModule,
     MaterialModule,
+    MatFormFieldModule,
+    MatButtonModule,
     ReactiveFormsModule,
-    ImageCropperModule
+    ImageCropperModule,
+    DefaultAdminModule,
   ],
   providers: [
     AuthService,

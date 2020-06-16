@@ -9,7 +9,7 @@ import { UpdateProfileService } from './../../services/update-profile.service';
 })
 export class UpdateAccountDocComponent implements OnInit {
 
-  doctor : string;
+  doctor :any ;
   doctorFirstName : string;
   doctorLastName : string;
   doctorEmail : string;
@@ -17,8 +17,22 @@ export class UpdateAccountDocComponent implements OnInit {
 
   constructor( public updateprofileservice : UpdateProfileService ) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(){
+    this.updateprofileservice.getAllDoctor().subscribe( data => {
+      this.doctor = data.map( e =>{
+        return{
+          id : e.payload.doc.id,
+          isedit :false,
+          doctorFirstName : e.payload.doc.data()['firstName'],
+          doctorLastName : e.payload.doc.data()['lastName'],
+          doctorEmail : e.payload.doc.data()['email'],
+        };
+      })
+        console.log(this.doctor);
+      })
+      
+}
+
 
   createDoctor(){
     let Record = {};
@@ -37,6 +51,20 @@ export class UpdateAccountDocComponent implements OnInit {
       });
 
   }
+
+  // EditDoctor(Record){
+  // }
+
+
+  // UpdateDoctor(recorddata){
+  //   let record = {};
+  //     record ['firstName'] = recorddata.doctorFirstName;
+  //     record ['lastName'] = recorddata.doctorLastName;
+  //     record ['email'] = recorddata.doctorEmail;
+  //   this.updateprofileservice.updateDoctor(recorddata.id, record);
+  //   recorddata.isedit = false;
+  // }
+  
 
   
 }
