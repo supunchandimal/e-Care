@@ -40,6 +40,7 @@
       margin-top: 4%;
       width: 20%;
       height: 15%;
+      color: black;
   }
   .collection-item{
       width: 80%;
@@ -49,4 +50,12 @@
   }
   table, th, td {
     border: 1px solid black;
+  }
+  .null{
+      font-size: xx-large;
+      display: flex;
+      align-self: center;
+      opacity: 0.5;
+      margin-top: 10%;
+      margin-left: 30%;
   }

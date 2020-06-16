@@ -13,7 +13,9 @@ import {MatInputModule} from '@angular/material/input';
 import { AppointmentDocComponent } from './../../modules/appointment-doc/appointment-doc.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { UpdateProfileService } from './../../services/update-profile.service';
-
+import {MatDividerModule} from '@angular/material/divider';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatCardModule } from '@angular/material/card';
 
 
 @NgModule({
@@ -33,6 +35,9 @@ import { UpdateProfileService } from './../../services/update-profile.service';
     MatButtonModule,
     MatProgressSpinnerModule,
     FormsModule,
+    MatDividerModule,
+    MatCardModule,
+    FlexLayoutModule
 
     
   ],
