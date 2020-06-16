@@ -51,6 +51,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MaterialModule } from './material/material.module';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
+import {MatRadioModule} from '@angular/material/radio';
 import { ManageDoctorService } from 'src/services/shared/manage-doctor.service';
 import { AdminAnnouncementComponent } from './admin-announcement/admin-announcement.component';
 
@@ -98,6 +99,7 @@ import { AdminAnnouncementComponent } from './admin-announcement/admin-announcem
     FormsModule, BrowserAnimationsModule,
     DefaultDocModule,
     MatButtonModule,
+    MatRadioModule,
     MatSliderModule,
     MaterialModule,
     MatFormFieldModule,
