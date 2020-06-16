@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./content-doc.component.css']
 })
 export class ContentDocComponent implements OnInit {
-
+  today: number = Date.now();
   constructor() { }
 
   ngOnInit(): void {
