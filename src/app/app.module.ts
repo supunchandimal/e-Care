@@ -1,3 +1,4 @@
+import { AccountService } from './patientpages/services/account.service';
 import { ServiceService } from './patientpages/services/service.service';
 import { DefaultDocModule } from './doctor/layouts/default-doc/default-doc.module';
 import { DefaultAdminModule } from './admin02/layouts/default-admin/default-admin.module';
@@ -27,6 +28,13 @@ import { ConsultationhistoryComponent } from './patientpages/consultationhistory
 import { AllergierecordsComponent } from './patientpages/allergierecords/allergierecords.component';
 import { MedicationComponent } from './patientpages/medication/medication.component';
 import { UploadrecordsComponent } from './patientpages/uploadrecords/uploadrecords.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatButtonModule} from '@angular/material/button';
+import {
+  AngularFireStorageReference,
+  AngularFireUploadTask,
+} from "@angular/fire/storage";
+import { ImageCropperModule,} from 'ngx-image-cropper';
 
 
 import { WhatwetreatComponent } from './whatwetreat/whatwetreat.component';
@@ -50,9 +58,16 @@ import { AdminComponent } from './admin/admin.component';
 import { MatSliderModule } from '@angular/material/slider';
 import { MaterialModule } from './material/material.module';
 import {MatFormFieldModule} from '@angular/material/form-field';
+<<<<<<< HEAD
 import {MatButtonModule} from '@angular/material/button';
 import {MatRadioModule} from '@angular/material/radio';
+=======
+
+>>>>>>> d02e8eb94cae905a93ae1f2a646b661effd6e4bf
 import { ManageDoctorService } from 'src/services/shared/manage-doctor.service';
+import { MyaccountComponent } from './patientpages/myaccount/myaccount.component';
+import { PpicComponent } from './patientpages/myaccount/ppic/ppic.component';
+import { UploadererppicComponent } from './patientpages/myaccount/uploadererppic/uploadererppic.component';
 import { AdminAnnouncementComponent } from './admin-announcement/admin-announcement.component';
 
 
@@ -80,13 +95,17 @@ import { AdminAnnouncementComponent } from './admin-announcement/admin-announcem
     OurproviersComponent,
     ManageDoctorComponent,
     ManagePatientComponent,
-
+    
     AdminFeedbacksComponent,
     DropzoneDirective,
     UploaderComponent,
     UploadTaskComponent,
     BehaviorhistoryComponent,
     FamilyhistoryComponent,
+    MyaccountComponent,
+    PpicComponent,
+    UploadererppicComponent,
+
     AdminAnnouncementComponent,
   ],
   imports: [
@@ -98,6 +117,7 @@ import { AdminAnnouncementComponent } from './admin-announcement/admin-announcem
     AngularFireStorageModule, // storage
     FormsModule, BrowserAnimationsModule,
     DefaultDocModule,
+    MatProgressSpinnerModule,
     MatButtonModule,
     MatRadioModule,
     MatSliderModule,
@@ -105,12 +125,15 @@ import { AdminAnnouncementComponent } from './admin-announcement/admin-announcem
     MatFormFieldModule,
     MatButtonModule,
     ReactiveFormsModule,
+    ImageCropperModule,
     DefaultAdminModule,
   ],
   providers: [
     AuthService,
     ServiceService ,
-    ManageDoctorService
+    ManageDoctorService,
+    AccountService
+    
   ],
   bootstrap: [AppComponent]
 })

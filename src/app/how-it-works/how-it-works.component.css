@@ -45,6 +45,7 @@
 .howitworks_container2{
     display:block;
     height: 400px;
+    width: 100%;
     
 }
 .howitworks_container2 h1{
@@ -59,9 +60,10 @@
 
 
 .con2_sub2 {
-    text-align: center;
-  
-    margin-top: 20px;
+    text-align: center; 
+    font-size: 20px;    
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 

@@ -8,7 +8,8 @@
 }
 .body{
     display: flex; 
-    overflow-x: hidden;   
+    
+    margin-top: 2px;  
 }
 .naviBar{
   width: 22.5%;
@@ -23,9 +24,9 @@
   margin-top: -10px;
 }
 .bodyrest{
-  width: 78%;
+  width: 85%;
   height: 100%;
-  margin-left: 22%;
+  margin-left: 20%;
   display: flex;   
 }
 .submenu{
@@ -35,7 +36,7 @@
   color: #888, #555;
   text-shadow: 0 -1px 0 #000;	
   border-bottom: 1px solid black;
-  opacity: 0.5;
+  opacity: 1;
 }
 .photoholder{
   margin-bottom: 70px;
@@ -56,6 +57,7 @@
   align-self: center;
   opacity: 1;
   width: 100%;
+  padding-top: 20px;
 }
 .btn-holder{
   justify-content:flex-end;
@@ -102,10 +104,20 @@
   font-size: medium;
   display: flex;
   align-self: flex-end;
-  margin-top: 45%;
+  margin-top: 35%;
   margin-left: 10%;
-  border-radius: 50%;
+  border-radius: 0%;
   box-shadow: 2px black;
+}
+.btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 15%;
+  opacity: 0.9;
+  
 }
 
 .details{
@@ -146,10 +158,11 @@
     font-size: small;
   }
   .formcontrol{
-    width: 10vw;
+    width: 1vw;
     height: 3vh;
     margin-top: 25px;
     margin-left: -92px;
+    border: none;
   }
   
   .btn-group button:not(:last-child) {

@@ -1,6 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../auth.service';
+import { LoginserviceService } from '../loginservice.service';
 
 @Component({
   selector: 'app-login-component',
@@ -10,11 +10,16 @@ import { AuthService } from '../auth.service';
 export class LoginComponentComponent implements OnInit {
 
   authError: any;
-  constructor(private auth: AuthService) { }
+  constructor(private auth: LoginserviceService) { }
 
   ngOnInit(): void {
     this.auth.eventAuthError$.subscribe( data => {
-      this.authError = data;
+
+      if(data){
+        this.authError = "username or password wrong";
+        
+      }
+      
     });
   }
 

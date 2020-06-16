@@ -22,14 +22,14 @@
   </div>
  
  <div *ngIf='allegs?.length >0 ;else noAllegs'>
-    <ul *ngFor ="let alleg of allegs" class="collection">
+    <ul >
       <table style="width:80%;margin-left: 5%;">
         <tr>
           <th>Allergie</th>
           <th>Description</th>
           <th>Source</th>
         </tr>
-        <tr>
+        <tr *ngFor ="let alleg of allegs" class="collection">
           <td>{{alleg.name}}</td>
           <td>{{alleg.reaction}}</td>
           <td>{{alleg.source}}</td>
@@ -37,7 +37,8 @@
       </table>
     </ul>
  </div>
+ <mat-spinner  *ngIf="loader"></mat-spinner >
  <ng-template #noAllegs>
      <hr>
-     <h5>You have no allergies</h5>
+     <h5 class="null">You have no allergies</h5>
  </ng-template>
