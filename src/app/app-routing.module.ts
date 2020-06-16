@@ -1,10 +1,9 @@
+import { MyaccountComponent } from './patientpages/myaccount/myaccount.component';
 import { ConsultationhistoryComponent } from './patientpages/consultationhistory/consultationhistory.component';
 import { MyprovidersComponent } from './patientpages/myproviders/myproviders.component';
 import { HealthrecordsComponent } from './patientpages/healthrecords/healthrecords.component';
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
-
 import { FirstPageComponent } from './first-page/first-page.component';
 import { pathToFileURL } from 'url';
 import { LoginComponentComponent } from './auth/login-component/login-component.component';
@@ -14,8 +13,6 @@ import { HowItWorksComponent } from './how-it-works/how-it-works.component';
 import { AdminComponent } from './admin/admin.component';
 import { PatientHomeComponent } from './patient-home-navibar/patient-home.component';
 import { PatientDefaultPageComponent } from './patient-default-page/patient-default-page.component';
-
-
 import { HealthprofileComponent } from './patientpages/healthprofile/healthprofile.component';
 import { AppoinmentsComponent } from './patientpages/appoinments/appoinments.component';
 import { WhatwetreatComponent } from './whatwetreat/whatwetreat.component';
@@ -69,7 +66,7 @@ const routes: Routes = [
   {path:'whatwetreat', component:WhatwetreatComponent},
   {path:'forgotpass',component:ForgotpassComponent},
   {path:'ourproviders',component:OurproviersComponent},
-  
+  {path:'myaccount',component:MyaccountComponent},
   {path:'adminfeedbacks', component:AdminFeedbacksComponent},
   {path:'patientupload',component:UploaderComponent},
 

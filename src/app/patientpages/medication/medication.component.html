@@ -1,1 +1,38 @@
-<p>medication works!</p>
+<div class="card">
+    <div class="card-content">
+      <span class="card-title">Are you taking any medications currently?</span>
+      <form (ngSubmit)="onSubmit()" class="col s6">
+        <div class="row" style="width: 500px;">
+          <div class="input-field">
+            <label>Medication</label>
+            <input type="text" placeholder="Medication" [(ngModel)]="item.name" name="name" style="margin-left: 10px;">
+          </div>
+          <div class="input-field">
+            <label style="margin-top: 25px;">Frequency</label>
+            <input type="text" placeholder="Frequency(eg:- once a day)" [(ngModel)]="item.description" name="description" style="margin-left: 6px;margin-top: 25px;">
+          </div>
+          <input type="submit" value="Submit" class="btn">
+        </div>
+      </form>
+    </div>
+  </div>
+ 
+ <div *ngIf='meds?.length >0 ;else noMeds'>
+    <ul class="collection">
+      <table style="width:80%;margin-left: 5%;" class="striped" >
+        <tr>
+          <th>Medication</th>
+          <th>Description</th>
+        </tr>
+        <tr *ngFor ="let med of meds" class="collection">
+          <td>{{med.name}}</td>
+          <td>{{med.description}}</td>
+        </tr>
+      </table>
+    </ul>
+ </div>
+ <mat-spinner  *ngIf="loader"></mat-spinner >
+ <ng-template #noMeds>
+     <hr>
+     <h5 class="null">There are no records</h5>
+ </ng-template>

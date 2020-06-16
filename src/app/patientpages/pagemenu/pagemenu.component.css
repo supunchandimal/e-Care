@@ -7,7 +7,7 @@
     flex-direction: column;
     display: flex;
     position: relative;
-    background-image: url('../../../assets/images/123.png');
+    background-image: url('../../../assets/images/111.jpg');
     background-position:center;
   	background-repeat:no-repeat;
   	background-size:cover;
@@ -26,8 +26,9 @@
     width: 1vw;
     height: 1vh;
     align-items: left;
-    margin-right: 10%;
+    margin-right: 4%;
     margin-bottom: 20px;
+    border-radius: 50%;
   }
   
   .dropdown-content {

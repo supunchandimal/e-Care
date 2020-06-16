@@ -1,0 +1,11 @@
+<div class="uploadcon">
+    <div class="uploadcon2">  
+      <div *ngIf="snapshot | async as snap">
+      
+        {{ snap.bytesTransferred }} of {{ snap.totalBytes }} 
+      
+        <div *ngIf="downloadURL as url">
+          <p>PROFILE UPDATED</p>
+          <img [src]="url" height=10%; width=10%><br>
+       </div>
+    </div>

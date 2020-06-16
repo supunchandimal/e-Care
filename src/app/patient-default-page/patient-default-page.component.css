@@ -12,16 +12,45 @@
     background-color: #888, #555;
 }
 .margin{
-    width: 78%;
+    width: 80%;
     height: 100%;
-    margin-left: 0%;
+    margin-left: -2%;
     display: flex;
-    background-image: url("../../assets/images/123.png");
+    background-image: url("../../assets/images/patienth.jpg");
     background-position:center;
   	background-repeat:no-repeat;
     background-size:cover;  
     overflow-x: hidden;
 }
+.change{
+  animation: chbg 15s infinite alternate;
+  display: flex; 
+  align-self: flex-end;
+  height: 30%;
+  width: 60%;
+  background-color: black;
+  margin-left: -13%;
+}
+@keyframes chbg {
+  0% {
+    background-image:url("../../assets/images/covid19.png" );
+  background-size:cover
+  }
+  20% {
+    background-image:url("../../assets/images/covid.jpg" );
+  background-size:cover
+  }
+  40% {
+    background-image:url("../../assets/images/backgroundimage_howitworks.jpg" );
+  background-size:cover
+  }
+  100% {
+    background:url("../../assets/images/contactuspic.jpg" );
+  background-size:cover
+  }
+}
+
+
 
 .btn {
     align-items: flex-end;
@@ -34,7 +63,7 @@
     border: none;
     cursor: pointer;
     border-radius: 5px;
-    margin-left: 600%;
+    margin-left: 720%;
     margin-top: 5%;
   }
   .addr{
