@@ -1,0 +1,21 @@
+
+.form-control{
+    height: 120px;
+    width: 1000px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+
+section {
+    display: table;
+    margin: 10px;
+    margin-bottom: 50px;
+  }
+
+  .mat-radio-button ~ .mat-radio-button {
+    margin-left: 20px;
+  }
+
+ 
+  
