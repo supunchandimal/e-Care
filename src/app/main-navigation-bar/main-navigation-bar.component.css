@@ -1,7 +1,7 @@
 
 /* navigation bar starts */
 .navigation_bar ul{
-    
+    display: block;
     position: -webkit-sticky;
     list-style-type:none;
     margin: 0;
@@ -10,6 +10,7 @@
     background: rgb(0, 0, 0); /* Fallback color */
     background: rgba(0, 0, 0, 0.5); 
     height: 50px;
+    width: 100%;
 }
 
 
@@ -48,13 +49,13 @@
     float: right;
 }
 
-.dropdown{
+.dropdown_nav{
     float: left;
     overflow: hidden;
 
 }
 
-.dropdown .dropbtn{
+.dropdown_nav .dropbtn{
     
     border: none;
     outline: none;
@@ -87,7 +88,7 @@
 
 }
 
-.dropdown:hover .dropdown-content{
+.dropdown_nav:hover .dropdown-content{
     display: block;
 }
 /* navigation bar ends */
