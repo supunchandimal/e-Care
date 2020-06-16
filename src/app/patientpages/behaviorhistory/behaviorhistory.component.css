@@ -16,6 +16,12 @@ section {
   .mat-radio-button ~ .mat-radio-button {
     margin-left: 20px;
   }
-
- 
+.dive{
+    margin-bottom: 40px;
+}
+.radio-btn{
+    margin-right: 40px;
+}
+  
+  
   
