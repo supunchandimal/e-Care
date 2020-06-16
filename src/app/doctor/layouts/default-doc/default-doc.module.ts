@@ -16,6 +16,9 @@ import { UpdateProfileService } from './../../services/update-profile.service';
 import {MatDividerModule} from '@angular/material/divider';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatCardModule } from '@angular/material/card';
+import {MatTableModule} from '@angular/material/table';
+import {MatSortModule} from '@angular/material/sort';
+import {MatSelectModule} from '@angular/material/select';
 
 
 @NgModule({
@@ -37,8 +40,10 @@ import { MatCardModule } from '@angular/material/card';
     FormsModule,
     MatDividerModule,
     MatCardModule,
-    FlexLayoutModule
-
+    FlexLayoutModule,
+    MatTableModule,
+    MatSortModule,
+    MatSelectModule
     
   ],
   providers: [UpdateProfileService]
