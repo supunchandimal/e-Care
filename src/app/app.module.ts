@@ -30,6 +30,7 @@ import { MedicationComponent } from './patientpages/medication/medication.compon
 import { UploadrecordsComponent } from './patientpages/uploadrecords/uploadrecords.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatButtonModule} from '@angular/material/button';
+import {MatRadioModule} from '@angular/material/radio';
 import {
   AngularFireStorageReference,
   AngularFireUploadTask,
@@ -58,12 +59,6 @@ import { AdminComponent } from './admin/admin.component';
 import { MatSliderModule } from '@angular/material/slider';
 import { MaterialModule } from './material/material.module';
 import {MatFormFieldModule} from '@angular/material/form-field';
-<<<<<<< HEAD
-import {MatButtonModule} from '@angular/material/button';
-import {MatRadioModule} from '@angular/material/radio';
-=======
-
->>>>>>> d02e8eb94cae905a93ae1f2a646b661effd6e4bf
 import { ManageDoctorService } from 'src/services/shared/manage-doctor.service';
 import { MyaccountComponent } from './patientpages/myaccount/myaccount.component';
 import { PpicComponent } from './patientpages/myaccount/ppic/ppic.component';
