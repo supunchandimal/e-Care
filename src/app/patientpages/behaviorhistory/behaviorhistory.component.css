@@ -24,6 +24,12 @@ section {
 .radio-btn{
     margin-right: 40px;
 }
+
+.mat-form-field{
+  font-size: medium;
+  border-radius: 10px;
+  margin-right: 50px;
   
+}
   
   

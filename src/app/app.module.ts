@@ -53,7 +53,7 @@ import { UploadTaskComponent } from './patientpages/patientfiles/upload-task/upl
 
 import { BehaviorhistoryComponent } from './patientpages/behaviorhistory/behaviorhistory.component';
 import { FamilyhistoryComponent } from './patientpages/familyhistory/familyhistory.component';
-
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 import { AdminComponent } from './admin/admin.component';
 import { MatSliderModule } from '@angular/material/slider';
@@ -64,7 +64,7 @@ import { MyaccountComponent } from './patientpages/myaccount/myaccount.component
 import { PpicComponent } from './patientpages/myaccount/ppic/ppic.component';
 import { UploadererppicComponent } from './patientpages/myaccount/uploadererppic/uploadererppic.component';
 import { AdminAnnouncementComponent } from './admin-announcement/admin-announcement.component';
-
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -122,12 +122,16 @@ import { AdminAnnouncementComponent } from './admin-announcement/admin-announcem
     ReactiveFormsModule,
     ImageCropperModule,
     DefaultAdminModule,
+    MatDatepickerModule,
+    MatNativeDateModule ,
   ],
   providers: [
     AuthService,
     ServiceService ,
     ManageDoctorService,
-    AccountService
+    AccountService,
+    MatDatepickerModule
+
     
   ],
   bootstrap: [AppComponent]

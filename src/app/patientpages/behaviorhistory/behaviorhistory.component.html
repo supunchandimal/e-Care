@@ -49,12 +49,24 @@
 <div class="dive">
   <h2>Has any family member ever been hospitalized for mental health or substance abuse treatment?</h2>
   
-  <mat-radio-group aria-label="Select an option">
+  <mat-radio-group aria-label="Select an option" [(ngModel)]="mentalHealth">
     <mat-radio-button class="radio-btn" value="1">Yes</mat-radio-button>
     <mat-radio-button class="radio-btn" value="2">No</mat-radio-button>
     <mat-radio-button  class="radio-btn" value="3">Unknown</mat-radio-button>
   </mat-radio-group>
-
+</div>
+<div class="div" *ngIf="mentalHealth=='1'">
+  <mat-form-field>
+    <mat-label>Choose a date</mat-label>
+    <input matInput [matDatepicker]="picker">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  
+  <mat-form-field appearance="duration">
+    <mat-label>For How Long?</mat-label>
+    <input matInput placeholder="Type Duration">
+  </mat-form-field>
 </div>
 
 <div class="dive">
