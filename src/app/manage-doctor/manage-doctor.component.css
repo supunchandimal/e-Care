@@ -150,3 +150,32 @@ form.normal-form{
 .ng-invalid{
     border-left:5px sold red
 }
+
+
+#sidebar{
+    position: absolute;
+    display: block;
+    width:20%;
+    height: 100%;
+    /* left: -30%; */
+    background-color: black;
+    filter: opacity(0.7);
+    
+}
+
+#sidebar li{
+    color: white;
+    font-size: 100%;
+    padding: 30px;
+    border-bottom: 1px solid gray;
+    text-align: center;
+}
+
+#sidebar li a{
+    text-decoration: none;
+    color: white;
+}
+
+#sidebar.active{
+    left: 0;
+}
