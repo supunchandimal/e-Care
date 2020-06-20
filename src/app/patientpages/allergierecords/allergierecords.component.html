@@ -4,16 +4,16 @@
       <form (ngSubmit)="onSubmit()" class="col s6">
         <div class="row" style="width: 500px;">
           <div class="input-field">
-            <label>Allergie</label>
-            <input type="text" placeholder="Allergie" [(ngModel)]="item.name" name="name" style="margin-left: 10px;">
+            <label style="margin-right: 10px;">Allergie</label>
+            <input type="text" placeholder="Allergie" [(ngModel)]="item.name" name="name" style="margin-left: 10px;" style="color: black;">
           </div>
           <div class="input-field">
             <label style="margin-top: 25px;">Reaction</label>
-            <input type="text" placeholder="Add Reaction" [(ngModel)]="item.reaction" name="description" style="margin-left: 6px;margin-top: 25px;">
+            <input type="text" placeholder="Add Reaction" [(ngModel)]="item.reaction" name="description" style="margin-left: 6px;margin-top: 25px; color: black;" >
           </div>
           <div class="input-field">
             <label style="margin-top: 25px;">Source</label>
-            <input type="text" placeholder="Add Source" [(ngModel)]="item.source" name="source" style="margin-left: 18px;margin-top: 25px;">
+            <input type="text" placeholder="Add Source" [(ngModel)]="item.source" name="source" style="margin-left: 18px;margin-top: 25px; color: black;">
           </div>
           <input type="submit" value="Submit" class="btn">
         </div>

@@ -30,7 +30,7 @@ export class AuthService {
           this.newUser = user;
           console.log(userCredential);
           userCredential.user.updateProfile({
-              displayName:user.firstName,
+              displayName:user.firstName + user.secondName,
           });
           
           this.insertUserData(userCredential)

@@ -64,6 +64,8 @@ import { MyaccountComponent } from './patientpages/myaccount/myaccount.component
 import { PpicComponent } from './patientpages/myaccount/ppic/ppic.component';
 import { UploadererppicComponent } from './patientpages/myaccount/uploadererppic/uploadererppic.component';
 import { AdminAnnouncementComponent } from './admin-announcement/admin-announcement.component';
+import { PasswordComponent } from './patientpages/myaccount/password/password.component';
+import { PpicService } from './patientpages/services/ppic.service';
 
 
 @NgModule({
@@ -102,6 +104,8 @@ import { AdminAnnouncementComponent } from './admin-announcement/admin-announcem
     UploadererppicComponent,
 
     AdminAnnouncementComponent,
+
+    PasswordComponent,
   ],
   imports: [
     BrowserModule,
@@ -126,7 +130,8 @@ import { AdminAnnouncementComponent } from './admin-announcement/admin-announcem
     AuthService,
     ServiceService ,
     ManageDoctorService,
-    AccountService
+    AccountService,
+    PpicService
     
   ],
   bootstrap: [AppComponent]

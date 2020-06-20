@@ -46,6 +46,9 @@ export class AccountService {
    getAlegs(){
      return this.afsal.collection('Users', ref => ref.where('email', '==', this.currentUser.email));
    }
+   getPp(){
+    return this.afsal.doc(`ppic/${this.currentUser.uid}`);
+  }
 
    addItem(item:User){
     return this.MedCollection.doc(this.currentUser.uid).update(item);

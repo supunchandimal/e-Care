@@ -6,14 +6,23 @@
     width:40% ;
     font-weight: 200;
     height: 20%;
-    border: 2px dashed #f16624;
+    
     border-radius: 5px;
-    background: white;
+    background: black;
     margin-left: 30%;
    
   
   
   }
+  .photoholder{
+    border-radius: 50%;
+    border: 1px solid black;
+    height: 75px;
+    width: 75px;
+    background-color: #bbb;
+    margin-left: -55%;
+    background-size: contain;
+}
 
   .hovering{
     border: 2px solid #f16624;

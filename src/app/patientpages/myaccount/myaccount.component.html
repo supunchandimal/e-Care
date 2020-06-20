@@ -28,49 +28,47 @@
                 <div class="navbar">
                     <div>
                         <div style="margin-top: 30%;">
-                            <h1>ACCOUNT DETAILS</h1>
+                            <h1><button class="bton" (click)= "onClickAD()">ACCOUNT DETAILS</button></h1>
                         </div>
                         <div style="margin-top: 30%;">
-                            <h1>LOGIN & PASSWORD</h1>
+                            <h1><button class="bton"  (click)= "onClickLP()">LOGIN & PASSWORD</button></h1>
                         </div>
                         <div style="margin-top: 30%;">
-                            <h1>BILLING DETAILS</h1>
+                            <h1><button class="bton"  (click)= "onClickBD()">BILLING DETAILS</button></h1>
                         </div>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card" *ngIf = "mark==1">
                     <div class="container">
                         <div class="ppic">
-                            <div class="photoholder">
-                                
-                            </div>
-                            <div style="margin-left: 3%;width: 9.5%;">
+                           
+                            <div style="margin-left: 0%;width: 100%;background-color: black;height: 99%;">
                                 <app-uploadererppic></app-uploadererppic>
                             </div>
-                            <div style="margin-left: 25%;margin-top: -8%;">
-                                <p><b>ADD PROFILE PICTURE</b></p>
+                            <div style="margin-left: 45%;margin-top: -12%;">
+                                <p style="color: black;"><b>ADD PROFILE PICTURE</b></p>
                             </div>
                         </div>
                         <div >
-                            <form *ngFor="let user of meds" (ngSubmit)="onSubmit()" class="col s6" class="mainbody"  style="width: 68vw;height: 85vh;align-self: flex-start;">
+                            <form *ngFor="let user of meds" (ngSubmit)="onSubmit()" class="col s6" class="mainbody"  style="width: 68vw;height: 85vh;align-self: flex-start;color: blue;margin-top: 1%;">
                                 <div class="formp1">
-                                    <h1 style="color: blue;">ACCOUNT DETAILS</h1>
+                                    <h1 style="color: black;">ACCOUNT DETAILS</h1>
                                     
                                 <div style="width: 35%;">
                                     <div class="searchformfld" >
-                                        <input width="50vw" type="text" class="email" id="email" name="email" value="fuck"  placeholder=" "/>
+                                        <input style="color: red;" width="50vw" type="text" class="email" id="email" name="email" value="{{user.email}}"   placeholder=" "/>
                                         <label for="email"><b>E-mail</b></label>
                                     </div>
                                 </div>
                                 <div style="width: 35%;">
                                     <div class="searchformfld" >
-                                        <input [(ngModel)]="item.firstname"  width="50vw"  type="text" class="firstName" id="firstName" name="firstName" value="fuck" placeholder=" "/>
-                                        <label for="firstName"><b>First Name</b></label>
+                                        <input [(ngModel)]="item.firstname"  width="50vw"  type="text" class="firstname" id="firstname" name="firstname" value="fuck off" placeholder=" " #firstname="ngModel"/>
+                                        <label for="firstname"><b>First Name</b></label>
                                     </div>
                                 </div>
                                 <div style="width: 35%;">
                                     <div class="searchformfld">
-                                        <input [(ngModel)]="item.secondname" value={{user.secondname}} width="50vw" type="text" class="lastName" id="lastName" name="lastName" placeholder=" "/>
+                                        <input value={{user.secondname}} [(ngModel)]="item.secondname"  width="50vw" type="text" class="lastName" id="lastName" name="lastName" placeholder=" "/>
                                         <label  for="lastName"><b>Last Name</b></label>
                                     </div>
                                 </div>
@@ -82,7 +80,7 @@
                                 </div>
                                 </div>
                                 <div class="formp2">
-                                    <h1 style="color: blue;">Enter your details</h1>
+                                    <h1 style="color: black;">Enter your details</h1>
                                     <div style="width: 35%;">
                                         <div class="searchformfld">
                                             <input [(ngModel)]="item.addr" value={{user.addr}} width="50vw" type="text" class="addr" id="addr" name="addr" placeholder=" "/>
@@ -124,7 +122,9 @@
                         
                     </div>
                   </div>
-                
+                <div *ngIf = "mark == 2">
+                    <app-password></app-password>
+                </div>
             </div>
         
     </div>
