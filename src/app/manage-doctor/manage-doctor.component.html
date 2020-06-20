@@ -1,5 +1,4 @@
-
-  <mat-toolbar color="primary">
+<mat-toolbar color="primary">
     <mat-toolbar-row>
       <span>eCare</span>
     </mat-toolbar-row> 
@@ -11,36 +10,57 @@
         <h1 class="title">Doctor Details</h1>
     
 <div class="container">
-    <!-- <div  class="row justify-content-center p-2">
-        <h1>Doctor Details</h1>
-    </div> -->
+    
     <div class="doc-form row">
-        <div class="form-field col-lg-6">
-            <input type="text" id="name" class="form-control input-text" [(ngModel)]="fullName">
-            <label for="name" class="label">Full Name</label>
-           
+        <form #docForm="ngForm" (ngSubmit)="CreateRecord(docForm)">
+        <div class="form-field col-lg-6" [class.has-error]="fullNameControl.invalid && fullNameControl.touched">
+            <input type="text" id="name" class="form-control input-text" [(ngModel)]="fullName" #fullNameControl="ngModel" required  [ngModelOptions]="{standalone: true}">
+            <label for="name" class="label control-label">Full Name</label>
+          <small class="help-block" *ngIf="fullNameControl.invalid && fullNameControl.touched">
+              *Full name is required
+          </small>
         </div>
-        <div class="form-field col-lg-6">
-            <input type="email" id="email" class="form-control input-text" [(ngModel)]="email">
+
+        <div class="form-field col-lg-6" [class.has-error]="emailControl.invalid && emailControl.touched">
+            <input type="email" id="email" class="form-control input-text" [(ngModel)]="email"  #emailControl="ngModel" required pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z0-9.-]+$" [ngModelOptions]="{standalone: true}">
             <label for="email" class="label">Email</label>
+            <!-- <small class="help-block" *ngIf="emailControl.invalid  && emailControl.touched">
+                *Email is required
+            </small> -->
+            <small class="help-block" *ngIf="emailControl.errors?.required && emailControl.touched">
+                *Email is required
+            </small>
+            <small class="help-block" *ngIf="emailControl.errors?.pattern && emailControl.touched">
+                *Email is invalid
+            </small>
+
         </div>
-        <div class="form-field col-lg-6">
-            <input type="text" id="nic" class="form-control input-text" [(ngModel)]="nic">
+        <div class="form-field col-lg-6" [class.has-error]="nicControl.invalid && nicControl.touched">
+            <input type="text" id="nic" class="form-control input-text" [(ngModel)]="nic" #nicControl="ngModel" pattern="[0-9]+v" minlength="3" maxlength="10" required [ngModelOptions]="{standalone: true}">
             <label for="nic" class="label">NIC</label>
+            <small class="help-block" *ngIf="nicControl.errors?.required && nicControl.touched">
+                *nic is required
+            </small>
+            <small class="help-block" *ngIf="nicControl.errors?.pattern && nicControl.touched">
+                *nic is invalid
+            </small>
         </div>
-        <div class="form-field col-lg-6">
-            <input type="number" id="age" class="form-control input-text" [(ngModel)]="age" >
+        <div class="form-field col-lg-6" [class.has-error]="ageControl.invalid && ageControl.touched">
+            <input type="number" id="age" class="form-control input-text" [(ngModel)]="age" #ageControl="ngModel"  maxlength="2" required [ngModelOptions]="{standalone: true}" >
             <label for="age" class="label">Age</label>
+            <small class="help-block" *ngIf="ageControl.invalid && ageControl.touched">
+                *age is required
+            </small>
         </div>
         <div class="form-field col-lg-6">
-            <input type="text" id="city" class="form-control input-text" [(ngModel)]="city">
+            <input type="text" id="city" class="form-control input-text" [(ngModel)]="city" #cityControl="ngModel" required [ngModelOptions]="{standalone: true}">
             <label for="city" class="label">City</label>
         </div>
       
         <div class="form-field col-lg-6 input-text" >
         <div class="form-group">
             <label for="select" class="form-control label-select" >Gender
-            <select id="select1" [(ngModel)]="gender" >    
+            <select id="select1" [(ngModel)]="gender"  #genderControl="ngModel" required [ngModelOptions]="{standalone: true}">    
                 <option *ngFor = "let g of genderList"
                  [value] = "g"> {{g}} 
                 </option>
@@ -48,11 +68,11 @@
             </label>
           </div>
           </div>
-        
+         
     <div class="form-field col-lg-6">      
     <div class="form-group">
         <label for="select" class="form-control label-select" >Specialised in..
-        <select  id="select2" [(ngModel)]="speciality"> 
+        <select  id="select2" [(ngModel)]="speciality"  #specialityControl="ngModel" required [ngModelOptions]="{standalone: true}"> 
             <option value="" selected="selected" hidden="hidden">Select an Option </option> 
             <option value="Practiced Physician">Practiced Physician</option> 
             <option value="Pediatricians">Pediatricians </option> 
@@ -71,62 +91,11 @@
     </div>
         <div class="form-field col-lg-12"> 
         <div class="form-group">
-            <button class="submit-btn" type="submit" (click)="CreateRecord()" [disabled]="!fullName || !nic || !email || !speciality" >Create Doctor</button>
+            <button class="submit-btn" type="submit"  [disabled]="!fullName || !nic || !email || !speciality" >Create Doctor</button>
         </div>
         </div>
+    </form>    
 </div>
-
-    <!-- <div  class="row justify-content-center p-2">
-        <h1>Doctor Details</h1>
-    </div>
-    <div class="form-group">
-        <input type="text" class="form-control" [(ngModel)]="fullName" placeholder="Enter Name">
-    </div>
-    <div class="form-group">
-        <input type="email" class="form-control" [(ngModel)]="email" placeholder="Enter email">
-    </div>
-    <div class="form-group">
-        <input type="email" class="form-control" [(ngModel)]="nic" placeholder="Enter NIC">
-    </div>
-    <div class="form-group">
-        <input type="number" class="form-control" [(ngModel)]="age" placeholder="Enter Age">
-    </div>
-    <div class="form-group">
-        <input type="text" class="form-control" [(ngModel)]="city" placeholder="Enter city">
-    </div>
-
-     <div class="form-group">
-        <label for="select" class="form-control" >Gender
-        <select id="select1" [(ngModel)]="gender" >    
-            <option *ngFor = "let g of genderList"
-             [value] = "g"> {{g}}  
-            </option>
-          </select>
-        </label>
-      </div>
-
-    <div class="form-group">
-        
-        <label for="select" class="form-control" >Specialised in..
-        <select  id="select2" [(ngModel)]="speciality"> 
-            <option value="" selected="selected" hidden="hidden">Select an Option </option> 
-            <option value="Practiced Physician">Practiced Physician</option> 
-            <option value="Pediatricians">Pediatricians </option> 
-            <option value="Geriatricians">Geriatricians</option> 
-            <option value="Cardiologists">Cardiologists</option> 
-            <option value="Allergists">Allergists</option> 
-            <option value="Dermatologists">Dermatologists</option> 
-            <option value="Ophthalmologists">Ophthalmologists</option> 
-            <option value="Gastroenterologists">Gastroenterologists</option> 
-            <option value="Nephrologists">Nephrologists</option> 
-            <option value="Otolaryngologists">Otolaryngologists</option> 
-            <option value="Other">Other..</option> 
-        </select> 
-        </label>
-    </div>
-    <div class="form-group">
-        <button class="btn btn-primary" (click)="CreateRecord()" [disabled]="!fullName || !nic || !email || !speciality" >Create Doctor</button>
-    </div> -->
  
 </div>
 <!-- <div class="form-group">
@@ -134,7 +103,7 @@
 </div> -->
 </section>
 </div>
-   
+
     <div class="row p-2">
         <div class="col-md-12 p-2 justify-content-center">
           <h4>All Doctor Data</h4>
@@ -215,8 +184,6 @@
     </div>
 
 </div>
-
-
 
 
 

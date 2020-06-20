@@ -140,7 +140,13 @@ form.normal-form{
 }
 
 .label-select{
+    font-weight: 400;
+    font-size: 18px;
     background: transparent; 
     color: black;
     border-color: transparent;
+}
+
+.ng-invalid{
+    border-left:5px sold red
 }

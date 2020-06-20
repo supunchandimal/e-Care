@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ManageDoctorService } from 'src/services/shared/manage-doctor.service';
-
+import { FormGroup, FormControl, Validators, FormBuilder, AbstractControl,NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-manage-doctor',
@@ -8,9 +8,14 @@ import { ManageDoctorService } from 'src/services/shared/manage-doctor.service';
   styleUrls: ['./manage-doctor.component.css']
 })
 export class ManageDoctorComponent implements OnInit {
+  
+ docForm: FormGroup;
+
   public genderList: string[];
   doctor: any;
   fullName: string;
+  fullNameControl:String;
+  emailControl:String;
   email:string;
   nic:string;
   age:number;
@@ -19,9 +24,13 @@ export class ManageDoctorComponent implements OnInit {
   speciality:string;
   message:string;
 
-  constructor(public DoctorService: ManageDoctorService ) { }
+  constructor(public DoctorService: ManageDoctorService, private fb: FormBuilder ) { }
 
   ngOnInit(){
+// this.docForm = this.fb.group({
+//   fullName:['',[Validators.required]]
+// });
+
 this.genderList =  ['Male', 'Female', 'Others'];    
 this.DoctorService.get_Alldoctors().subscribe(data => {
 
@@ -43,7 +52,7 @@ this.DoctorService.get_Alldoctors().subscribe(data => {
 
 }
 
-CreateRecord(){
+CreateRecord(docForm: NgForm){
   let Record = {};
   Record['fullName']=this.fullName;
   Record['email']=this.email;
