@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./behaviorhistory.component.css']
 })
 export class BehaviorhistoryComponent implements OnInit {
-
+  mentalHealth="";
   constructor() { }
   
   

@@ -30,6 +30,7 @@ import { MedicationComponent } from './patientpages/medication/medication.compon
 import { UploadrecordsComponent } from './patientpages/uploadrecords/uploadrecords.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatButtonModule} from '@angular/material/button';
+import {MatRadioModule} from '@angular/material/radio';
 import {
   AngularFireStorageReference,
   AngularFireUploadTask,
@@ -52,13 +53,12 @@ import { UploadTaskComponent } from './patientpages/patientfiles/upload-task/upl
 
 import { BehaviorhistoryComponent } from './patientpages/behaviorhistory/behaviorhistory.component';
 import { FamilyhistoryComponent } from './patientpages/familyhistory/familyhistory.component';
-
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 import { AdminComponent } from './admin/admin.component';
 import { MatSliderModule } from '@angular/material/slider';
 import { MaterialModule } from './material/material.module';
 import {MatFormFieldModule} from '@angular/material/form-field';
-
 import { ManageDoctorService } from 'src/services/shared/manage-doctor.service';
 import { MyaccountComponent } from './patientpages/myaccount/myaccount.component';
 import { PpicComponent } from './patientpages/myaccount/ppic/ppic.component';
@@ -67,6 +67,7 @@ import { AdminAnnouncementComponent } from './admin-announcement/admin-announcem
 import { PasswordComponent } from './patientpages/myaccount/password/password.component';
 import { PpicService } from './patientpages/services/ppic.service';
 
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -118,6 +119,7 @@ import { PpicService } from './patientpages/services/ppic.service';
     DefaultDocModule,
     MatProgressSpinnerModule,
     MatButtonModule,
+    MatRadioModule,
     MatSliderModule,
     MaterialModule,
     MatFormFieldModule,
@@ -125,13 +127,17 @@ import { PpicService } from './patientpages/services/ppic.service';
     ReactiveFormsModule,
     ImageCropperModule,
     DefaultAdminModule,
+    MatDatepickerModule,
+    MatNativeDateModule ,
   ],
   providers: [
     AuthService,
     ServiceService ,
     ManageDoctorService,
     AccountService,
-    PpicService
+    PpicService,
+    MatDatepickerModule
+
     
   ],
   bootstrap: [AppComponent]

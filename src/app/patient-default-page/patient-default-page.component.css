@@ -26,10 +26,11 @@
   animation: chbg 15s infinite alternate;
   display: flex; 
   align-self: flex-end;
-  height: 15%;
-  width: 50%;
+  height: 25%;
+  width: 98.6%;
   background-color: black;
-  margin-left: -60%;
+  margin-left: -95%;
+  padding-bottom: 10%;
 }
 @keyframes chbg {
   0% {

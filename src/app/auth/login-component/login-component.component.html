@@ -4,9 +4,9 @@
     <img src="assets/images/loginpic.jpg" alt="" height=100% width=65% class="login_image" >
     <div class="form_container">
         <form action="" #loginForm="ngForm" (ngSubmit)="login(loginForm)">
-            <h1>login</h1>
+            <h1 style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-weight: bold;">Login</h1>
             <div class="row" *ngIf="authError">
-                <div class="col-12 alert alert-danger">{{ authError?.message }}</div>
+                <div class="col-12 alert alert-danger">{{ authError }}</div>
               </div>
             <label for="email"> <b>Email</b> </label>
             <input ngModel #email="ngModel" name="email" type="text" class="form-control"  placeholder="Enter Email" required>

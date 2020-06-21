@@ -16,7 +16,6 @@
   height: 100%;
   align-self: flex-start;
   background-color: #888, #555;
-  margin-left: 20px;
 }
 .subnavibar{
   position: fixed;
@@ -82,9 +81,10 @@
   width: 100%;
   height: 5vh;
   font-family: 'Squada One', cursive;
-  font-size: small;
+  font-size: medium;
   align-self: flex-start;
   padding-left: 10px;
+  margin-top: 40px;
 }
 .btn-holder2{
   justify-content:flex-start;
@@ -156,7 +156,7 @@
     width: 80vw;
     height: 1px;
     font-family: 'Squada One', cursive;
-    font-size: small;
+    font-size: medium;
   }
   .formcontrol{
     width: 1vw;

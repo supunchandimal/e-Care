@@ -1,1 +1,8 @@
-<p>appoinments works!</p>
+<input type="text" [(ngModel)]="searchterm" (keydown)="search($event)">
+<ul *ngFor="let club of clubs">
+  <li>{{club.fullName}}</li>
+  <li>{{club.speciality}}</li>
+</ul>
+<div *ngIf="clubs?.length < 1">
+  <p>Sorry, no clubs found</p>
+</div>

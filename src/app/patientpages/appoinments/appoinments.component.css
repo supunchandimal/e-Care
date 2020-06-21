@@ -1,0 +1,29 @@
+.body{
+    display: flex; 
+    overflow-x: hidden;
+}
+.naviBar{
+  width: 22.5%;
+  height: 100%;
+  align-self: flex-start;
+  background-color: #888, #555;
+  
+}
+.bodyrest{
+    width: 85%;
+    height: 100%;
+    margin-left: 1%;
+    display: flex; 
+    background-color: lightblue;  
+  }
+  .search{   
+    width: 100%;
+    height: 10%;
+    margin-top: 50px;
+    color: #888, #555;
+    text-shadow: 0 -1px 0 #000;	
+    border-bottom: 1px solid black;
+    opacity: 1;
+    align-self: flex-start;
+    display: flex;
+  }

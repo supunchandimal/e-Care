@@ -73,7 +73,7 @@
     margin-left: 40%;
     
 }
-input[type=text], input[type=password],input[type=number],input[type=date],input[type=email] {
+input[type=text], input[type=password],input[type=number],input[type=date],input[type=email] ,input[type=tel]{
    display:inline-block;
     padding: 6px;
     margin: 0px 0 4px 0;
@@ -81,11 +81,30 @@ input[type=text], input[type=password],input[type=number],input[type=date],input
     background: #ecebeb;
     width: 250px;
     float: right;
-    margin-right: 10%;
+    margin-right: 8%;
     border-radius: 5px;
-    
+  }
+
+  select{
+      display: inline-block;
+      padding: 6px;
+      margin: 0px 0 4px 0;
+      border:none;
+      background: #ecebeb;
+      width: 100px; 
+      float: right;
+      margin-right: 38%;
+      border-radius: 5px;
 
   }
+  .ng-valid[required], .ng-valid.required  {
+    border-left: 5px solid #42A948; /* green */
+  }
+  
+  .ng-invalid:not(form)  {
+    border-left: 5px solid #a94442; /* red */
+  }
+
   input[type=submit]{
       margin-left: 45%;
       padding: 10px 20px;
@@ -93,13 +112,32 @@ input[type=text], input[type=password],input[type=number],input[type=date],input
       background-color: blue;
       color: white;
   }
+  input[type=submit]:disabled{
+    background-color: rgb(187, 187, 228);
+  }
+
   input[type=text]:focus, input[type=password]:focus, input[type=date]:focus, input[type=number]:focus,input[type=email]:focus {
     background-color: rgb(255, 255, 255);
     outline: lightgreen;
     
     
   }
- label{
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+
+
+  label{
     display:inline-block;
      font-size: 20px;
     padding: 12px 16px;

@@ -8,7 +8,7 @@
 
 <div class="contactus_container_1">
     <h1>Send us a message </h1>
-    <div class="container">
+    <div class="container_form">
         <form action=""  #contactusform="ngForm"  (ngSubmit)="onsubmit(contactusform)">
         <div class="row">
           <div class="col-25">
@@ -21,7 +21,7 @@
         </div>
         <div class="row">
           <div class="col-25">
-            <label for="lname"   class="form-control">Last Name</label>
+            <label for="lname" >Last Name</label>
           </div>
           <div class="col-75">
             <input type="text" id="lname" name="lastname" placeholder="Your last name.."   #lastname="ngModel"  required ngModel>
