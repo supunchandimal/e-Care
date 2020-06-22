@@ -61,6 +61,7 @@ CreateRecord(docForm: NgForm){
   Record['city']=this.city;
   Record['gender']=this.gender;
   Record['speciality']=this.speciality;
+  Record['role']="doctor";
 
   this.DoctorService.create_Newdoctor(Record).then(res=> {
 
@@ -70,6 +71,7 @@ CreateRecord(docForm: NgForm){
     this.age=undefined;
     this.city="";
     this.gender="";
+    this.speciality="";
     console.log(res);
         this.message = "New doctor added";
   }).catch(error=>{
@@ -84,7 +86,7 @@ EditRecord(Record){
   Record.editcity = Record.city;
   Record.editnic=Record.nic;
 
-}
+} 
 
 UpdateRecord(recorddata){
   let record = {};
