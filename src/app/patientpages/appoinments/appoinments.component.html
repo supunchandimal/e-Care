@@ -1,1 +1,45 @@
-<p>appoinments works!</p>
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Squada+One&display=swap" rel="stylesheet">
+</head>
+<body class="body">
+    <div class="navibar">
+        <app-patient-home class="subnavibar"></app-patient-home>
+    </div>
+    <div class="bodyrest">
+        <div style="align-self: flex-start;width: 82vw;">
+            <app-pagemenu></app-pagemenu>
+            <div class="search">
+                <div>
+                   <div style="margin-left: 25%;">
+                        <input type="text" [(ngModel)]="searchterm" (keydown)="search($event)" placeholder="&#xf002; Search From Doctor Name or Speciality" style="font-family: FontAwesome, Arial; font-style: normal;width: 250%;">
+                   </div>
+                    
+                </div>
+            </div>
+            <div class="data">
+                <div class="datacard" *ngFor="let doca of docs">
+                    <div class="pic">
+                        <img src="../../../assets/images/doca.jpg" alt="dasith" style="width: 100%;height: 100%;">
+                    </div>
+                    <div class="docname" *ngIf="doc?.length < 1">
+                        <h1>Dr.  {{doca.fullName}}</h1>
+                        <h2>Speciality - {{doca.speciality}} </h2>
+                    </div>
+                </div>
+                <div  class="datacard" *ngFor="let doca of doc">
+                    <div class="pic">
+                        <img src="../../../assets/images/doca.jpg" alt="dasith" style="width: 100%;height: 100%;">
+                    </div>
+                    <div class="docname" *ngIf="docs?.length < 1">
+                        <h1>Dr.  {{doca.fullName}}</h1>
+                        <h2> {{doca.speciality}} </h2>
+                    </div>
+                </div>
+                   
+            </div>
+        </div>
+       
+    </div>
+</body>
