@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyprovidersComponent implements OnInit {
 
+  firstNameAutofilled: boolean;
+
   constructor() { }
   public flag3=3;
   ngOnInit(): void {
