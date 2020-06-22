@@ -65,6 +65,9 @@ import { MyaccountComponent } from './patientpages/myaccount/myaccount.component
 import { PpicComponent } from './patientpages/myaccount/ppic/ppic.component';
 import { UploadererppicComponent } from './patientpages/myaccount/uploadererppic/uploadererppic.component';
 import { AdminAnnouncementComponent } from './admin-announcement/admin-announcement.component';
+import { PasswordComponent } from './patientpages/myaccount/password/password.component';
+import { PpicService } from './patientpages/services/ppic.service';
+
 import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
@@ -103,6 +106,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     UploadererppicComponent,
 
     AdminAnnouncementComponent,
+
+    PasswordComponent,
   ],
   imports: [
     BrowserModule,
@@ -132,6 +137,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     ServiceService ,
     ManageDoctorService,
     AccountService,
+    PpicService,
     MatDatepickerModule
 
     
