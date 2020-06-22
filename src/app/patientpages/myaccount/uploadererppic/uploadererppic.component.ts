@@ -3,6 +3,8 @@ import { PpicService } from './../../services/ppic.service';
 import { Component, OnInit } from '@angular/core';
 import { from, Observable } from 'rxjs';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { AuthService } from 'src/app/auth/auth.service';
 @Component({
   selector: 'app-uploadererppic',
   templateUrl: './uploadererppic.component.html',
@@ -14,19 +16,23 @@ export class UploadererppicComponent implements OnInit {
   item:Ppic={
     downloadURL:'', 
   }
-  allegs: any;
-  constructor(private afAuth:AngularFireAuth,private serviceService:PpicService) { 
+  user:firebase.User;
+  allegs;
+  constructor(private auth:AuthService,private afAuth:AngularFireAuth,private afs: AngularFirestore) { 
     this.authState = this.afAuth.authState;
   }
   ngOnInit(): void {
-   
+    this.auth.getUserState()
+      .subscribe(user =>{
+        this.user = user;
+      });
     this.authState.subscribe(user => {
       
       if (user) {
         this.currentUser = user;
         console.log('AUTHSTATE USER', user.uid); 
-        this.serviceService.getPpic().valueChanges().subscribe(allegs =>{
-          //console.log(allegs);
+        this.getPpic().subscribe(allegs =>{
+          console.log(allegs);
         this.allegs= allegs;
       });
         //this works
@@ -56,5 +62,7 @@ export class UploadererppicComponent implements OnInit {
       this.files.push(files.item(i));
     }
   }
-
+ getPpic(){
+  return this.afs.collection('ppic').doc(this.currentUser.uid).valueChanges();
+ }
 }

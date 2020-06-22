@@ -32,7 +32,10 @@ export class MyaccountComponent implements OnInit {
 
   ngOnInit(): void {
     console.log("hi")
-  
+    this.auth.getUserState()
+      .subscribe(user =>{
+        this.user = user;
+      });
     this.authState.subscribe(user => {
       
       if (user) {

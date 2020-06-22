@@ -14,8 +14,8 @@ export class AppoinmentsComponent implements OnInit {
   startAt = new Subject();
   endAt = new Subject();
 
-  clubs;
-  allclubs;
+  doc;
+  docs;
 
   startobs = this.startAt.asObservable();
   endobs = this.endAt.asObservable();
@@ -25,8 +25,13 @@ export class AppoinmentsComponent implements OnInit {
   }
   ngOnInit(): void {
     combineLatest(this.startobs, this.endobs).subscribe((value) => {
-      this.firequery(value[0], value[1]).subscribe((clubs) => {
-        this.clubs = clubs;
+      this.getalldocs(value[0], value[1]).subscribe((docs) => {
+        this.docs = docs;
+      })
+    })
+    combineLatest(this.startobs, this.endobs).subscribe((value) => {
+      this.firequery(value[0], value[1]).subscribe((docs) => {
+        this.doc = docs;
       })
     })
   }
@@ -38,6 +43,9 @@ export class AppoinmentsComponent implements OnInit {
     }
   }
   firequery(start, end) {
+    return this.afs.collection('doctors', ref => ref.limit(100).orderBy('speciality').startAt(start).endAt(end)).valueChanges();
+  }
+  getalldocs(start, end) {
     return this.afs.collection('doctors', ref => ref.limit(100).orderBy('fullName').startAt(start).endAt(end)).valueChanges();
   }
 }
