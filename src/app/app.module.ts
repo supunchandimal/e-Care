@@ -54,6 +54,7 @@ import { UploadTaskComponent } from './patientpages/patientfiles/upload-task/upl
 import { BehaviorhistoryComponent } from './patientpages/behaviorhistory/behaviorhistory.component';
 import { FamilyhistoryComponent } from './patientpages/familyhistory/familyhistory.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import {TextFieldModule} from '@angular/cdk/text-field';
 
 import { AdminComponent } from './admin/admin.component';
 import { MatSliderModule } from '@angular/material/slider';
@@ -122,6 +123,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatRadioModule,
     MatSliderModule,
     MaterialModule,
+    TextFieldModule,
     MatFormFieldModule,
     MatButtonModule,
     ReactiveFormsModule,

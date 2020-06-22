@@ -1,1 +1,79 @@
-<p>manage-patient works!</p>
+<div id="img"> 
+     
+    <div id="sidebar">
+        <ul>
+            <li><a routerLink="../manage-doctor">Manage Doctors</a></li>
+            <li><a routerLink="../manage-patient">Manage Patients</a></li> 
+            <li>Notifications</li>
+            <li><a href="" routerLink="../adminfeedbacks" routerLinkActive="active">Feedbacks</a></li>
+            <li>Payment details</li>
+            <li><a routerLink="../admin-announcement">Announcements</a></li>
+        </ul>
+    </div>
+    
+<div class="wrapper">    
+<!-- <div class="row p-2"> -->
+        <!-- <div class="col-md-12 p-2 justify">
+          <h4>All Patient Data</h4>
+        </div> -->
+
+        <!-- <div class="col-md-3"  *ngFor="let item of doctor"> -->
+<div class="table-wrapper-scroll-y my-custom-scrollbar">
+        <table class="table table-bordered table-striped mb-0">
+            <caption>Patient list</caption>
+            
+            <tr>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Email</th>
+                <th></th>
+            </tr>
+          
+            <tr *ngFor="let item of patient">
+                <td>{{item.firstname}}</td>
+                <td>{{item.gender}}</td>
+                <td>{{item.email}}</td>
+                <td class="btn btn-danger">delete</td>
+                <!-- <td>Gender</td>
+                <td>Email</td>
+                <td>nic</td>
+                <td>city</td> -->
+            </tr>
+      
+        </table>    
+</div>
+        <div class="col-md-3"  *ngFor="let item of patient">
+            <!-- <div class="card">
+                <div class="card-body">
+                <div class="card-title">
+                    Name: {{item.fullName}}
+                </div>
+
+                <div class="card-text">
+                    Email: {{item.email}}
+                </div>
+
+                <div class="card-text">
+                    NIC: {{item.nic}}
+                 </div>
+
+                 <div class="card-text">
+                    Age: {{item.age}}
+                </div>
+
+                <div class="card-text">
+                    City: {{item.city}}
+                </div>
+
+                <div class="card-text">
+                    Gender: {{item.gender}}
+                </div>
+
+                <div class="card-text">
+                    Speciality: {{item.speciality}}
+                </div>                
+                </div> -->
+            </div>
+    <!-- </div>    -->
+</div>
+</div>
