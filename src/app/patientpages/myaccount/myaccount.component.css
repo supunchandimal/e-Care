@@ -36,9 +36,11 @@
     height: 120%;
     border-right: 1px solid black;
     margin-bottom: 10%;
-    background-color: #5AB9EA;
-    background: -webkit-linear-gradient #5AB9EA;
-	background: linear-gradient #5AB9EA;
+    background-color: #C1C8E4;
+    background: -webkit-linear-gradient #C1C8E4;
+    background: linear-gradient #C1C8E4;
+    font-size:medium;
+	font-weight: bold;
    
 }
 .mainbody{
@@ -171,11 +173,11 @@ input[type=text], input[type=password],input[type=number],input[type=date],input
  .bton{
      width: 100%;
      border: none;
-     background-color: #5AB9EA;
+     background-color: #C1C8E4;
      font-size: medium;
  }
 
  .bton:hover{
-    background: -webkit-linear-gradient(#5680E9, #84CEEB);
-	background: linear-gradient(#5680E9, #84CEEB);
+    background: -webkit-linear-gradient(#5AB9EA, #84CEEB);
+	background: linear-gradient(#5AB9EA, #84CEEB);
  }
