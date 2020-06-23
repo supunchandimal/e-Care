@@ -47,7 +47,8 @@
 	background: linear-gradient #5AB9EA;
 	border: 0 none;
 	text-shadow: 0 -1px 0 #000;	
-	cursor: pointer;
+    cursor: pointer;
+    position: relative;
 }
 .naviButton:hover{
     width: 18vw;
@@ -82,6 +83,7 @@
     opacity: 2;
 }
 .icn{
+    position: absolute;
     width: 2vw;
     height: 100%;
     align-self: center;
@@ -90,4 +92,7 @@
     width: 2vw;
     height: 80%;
     align-items: flex-start;
+    /* background-color: chartreuse; */
 }
+/* style="color: green; display: inline;" */
+
