@@ -8,18 +8,20 @@ export class UpdateProfileService {
 
   constructor( public fireservice : AngularFirestore ) { }
 
-  createDoctor( Record ){
-    return this.fireservice.collection('temp').add(Record);
+
+
+  getDoctor()
+  {
+    return this.fireservice.collection('hii', ref=>ref.where("docID","==",1)).snapshotChanges();
   }
 
-  getAllDoctor (){
-    return this.fireservice.collection('temp').snapshotChanges();
+  updateDoctor(recordid, record)
+  {
+    this.fireservice.doc('hii/' + recordid).update(record);
   }
 
-  updateDoctor (recordid, record){
-    this.fireservice.doc('temp/' + recordid).update(record);
-     
-  }
+
+
 
 
   }
