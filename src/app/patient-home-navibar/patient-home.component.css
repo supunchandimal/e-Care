@@ -10,7 +10,7 @@
 .naviBar{
     width: 20vw;
     height: 100vh;
-    background-color: #5AB9EA;
+    background-color: #C1C8E4;
     align-items: flex-start;
 }
 #title{
@@ -31,7 +31,7 @@
     padding-bottom: 15px;
     height: 20%;
     align-self: center;
-    background-color:  #5AB9EA;
+    background-color:  #C1C8E4;
     align-items: center;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -42,9 +42,9 @@
 	padding: 10px 15px;
 	margin: 20px auto;
 	color: black;
-	background-color:#5AB9EA;
-	background: -webkit-linear-gradient #5AB9EA;
-	background: linear-gradient #5AB9EA;
+	background-color:#C1C8E4;
+	background: -webkit-linear-gradient #C1C8E4 ;
+	background: linear-gradient #C1C8E4;
 	border: 0 none;
 	text-shadow: 0 -1px 0 #000;	
     cursor: pointer;
@@ -68,8 +68,8 @@
 	margin: 20px auto;
 	color: rgb(12, 12, 12);
 	background-color:rgb(221, 224, 226);
-	background: -webkit-linear-gradient(#5680E9, #84CEEB);
-	background: linear-gradient(#5680E9, #84CEEB);
+	background: -webkit-linear-gradient(#5AB9EA, #84CEEB);
+	background: linear-gradient(#5AB9EA, #84CEEB);
 	border: 0 none;
 	text-shadow: 0 -1px 0 #000;	
 	cursor: pointer;
