@@ -1,77 +1,36 @@
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-
 <div class="container">
-    <b><h1><label for="">Update Account Details</label></h1></b>
-    <div class="form-group">
-        
-        <div class="form-group">
-        <input type="string" class="form-control" [(ngModel)]="doctorFirstName" placeholder="First Name">
-        </div>
-
-        <div class="form-group">
-        <input type="string" class="form-control" [(ngModel)]="doctorLastName" placeholder="Last Name">
-        </div>
-
-        <div class="form-group">
-            <input type="string" class="form-control" [(ngModel)]="doctorEmail" placeholder="Email">
-        </div>
-    
-
-        <button class="btn btn-primary btn-sm" (click)="createDoctor()">Update Details</button>
-
-    </div>
-  <div class="form-group">
-    <h4><b>{{message}}</b></h4>
+  <div class="row justify-content-center p-2">
+      <h1>Update Account</h1>
   </div>
-<hr>
-  <b><h1><label for="">Change Password</label></h1></b>
-    <div class="form-group">
-        
+  
+  <div class="row p-2">
+
+    <div class="col-md-3" *ngFor ="let item of employee">
+      <h2><div class="card" *ngIf="!item.isedit; else elseBlock">
+        <div>FullName: {{item.doctorFullName}}</div>
+        <div>Email: {{item.doctorEmail}}</div>
+        <div>City: {{item.doctorCity}}</div>
+        <span>
+          <button type="button" (click)="EditRecord(item)" class="btn btn-primary btn-xs">Edit</button>
+        </span>
+    </div></h2>
+
+      <ng-template #elseBlock>
         <div class="form-group">
-        <input type="password" class="form-control" placeholder="Current Password">
-        </div>
 
-        <div class="form-group">
-        <input type="password" class="form-control" [(ngModel)]="doctorLastName" placeholder="New Password">
-        </div>
-
-        <button class="btn btn-primary btn-sm">Change Password</button>
-
-    </div>
-
-
-<!-- 
-    <div class="card" *ngFor = "let item of doctor">
-      doctorFirstName : {{item.doctorFirstName}}
-      doctorLastName : {{item.doctorLastName}}
-      doctorEmail : {{item.doctorEmail}}
-    </div>
-</div>
-
-
-    <div class="row p-2">
-      <div class="col-md-12 p-2 justify-content-center">
-        <h4>All Doctors</h4>
-      </div>
-      <div class="col-md-3" *ngFor = "let item of doctor">
-        <div class="card">
-          <div class="card-body">
-            <div class="card title">
-              doctorFirstName : {{item.doctorFirstName}}
-            </div>
-            <div class="card-subtitle">
-              doctorLastName : {{item.doctorLastName}}
-            </div>
-            <div class="card-text">
-              doctorEmail : {{item.doctorEmail}}
-            </div>
-            <a href="#" class="btn btn-primary">Edit</a>
+          <div class="col-md-12 row">
+              FullName :<input type="text" [(ngModel)]="item.editFullName" class="form-control">
           </div>
-        </div>
-      </div> -->
-
+          <div class="col-md-12 row">
+              Email :<input type="text" [(ngModel)]="item.editEmail" class="form-control">
+          </div>
+          <div class="col-md-12 row">
+              City :<input type="text" [(ngModel)]="item.editCity" class="form-control">
+          </div>
+      </div>
+      <button type="button" (click)="item.isedit = false" class="btn btn-danger btn-xs">Cancel</button>
+      <button type="button" (click)="Updatarecord(item)" class="btn btn-primary btn-xs">Update</button>
+      </ng-template>    
     </div>
-
-
-
+  </div>
+</div>

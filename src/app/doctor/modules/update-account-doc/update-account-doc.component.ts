@@ -9,62 +9,45 @@ import { UpdateProfileService } from './../../services/update-profile.service';
 })
 export class UpdateAccountDocComponent implements OnInit {
 
-  doctor :any ;
-  doctorFirstName : string;
-  doctorLastName : string;
-  doctorEmail : string;
+  employee: any;
+  doctorFullName:string;
+  doctorEmail:string;
+  doctorCity:string;
   message : string;
-
   constructor( public updateprofileservice : UpdateProfileService ) { }
 
-  ngOnInit(){
-    this.updateprofileservice.getAllDoctor().subscribe( data => {
-      this.doctor = data.map( e =>{
-        return{
-          id : e.payload.doc.id,
-          isedit :false,
-          doctorFirstName : e.payload.doc.data()['firstName'],
-          doctorLastName : e.payload.doc.data()['lastName'],
-          doctorEmail : e.payload.doc.data()['email'],
+  ngOnInit() {
+    this.updateprofileservice.getDoctor().subscribe(data => {
+
+      this.employee = data.map(e => {
+        return {
+          id: e.payload.doc.id,
+          isedit: false,
+          doctorFullName: e.payload.doc.data()['fullName'],
+          doctorEmail: e.payload.doc.data()['email'],
+          doctorCity: e.payload.doc.data()['city'],
         };
       })
-        console.log(this.doctor);
-      })
-      
-}
+      console.log(this.employee);
 
-
-  createDoctor(){
-    let Record = {};
-      Record ['firstName'] = this.doctorFirstName;
-      Record ['lastName'] = this.doctorLastName;
-      Record ['email'] = this.doctorEmail;
-
-      this.updateprofileservice.createDoctor(Record).then(res => {
-        this.doctorFirstName = "";
-        this.doctorLastName = "";
-        this.doctorEmail = "";
-        console.log(res);
-        this.message = "byee";
-      }).catch(error => {
-        console.log(error);
-      });
-
+    });
   }
 
-  // EditDoctor(Record){
-  // }
+  EditRecord(Record)
+  {
+    Record.isedit = true;
+    Record.editFullName = Record.doctorFullName;
+    Record.editEmail = Record.doctorEmail;
+    Record.editCity = Record.doctorCity;
+  }
 
-
-  // UpdateDoctor(recorddata){
-  //   let record = {};
-  //     record ['firstName'] = recorddata.doctorFirstName;
-  //     record ['lastName'] = recorddata.doctorLastName;
-  //     record ['email'] = recorddata.doctorEmail;
-  //   this.updateprofileservice.updateDoctor(recorddata.id, record);
-  //   recorddata.isedit = false;
-  // }
-  
-
-  
+  Updatarecord(recorddata)
+  {
+    let record = {};
+    record['fullName'] = recorddata.editFullName;
+    record['email'] = recorddata.editEmail;
+    record['city'] = recorddata.editCity;
+    this.updateprofileservice.updateDoctor(recorddata.id, record);
+    recorddata.isedit = false;
+  }
 }
