@@ -22,6 +22,7 @@ form.normal-form{
 *{
     margin: 0;
     padding: 0;
+    max-width: 100%;
 }
 
 
@@ -80,6 +81,9 @@ form.normal-form{
     -webkit-text-fill-color: transparent;
     /* -webkit-background-clip: text; */
 
+}
+.doc-form{
+    position: relative;
 }
 
 .doc-form .form-field{

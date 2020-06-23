@@ -59,10 +59,10 @@
             </small>
         </div>
         <div class="form-field col-lg-6" [class.has-error]="ageControl.invalid && ageControl.touched">
-            <input type="number" id="age" class="form-control input-text" [(ngModel)]="age" #ageControl="ngModel"  maxlength="2" required [ngModelOptions]="{standalone: true}" >
-            <label for="age" class="label">Age</label>
+            <input type="date" id="age" class="form-control input-text" [(ngModel)]="age" #ageControl="ngModel"  max="2020-01-01" required [ngModelOptions]="{standalone: true}" >
+            <label for="age" class="label">Date of Birth</label>
             <small class="help-block" *ngIf="ageControl.invalid && ageControl.touched">
-                *age is required
+                *dob is required
             </small>
         </div>
         <div class="form-field col-lg-6">
@@ -84,13 +84,14 @@
          
     <div class="form-field col-lg-6">      
     <div class="form-group">
-        <label for="select" class="form-control label-select" >Specialised in..
+        <label for="select" class="form-control label-select" >Specialised in.. 
         <select  id="select2" [(ngModel)]="speciality"  #specialityControl="ngModel" required [ngModelOptions]="{standalone: true}"> 
             <option value="" selected="selected" hidden="hidden">Select an Option </option> 
             <option value="Practiced Physician">Practiced Physician</option> 
             <option value="Pediatricians">Pediatricians </option> 
             <option value="Geriatricians">Geriatricians</option> 
             <option value="Cardiologists">Cardiologists</option> 
+            <option value="Dermatologists">Obstetrician</option> 
             <option value="Allergists">Allergists</option> 
             <option value="Dermatologists">Dermatologists</option> 
             <option value="Ophthalmologists">Ophthalmologists</option> 
@@ -119,7 +120,7 @@
 
     <div class="row p-2">
         <div class="col-md-12 p-2 justify-content-center">
-          <h4>All Doctor Data</h4>
+          <h4 style="padding: 20px;">All Doctor Data</h4>
         </div>
 
         <div class="col-md-3"  *ngFor="let item of doctor">
