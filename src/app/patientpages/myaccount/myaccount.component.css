@@ -24,7 +24,7 @@
     background-color: lightblue;
 }
 .ma{
-    color: blue;
+    color: black;
     box-shadow: 5px black;
 }
 .cog{
@@ -112,7 +112,7 @@ input[type=text], input[type=password],input[type=number],input[type=date],input
 .searchformfld input:focus + label,.searchformfld input:not(:placeholder-shown) + label{
     opacity:1;
     transform: scale(.9) translateY(-100%) translateX(-10px);
-    color:blue;
+    color:black;
 }
 .searchformfld input:focus{
     border:1px solid #000;
@@ -164,14 +164,15 @@ input[type=text], input[type=password],input[type=number],input[type=date],input
  .submit{
      width: 10vw;
      height: 5vh;
-     background-color: blue;
-     color: aliceblue;
+     background-color: #5680E9;
+     color: rgb(28, 30, 32);
      font-size: larger;
  }
  .bton{
      width: 100%;
      border: none;
      background-color: #5AB9EA;
+     font-size: medium;
  }
 
  .bton:hover{
