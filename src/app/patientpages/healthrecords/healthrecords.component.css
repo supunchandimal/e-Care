@@ -35,3 +35,6 @@
     width: 15vw;
     
 }
+.btn:hover{
+    background-color: #C1C8E4;
+}

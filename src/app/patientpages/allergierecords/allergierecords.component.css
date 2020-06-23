@@ -9,10 +9,12 @@
 }
 .card-title{
     align-self: flex-start;
-    width: 500px; 
+    width: 900px; 
     font-family: Arial, Helvetica, sans-serif;
     font-size: large;
-    color: white;
+    color: #34495E ;
+    margin-left: 18px;
+    margin-top: 10px;
 }
 
 .card-content {
@@ -24,11 +26,12 @@
     display: flex;
     height: 40vh;
     align-items: center;
-    background-image: url("../../../assets/images/allegback.jpg");
+    background-image: url("../../../assets/images/patient2.jpg");
     background-position:center;
   	background-repeat:no-repeat;
   	background-size:cover;
     color: white;
+    margin-left: 40px;
   }
   .input-field{
       width: 100px;
