@@ -10,10 +10,11 @@ import { UpdateProfileService } from './../../services/update-profile.service';
 export class UpdateAccountDocComponent implements OnInit {
 
   employee: any;
-  doctorFullName:string;
+  doctorFirstName:string;
+  doctorLastName:string;
   doctorEmail:string;
-  doctorCity:string;
-  message : string;
+  doctorSpeciality:string;
+  doctorWorkingHospital:string;
   constructor( public updateprofileservice : UpdateProfileService ) { }
 
   ngOnInit() {
@@ -23,9 +24,11 @@ export class UpdateAccountDocComponent implements OnInit {
         return {
           id: e.payload.doc.id,
           isedit: false,
-          doctorFullName: e.payload.doc.data()['fullName'],
+          doctorFirstName: e.payload.doc.data()['firstName'],
+          doctorLastName: e.payload.doc.data()['lastName'],
           doctorEmail: e.payload.doc.data()['email'],
-          doctorCity: e.payload.doc.data()['city'],
+          doctorSpeciality: e.payload.doc.data()['speciality'],
+          doctorWorkingHospital: e.payload.doc.data()['workingHospital'],
         };
       })
       console.log(this.employee);
@@ -36,17 +39,21 @@ export class UpdateAccountDocComponent implements OnInit {
   EditRecord(Record)
   {
     Record.isedit = true;
-    Record.editFullName = Record.doctorFullName;
+    Record.editFirstName = Record.doctorFirstName;
+    Record.editLastName = Record.doctorLastName;
     Record.editEmail = Record.doctorEmail;
-    Record.editCity = Record.doctorCity;
+    Record.editSpeciality = Record.doctorSpeciality;
+    Record.editWorkingHospital = Record.doctorWorkingHospital;
   }
 
   Updatarecord(recorddata)
   {
     let record = {};
-    record['fullName'] = recorddata.editFullName;
+    record['firstName'] = recorddata.editFirstName;
+    record['lastName'] = recorddata.editLastName;
     record['email'] = recorddata.editEmail;
-    record['city'] = recorddata.editCity;
+    record['speciality'] = recorddata.editSpeciality;
+    record['workingHospital'] = recorddata.editWorkingHospital;
     this.updateprofileservice.updateDoctor(recorddata.id, record);
     recorddata.isedit = false;
   }
