@@ -26,22 +26,22 @@
                             <i class="fa fa-user" id="icon" style="width: 2vw;height: 100%;" ></i>
                         </button>
                         <div class="profilename">
-                            <h1 *ngIf="user">{{ user?.uid }}</h1>
+                            <h1 *ngIf="user">{{ user?.displayName }}</h1>
                         </div>
                    </div>
                    <div class="btn-holder">
                     <div class="btn-group" >
                         <button *ngIf="mark==2" class="btn" (click)='onClickhealth()'>MY HEALTH HISTORY</button>
-                        <button *ngIf="mark==1" class="btn" (click)='onClickhealth()' style="background-color: blueviolet;">MY HEALTH HISTORY</button>
+                        <button *ngIf="mark==1" class="btn" (click)='onClickhealth()' style="background-color: #8860D0;">MY HEALTH HISTORY</button>
                         <button *ngIf="mark==3" class="btn" (click)='onClickhealth()'>MY HEALTH HISTORY</button>
 
                         <button *ngIf="mark==1" class="btn" (click)='onClickbehavirol()'>MY BEHAVIROL HISTORY</button>
-                        <button *ngIf="mark==2" class="btn" (click)='onClickbehavirol()' style="background-color: blueviolet;">MY BEHAVIROL History</button>
+                        <button *ngIf="mark==2" class="btn" (click)='onClickbehavirol()' style="background-color: #8860D0;">MY BEHAVIROL History</button>
                         <button *ngIf="mark==3" class="btn" (click)='onClickbehavirol()'>MY BEHAVIROL History</button>
 
                         <button *ngIf="mark==1" class="btn" (click)='onClickfamily()'>MY FAMILY HISTORY</button>
                         <button *ngIf="mark==2" class="btn" (click)='onClickfamily()'>MY FAMILY HISTORY</button>
-                        <button *ngIf="mark==3" class="btn" (click)='onClickfamily()' style="background-color: blueviolet;">MY FAMILY HISTORY</button>
+                        <button *ngIf="mark==3" class="btn" (click)='onClickfamily()' style="background-color: #8860D0;">MY FAMILY HISTORY</button>
                     </div>
 
                    </div>

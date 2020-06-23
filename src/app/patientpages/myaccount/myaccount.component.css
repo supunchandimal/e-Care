@@ -33,9 +33,12 @@
 }
 .navbar{
     width: 20%;
-    height: 100%;
+    height: 120%;
     border-right: 1px solid black;
     margin-bottom: 10%;
+    background-color: #5AB9EA;
+    background: -webkit-linear-gradient #5AB9EA;
+	background: linear-gradient #5AB9EA;
    
 }
 .mainbody{
@@ -54,6 +57,7 @@
     margin-left: 5%;
     opacity: 0.8;
     border: 1px solid black;
+    height: 120vh;
 }
 .card:hover {
     box-shadow: 0 16px 32px 0 rgba(0,0,0,0.2);
@@ -63,9 +67,9 @@
     
 }
 .ppic{
-    width: 99%;
-    height: 15vh;
-    
+    width: 75%;
+    height: 20vh;
+    border: 1px solid black;
 }
 .photoholder{
     border-radius: 50%;
@@ -74,7 +78,7 @@
     width: 75px;
     background-color: #bbb;
     margin-left: 50px;
-    background-image: url("../../../assets/images/myaccount.jpg");
+    background-image: url("../../../assets/images/1.jpg");
     background-size: contain;
 }
 .form{
@@ -121,12 +125,13 @@ input[type=text], input[type=password],input[type=number],input[type=date],input
 .searchformfld input{
     width:20vw;
     padding-left: 10px;
+    color: blue;
 }
 .searchformfld label,.searchformfld input{
     transition: all 0.2s;
     transition-timing-function: ease;
     transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
-    opacity:0.5;
+    opacity:1;
 }
 .btn-group button {
     background-color: rgb(243, 237, 237); /* Green background */
@@ -162,4 +167,14 @@ input[type=text], input[type=password],input[type=number],input[type=date],input
      background-color: blue;
      color: aliceblue;
      font-size: larger;
+ }
+ .bton{
+     width: 100%;
+     border: none;
+     background-color: #5AB9EA;
+ }
+
+ .bton:hover{
+    background: -webkit-linear-gradient(#888, #C1C8E4);
+	background: linear-gradient(#888, #C1C8E4);
  }

@@ -8,8 +8,8 @@
 }
 .body{
     display: flex; 
-    
-    margin-top: 2px;  
+    margin-left: 20px;
+    margin-top: 5px;  
 }
 .naviBar{
   width: 22.5%;
@@ -179,7 +179,7 @@
   
   /* Add a background color on hover */
   .btn-group button:hover {
-    background-color: #374A56;
+    background-color: #C1C8E4;
   }
   .btn-group button:not(:last-child) {
     border-right: none; /* Prevent double borders */
@@ -193,7 +193,7 @@
   }
   /* Add a background color on hover */
   .btn-group2 button:hover {
-    background-color: #374A56;
+    background-color: #C1C8E4;
   }
   
   
