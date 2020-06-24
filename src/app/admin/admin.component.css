@@ -8,9 +8,17 @@
         color: #fff;
 }
 
+.toolbar-space{
+        text-decoration: none;
+        color: white;
+        padding: 0 14px;
+        font-size: 18px;
+}
+
 a{
         text-decoration: none;
         color: white;
+      
 }
     
 a:hover {

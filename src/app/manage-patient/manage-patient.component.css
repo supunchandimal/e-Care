@@ -49,33 +49,27 @@
     align-items: center;
 }
 
-/* @media screen and (max-width: 700px) {
-    #sidebar {
-      width: 100%;
-      height: auto;
-      position: relative;
-    }
-    #sidebar a {float: left;}
-    div.content {margin-left: 0;}
-  } */
 
 .wrapper{
     position: fixed;
     display: flex;
-    margin-right: auto; /* 1 */
-    margin-left:  auto; /* 1 */ 
-    max-width: 960px; /* 2 */
+    margin-right: auto; 
+    margin-left:  auto; 
+    max-width: 960px; 
     padding-top: 50px;
-    padding-right: 10px; /* 3 */
-    padding-left:  50px; /* 3 */
+    padding-right: 10px;
+    padding-left:  50px; 
     color: black;
     left: 50%;
-    transform: translate(-50%, 0);
+    transform: translate(100%, 0);
+     
  
 }
 
 table{
     width: 800px;
+    table-layout: inherit;
+    
     /* overflow-y:scroll; */
     /* border-spacing: 40px ; */
 }
@@ -132,6 +126,13 @@ tr:nth-child(odd){
 .mat-toolbar.mat-primary {
     background: grey;
     color: #fff;
+}
+
+.toolbar-space{
+    text-decoration: none;
+    color: white;
+    padding: 0 14px;
+    font-size: 18px;
 }
 
 .material-icons{  
