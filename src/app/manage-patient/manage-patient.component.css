@@ -127,3 +127,25 @@ tr:nth-child(odd){
     transform: translate(-50%, 0);
  
 }
+
+
+.mat-toolbar.mat-primary {
+    background: grey;
+    color: #fff;
+}
+
+.material-icons{  
+    margin-right: 10px; 
+    align-items: center;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+   color: white;
+    text-decoration: none;
+}
+

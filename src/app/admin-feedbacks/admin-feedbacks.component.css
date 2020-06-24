@@ -143,6 +143,21 @@
 }
 
 
+.mat-toolbar.mat-primary {
+    background: grey;
+    color: #fff;
+}
+
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+   color: white;
+    text-decoration: none;
+}
 /* @media screen and (max-width: 700px) {
     #sidebar {
       width: 100%;
