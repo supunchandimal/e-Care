@@ -105,8 +105,8 @@
   font-size: medium;
   display: flex;
   align-self: flex-end;
-  margin-top: 35%;
-  margin-left: 10%;
+  margin-top: 5%;
+  margin-left: 0%;
   border-radius: 0%;
   box-shadow: 2px black;
 }
@@ -197,3 +197,33 @@
   }
   
   
+.btn-group2 .yes-btn{
+    display: inline;
+    color:black; 
+    margin-right: 30px;
+    margin-left:10px ;
+    float: left;
+    background-color: #61892F;
+    border-radius: 5px;
+    padding: 0px;
+    /* float: left; */
+}
+.btn-group2 .no-btn{
+  /* float: left; */
+    color:black;
+    display: inline;
+    float: left;
+    background-color:#BC4639 ;
+    border-radius: 5px;
+    padding: 0px;
+}
+
+
+.btn-group2{
+  width:100%;
+  /* background-color: yellow; */
+  padding: 0px;
+  float: left;
+
+
+}

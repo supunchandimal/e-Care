@@ -1,18 +1,18 @@
 <div class="card">
     <div class="card-content">
-      <span class="card-title">Do you have any allergies?</span>
+      <span class="card-title">Do You Have Any Allergies?</span>
       <form (ngSubmit)="onSubmit()" class="col s6">
         <div class="row" style="width: 500px;">
           <div class="input-field">
-            <label style="margin-right: 10px;">Allergie</label>
+            <label style="margin-right: 10px;">Allergie </label>
             <input type="text" placeholder="Allergie" [(ngModel)]="item.name" name="name" style="margin-left: 10px;" style="color: black;">
           </div>
           <div class="input-field">
-            <label style="margin-top: 25px;">Reaction</label>
+            <label style="margin-top: 25px;">Reaction </label>
             <input type="text" placeholder="Add Reaction" [(ngModel)]="item.reaction" name="description" style="margin-left: 6px;margin-top: 25px; color: black;" >
           </div>
           <div class="input-field">
-            <label style="margin-top: 25px;">Source</label>
+            <label style="margin-top: 25px;">Source </label>
             <input type="text" placeholder="Add Source" [(ngModel)]="item.source" name="source" style="margin-left: 18px;margin-top: 25px; color: black;">
           </div>
           <input type="submit" value="Submit" class="btn">
@@ -23,11 +23,11 @@
  
  <div *ngIf='allegs?.length >0 ;else noAllegs'>
     <ul >
-      <table style="width:80%;margin-left: 5%;">
+      <table style="width:80%;margin-left: 10%;">
         <tr>
-          <th>Allergie</th>
-          <th>Description</th>
-          <th>Source</th>
+          <th>Allergie </th>
+          <th>Description </th>
+          <th>Source </th>
         </tr>
         <tr *ngFor ="let alleg of allegs" class="collection">
           <td>{{alleg.name}}</td>

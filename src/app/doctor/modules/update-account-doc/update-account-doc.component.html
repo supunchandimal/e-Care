@@ -1,77 +1,101 @@
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<h2>Update Profile</h2><br>
+<div class="col-md-6">
+<div *ngFor ="let item of employee">
+      <div *ngIf="!item.isedit; else elseBlock"><h2>
+       
 
+        <table class="example-full-width" cellspacing="0"><tr>
+          <td><mat-form-field class="example-full-width">
+            <mat-label>First name</mat-label>
+            <input matInput disabled value={{item.doctorFirstName}}> 
+          </mat-form-field></td> 
+          <td><mat-form-field class="example-full-width">
+            <mat-label>Last name</mat-label>
+            <input matInput  disabled value={{item.doctorLastName}}>
+          </mat-form-field></td>
+        </tr></table>
 
-<div class="container">
-    <b><h1><label for="">Update Account Details</label></h1></b>
-    <div class="form-group">
-        
-        <div class="form-group">
-        <input type="string" class="form-control" [(ngModel)]="doctorFirstName" placeholder="First Name">
-        </div>
+        <table class="example-full-width" cellspacing="0"><tr>
+          <td><mat-form-field class="example-full-width">
+            <mat-label>Speciality</mat-label>
+            <input matInput disabled value={{item.doctorSpeciality}}> 
+          </mat-form-field></td>
+        </tr></table>
 
-        <div class="form-group">
-        <input type="string" class="form-control" [(ngModel)]="doctorLastName" placeholder="Last Name">
-        </div>
-
-        <div class="form-group">
-            <input type="string" class="form-control" [(ngModel)]="doctorEmail" placeholder="Email">
-        </div>
-    
-
-        <button class="btn btn-primary btn-sm" (click)="createDoctor()">Update Details</button>
-
-    </div>
-  <div class="form-group">
-    <h4><b>{{message}}</b></h4>
-  </div>
-<hr>
-  <b><h1><label for="">Change Password</label></h1></b>
-    <div class="form-group">
-        
-        <div class="form-group">
-        <input type="password" class="form-control" placeholder="Current Password">
-        </div>
-
-        <div class="form-group">
-        <input type="password" class="form-control" [(ngModel)]="doctorLastName" placeholder="New Password">
-        </div>
-
-        <button class="btn btn-primary btn-sm">Change Password</button>
-
-    </div>
-
-
-<!-- 
-    <div class="card" *ngFor = "let item of doctor">
-      doctorFirstName : {{item.doctorFirstName}}
-      doctorLastName : {{item.doctorLastName}}
-      doctorEmail : {{item.doctorEmail}}
-    </div>
-</div>
-
-
-    <div class="row p-2">
-      <div class="col-md-12 p-2 justify-content-center">
-        <h4>All Doctors</h4>
+        <table class="example-full-width" cellspacing="0"><tr>
+          <td><mat-form-field class="example-full-width">
+            <mat-label>Working Hospital</mat-label>
+            <input matInput disabled value={{item.doctorWorkingHospital}}> 
+          </mat-form-field></td>
+        </tr></table>
+      
+        <table class="example-full-width" cellspacing="0"><tr>
+          <td><mat-form-field class="example-full-width">
+            <mat-label>Email</mat-label>
+            <input matInput disabled value={{item.doctorEmail}}> 
+          </mat-form-field></td>
+        </tr></table>
+      
+      
+      </h2>
+        <button type="button" (click)="EditRecord(item)" class="btn btn-primary btn-xs">Edit</button>
       </div>
-      <div class="col-md-3" *ngFor = "let item of doctor">
-        <div class="card">
-          <div class="card-body">
-            <div class="card title">
-              doctorFirstName : {{item.doctorFirstName}}
-            </div>
-            <div class="card-subtitle">
-              doctorLastName : {{item.doctorLastName}}
-            </div>
-            <div class="card-text">
-              doctorEmail : {{item.doctorEmail}}
-            </div>
-            <a href="#" class="btn btn-primary">Edit</a>
-          </div>
-        </div>
-      </div> -->
 
-    </div>
+      <ng-template #elseBlock>
+          <h2>
+            <table class="example-full-width" cellspacing="0"><tr>
+              <td><mat-form-field class="example-full-width">
+                <mat-label>First name</mat-label>
+                <input matInput  [(ngModel)]="item.editFirstName"> 
+              </mat-form-field></td> 
+              <td><mat-form-field class="example-full-width">
+                <mat-label>Last name</mat-label>
+                <input matInput   [(ngModel)]="item.editLastName">
+              </mat-form-field></td>
+            </tr></table>
+    
+            <table class="example-full-width" cellspacing="0"><tr>
+              <td><mat-form-field class="example-full-width">
+                <mat-label>Speciality</mat-label>
+                <input matInput [(ngModel)]="item.editSpeciality"> 
+              </mat-form-field></td>
+            </tr></table>
+    
+            <table class="example-full-width" cellspacing="0"><tr>
+              <td><mat-form-field class="example-full-width">
+                <mat-label>Working Hospital</mat-label>
+                <input matInput  [(ngModel)]="item.editWorkingHospital"> 
+              </mat-form-field></td>
+            </tr></table>
+          
+            <table class="example-full-width" cellspacing="0"><tr>
+              <td><mat-form-field class="example-full-width">
+                <mat-label>Email</mat-label>
+                <input matInput [(ngModel)]="item.editEmail"> 
+              </mat-form-field></td>
+            </tr></table></h2>
 
+      <button type="button" (click)="item.isedit = false" class="btn btn-danger btn-xs">Cancel</button>
+      <button type="button" (click)="Updatarecord(item)" class="btn btn-primary btn-xs">Update</button>
+      </ng-template>
+      
+      
+    </div><br><br>
+    <h2>Change Password</h2>
+    <div class="col-md-3">
+    <table class="example-full-width" cellspacing="0"><tr>
+      <td><mat-form-field class="example-full-width">
+        <mat-label>Current Password</mat-label>
+        <input matInput> 
+      </mat-form-field></td>
+    </tr></table>
 
-
+    <table class="example-full-width" cellspacing="0"><tr>
+      <td><mat-form-field class="example-full-width">
+        <mat-label>Confirm Password</mat-label>
+        <input matInput> 
+      </mat-form-field></td>
+    </tr></table>
+  </div>
+  </div>
+  
