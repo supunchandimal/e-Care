@@ -32,27 +32,22 @@
 #sidebar li a{
     text-decoration: none;
     color: white;
+    display: inline-flex;
+    align-items: center;
 }
 
-.toggle-btn{
-    position: absolute;
-    left: 105%;
-    top: 15px;
+#sidebar li:active{
+    background:gray;
 
-}
-
-.toggle-btn span{
-    display: block;
-    background-color: black;
-    width: 30px;
-    height: 5px;
-    margin: 3px;
 }
 
 #sidebar.active{
     left: 0;
 }
-
+.material-icons{  
+    margin-right: 10px; 
+    align-items: center;
+}
 
 /* @media screen and (max-width: 700px) {
     #sidebar {

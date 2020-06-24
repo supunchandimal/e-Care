@@ -30,14 +30,25 @@
     border-bottom: 1px solid gray;
     text-align: center;
 }
+
+#sidebar li:active{
+    background:gray;
+
+}
+
 #sidebar li a{
     text-decoration: none;
     color: white;
+    display: inline-flex;
+    align-items: center;
+
 }
 
-#sidebar.active{
-    left: 0;
+.material-icons{  
+    margin-right: 10px; 
+    align-items: center;
 }
+
 
 h1{
     font-family: 'Times New Roman', Times, serif;

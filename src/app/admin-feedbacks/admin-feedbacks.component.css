@@ -47,21 +47,19 @@
 #sidebar li a{
     text-decoration: none;
     color: white;
-}
-
-.toggle-btn{
-    position: absolute;
-    left: 105%;
-    top: 15px;
+    display: inline-flex;
+    align-items: center;
 
 }
 
-.toggle-btn span{
-    display: block;
-    background-color: black;
-    width: 30px;
-    height: 5px;
-    margin: 3px;
+#sidebar li:active{
+    background:gray;
+
+}
+
+.material-icons{  
+    margin-right: 10px; 
+    align-items: center;
 }
 
 #sidebar.active{
