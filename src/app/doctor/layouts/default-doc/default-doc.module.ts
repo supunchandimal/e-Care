@@ -20,6 +20,9 @@ import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 
 @NgModule({
@@ -45,7 +48,10 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     MatTableModule,
     MatSortModule,
     MatSelectModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatCheckboxModule,
+    MatRadioModule,
+    MatDatepickerModule
     
   ],
   providers: [UpdateProfileService]
