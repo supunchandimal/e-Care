@@ -7,8 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContentDocComponent implements OnInit {
   today: number = Date.now();
-  edit : boolean = true;
-  constructor() { }
+  minDate: Date;
+  maxDate: Date;
+  t07 = false;
+  indeterminate = false;
+  labelPosition: 'before' | 'after' = 'after';
+  disabled = false;
+
+  constructor() { 
+    const currentYear = new Date().getFullYear();
+    this.minDate = new Date(this.today);
+    this.maxDate = new Date(currentYear + 1, 11, 31);}
 
   ngOnInit(): void {
   }
