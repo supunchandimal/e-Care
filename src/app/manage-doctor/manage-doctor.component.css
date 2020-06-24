@@ -22,6 +22,7 @@ form.normal-form{
 *{
     margin: 0;
     padding: 0;
+    max-width: 100%;
 }
 
 
@@ -29,6 +30,13 @@ form.normal-form{
     background: grey;
     color: #fff;
   }
+
+.toolbar-space{
+    text-decoration: none;
+    color: white;
+    padding: 0 14px;
+    font-size: 18px;
+}
 
   
 #img{
@@ -80,6 +88,9 @@ form.normal-form{
     -webkit-text-fill-color: transparent;
     /* -webkit-background-clip: text; */
 
+}
+.doc-form{
+    position: relative;
 }
 
 .doc-form .form-field{
@@ -174,10 +185,23 @@ form.normal-form{
 #sidebar li a{
     text-decoration: none;
     color: white;
+    display: inline-flex;
+    align-items: center;
+
 }
 
 #sidebar.active{
     left: 0;
+}
+
+#sidebar li:active{
+    background:gray;
+
+}
+
+.material-icons{  
+    margin-right: 10px; 
+    align-items: center;
 }
 
 a{
