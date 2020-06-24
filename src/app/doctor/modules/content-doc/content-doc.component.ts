@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContentDocComponent implements OnInit {
   today: number = Date.now();
+  edit : boolean = true;
   constructor() { }
 
   ngOnInit(): void {
