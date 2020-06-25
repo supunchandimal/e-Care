@@ -7,10 +7,11 @@
         <div class="navibar">
              <app-patient-home class="subnavibar"></app-patient-home>
         </div>
-        <div class="bodyrest">
+        <div class="bodyrest" >
             <div style="align-self: flex-start;width: 82vw;"> 
                 <app-pagemenu [parentData]="flag"></app-pagemenu>
                 <div class="submenu">
+                    
                    <div class="photoholder">
                                 <img src="{{allegs.downloadURL}}" alt="Girl in a jacket" width="100%" height="100%" style="border-radius: 50%;">
                         <div class="profilename">
@@ -20,16 +21,16 @@
                    <div class="btn-holder">
                     <div class="btn-group" >
                         <button *ngIf="mark==2" class="btn" (click)='onClickhealth()'>MY HEALTH HISTORY</button>
-                        <button *ngIf="mark==1" class="btn" (click)='onClickhealth()' style="background-color: blueviolet;">MY HEALTH HISTORY</button>
+                        <button *ngIf="mark==1" class="btn" (click)='onClickhealth()' style="background-color: #8860D0;">MY HEALTH HISTORY</button>
                         <button *ngIf="mark==3" class="btn" (click)='onClickhealth()'>MY HEALTH HISTORY</button>
 
                         <button *ngIf="mark==1" class="btn" (click)='onClickbehavirol()'>MY BEHAVIROL HISTORY</button>
-                        <button *ngIf="mark==2" class="btn" (click)='onClickbehavirol()' style="background-color: blueviolet;">MY BEHAVIROL History</button>
+                        <button *ngIf="mark==2" class="btn" (click)='onClickbehavirol()' style="background-color: #8860D0;">MY BEHAVIROL History</button>
                         <button *ngIf="mark==3" class="btn" (click)='onClickbehavirol()'>MY BEHAVIROL History</button>
 
                         <button *ngIf="mark==1" class="btn" (click)='onClickfamily()'>MY FAMILY HISTORY</button>
                         <button *ngIf="mark==2" class="btn" (click)='onClickfamily()'>MY FAMILY HISTORY</button>
-                        <button *ngIf="mark==3" class="btn" (click)='onClickfamily()' style="background-color: blueviolet;">MY FAMILY HISTORY</button>
+                        <button *ngIf="mark==3" class="btn" (click)='onClickfamily()' style="background-color: #8860D0;">MY FAMILY HISTORY</button>
                     </div>
 
                    </div>
@@ -40,8 +41,8 @@
                     <h2>Do you have any allergies or drug sensivities?</h2>
                 </div>
                  <div class="btn-holder2" >
-                    <div class="btn-group2 button">
-                        <button style="color: green;" (click)=" onClickYesAlleg()">yes</button><button style="color: red;"(click)=" onClickNoAlleg()">no</button>
+                    <div class="btn-group2">
+                        <button class="yes-btn" (click)=" onClickYesAlleg()">YES</button><button class="no-btn" (click)=" onClickNoAlleg()">NO</button>
                     </div> 
                  </div>
                  <div class="dive">
@@ -49,7 +50,7 @@
                 </div>
                  <div class="btn-holder2">
                     <div class="btn-group2 button">
-                        <button style="color: green;" (click)=" onClickYesMed()">yes</button><button style="color: red;" (click)=" onClickNoMed()">no</button>
+                        <button class="yes-btn" (click)=" onClickYesMed()">YES</button><button class="no-btn" (click)=" onClickNoMed()">NO</button>
                     </div> 
                  </div>
                  <div class="dive">
@@ -57,7 +58,7 @@
                 </div>
                  <div class="btn-holder2">
                     <div class="btn-group2 button">
-                        <button style="color: green;" (click)=" onClickYesCond()">yes</button><button style="color: red;" (click)=" onClickNoCond()">no</button>
+                        <button class="yes-btn" (click)=" onClickYesCond()">YES</button><button class="no-btn" (click)=" onClickNoCond()">NO</button>
                     </div> 
                  </div>
                  <div class="dive">
@@ -65,7 +66,7 @@
                 </div>
                  <div class="btn-holder2">
                     <div class="btn-group2 button">
-                        <button style="color: green;" (click)=" onClickYesOpo()">yes</button><button style="color: red;" (click)=" onClickNoOpo()">no</button>
+                        <button class="yes-btn" (click)=" onClickYesOpo()">YES</button><button class="no-btn" (click)=" onClickNoOpo()">NO</button>
                     </div> 
                  </div>
                  <div class="bmi">

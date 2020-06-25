@@ -19,3 +19,9 @@
   display: block;
   border-radius: 50%;
  }
+
+ .mat-list-item:hover{
+  background: -webkit-linear-gradient(#5AB9EA, #84CEEB);
+	background: linear-gradient(#5AB9EA, #84CEEB);
+	border: 0 none;
+ }

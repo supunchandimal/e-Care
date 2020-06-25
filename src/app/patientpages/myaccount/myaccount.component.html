@@ -27,14 +27,23 @@
             <div class="mainbody" style="align-self: flex-start;">
                 <div class="navbar">
                     <div>
-                        <div style="margin-top: 30%;background-color: rgb(0,191,255);">
-                            <h1><button class="bton" (click)= "onClickAD()" style="background-color: rgb(0,191,255);">ACCOUNT DETAILS</button></h1>
+                        <div style="margin-top: 30%;">
+                            <div class="icn">
+                                <i class="fa fa-user-circle" aria-hidden="true" id="icon"></i>
+                            </div>
+                            <h1><button class="bton" (click)= "onClickAD()">ACCOUNT DETAILS</button></h1>
                         </div>
                         <div style="margin-top: 30%;">
-                            <h1><button class="bton"  (click)= "onClickLP()" style="background-color: rgb(0,191,255);">LOGIN & PASSWORD</button></h1>
+                            <div class="icn">
+                                <i class="fa fa-cog" aria-hidden="true" id="icon"></i>
+                            </div>
+                            <h1><button class="bton"  (click)= "onClickLP()">LOGIN & PASSWORD</button></h1>
                         </div>
                         <div style="margin-top: 30%;">
-                            <h1><button class="bton"  (click)= "onClickBD()" style="background-color: rgb(0,191,255);">BILLING DETAILS</button></h1>
+                            <div class="icn">
+                                <i class="fa fa-credit-card" aria-hidden="true" id="icon"></i>
+                            </div>
+                            <h1><button class="bton"  (click)= "onClickBD()">BILLING DETAILS</button></h1>
                         </div>
                     </div>
                 </div>
@@ -56,7 +65,7 @@
                                     
                                 <div style="width: 35%;">
                                     <div class="searchformfld" >
-                                        <input style="color: red;" width="50vw" type="text" class="email" id="email" name="email" value="{{user.email}}"   placeholder=" "/>
+                                        <input style="color: blue;" width="50vw" type="text" class="email" id="email" name="email" value="{{user.email}}"   placeholder=" "/>
                                         <label for="email"><b>E-mail</b></label>
                                     </div>
                                 </div>
@@ -80,7 +89,7 @@
                                 </div>
                                 </div>
                                 <div class="formp2">
-                                    <h1 style="color: black;">Enter your details</h1>
+                                    <h1 style="color: black;">Enter Your Details</h1>
                                     <div style="width: 35%;">
                                         <div class="searchformfld">
                                             <input [(ngModel)]="item.addr" value={{user.addr}} width="50vw" type="text" class="addr" id="addr" name="addr" placeholder=" "/>
@@ -90,7 +99,7 @@
                                     <div style="width: 35%;">
                                         <div class="searchformfld">
                                             <input [(ngModel)]="item.emercntct" value={{user.emercntct}} width="50vw" type="text" class="emergency" id="emergency" name="emergency" placeholder=" "/>
-                                            <label for="emergency"><b>Emergency Cntact </b></label>
+                                            <label for="emergency"><b>Emergency Contact </b></label>
                                         </div>
                                     </div>
                            <div style="width: 35%;">
@@ -110,7 +119,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div style="width: 100%;margin-left: 50%;margin-top: 30%;">
+                                    <div style="width: 100%;margin-left: 20%;margin-top: 20%;">
                                         <div class="submit">
                                             <input width="10vw" type="submit" class="submit" id="phoneNumber" name="phoneNumber" placeholder=" "/>
                                            

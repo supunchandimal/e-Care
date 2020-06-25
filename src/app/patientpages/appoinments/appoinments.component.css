@@ -35,14 +35,14 @@
   .datacard{
     display: flex;
     grid-template-columns: 300px;
-    grid-template-rows: 210px 210px 80px;
+    grid-template-rows: 200px 200px 80px;
     grid-template-areas: "image" "text" "stats";
-    background: lightblue;
+    background: #84CEEB;
     box-shadow: 15px 15px 25px rgba(0,0,0,0.9);
     font-family: roboto;
     text-align: center;
     height: 25vh;
-    width: 92%;
+    width: 90%;
     margin-top: 5%;
     margin-left: 1%;
   }

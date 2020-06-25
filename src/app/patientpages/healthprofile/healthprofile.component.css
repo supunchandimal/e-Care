@@ -8,14 +8,14 @@
 }
 .body{
     display: flex; 
-    margin-left: 20px;
-    margin-top: 5px;  
+     
+    overflow-x: hidden;
 }
 .naviBar{
-  width: 22.5%;
-  height: 100%;
+  width: 22.5vw;
+  height: 100vh;
   align-self: flex-start;
-  background-color: #888, #555;
+  
 }
 .subnavibar{
   position: fixed;
@@ -24,10 +24,10 @@
   margin-top: -10px;
 }
 .bodyrest{
-  width: 85%;
-  height: 100%;
-  margin-left: 20%;
-  display: flex;   
+    width: 78%;
+    height: 100%;
+    margin-left: 20%;
+    display: flex;   
 }
 .submenu{
   width: 100%;
@@ -84,7 +84,7 @@
   font-size: medium;
   align-self: flex-start;
   padding-left: 10px;
-  margin-top: 40px;
+  margin-top: 20px;
 }
 .btn-holder2{
   justify-content:flex-start;
@@ -105,8 +105,8 @@
   font-size: medium;
   display: flex;
   align-self: flex-end;
-  margin-top: 35%;
-  margin-left: 10%;
+  margin-top: 5%;
+  margin-left: 0%;
   border-radius: 0%;
   box-shadow: 2px black;
 }
@@ -179,7 +179,7 @@
   
   /* Add a background color on hover */
   .btn-group button:hover {
-    background-color: #374A56;
+    background-color: #C1C8E4;
   }
   .btn-group button:not(:last-child) {
     border-right: none; /* Prevent double borders */
@@ -193,7 +193,37 @@
   }
   /* Add a background color on hover */
   .btn-group2 button:hover {
-    background-color: #374A56;
+    background-color: #C1C8E4;
   }
   
   
+.btn-group2 .yes-btn{
+    display: inline;
+    color:black; 
+    margin-right: 30px;
+    margin-left:10px ;
+    float: left;
+    background-color: #61892F;
+    border-radius: 5px;
+    padding: 0px;
+    /* float: left; */
+}
+.btn-group2 .no-btn{
+  /* float: left; */
+    color:black;
+    display: inline;
+    float: left;
+    background-color:#BC4639 ;
+    border-radius: 5px;
+    padding: 0px;
+}
+
+
+.btn-group2{
+  width:100%;
+  /* background-color: yellow; */
+  padding: 0px;
+  float: left;
+
+
+}
