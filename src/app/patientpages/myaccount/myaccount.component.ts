@@ -44,6 +44,7 @@ export class MyaccountComponent implements OnInit {
         this.accountService.getAlegs().valueChanges().subscribe(meds =>{
           //console.log(allegs);
         this.meds= meds;
+        console.log(this.user.displayName)
         this.item.firstname = this.user.displayName;
       });
         //this works

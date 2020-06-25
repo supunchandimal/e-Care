@@ -27,14 +27,14 @@
             <div class="mainbody" style="align-self: flex-start;">
                 <div class="navbar">
                     <div>
-                        <div style="margin-top: 30%;">
-                            <h1><button class="bton" (click)= "onClickAD()">ACCOUNT DETAILS</button></h1>
+                        <div style="margin-top: 30%;background-color: rgb(0,191,255);">
+                            <h1><button class="bton" (click)= "onClickAD()" style="background-color: rgb(0,191,255);">ACCOUNT DETAILS</button></h1>
                         </div>
                         <div style="margin-top: 30%;">
-                            <h1><button class="bton"  (click)= "onClickLP()">LOGIN & PASSWORD</button></h1>
+                            <h1><button class="bton"  (click)= "onClickLP()" style="background-color: rgb(0,191,255);">LOGIN & PASSWORD</button></h1>
                         </div>
                         <div style="margin-top: 30%;">
-                            <h1><button class="bton"  (click)= "onClickBD()">BILLING DETAILS</button></h1>
+                            <h1><button class="bton"  (click)= "onClickBD()" style="background-color: rgb(0,191,255);">BILLING DETAILS</button></h1>
                         </div>
                     </div>
                 </div>
@@ -62,7 +62,7 @@
                                 </div>
                                 <div style="width: 35%;">
                                     <div class="searchformfld" >
-                                        <input [(ngModel)]="item.firstname"  width="50vw"  type="text" class="firstname" id="firstname" name="firstname" value="fuck off" placeholder=" " #firstname="ngModel"/>
+                                        <input [(ngModel)]="item.firstname"  width="50vw"  type="text" class="firstname" id="firstname" name="firstname" value="fuck off" placeholder=" " />
                                         <label for="firstname"><b>First Name</b></label>
                                     </div>
                                 </div>

@@ -4,7 +4,7 @@ import { DefaultDocModule } from './doctor/layouts/default-doc/default-doc.modul
 import { DefaultAdminModule } from './admin02/layouts/default-admin/default-admin.module';
 
 import { AuthService } from './auth/auth.service';
-import { environment } from './../environments/environment';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule,ReactiveFormsModule }   from '@angular/forms';
@@ -69,6 +69,10 @@ import { PasswordComponent } from './patientpages/myaccount/password/password.co
 import { PpicService } from './patientpages/services/ppic.service';
 
 import { MatNativeDateModule } from '@angular/material/core';
+import { environment } from 'src/environments/environment';
+import { NgxAgoraModule } from 'ngx-agora';
+
+import { VconferenceComponent } from './video/vconference/vconference.component';
 
 @NgModule({
   declarations: [
@@ -108,6 +112,10 @@ import { MatNativeDateModule } from '@angular/material/core';
     AdminAnnouncementComponent,
 
     PasswordComponent,
+
+    
+
+    VconferenceComponent,
   ],
   imports: [
     BrowserModule,
@@ -130,7 +138,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     ImageCropperModule,
     DefaultAdminModule,
     MatDatepickerModule,
-    MatNativeDateModule ,
+    MatNativeDateModule,
+    NgxAgoraModule.forRoot({ AppID: environment.agora.appId }) ,
   ],
   providers: [
     AuthService,

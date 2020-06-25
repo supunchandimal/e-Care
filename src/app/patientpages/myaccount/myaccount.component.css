@@ -36,7 +36,7 @@
     height: 120%;
     border-right: 1px solid black;
     margin-bottom: 10%;
-   
+    background-color: rgb(0,191,255);
 }
 .mainbody{
     width: 100%;

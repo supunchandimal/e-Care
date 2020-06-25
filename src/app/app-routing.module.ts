@@ -39,6 +39,7 @@ import { DefaultAdminComponent } from './admin02/layouts/default-admin/default-a
 
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { from } from 'rxjs';
+import { VconferenceComponent } from './video/vconference/vconference.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'/home' ,pathMatch:'full'},
@@ -69,7 +70,7 @@ const routes: Routes = [
   {path:'myaccount',component:MyaccountComponent},
   {path:'adminfeedbacks', component:AdminFeedbacksComponent},
   {path:'patientupload',component:UploaderComponent},
-
+  {path:'video',component:VconferenceComponent},
   
 
   //doctor's paths
