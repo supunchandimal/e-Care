@@ -23,6 +23,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import { AppointmentScheduleComponent } from './../../modules/appointment-schedule/appointment-schedule.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     DashboardDocComponent,
     ContentDocComponent,
     UpdateAccountDocComponent,
-    AppointmentDocComponent
+    AppointmentDocComponent,
+    AppointmentScheduleComponent
   ],
   imports: [
     CommonModule,
