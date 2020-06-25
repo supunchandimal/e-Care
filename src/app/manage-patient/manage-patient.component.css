@@ -19,6 +19,7 @@
     height: 100%;
     /* left: -20%; */
     background-color: black;
+    filter: opacity(0.7);
 }
 
 #sidebar li{
@@ -51,7 +52,7 @@
 
 
 .wrapper{
-    position: fixed;
+    position: absolute;
     display: flex;
     margin-right: auto; 
     margin-left:  auto; 
@@ -63,12 +64,11 @@
     left: 50%;
     transform: translate(100%, 0);
      
- 
 }
 
 table{
     width: 800px;
-    table-layout: inherit;
+    table-layout: initial;
     
     /* overflow-y:scroll; */
     /* border-spacing: 40px ; */
