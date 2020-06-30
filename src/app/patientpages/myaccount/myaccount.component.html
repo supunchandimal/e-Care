@@ -67,7 +67,24 @@
                                 <div style="width: 35%;">
                                     <div class="searchformfld" >
                                         <input style="color: blue;" width="50vw" type="text" class="email" id="email" name="email" value="{{user.email}}"   placeholder=" "/>
-                                        <label for="email"><b>E-mail</b></label>
+                                        <!-- <label for="email"><b>E-mail</b></label> -->
+
+                                        <form class="example-form">
+                                            <mat-form-field class="example-full-width">
+                                              <mat-label>Email</mat-label>
+                                              <input matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
+                                                     placeholder="Ex. pat@example.com">
+                                              <mat-hint>Errors appear instantly!</mat-hint>
+                                              <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                                                Please enter a valid email address
+                                              </mat-error>
+                                              <mat-error *ngIf="emailFormControl.hasError('required')">
+                                                Email is <strong>required</strong>
+                                              </mat-error>
+                                            </mat-form-field>
+                                          </form>
+
+
                                     </div>
                                 </div>
                                 <div style="width: 35%;">
@@ -109,17 +126,27 @@
                                             <label for="dob"><b>DATE OF Birth </b></label>
                                         </div>
                                     </div>
-                                    <div style="width: 35%;">
-                                        <div class="searchformfld">
-                                            <div class="btn-holder">
-                                                <div class="btn-group">
-                                                    <button style="border-bottom-left-radius: 50%;border-top-left-radius: 50%;">Male</button>
-                                                    <button>Female</button>
-                                                    <button style="border-bottom-right-radius: 50%;border-top-right-radius: 50%;">Other</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <!-- <div style="width: 35%;"> -->
+                                        <!-- <div class="searchformfld"> -->
+                                            <!-- <div class="btn-holder"> -->
+                                                <!-- <div class="btn-group"> -->
+                                                    <!-- <button style="border-bottom-left-radius: 50%;border-top-left-radius: 50%;">Male</button> -->
+                                                    <!-- <button>Female</button> -->
+                                                    <!-- <button style="border-bottom-right-radius: 50%;border-top-right-radius: 50%;">Other</button> -->
+                                                <!-- </div> -->
+                                            <!-- </div> -->
+                                        <!-- </div> -->
+                                    <!-- </div> -->
+                                    <div class="dive">
+                                        <h3><b>Gender</b></h3>
+                                        
+                                        <mat-radio-group aria-label="Select an option">
+                                          <mat-radio-button class="radio-btn" value="1">Male</mat-radio-button>
+                                          <mat-radio-button class="radio-btn" value="2">female</mat-radio-button>
+
+                                        </mat-radio-group>
+                                      
+                                      </div>
                                     <div style="width: 100%;margin-left: 20%;margin-top: 20%;">
                                         <div class="submit">
                                             <input width="10vw" type="submit" class="submit" id="phoneNumber" name="phoneNumber" placeholder=" "/>
