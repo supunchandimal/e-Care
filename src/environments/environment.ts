@@ -3,6 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
+  agora: {
+    appId: '75d2964da18e41ddb117d48a00d410d3'
+  },
   production: false,
   firebase:{
     apiKey: "AIzaSyAXg-d2JPlYSmnUcb8iGCjFeC8ksBPYYGc",
@@ -12,8 +15,8 @@ export const environment = {
     storageBucket: "e-care-96a24.appspot.com",
     messagingSenderId: "278171010639",
     appId: "1:278171010639:web:564eb007ee7db51211cc3a",
-    measurementId: "G-SZ0SMFEQZN"
-  }
+    measurementId: "G-SZ0SMFEQZN",
+  },
 };
 
 /*

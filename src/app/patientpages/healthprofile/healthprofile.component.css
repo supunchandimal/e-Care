@@ -8,14 +8,14 @@
 }
 .body{
     display: flex; 
-    margin-left: 20px;
-    margin-top: 5px;  
+     
+    overflow-x: hidden;
 }
 .naviBar{
-  width: 22.5%;
-  height: 100%;
+  width: 22.5vw;
+  height: 100vh;
   align-self: flex-start;
-  background-color: #888, #555;
+  
 }
 .subnavibar{
   position: fixed;
@@ -24,10 +24,10 @@
   margin-top: -10px;
 }
 .bodyrest{
-  width: 85%;
-  height: 100%;
-  margin-left: 20%;
-  display: flex;   
+    width: 78%;
+    height: 100%;
+    margin-left: 20%;
+    display: flex;   
 }
 .submenu{
   width: 100%;
@@ -41,8 +41,8 @@
 .photoholder{
   margin-bottom: 70px;
   margin-left: 20px;
-  width: 25vw;
-  height: 5vh;
+  width: 75px;
+  height: 75px;
   align-self: center;
 }
 .addpoto{
