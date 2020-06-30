@@ -60,6 +60,7 @@ import { AdminComponent } from './admin/admin.component';
 import { MatSliderModule } from '@angular/material/slider';
 import { MaterialModule } from './material/material.module';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 import { ManageDoctorService } from 'src/services/shared/manage-doctor.service';
 import { MyaccountComponent } from './patientpages/myaccount/myaccount.component';
 import { PpicComponent } from './patientpages/myaccount/ppic/ppic.component';
@@ -134,6 +135,7 @@ import { VconferenceComponent } from './video/vconference/vconference.component'
     TextFieldModule,
     MatFormFieldModule,
     MatButtonModule,
+    MatInputModule,
     ReactiveFormsModule,
     ImageCropperModule,
     DefaultAdminModule,
