@@ -26,26 +26,27 @@
         </div>
             <div class="mainbody" style="align-self: flex-start;">
                 <div class="navbar">
-                    <div>
-                        <div style="margin-top: 30%;">
-                            <div class="icn">
-                                <i class="fa fa-user-circle" aria-hidden="true" id="icon"></i>
-                            </div>
-                            <h1><button class="bton" (click)= "onClickAD()">ACCOUNT DETAILS</button></h1>
-                        </div>
-                        <div style="margin-top: 30%;">
-                            <div class="icn">
-                                <i class="fa fa-cog" aria-hidden="true" id="icon"></i>
-                            </div>
-                            <h1><button class="bton"  (click)= "onClickLP()">LOGIN & PASSWORD</button></h1>
-                        </div>
-                        <div style="margin-top: 30%;">
-                            <div class="icn">
-                                <i class="fa fa-credit-card" aria-hidden="true" id="icon"></i>
-                            </div>
-                            <h1><button class="bton"  (click)= "onClickBD()">BILLING DETAILS</button></h1>
-                        </div>
-                    </div>
+                    <!-- <div> -->
+                        <!-- <div style="margin-top: 30%;"> -->
+                            <!-- <div class="icn"> -->
+                                <!-- <i class="fa fa-user-circle" aria-hidden="true" id="icon"></i> -->
+                            <!-- </div> -->
+                            <!-- <h1><button class="bton" (click)= "onClickAD()">ACCOUNT DETAILS</button></h1> -->
+                        <!-- </div> -->
+                        <!-- <div style="margin-top: 30%;"> -->
+                            <!-- <div class="icn"> -->
+                                <!-- <i class="fa fa-cog" aria-hidden="true" id="icon"></i> -->
+                            <!-- </div> -->
+                            <!-- <h1><button class="bton"  (click)= "onClickLP()">LOGIN & PASSWORD</button></h1> -->
+                        <!-- </div> -->
+                        <!-- <div style="margin-top: 30%;"> -->
+                            <!-- <div class="icn"> -->
+                                <!-- <i class="fa fa-credit-card" aria-hidden="true" id="icon"></i> -->
+                            <!-- </div> -->
+                            <!-- <h1><button class="bton"  (click)= "onClickBD()">BILLING DETAILS</button></h1> -->
+                        <!-- </div> -->
+                    <!-- </div> -->
+                    <app-patient-home class="subnavibar"></app-patient-home>
                 </div>
                 <div class="card" *ngIf = "mark==1">
                     <div class="container">
@@ -61,7 +62,7 @@
                         <div >
                             <form *ngFor="let user of meds" (ngSubmit)="onSubmit()" class="col s6" class="mainbody"  style="width: 68vw;height: 85vh;align-self: flex-start;color: blue;margin-top: 1%;">
                                 <div class="formp1">
-                                    <h1 style="color: black;">ACCOUNT DETAILS</h1>
+                                    <h1 style="color: black;"><b> ENTER YOUR DETAILS</b></h1>
                                     
                                 <div style="width: 35%;">
                                     <div class="searchformfld" >
@@ -89,7 +90,7 @@
                                 </div>
                                 </div>
                                 <div class="formp2">
-                                    <h1 style="color: black;">Enter Your Details</h1>
+                                    
                                     <div style="width: 35%;">
                                         <div class="searchformfld">
                                             <input [(ngModel)]="item.addr" value={{user.addr}} width="50vw" type="text" class="addr" id="addr" name="addr" placeholder=" "/>
