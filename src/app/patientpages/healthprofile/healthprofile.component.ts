@@ -8,6 +8,8 @@ import { Router } from '@angular/router';
 import * as _ from 'lodash';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { Alleg } from '../../models/allergie';
+import { ServiceService } from '../services/service.service';
 @Component({
   selector: 'app-healthprofile',
   templateUrl: './healthprofile.component.html',
@@ -24,13 +26,21 @@ export class HealthprofileComponent implements OnInit {
     medication:'',
     conditions:''
   }
+  items:Alleg={
+    name:'',
+    reaction:'',
+    source:'',
+  };
+  allegs: Alleg[];
   recs: Rec[];
   user:firebase.User;
 id:string;
-allegs;
+ppic;
+yes;
+als;
 
 public currentUser: firebase.User;
-  constructor(private afAuth:AngularFireAuth,private auth:AuthService,private router:Router,private service:HealthproService,private afs: AngularFirestore) { 
+  constructor(private afAuth:AngularFireAuth,private auth:AuthService,private router:Router,private service:HealthproService,private afs: AngularFirestore,private serviceService:ServiceService) { 
     this.authState = this.afAuth.authState;
   }
     
@@ -53,8 +63,16 @@ public currentUser: firebase.User;
         console.log('AUTHSTATE USER', user.uid); 
         this.getPpic().subscribe(allegs =>{
           console.log(allegs);
-        this.allegs= allegs;
+        this.ppic= allegs;
       });
+      this.getYes().subscribe(yes =>{
+        console.log(yes);
+      this.yes= yes;
+    });
+    this.getAl().subscribe(als =>{
+      console.log(als);
+    this.als= als;
+  });
         //this works
         
       } else {
@@ -126,4 +144,19 @@ public  bmi: number;
   getPpic(){
     return this.afs.collection('ppic').doc(this.currentUser.uid).valueChanges();
    }
+   getYes(){
+    return this.afs.collection('Healthpro').doc(this.currentUser.uid).valueChanges();
+   }
+   getAl(){
+    return this.afs.collection('Allegs', ref => ref.where('id', '==', this.currentUser.uid)).valueChanges();
+   }
+   onSubmit(){
+    if(this.items.name != '' && this.items.reaction != ''){
+      this.items.id=this.currentUser.uid;
+      this.serviceService.addItem(this.items);
+      this.items.name = '';
+      this.items.reaction = '';
+      this.items.source = '';
+    }
+  }
 }
