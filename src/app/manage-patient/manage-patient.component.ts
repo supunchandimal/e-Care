@@ -11,7 +11,7 @@ export class ManagePatientComponent implements OnInit {
   constructor(public PatientService: ManagePatientService, public firestore: AngularFirestore) { }
 
   ngOnInit(): void {
-    this.PatientService.get_Alldoctors().subscribe(data => {
+    this.PatientService.get_Allpatients().subscribe(data => {
 
       this.patient=data.map(e=> {
         return{
@@ -32,15 +32,9 @@ export class ManagePatientComponent implements OnInit {
     //     map(Users=> Users.filter(Users=>Users.roles.patient===true))
     //   );
     // }
-
-    }
-    
+  } 
+  DeleteDoctor(record_id){
+    this.PatientService.delete_patient(record_id);
+  }
     
   }
-
-
-  // get_Alldoctors(){
-  //   return this.firestore.pipe(
-  //     map(Users=> Users.filter(Users=>Users.roles.patient===true))
-  //   );
-  // }

@@ -8,9 +8,11 @@ export class ManagePatientService {
 
   constructor(public firestore: AngularFirestore) { }
 
-  get_Alldoctors(){
-    return this.firestore.collection('Users').snapshotChanges();
+  get_Allpatients(){
+    return this.firestore.collection('Users',ref=>ref.where('role','==','patient')).snapshotChanges();
   }
 
-
+  delete_patient(record_id){
+    this.firestore.doc('Users/'+record_id).delete();
+  }
 }
