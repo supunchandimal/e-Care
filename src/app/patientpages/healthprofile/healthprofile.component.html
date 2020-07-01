@@ -7,24 +7,13 @@
         <div class="navibar">
              <app-patient-home class="subnavibar"></app-patient-home>
         </div>
-        <div class="bodyrest">
+        <div class="bodyrest" >
             <div style="align-self: flex-start;width: 82vw;"> 
                 <app-pagemenu [parentData]="flag"></app-pagemenu>
                 <div class="submenu">
+                    
                    <div class="photoholder">
-                        <button class="addpoto" *ngIf='changingimg'> 
-                            <div > 
-                              <i class="fa fa-user" id="icon" style="width: 2vw;height: 100%;" ></i>
-                            </div>
-                        </button>
-                        <button class="addpoto" *ngIf='!changingimg'> 
-                            <div > 
-                              
-                            </div>
-                        </button> 
-                        <button style="top: 30%;border-radius: 50%;border-color: aliceblue;" (click)='changingImage()'>
-                            <i class="fa fa-user" id="icon" style="width: 2vw;height: 100%;" ></i>
-                        </button>
+                                <img src="{{allegs.downloadURL}}" alt="Girl in a jacket" width="100%" height="100%" style="border-radius: 50%;">
                         <div class="profilename">
                             <h1 *ngIf="user">{{ user?.displayName }}</h1>
                         </div>

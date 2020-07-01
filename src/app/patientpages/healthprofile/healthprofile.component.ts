@@ -1,4 +1,4 @@
-import { from } from 'rxjs';
+import { from, Observable } from 'rxjs';
 import { Ppic } from './../../models/propic';
 import { Rec } from './../../models/healthpro';
 import { HealthproService } from './../services/healthpro.service';
@@ -6,14 +6,15 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { AuthService } from 'src/app/auth/auth.service';
 import { Router } from '@angular/router';
 import * as _ from 'lodash';
-
-
+import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFireAuth } from '@angular/fire/auth';
 @Component({
   selector: 'app-healthprofile',
   templateUrl: './healthprofile.component.html',
   styleUrls: ['./healthprofile.component.css']
 })
 export class HealthprofileComponent implements OnInit {
+  private authState: Observable<firebase.User>;
   changingimg:boolean;
   files : FileList;
   upload : Ppic;
@@ -26,7 +27,12 @@ export class HealthprofileComponent implements OnInit {
   recs: Rec[];
   user:firebase.User;
 id:string;
-  constructor(private auth:AuthService,private router:Router,private service:HealthproService) { }
+allegs;
+
+public currentUser: firebase.User;
+  constructor(private afAuth:AngularFireAuth,private auth:AuthService,private router:Router,private service:HealthproService,private afs: AngularFirestore) { 
+    this.authState = this.afAuth.authState;
+  }
     
   public flag = 1;
   public ans = '';
@@ -40,6 +46,27 @@ id:string;
        // console.log(recs);
         this.recs= recs;
     });
+    this.authState.subscribe(user => {
+      
+      if (user) {
+        this.currentUser = user;
+        console.log('AUTHSTATE USER', user.uid); 
+        this.getPpic().subscribe(allegs =>{
+          console.log(allegs);
+        this.allegs= allegs;
+      });
+        //this works
+        
+      } else {
+        console.log('AUTHSTATE USER EMPTY', user);
+        this.currentUser = null;
+      }
+      
+    },
+    err => {
+      console.log('Please try again')
+    });
+
   }
 public  bmi: number;
   calc(frm){
@@ -96,4 +123,7 @@ public  bmi: number;
   changingImage(){
     this.changingimg = !this.changingimg;
   }
+  getPpic(){
+    return this.afs.collection('ppic').doc(this.currentUser.uid).valueChanges();
+   }
 }

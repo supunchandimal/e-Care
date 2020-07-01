@@ -8,6 +8,7 @@ import { UpdateProfileService } from './../../services/update-profile.service';
   styleUrls: ['./update-account-doc.component.css']
 })
 export class UpdateAccountDocComponent implements OnInit {
+  edit : boolean;
 
   employee: any;
   doctorFirstName:string;
@@ -15,9 +16,12 @@ export class UpdateAccountDocComponent implements OnInit {
   doctorEmail:string;
   doctorSpeciality:string;
   doctorWorkingHospital:string;
+  password : string;
   constructor( public updateprofileservice : UpdateProfileService ) { }
 
   ngOnInit() {
+
+    this.edit = false;
     this.updateprofileservice.getDoctor().subscribe(data => {
 
       this.employee = data.map(e => {
@@ -57,4 +61,10 @@ export class UpdateAccountDocComponent implements OnInit {
     this.updateprofileservice.updateDoctor(recorddata.id, record);
     recorddata.isedit = false;
   }
+
+  hello1 (){
+    this.edit=true;
+  }
+  hello2 (){}
+
 }

@@ -1,6 +1,7 @@
-<h2>Update Profile</h2><br>
+
 <div class="col-md-6">
-<div *ngFor ="let item of employee">
+<h2>Update Profile</h2><br>
+  <div *ngFor ="let item of employee">
       <div *ngIf="!item.isedit; else elseBlock"><h2>
        
 
@@ -80,22 +81,65 @@
       </ng-template>
       
       
-    </div><br><br>
+    </div><br>
+    <mat-divider></mat-divider><br>
+
     <h2>Change Password</h2>
-    <div class="col-md-3">
+    <h2>
     <table class="example-full-width" cellspacing="0"><tr>
       <td><mat-form-field class="example-full-width">
         <mat-label>Current Password</mat-label>
-        <input matInput> 
+        <input type="password" matInput> 
       </mat-form-field></td>
     </tr></table>
 
     <table class="example-full-width" cellspacing="0"><tr>
       <td><mat-form-field class="example-full-width">
         <mat-label>Confirm Password</mat-label>
-        <input matInput> 
+        <input type="password" matInput > 
       </mat-form-field></td>
-    </tr></table>
+    </tr></table></h2>
+    <button type="button"  class="btn btn-primary btn-xs">Change Password</button>
+ 
   </div>
-  </div>
-  
+
+<!--   
+  <div class="form-row">
+    <div class="col-6">
+        <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password">
+            <div *ngIf="password.touched && password.invalid">
+                <small *ngIf="password.errors.required" class="text-danger">Password is required<br></small>
+                <small *ngIf="password.errors.minlength" class="text-danger">password must contain 6 characters at least</small>
+            </div>
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="form-group">
+            <label for="repeatPassword">Repeat Password</label>
+            <input type="password" class="form-control" id="repeatPassword" formControlName="repassword">
+            <div *ngIf="repassword.touched && repassword.invalid">
+                <small *ngIf="repassword.errors.required" class="text-danger">Repeat Password is required<br></small>
+            </div>
+            <div *ngIf="repassword.valid && repassword.value != password.value" class="text-danger">
+                The passwords entered do not match
+            </div>
+        </div>
+    </div> -->
+
+
+    <br>
+   
+      <div *ngIf="!edit; else elseBlock">
+        <button type="button" (click)="hello1()" class="btn btn-primary btn-xs">Edit</button>
+      </div>
+
+      <ng-template #elseBlock>
+         
+
+      <button type="button" (click)="edit=false" class="btn btn-danger btn-xs">Cancel</button>
+      <button type="button" (click)="hello2()" class="btn btn-primary btn-xs">Update</button>
+      </ng-template>
+      
+      
