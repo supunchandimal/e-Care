@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ManagePatientService } from 'src/services/shared/manage-patient.service';
 import { AngularFirestore } from '@angular/fire/firestore'; 
+import { MatDialog, MatDialogConfig } from  '@angular/material/dialog';
+import { PatientDeleteDialogService } from 'src/services/shared/patient-delete-dialog.service';
+
 @Component({
   selector: 'app-manage-patient',
   templateUrl: './manage-patient.component.html',
@@ -8,7 +11,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 })
 export class ManagePatientComponent implements OnInit {
   patient: any;
-  constructor(public PatientService: ManagePatientService, public firestore: AngularFirestore) { }
+  constructor(public PatientService: ManagePatientService, public firestore: AngularFirestore, private dialog: MatDialog, private DialogService: PatientDeleteDialogService) { }
 
   ngOnInit(): void {
     this.PatientService.get_Allpatients().subscribe(data => {
@@ -27,14 +30,22 @@ export class ManagePatientComponent implements OnInit {
       })
       console.log(this.patient);
     })
-    // get_Alldoctors(){
-    //   return this.firestore.pipe(
-    //     map(Users=> Users.filter(Users=>Users.roles.patient===true))
-    //   );
-    // }
+    
   } 
+  // DeleteDoctor(record_id){
+  //   this.PatientService.delete_patient(record_id);
+  // }
+
   DeleteDoctor(record_id){
-    this.PatientService.delete_patient(record_id);
+   this.DialogService.openConfirmDialog('Are you sure you want to delete this record?')
+   .afterClosed().subscribe(res=>{
+    //  console.log(res);
+    if(res){
+      this.PatientService.delete_patient(record_id);
+    }
+    
+   });
+
   }
     
   }
