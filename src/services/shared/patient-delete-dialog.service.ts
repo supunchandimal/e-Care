@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { MatDialog, MatDialogConfig } from  '@angular/material/dialog';
+import {MatIconModule} from '@angular/material/icon';
 import { PatientDeleteDialogComponent } from 'src/app/manage-patient/patient-delete-dialog/patient-delete-dialog.component';
 
 @Injectable({

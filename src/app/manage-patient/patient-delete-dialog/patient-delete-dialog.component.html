@@ -1,7 +1,7 @@
 <!-- <p>patient-delete-dialog works!</p> -->
 <div>
     <div class="content-container">
-        <mat-icon id="close-icon" (click)="closeDialog()">close</mat-icon>
+      <div class="close"><mat-icon id="close-icon" (click)="closeDialog()">close</mat-icon></div>  
         <span class="content-span full-width">{{data.message}}</span>
     </div>
     <button mat-flat-button id="no-button" [mat-dialog-close]="false">No</button>
