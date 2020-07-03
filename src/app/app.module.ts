@@ -77,6 +77,10 @@ import { environment } from 'src/environments/environment';
 import { NgxAgoraModule } from 'ngx-agora';
 
 import { VconferenceComponent } from './video/vconference/vconference.component';
+import { ConditionsService } from './patientpages/services/conditions.service';
+import { OpoService } from './patientpages/services/opo.service';
+import { ConditionsComponent } from './patientpages/conditions/conditions.component';
+import { SurgeriesComponent } from './patientpages/surgeries/surgeries.component';
 
 @NgModule({
   declarations: [
@@ -123,6 +127,11 @@ import { VconferenceComponent } from './video/vconference/vconference.component'
 
     
 
+    ConditionsComponent,
+
+    
+
+    SurgeriesComponent,
     PatientDeleteDialogComponent,
   ],
   imports: [
@@ -158,7 +167,9 @@ import { VconferenceComponent } from './video/vconference/vconference.component'
     PatientDeleteDialogService,
     AccountService,
     PpicService,
-    MatDatepickerModule
+    MatDatepickerModule,
+    ConditionsService,
+    OpoService
 
     
   ],

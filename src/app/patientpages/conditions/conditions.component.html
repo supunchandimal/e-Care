@@ -1,0 +1,25 @@
+<div *ngIf='yes.conditions==="yes"'>
+    <ul>
+        <table id="customers">
+            <tr>
+                <th>Conditions </th>
+                <th>Description </th>
+
+            </tr>
+            <tr *ngFor="let alleg of als" class="collection">
+                <td>{{alleg.name}}</td>
+                <td>{{alleg.description}}</td>
+
+            </tr>
+        </table>
+    </ul>
+</div>
+
+<div *ngIf='yes.conditions==="No"'>
+    <hr>
+    <h5 class="null">There are no records</h5>
+</div>
+<div *ngIf='yes.conditions===" "'>
+    <hr>
+    <h5 class="null">There are no records</h5>
+</div>

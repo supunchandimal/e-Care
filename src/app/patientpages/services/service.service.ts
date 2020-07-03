@@ -1,6 +1,6 @@
 import { Alleg } from './../../models/allergie';
 import { Injectable } from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
+import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
 import {Observable} from 'rxjs';
 import { map } from 'rxjs/operators';
 import { AngularFireAuth } from '@angular/fire/auth';
@@ -12,6 +12,7 @@ export class ServiceService {
   private authState: Observable<firebase.User>;
   AllegCollection: AngularFirestoreCollection<Alleg>;
   Allegs:Observable<Alleg[]>;
+  Allegdoc : AngularFirestoreDocument<Alleg>;
   public currentUser: firebase.User;
   constructor(private afAuth:AngularFireAuth,public afsal:AngularFirestore) {
     this.authState = this.afAuth.authState;
@@ -41,11 +42,17 @@ export class ServiceService {
    }
 
    getAlegs(){
-    return this.afsal.collection('Allegs', ref => ref.where('id', '==', this.currentUser.uid));
+    return this.afsal.collection('Allegs', ref => ref.where('id', '==', this.currentUser.uid).orderBy('name','asc'));
    }
 
    addItem(item:Alleg){
     return this.AllegCollection.add(item);
+  }
+
+  deleteItem(item : Alleg){
+    console.log('hii');
+    this.Allegdoc = this.afsal.doc(`Allegs/${item.id}`);
+    this.Allegdoc.delete();
   }
    
 }

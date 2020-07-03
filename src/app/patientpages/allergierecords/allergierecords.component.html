@@ -1,44 +1,25 @@
-<div class="card">
-    <div class="card-content">
-      <span class="card-title">Do You Have Any Allergies?</span>
-      <form (ngSubmit)="onSubmit()" class="col s6">
-        <div class="row" style="width: 500px;">
-          <div class="input-field">
-            <label style="margin-right: 10px;">Allergie </label>
-            <input type="text" placeholder="Allergie" [(ngModel)]="item.name" name="name" style="margin-left: 10px;" style="color: black;">
-          </div>
-          <div class="input-field">
-            <label style="margin-top: 25px;">Reaction </label>
-            <input type="text" placeholder="Add Reaction" [(ngModel)]="item.reaction" name="description" style="margin-left: 6px;margin-top: 25px; color: black;" >
-          </div>
-          <div class="input-field">
-            <label style="margin-top: 25px;">Source </label>
-            <input type="text" placeholder="Add Source" [(ngModel)]="item.source" name="source" style="margin-left: 18px;margin-top: 25px; color: black;">
-          </div>
-          <input type="submit" value="Submit" class="btn">
-        </div>
-      </form>
-    </div>
-  </div>
- 
- <div *ngIf='allegs?.length >0 ;else noAllegs'>
-    <ul >
-      <table style="width:80%;margin-left: 10%;">
-        <tr>
-          <th>Allergie </th>
-          <th>Description </th>
-          <th>Source </th>
-        </tr>
-        <tr *ngFor ="let alleg of allegs" class="collection">
-          <td>{{alleg.name}}</td>
-          <td>{{alleg.reaction}}</td>
-          <td>{{alleg.source}}</td>
-        </tr>
-      </table>
+<div *ngIf='yes.allergies==="yes"'>
+    <ul>
+        <table id="customers">
+            <tr>
+                <th>Allergie </th>
+                <th>Description </th>
+                <th>Source </th>
+            </tr>
+            <tr *ngFor="let alleg of allegs" class="collection" (dbclick)="deleteItem($event,item)">
+                <td>{{alleg.name}}</td>
+                <td>{{alleg.reaction}}</td>
+                <td>{{alleg.source}}</td>
+            </tr>
+        </table>
     </ul>
- </div>
- <mat-spinner  *ngIf="loader"></mat-spinner >
- <ng-template #noAllegs>
-     <hr>
-     <h5 class="null">You have no allergies</h5>
- </ng-template>
+</div>
+<mat-spinner *ngIf="loader"></mat-spinner>
+<div *ngIf='yes.allergies==="No"'>
+    <hr>
+    <h5 class="null">There are no records</h5>
+</div>
+<div *ngIf='yes.allergies===""'>
+    <hr>
+    <h5 class="null">There are no records</h5>
+</div>
