@@ -18,7 +18,50 @@
     </div>
 
     <div  class="row justify-content-center p-2">
-        <h1>Announcements</h1>
-    </div>
-
+        
+      <div class="form_container">
+        <div class="container_a container w-50 p-3 ">
+            <h1>Announcements</h1>
+            <form #announcementform="ngForm" (ngSubmit)="onsubmit(announcementform)">
+                <div class="form-group row">
+                  <label for="subject" class="col-sm-3 col-form-label">subject</label>
+                  <div class="col-sm-6">
+                    <input type="text" class="form-control" id="subject" placeholder="subject" name="subject" #name="ngModel" ngModel >
+                  </div>
+                </div>
+                <div class="form-group row">
+                    <label for="audience"class="col-sm-3 col-form-label"> Select Audience</label>
+                    <div class="col-sm-6">
+                        <select class="form-control" id="audience" ngModel #audience="ngModel" name="audience">
+                            <option value="customers">customers</option>
+                            <option value="doctors">Doctors</option>
+                            <option value="All">All</option>
+                        </select>
+                    </div>
+                  </div>
+                <div class="form-group row">
+                    <label for="message"class="col-sm-3 col-form-label" >Message</label>
+                    <div class="col-sm-6 w-50">
+                    <textarea class="form-control" id="message"  #message="ngModel" rows="4" name="message"ngModel></textarea>
+                    </div>
+                  </div>
+                <div class="form-group row">
+                  <div class="col-sm-10">
+                    <button type="submit" class="btn btn-primary">Send</button>
+                  </div>
+                </div>
+              </form>
+        </div>
+      </div>
+       
+          <div class="announcement_con2 "*ngFor ="let am of announcements; let i = index">
+            <br>
+            <div class="audience">Audience : {{am.audience}}</div>
+            <div class="subject" > Subject :{{am.subjcect}}</div>
+            <div class="message">Message: {{am.message}}</div>
+          </div>
+        
+      
+        </div>
 </div> 
+

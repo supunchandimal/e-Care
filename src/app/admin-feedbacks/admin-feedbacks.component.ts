@@ -57,7 +57,7 @@ export class AdminFeedbacksComponent implements OnInit {
     this.getfeedbacks.markfeedback(key);
   }
 
-  getmarkstatus(i:number){
+  getmarkstatus (i:number){
   if(this.contactmessages[i].mark==1){
     return true;
   }else{
