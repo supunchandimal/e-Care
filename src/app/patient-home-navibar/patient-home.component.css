@@ -1,6 +1,5 @@
-
 .body{
-    background-color: rgb(243, 237, 237);
+    background-color: rgb(0,191,255);
     width: 20vw;
     height: 100vh;
     display: flex;
@@ -10,20 +9,19 @@
 .naviBar{
     width: 20vw;
     height: 100vh;
-    background-color: rgb(221, 224, 226);
+    background-color: #84CEEB;
     align-items: flex-start;
 }
 #title{
     width: 100%;
     height: 100%;
     display: block;
-    text-align: center;
-    
+    text-align: center;  
 }
 .margin{
     height:100vh;
     width: 0.01vw;
-    background-color: grey;
+    background-color: rgb(0,191,255);
 }
 .naviButton{
     width: 18vw;
@@ -31,7 +29,7 @@
     padding-bottom: 15px;
     height: 20%;
     align-self: center;
-    background-color:  rgb(221, 224, 226);
+    background-color:  #84CEEB;
     align-items: center;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -40,14 +38,15 @@
 	font-weight: bold;
 	text-transform: uppercase;
 	padding: 10px 15px;
-	margin: 20px auto;
-	color: #ccc;
-	background-color:rgb(221, 224, 226);
-	background: -webkit-linear-gradient(#888, #555);
-	background: linear-gradient(#888, #555);
+	margin: 30px auto;
+	color: black;
+	background-color:#84CEEB;
+	background: -webkit-linear-gradient #84CEEB ;
+	background: linear-gradient #84CEEB;
 	border: 0 none;
 	text-shadow: 0 -1px 0 #000;	
-	cursor: pointer;
+    cursor: pointer;
+    position: relative;
 }
 .naviButton:hover{
     width: 18vw;
@@ -55,7 +54,6 @@
     padding-bottom: 15px;
     height: 20%;
     align-self: center;
-    background-color:  rgb(221, 224, 226);
     align-items: center;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -64,11 +62,11 @@
 	font-weight: bold;
 	text-transform: uppercase;
 	padding: 10px 15px;
-	margin: 20px auto;
+	margin: 30px auto;
 	color: rgb(12, 12, 12);
-	background-color:rgb(221, 224, 226);
-	background: -webkit-linear-gradient(#888, #555);
-	background: linear-gradient(#888, #555);
+	background-color:#5AB9EA;
+	background: -webkit-linear-gradient#5AB9EA;
+	background: linear-gradient#5AB9EA;
 	border: 0 none;
 	text-shadow: 0 -1px 0 #000;	
 	cursor: pointer;
@@ -76,12 +74,14 @@
 .logoBox{
     height: 5%;
     width: 100%;
-    padding-bottom: 10px;
+    padding-bottom: 40px;
+    padding-top: 20px;
     z-index: 3;
     color: #000;
     opacity: 2;
 }
 .icn{
+    position: absolute;
     width: 2vw;
     height: 100%;
     align-self: center;
@@ -90,4 +90,5 @@
     width: 2vw;
     height: 80%;
     align-items: flex-start;
+    /* background-color: chartreuse; */
 }

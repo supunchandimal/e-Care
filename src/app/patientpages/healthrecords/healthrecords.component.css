@@ -24,14 +24,17 @@
     width: 80vw;
     height: 15vh;
     margin-top: -15px;
-    color: #888, #555;
+    color: #889, #555;
     text-shadow: 0 -1px 0 #000;	
     border-bottom: 1px solid black;
-    opacity: 0.5;
+    opacity: 0.8;
     margin-left: -10px;
 }
 .btn{
     font-size: 1em;
     width: 15vw;
     
+}
+.btn:hover{
+    background-color: #C1C8E4;
 }

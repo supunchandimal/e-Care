@@ -1,4 +1,4 @@
-
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { User } from '../../models/user';
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
@@ -12,6 +12,7 @@ import { AccountService } from '../services/account.service';
   styleUrls: ['./myaccount.component.css']
 })
 export class MyaccountComponent implements OnInit {
+  MedCollection: AngularFirestoreCollection<User>;
   private authState: Observable<firebase.User>;
   public currentUser: firebase.User;
   user:firebase.User;
@@ -23,14 +24,18 @@ export class MyaccountComponent implements OnInit {
     dob:'',
     id:''
   }
+  
   meds: User[];
-  constructor(private auth:AuthService,private afAuth:AngularFireAuth,private accountService:AccountService) { 
+  constructor(private auth:AuthService,private afAuth:AngularFireAuth,private accountService:AccountService,public afsal:AngularFirestore) { 
     this.authState = this.afAuth.authState;
   }
 
   ngOnInit(): void {
     console.log("hi")
-  
+    this.auth.getUserState()
+      .subscribe(user =>{
+        this.user = user;
+      });
     this.authState.subscribe(user => {
       
       if (user) {
@@ -39,6 +44,8 @@ export class MyaccountComponent implements OnInit {
         this.accountService.getAlegs().valueChanges().subscribe(meds =>{
           //console.log(allegs);
         this.meds= meds;
+        console.log(this.user.displayName)
+        this.item.firstname = this.user.displayName;
       });
         //this works
         
@@ -61,11 +68,23 @@ export class MyaccountComponent implements OnInit {
     if(this.item.firstname != '' && this.item.secondname != '' ){
       this.item.id=this.currentUser.uid;
       this.accountService.addItem(this.item);
-      this.item.addr = '';
-      this.item.phone = '';
-      this.item.emercntct = '';
+      
     }else{
       
     }
   }
+  public mark =1;
+
+  onClickAD(){
+    this.mark =1;
+  }
+  onClickLP(){
+    this.mark =2;
+  }
+  onClickBD(){
+    this.mark =3;
+  }
+ 
 }
+
+

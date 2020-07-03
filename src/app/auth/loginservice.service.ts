@@ -20,12 +20,15 @@ export class LoginserviceService {
   }
 
   login( email: string, password: string) {
+    console.log(email,password)
     this.afAuth.signInWithEmailAndPassword(email, password)
       .catch(error => {
-        this.eventAuthError.next(error);
+        console.log(error)
+        // this.eventAuthError.next(error);
       })
       .then(userCredential => {
-        if(userCredential) {
+        console.log(userCredential)
+        if(userCredential){
           this.afAuth.authState.subscribe(user=>{
             this.db.collection("Users").doc(`${user.uid}`).valueChanges().subscribe(
               data=>{

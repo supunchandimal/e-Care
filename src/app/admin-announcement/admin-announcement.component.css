@@ -20,7 +20,6 @@
     display: block;
     width:20%;
     height: 100%;
-    /* left: -20%; */
     background-color: black;
 }
 
@@ -33,13 +32,38 @@
     border-bottom: 1px solid gray;
     text-align: center;
 }
+
+#sidebar li:active{
+    background:gray;
+
+}
+
 #sidebar li a{
+    text-decoration: none;
+    color: white;
+    display: inline-flex;
+    align-items: center;
+
+}
+
+.material-icons{  
+    margin-right: 10px; 
+    align-items: center;
+}
+
+.mat-toolbar.mat-primary {
+    background: grey;
+    color: #fff;
+  }
+
+a{
     text-decoration: none;
     color: white;
 }
 
-#sidebar.active{
-    left: 0;
+a:hover {
+   color: white;
+    text-decoration: none;
 }
 
 h1{

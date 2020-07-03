@@ -5,7 +5,30 @@
     <div class="bodyrest">
          <div style="align-self: flex-start;"> 
              <app-pagemenu [parentData]="flag3"></app-pagemenu>
+
+
+               <div class="dive" style="font-style: italic;" style="font-size: medium;">
+                    <h1>Doctor Search</h1>
+                    <h3>A patient can search a doctor through this Doctor Search Form. Here you can search doctor through location, speciality and direct by name.</h3>
+               </div>
+
+               <form>
+                    <mat-form-field>
+                         <mat-label>First name</mat-label>
+                         <input matInput (cdkAutofill)="firstNameAutofilled = $event.isAutofilled">
+                         <mat-hint *ngIf="firstNameAutofilled">Autofilled!</mat-hint>
+                    </mat-form-field> 
+               </form>
+     
+               <section>
+     
+                    <button mat-button-raised color="accent" style="color:blue;">ADD</button>
+     
+               </section>
              
-         </div>
+         </div>   
+
     </div>
- </body>
+
+ 
+</body>

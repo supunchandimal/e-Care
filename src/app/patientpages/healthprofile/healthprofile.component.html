@@ -7,41 +7,30 @@
         <div class="navibar">
              <app-patient-home class="subnavibar"></app-patient-home>
         </div>
-        <div class="bodyrest">
+        <div class="bodyrest" >
             <div style="align-self: flex-start;width: 82vw;"> 
                 <app-pagemenu [parentData]="flag"></app-pagemenu>
                 <div class="submenu">
+                    
                    <div class="photoholder">
-                        <button class="addpoto" *ngIf='changingimg'> 
-                            <div > 
-                              <i class="fa fa-user" id="icon" style="width: 2vw;height: 100%;" ></i>
-                            </div>
-                        </button>
-                        <button class="addpoto" *ngIf='!changingimg'> 
-                            <div > 
-                              
-                            </div>
-                        </button> 
-                        <button style="top: 30%;border-radius: 50%;border-color: aliceblue;" (click)='changingImage()'>
-                            <i class="fa fa-user" id="icon" style="width: 2vw;height: 100%;" ></i>
-                        </button>
+                                <img src="{{allegs.downloadURL}}" alt="Girl in a jacket" width="100%" height="100%" style="border-radius: 50%;">
                         <div class="profilename">
-                            <h1 *ngIf="user">{{ user?.uid }}</h1>
+                            <h1 *ngIf="user">{{ user?.displayName }}</h1>
                         </div>
                    </div>
                    <div class="btn-holder">
                     <div class="btn-group" >
                         <button *ngIf="mark==2" class="btn" (click)='onClickhealth()'>MY HEALTH HISTORY</button>
-                        <button *ngIf="mark==1" class="btn" (click)='onClickhealth()' style="background-color: rebeccapurple;">MY HEALTH HISTORY</button>
+                        <button *ngIf="mark==1" class="btn" (click)='onClickhealth()' style="background-color: #8860D0;">MY HEALTH HISTORY</button>
                         <button *ngIf="mark==3" class="btn" (click)='onClickhealth()'>MY HEALTH HISTORY</button>
 
                         <button *ngIf="mark==1" class="btn" (click)='onClickbehavirol()'>MY BEHAVIROL HISTORY</button>
-                        <button *ngIf="mark==2" class="btn" (click)='onClickbehavirol()' style="background-color: rebeccapurple;">MY BEHAVIROL History</button>
+                        <button *ngIf="mark==2" class="btn" (click)='onClickbehavirol()' style="background-color: #8860D0;">MY BEHAVIROL History</button>
                         <button *ngIf="mark==3" class="btn" (click)='onClickbehavirol()'>MY BEHAVIROL History</button>
 
                         <button *ngIf="mark==1" class="btn" (click)='onClickfamily()'>MY FAMILY HISTORY</button>
                         <button *ngIf="mark==2" class="btn" (click)='onClickfamily()'>MY FAMILY HISTORY</button>
-                        <button *ngIf="mark==3" class="btn" (click)='onClickfamily()' style="background-color: re;">MY FAMILY HISTORY</button>
+                        <button *ngIf="mark==3" class="btn" (click)='onClickfamily()' style="background-color: #8860D0;">MY FAMILY HISTORY</button>
                     </div>
 
                    </div>
@@ -49,35 +38,35 @@
                 </div>
                 <div  *ngIf="mark==1">
                  <div class="dive">
-                    <h1>Do you have any allergies or drug sensivities?</h1>
+                    <h2>Do you have any allergies or drug sensivities?</h2>
                 </div>
                  <div class="btn-holder2" >
-                    <div class="btn-group2 button">
-                        <button style="color: green;" (click)=" onClickYesAlleg()">yes</button><button style="color: red;"(click)=" onClickNoAlleg()">no</button>
+                    <div class="btn-group2">
+                        <button class="yes-btn" (click)=" onClickYesAlleg()">YES</button><button class="no-btn" (click)=" onClickNoAlleg()">NO</button>
                     </div> 
                  </div>
                  <div class="dive">
-                    <h1>Are you currently taking any medication?</h1>
+                    <h2>Are you currently taking any medication?</h2>
                 </div>
                  <div class="btn-holder2">
                     <div class="btn-group2 button">
-                        <button style="color: green;" (click)=" onClickYesMed()">yes</button><button style="color: red;" (click)=" onClickNoMed()">no</button>
+                        <button class="yes-btn" (click)=" onClickYesMed()">YES</button><button class="no-btn" (click)=" onClickNoMed()">NO</button>
                     </div> 
                  </div>
                  <div class="dive">
-                    <h1>Do you have any health conditions?</h1>
+                    <h2>Do you have any health conditions?</h2>
                 </div>
                  <div class="btn-holder2">
                     <div class="btn-group2 button">
-                        <button style="color: green;" (click)=" onClickYesCond()">yes</button><button style="color: red;" (click)=" onClickNoCond()">no</button>
+                        <button class="yes-btn" (click)=" onClickYesCond()">YES</button><button class="no-btn" (click)=" onClickNoCond()">NO</button>
                     </div> 
                  </div>
                  <div class="dive">
-                    <h1>Have you ever had any surgeries or medical procedures?</h1>
+                    <h2>Have you ever had any surgeries or medical procedures?</h2>
                 </div>
                  <div class="btn-holder2">
                     <div class="btn-group2 button">
-                        <button style="color: green;" (click)=" onClickYesOpo()">yes</button><button style="color: red;" (click)=" onClickNoOpo()">no</button>
+                        <button class="yes-btn" (click)=" onClickYesOpo()">YES</button><button class="no-btn" (click)=" onClickNoOpo()">NO</button>
                     </div> 
                  </div>
                  <div class="bmi">
@@ -86,7 +75,7 @@
                     </div>
                     <form action="" #bmiForm="ngForm" (ngSubmit)="calc(bmiForm)">
                     <div style="padding-top: 3%;padding-left: 20%;">
-                        <label style="font-family: Arial, Helvetica, sans-serif;padding-right: 17px;">
+                        <label style="font-family: Arial, Helvetica, sans-serif;padding-right: 17px;" >
                             Current Body Weight(kg):
                         </label>
                         <input  ngModel #weight="ngModel" name="weight" type="text" class=""  placeholder="Enter weight"  >

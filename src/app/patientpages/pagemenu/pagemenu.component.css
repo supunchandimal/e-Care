@@ -7,7 +7,7 @@
     flex-direction: column;
     display: flex;
     position: relative;
-    background-image: url('../../../assets/images/111.jpg');
+    background-image: url('../../../assets/images/1112.jpg');
     background-position:center;
   	background-repeat:no-repeat;
   	background-size:cover;
@@ -52,8 +52,8 @@
     right: 210px;
   }
   .btn-group button {
-    background-color: #2BA4B9; /* Green background */
-    border: 1px solid #2BA4B9; /* Green border */
+    background-color: #84CEEB; /* Green background */
+    border: 1px solid ; /* Green border */
     color: black; /* White text */
     padding: 10px 24px; /* Some padding */
     cursor: pointer; /* Pointer/hand icon */
@@ -77,6 +77,6 @@
   
   /* Add a background color on hover */
   .btn-group button:hover {
-    background-color: #374A56;
+    background-color:#C1C8E4 ;
   }
   

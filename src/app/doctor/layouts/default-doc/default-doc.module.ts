@@ -16,6 +16,14 @@ import { UpdateProfileService } from './../../services/update-profile.service';
 import {MatDividerModule} from '@angular/material/divider';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatCardModule } from '@angular/material/card';
+import {MatTableModule} from '@angular/material/table';
+import {MatSortModule} from '@angular/material/sort';
+import {MatSelectModule} from '@angular/material/select';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { AppointmentScheduleComponent } from './../../modules/appointment-schedule/appointment-schedule.component';
 
 
 @NgModule({
@@ -24,7 +32,8 @@ import { MatCardModule } from '@angular/material/card';
     DashboardDocComponent,
     ContentDocComponent,
     UpdateAccountDocComponent,
-    AppointmentDocComponent
+    AppointmentDocComponent,
+    AppointmentScheduleComponent
   ],
   imports: [
     CommonModule,
@@ -37,8 +46,14 @@ import { MatCardModule } from '@angular/material/card';
     FormsModule,
     MatDividerModule,
     MatCardModule,
-    FlexLayoutModule
-
+    FlexLayoutModule,
+    MatTableModule,
+    MatSortModule,
+    MatSelectModule,
+    MatFormFieldModule,
+    MatCheckboxModule,
+    MatRadioModule,
+    MatDatepickerModule
     
   ],
   providers: [UpdateProfileService]

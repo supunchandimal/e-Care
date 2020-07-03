@@ -31,7 +31,8 @@ import { DashboardDocComponent } from './doctor/modules/dashboard-doc/dashboard-
 import { ContentDocComponent } from './doctor/modules/content-doc/content-doc.component';
 import { UpdateAccountDocComponent } from './doctor/modules/update-account-doc/update-account-doc.component';
 import { AppointmentDocComponent } from './doctor/modules/appointment-doc/appointment-doc.component';
- 
+import { AppointmentScheduleComponent } from './doctor/modules/appointment-schedule/appointment-schedule.component';
+
   //admin's new component
 import { DashboardAdminComponent } from './admin02/modules/dashboard-admin/dashboard-admin.component';
 import { DefaultAdminComponent } from './admin02/layouts/default-admin/default-admin.component';
@@ -39,6 +40,7 @@ import { DefaultAdminComponent } from './admin02/layouts/default-admin/default-a
 
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { from } from 'rxjs';
+import { VconferenceComponent } from './video/vconference/vconference.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'/home' ,pathMatch:'full'},
@@ -69,16 +71,17 @@ const routes: Routes = [
   {path:'myaccount',component:MyaccountComponent},
   {path:'adminfeedbacks', component:AdminFeedbacksComponent},
   {path:'patientupload',component:UploaderComponent},
-
+  {path:'video',component:VconferenceComponent},
   
 
-  //doctor's paths
+  //doctor's paths AppointmentScheduleComponent
 
   {path:'',component:DefaultDocComponent,
   children: [{ path :'docHome', component:DashboardDocComponent},
             { path : 'contentDoc' , component : ContentDocComponent},
             {path:'updateAccount',component:UpdateAccountDocComponent},
             {path:'appointments',component:AppointmentDocComponent},
+            {path:'appointmentSchedule',component:AppointmentScheduleComponent},
  ]
 },
 

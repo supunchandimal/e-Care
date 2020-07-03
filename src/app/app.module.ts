@@ -4,7 +4,7 @@ import { DefaultDocModule } from './doctor/layouts/default-doc/default-doc.modul
 import { DefaultAdminModule } from './admin02/layouts/default-admin/default-admin.module';
 
 import { AuthService } from './auth/auth.service';
-import { environment } from './../environments/environment';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule,ReactiveFormsModule }   from '@angular/forms';
@@ -30,6 +30,7 @@ import { MedicationComponent } from './patientpages/medication/medication.compon
 import { UploadrecordsComponent } from './patientpages/uploadrecords/uploadrecords.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatButtonModule} from '@angular/material/button';
+import {MatRadioModule} from '@angular/material/radio';
 import {
   AngularFireStorageReference,
   AngularFireUploadTask,
@@ -52,19 +53,27 @@ import { UploadTaskComponent } from './patientpages/patientfiles/upload-task/upl
 
 import { BehaviorhistoryComponent } from './patientpages/behaviorhistory/behaviorhistory.component';
 import { FamilyhistoryComponent } from './patientpages/familyhistory/familyhistory.component';
-
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {TextFieldModule} from '@angular/cdk/text-field';
 
 import { AdminComponent } from './admin/admin.component';
 import { MatSliderModule } from '@angular/material/slider';
 import { MaterialModule } from './material/material.module';
 import {MatFormFieldModule} from '@angular/material/form-field';
-
+import {MatInputModule} from '@angular/material/input';
 import { ManageDoctorService } from 'src/services/shared/manage-doctor.service';
 import { MyaccountComponent } from './patientpages/myaccount/myaccount.component';
 import { PpicComponent } from './patientpages/myaccount/ppic/ppic.component';
 import { UploadererppicComponent } from './patientpages/myaccount/uploadererppic/uploadererppic.component';
 import { AdminAnnouncementComponent } from './admin-announcement/admin-announcement.component';
+import { PasswordComponent } from './patientpages/myaccount/password/password.component';
+import { PpicService } from './patientpages/services/ppic.service';
 
+import { MatNativeDateModule } from '@angular/material/core';
+import { environment } from 'src/environments/environment';
+import { NgxAgoraModule } from 'ngx-agora';
+
+import { VconferenceComponent } from './video/vconference/vconference.component';
 
 @NgModule({
   declarations: [
@@ -102,6 +111,12 @@ import { AdminAnnouncementComponent } from './admin-announcement/admin-announcem
     UploadererppicComponent,
 
     AdminAnnouncementComponent,
+
+    PasswordComponent,
+
+    
+
+    VconferenceComponent,
   ],
   imports: [
     BrowserModule,
@@ -114,19 +129,28 @@ import { AdminAnnouncementComponent } from './admin-announcement/admin-announcem
     DefaultDocModule,
     MatProgressSpinnerModule,
     MatButtonModule,
+    MatRadioModule,
     MatSliderModule,
     MaterialModule,
+    TextFieldModule,
     MatFormFieldModule,
     MatButtonModule,
+    MatInputModule,
     ReactiveFormsModule,
     ImageCropperModule,
     DefaultAdminModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    NgxAgoraModule.forRoot({ AppID: environment.agora.appId }) ,
   ],
   providers: [
     AuthService,
     ServiceService ,
     ManageDoctorService,
-    AccountService
+    AccountService,
+    PpicService,
+    MatDatepickerModule
+
     
   ],
   bootstrap: [AppComponent]

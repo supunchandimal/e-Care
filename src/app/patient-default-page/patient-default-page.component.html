@@ -3,6 +3,7 @@
     <head>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
+    <STYLE>A {text-decoration: none;} </STYLE>
 <body class="body"> 
     <div class="naviBar">
         <app-patient-home></app-patient-home>
@@ -21,12 +22,35 @@
         <div>
             <button *ngIf="user" class="btn" (click)="logout()">SignOut</button>
         </div>
-        <div class="change" >
-            <button style="background-color: green;height: 10%;opacity: 0.5;">Learn More</button>
-        </div>
         
+        <div class="card" >
+            <div class="card-image">
+
+            </div>
+            <div class="card-text">
+                <h1>
+                    <a routerLink = '/appoinments'>
+                    YOUR PROVIDERS
+                    </a>
+                </h1>
+            </div>
+          </div>
+          <div class="card2">
+            <div class="card-image2" >
+
+            </div>
+            <div class="card-text">
+                <h1>
+                    <a routerLink = '/appoinments'>
+                    YOUR APPOINMENTS
+                    </a>
+                </h1>
+            </div>
+          </div>
+       
+         
         
     </div>  
-
+   
 </body>
 </html>

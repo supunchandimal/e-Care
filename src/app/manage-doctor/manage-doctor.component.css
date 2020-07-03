@@ -22,6 +22,7 @@ form.normal-form{
 *{
     margin: 0;
     padding: 0;
+    max-width: 100%;
 }
 
 
@@ -29,6 +30,13 @@ form.normal-form{
     background: grey;
     color: #fff;
   }
+
+.toolbar-space{
+    text-decoration: none;
+    color: white;
+    padding: 0 14px;
+    font-size: 18px;
+}
 
   
 #img{
@@ -80,6 +88,9 @@ form.normal-form{
     -webkit-text-fill-color: transparent;
     /* -webkit-background-clip: text; */
 
+}
+.doc-form{
+    position: relative;
 }
 
 .doc-form .form-field{
@@ -140,7 +151,66 @@ form.normal-form{
 }
 
 .label-select{
+    font-weight: 400;
+    font-size: 18px;
     background: transparent; 
     color: black;
     border-color: transparent;
 }
+
+.ng-invalid{
+    border-left:5px sold red
+}
+
+
+#sidebar{
+    position: absolute;
+    display: block;
+    width:20%;
+    height: 100%;
+    /* left: -30%; */
+    background-color: black;
+    filter: opacity(0.7);
+    
+}
+
+#sidebar li{
+    color: white;
+    font-size: 100%;
+    padding: 30px;
+    border-bottom: 1px solid gray;
+    text-align: center;
+}
+
+#sidebar li a{
+    text-decoration: none;
+    color: white;
+    display: inline-flex;
+    align-items: center;
+
+}
+
+#sidebar.active{
+    left: 0;
+}
+
+#sidebar li:active{
+    background:gray;
+
+}
+
+.material-icons{  
+    margin-right: 10px; 
+    align-items: center;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+   color: white;
+    text-decoration: none;
+}
+
