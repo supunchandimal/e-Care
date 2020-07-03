@@ -1,29 +1,613 @@
-<div fxLayout="row" fxLayoutAlign = "space-between center" fxLayoutGap = "20px" class="stat-cards">
-  <mat-card fxFlex="20">
-    <mat-form-field class="example-full-width">
-      <mat-label>Choose a date</mat-label>
-      <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker">
-      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker>
-    </mat-form-field>
-  </mat-card>
-</div><br>
-<button type="button" class="btn btn-primary btn-xs">Edit</button>
- <br> <br>
+<h1>Appointment Schedule</h1>
+<div *ngFor ="let item of schedule">
+  <div fxLayout="row" fxLayoutAlign = "space-between center" fxLayoutGap = "20px" class="stat-cards">
+    <mat-card fxFlex="20">
+      <mat-form-field class="example-full-width">
+        <mat-label>Choose a date</mat-label>
+        <input matInput [min]="minDate" [max]="maxDate" [(ngModel)]="item.scheduleDate" [matDatepicker]="picker">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </mat-card>
+  </div><br>
+
+
+
+
+
+  <div *ngIf="!item.isedit; else elseBlock">
+  <button type="button" (click)="EditSchedule(item)" class="btn btn-primary btn-xs">Edit</button><br><br>
+
+  
+  <div fxLayout="row" fxLayoutAlign = "space-between center" fxLayoutGap = "20px" class="stat-cards">
+
+    <mat-card fxFlex="18">
+      <div fxLayout="row" fxLayoutAlign = "space-between">
+      <p>07:00 AM - 07:20 AM :</p>
+      <mat-checkbox class="example-margin" [disabled]="true"  [(ngModel)]="item.t0700"></mat-checkbox></div>
+    </mat-card>
+    <mat-card fxFlex="18">
+      <div fxLayout="row" fxLayoutAlign = "space-between">
+      <p>07:20 AM - 07:40 AM :</p>
+      <mat-checkbox class="example-margin" [disabled]="true"  [(ngModel)]="item.t0720"></mat-checkbox></div>
+    </mat-card>
+    <mat-card fxFlex="18">
+      <div fxLayout="row" fxLayoutAlign = "space-between">
+      <p>07:40 AM - 08:00 AM :</p>
+      <mat-checkbox class="example-margin" [disabled]="true"  [(ngModel)]="item.t0740"></mat-checkbox></div>
+    </mat-card>
+    <mat-card fxFlex="18">
+      <div fxLayout="row" fxLayoutAlign = "space-between">
+      <p>08:00 AM - 08:20 AM :</p>
+      <mat-checkbox class="example-margin" [disabled]="true"   [(ngModel)]="item.t0800"></mat-checkbox></div>
+    </mat-card>
+    <mat-card fxFlex="18">
+      <div fxLayout="row" fxLayoutAlign = "space-between">
+      <p>08:20 AM - 08:40 AM :</p>
+      <mat-checkbox class="example-margin" [disabled]="true"  [(ngModel)]="item.t0820"></mat-checkbox></div>
+    </mat-card>
+  </div><br>
+
+  <div fxLayout="row" fxLayoutAlign = "space-between center" fxLayoutGap = "20px" class="stat-cards">
+
+    <mat-card fxFlex="18">
+      <div fxLayout="row" fxLayoutAlign = "space-between">
+      <p>08:40 AM - 09:00 AM :</p>
+      <mat-checkbox class="example-margin" [disabled]="true"  [(ngModel)]="item.t0840"></mat-checkbox></div>
+    </mat-card>
+    <mat-card fxFlex="18">
+      <div fxLayout="row" fxLayoutAlign = "space-between">
+      <p>09:00 AM - 09:20 AM :</p>
+      <mat-checkbox class="example-margin" [disabled]="true"  [(ngModel)]="item.t0900"></mat-checkbox></div>
+    </mat-card>
+    <mat-card fxFlex="18">
+      <div fxLayout="row" fxLayoutAlign = "space-between">
+      <p>09:20 AM - 09:40 AM :</p>
+      <mat-checkbox class="example-margin" [disabled]="true"  [(ngModel)]="item.t0920"></mat-checkbox></div>
+    </mat-card>
+    <mat-card fxFlex="18">
+      <div fxLayout="row" fxLayoutAlign = "space-between">
+      <p>09:40 AM - 10:00 AM :</p>
+      <mat-checkbox class="example-margin" [disabled]="true"   [(ngModel)]="item.t0940"></mat-checkbox></div>
+    </mat-card>
+    <mat-card fxFlex="18">
+      <div fxLayout="row" fxLayoutAlign = "space-between">
+      <p>10:00 AM - 10:20 AM :</p>
+      <mat-checkbox class="example-margin" [disabled]="true"  [(ngModel)]="item.t1000"></mat-checkbox></div>
+    </mat-card>
+  </div><br>
+
+  <div fxLayout="row" fxLayoutAlign = "space-between center" fxLayoutGap = "20px" class="stat-cards">
+
+    <mat-card fxFlex="18">
+      <div fxLayout="row" fxLayoutAlign = "space-between">
+      <p>10:20 AM - 10:40 AM :</p>
+      <mat-checkbox class="example-margin" [disabled]="true"  [(ngModel)]="item.t1020"></mat-checkbox></div>
+    </mat-card>
+    <mat-card fxFlex="18">
+      <div fxLayout="row" fxLayoutAlign = "space-between">
+      <p>10:40 AM - 11:00 AM :</p>
+      <mat-checkbox class="example-margin" [disabled]="true"  [(ngModel)]="item.t1040"></mat-checkbox></div>
+    </mat-card>
+    <mat-card fxFlex="18">
+      <div fxLayout="row" fxLayoutAlign = "space-between">
+      <p>11:00 AM - 11:20 AM :</p>
+      <mat-checkbox class="example-margin" [disabled]="true"  [(ngModel)]="item.t1100"></mat-checkbox></div>
+    </mat-card>
+    <mat-card fxFlex="18">
+      <div fxLayout="row" fxLayoutAlign = "space-between">
+      <p>11:20 AM - 11:40 AM :</p>
+      <mat-checkbox class="example-margin" [disabled]="true"   [(ngModel)]="item.t1120"></mat-checkbox></div>
+    </mat-card>
+    <mat-card fxFlex="18">
+      <div fxLayout="row" fxLayoutAlign = "space-between">
+      <p>11:40 AM - 12:00 PM :</p>
+      <mat-checkbox class="example-margin" [disabled]="true"  [(ngModel)]="item.t1140"></mat-checkbox></div>
+    </mat-card>
+  </div><br>
+
+  <div fxLayout="row" fxLayoutAlign = "space-between center" fxLayoutGap = "20px" class="stat-cards">
+
+    <mat-card fxFlex="18">
+      <div fxLayout="row" fxLayoutAlign = "space-between">
+      <p>12:00 PM - 12:20 PM :</p>
+      <mat-checkbox class="example-margin" [disabled]="true"  [(ngModel)]="item.t1200"></mat-checkbox></div>
+    </mat-card>
+    <mat-card fxFlex="18">
+      <div fxLayout="row" fxLayoutAlign = "space-between">
+      <p>12:20 PM - 12:40 PM :</p>
+      <mat-checkbox class="example-margin" [disabled]="true"  [(ngModel)]="item.t1220"></mat-checkbox></div>
+    </mat-card>
+    <mat-card fxFlex="18">
+      <div fxLayout="row" fxLayoutAlign = "space-between">
+      <p>12:40 PM - 01:00 PM :</p>
+      <mat-checkbox class="example-margin" [disabled]="true"  [(ngModel)]="item.t1240"></mat-checkbox></div>
+    </mat-card>
+    <mat-card fxFlex="18">
+      <div fxLayout="row" fxLayoutAlign = "space-between">
+      <p>01:00 PM - 01:20 PM :</p>
+      <mat-checkbox class="example-margin" [disabled]="true"  [(ngModel)]="item.t1300"></mat-checkbox></div>
+    </mat-card>
+    <mat-card fxFlex="18">
+      <div fxLayout="row" fxLayoutAlign = "space-between">
+      <p>01:20 PM - 01:40 PM :</p>
+      <mat-checkbox class="example-margin" [disabled]="true"   [(ngModel)]="item.t1320"></mat-checkbox></div>
+    </mat-card>
+  </div><br>
+
+  <div fxLayout="row" fxLayoutAlign = "space-between center" fxLayoutGap = "20px" class="stat-cards">
+
+    <mat-card fxFlex="18">
+      <div fxLayout="row" fxLayoutAlign = "space-between">
+      <p>01:40 PM - 02:00 PM :</p>
+      <mat-checkbox class="example-margin" [disabled]="true"  [(ngModel)]="item.t1340"></mat-checkbox></div>
+    </mat-card>
+    <mat-card fxFlex="18">
+      <div fxLayout="row" fxLayoutAlign = "space-between">
+      <p>02:00 PM - 02:20 PM :</p>
+      <mat-checkbox class="example-margin" [disabled]="true"  [(ngModel)]="item.t1400"></mat-checkbox></div>
+    </mat-card>
+    <mat-card fxFlex="18">
+      <div fxLayout="row" fxLayoutAlign = "space-between">
+      <p>02:20 PM - 02:40 PM :</p>
+      <mat-checkbox class="example-margin" [disabled]="true"  [(ngModel)]="item.t1420"></mat-checkbox></div>
+    </mat-card>
+    <mat-card fxFlex="18">
+      <div fxLayout="row" fxLayoutAlign = "space-between">
+      <p>02:40 PM - 03:00 PM :</p>
+      <mat-checkbox class="example-margin" [disabled]="true"  [(ngModel)]="item.t1440"></mat-checkbox></div>
+    </mat-card>
+    <mat-card fxFlex="18">
+      <div fxLayout="row" fxLayoutAlign = "space-between">
+      <p>03:00 PM - 03:20 PM :</p>
+      <mat-checkbox class="example-margin" [disabled]="true"   [(ngModel)]="item.t1500"></mat-checkbox></div>
+    </mat-card>
+  </div><br>
+
+  <div fxLayout="row" fxLayoutAlign = "space-between center" fxLayoutGap = "20px" class="stat-cards">
+
+    <mat-card fxFlex="18">
+      <div fxLayout="row" fxLayoutAlign = "space-between">
+      <p>03:20 PM - 03:40 PM :</p>
+      <mat-checkbox class="example-margin" [disabled]="true"  [(ngModel)]="item.t1520"></mat-checkbox></div>
+    </mat-card>
+    <mat-card fxFlex="18">
+      <div fxLayout="row" fxLayoutAlign = "space-between">
+      <p>03:40 PM - 04:00 PM :</p>
+      <mat-checkbox class="example-margin" [disabled]="true"  [(ngModel)]="item.t1540"></mat-checkbox></div>
+    </mat-card>
+    <mat-card fxFlex="18">
+      <div fxLayout="row" fxLayoutAlign = "space-between">
+      <p>04:00 PM - 04:20 PM :</p>
+      <mat-checkbox class="example-margin" [disabled]="true"  [(ngModel)]="item.t1600"></mat-checkbox></div>
+    </mat-card>
+    <mat-card fxFlex="18">
+      <div fxLayout="row" fxLayoutAlign = "space-between">
+      <p>04:20 PM - 04:40 PM :</p>
+      <mat-checkbox class="example-margin" [disabled]="true"  [(ngModel)]="item.t1620"></mat-checkbox></div>
+    </mat-card>
+    <mat-card fxFlex="18">
+      <div fxLayout="row" fxLayoutAlign = "space-between">
+      <p>04:40 PM - 05:00 PM :</p>
+      <mat-checkbox class="example-margin" [disabled]="true"   [(ngModel)]="item.t1640"></mat-checkbox></div>
+    </mat-card>
+  </div><br>
+
+  <div fxLayout="row" fxLayoutAlign = "space-between center" fxLayoutGap = "20px" class="stat-cards">
+
+    <mat-card fxFlex="18">
+      <div fxLayout="row" fxLayoutAlign = "space-between">
+      <p>05:20 PM - 05:40 PM :</p>
+      <mat-checkbox class="example-margin" [disabled]="true"  [(ngModel)]="item.t1720"></mat-checkbox></div>
+    </mat-card>
+    <mat-card fxFlex="18">
+      <div fxLayout="row" fxLayoutAlign = "space-between">
+      <p>05:40 PM - 06:00 PM :</p>
+      <mat-checkbox class="example-margin" [disabled]="true"  [(ngModel)]="item.t1740"></mat-checkbox></div>
+    </mat-card>
+    <mat-card fxFlex="18">
+      <div fxLayout="row" fxLayoutAlign = "space-between">
+      <p>06:00 PM - 06:20 PM :</p>
+      <mat-checkbox class="example-margin" [disabled]="true"  [(ngModel)]="item.t1800"></mat-checkbox></div>
+    </mat-card>
+    <mat-card fxFlex="18">
+      <div fxLayout="row" fxLayoutAlign = "space-between">
+      <p>06:20 PM - 06:40 PM :</p>
+      <mat-checkbox class="example-margin" [disabled]="true"  [(ngModel)]="item.t1820"></mat-checkbox></div>
+    </mat-card>
+    <mat-card fxFlex="18">
+      <div fxLayout="row" fxLayoutAlign = "space-between">
+      <p>06:40 PM - 07:00 PM :</p>
+      <mat-checkbox class="example-margin" [disabled]="true"   [(ngModel)]="item.t1840"></mat-checkbox></div>
+    </mat-card>
+  </div><br>
+
+  <div fxLayout="row" fxLayoutAlign = "space-between center" fxLayoutGap = "20px" class="stat-cards">
+
+    <mat-card fxFlex="18">
+      <div fxLayout="row" fxLayoutAlign = "space-between">
+      <p>07:00 PM - 07:20 PM :</p>
+      <mat-checkbox class="example-margin" [disabled]="true"  [(ngModel)]="item.t1900"></mat-checkbox></div>
+    </mat-card>
+    <mat-card fxFlex="18">
+      <div fxLayout="row" fxLayoutAlign = "space-between">
+      <p>07:20 PM - 07:40 PM :</p>
+      <mat-checkbox class="example-margin" [disabled]="true"  [(ngModel)]="item.t1920"></mat-checkbox></div>
+    </mat-card>
+    <mat-card fxFlex="18">
+      <div fxLayout="row" fxLayoutAlign = "space-between">
+      <p>07:40 PM - 08:00 PM :</p>
+      <mat-checkbox class="example-margin" [disabled]="true"  [(ngModel)]="item.t1940"></mat-checkbox></div>
+    </mat-card>
+    <mat-card fxFlex="18">
+      <div fxLayout="row" fxLayoutAlign = "space-between">
+      <p>08:00 PM - 08:20 PM :</p>
+      <mat-checkbox class="example-margin" [disabled]="true"  [(ngModel)]="item.t2000"></mat-checkbox></div>
+    </mat-card>
+    <mat-card fxFlex="18">
+      <div fxLayout="row" fxLayoutAlign = "space-between">
+      <p>08:20 PM - 08:40 PM :</p>
+      <mat-checkbox class="example-margin" [disabled]="true"   [(ngModel)]="item.t2020"></mat-checkbox></div>
+    </mat-card>
+  </div><br>
+
+  <div fxLayout="row" fxLayoutAlign = "space-between center" fxLayoutGap = "20px" class="stat-cards">
+
+    <mat-card fxFlex="18">
+      <div fxLayout="row" fxLayoutAlign = "space-between">
+      <p>08:40 PM - 09:00 PM :</p>
+      <mat-checkbox class="example-margin" [disabled]="true"  [(ngModel)]="item.t2040"></mat-checkbox></div>
+    </mat-card>
+    <mat-card fxFlex="18">
+      <div fxLayout="row" fxLayoutAlign = "space-between">
+      <p>09:00 PM - 09:20 PM :</p>
+      <mat-checkbox class="example-margin" [disabled]="true"  [(ngModel)]="item.t2100"></mat-checkbox></div>
+    </mat-card>
+    <mat-card fxFlex="18">
+      <div fxLayout="row" fxLayoutAlign = "space-between">
+      <p>09:20 PM - 09:40 PM :</p>
+      <mat-checkbox class="example-margin" [disabled]="true"  [(ngModel)]="item.t2120"></mat-checkbox></div>
+    </mat-card>
+    <mat-card fxFlex="18">
+      <div fxLayout="row" fxLayoutAlign = "space-between">
+      <p>09:40 PM - 10:00 PM :</p>
+      <mat-checkbox class="example-margin" [disabled]="true"  [(ngModel)]="item.t2140"></mat-checkbox></div>
+    </mat-card>
+    <mat-card fxFlex="18">
+      <div fxLayout="row" fxLayoutAlign = "space-between">
+      <p>10:00 PM - 10:20 PM :</p>
+      <mat-checkbox class="example-margin" [disabled]="true"   [(ngModel)]="item.t2200"></mat-checkbox></div>
+    </mat-card>
+  </div><br>
+
+  <div fxLayout="row" fxLayoutAlign = "space-between center" fxLayoutGap = "20px" class="stat-cards">
+
+    <mat-card fxFlex="18">
+      <div fxLayout="row" fxLayoutAlign = "space-between">
+      <p>10:20 PM - 10:40 PM :</p>
+      <mat-checkbox class="example-margin" [disabled]="true"  [(ngModel)]="item.t12220"></mat-checkbox></div>
+    </mat-card>
+    <mat-card fxFlex="18">
+      <div fxLayout="row" fxLayoutAlign = "space-between">
+      <p>10:40 PM - 11:00 PM :</p>
+      <mat-checkbox class="example-margin" [disabled]="true"  [(ngModel)]="item.t2240"></mat-checkbox></div>
+    </mat-card>
+    <mat-card fxFlex="18">
+      <div fxLayout="row" fxLayoutAlign = "space-between">
+      <p>11:00 PM - 11:20 PM :</p>
+      <mat-checkbox class="example-margin" [disabled]="true"  [(ngModel)]="item.t2300"></mat-checkbox></div>
+    </mat-card>
+    <mat-card fxFlex="18">
+      <div fxLayout="row" fxLayoutAlign = "space-between">
+      <p>11:20 PM - 11:40 PM :</p>
+      <mat-checkbox class="example-margin" [disabled]="true"  [(ngModel)]="item.t2320"></mat-checkbox></div>
+    </mat-card>
+    <mat-card fxFlex="18">
+      <div fxLayout="row" fxLayoutAlign = "space-between">
+      <p>11:40 PM - 12:00 AM :</p>
+      <mat-checkbox class="example-margin" [disabled]="true"   [(ngModel)]="item.t2340"></mat-checkbox></div>
+    </mat-card>
+  </div><br>
+
+
+  
+</div>
+
+<ng-template #elseBlock>
+   
+
+<button type="button" (click)="item.isedit = false" class="btn btn-danger btn-xs">Cancel</button>
+<button type="button" (click)="updateSchedule(item)" class="btn btn-primary btn-xs">Update</button> <br><br>
 
 <div fxLayout="row" fxLayoutAlign = "space-between center" fxLayoutGap = "20px" class="stat-cards">
 
   <mat-card fxFlex="18">
     <div fxLayout="row" fxLayoutAlign = "space-between">
     <p>07:00 AM - 07:20 AM :</p>
-    <mat-checkbox class="example-margin" [(ngModel)]="t07"></mat-checkbox></div>
+    <mat-checkbox class="example-margin"  [(ngModel)]="item.editt0700"></mat-checkbox></div>
   </mat-card>
   <mat-card fxFlex="18">
     <div fxLayout="row" fxLayoutAlign = "space-between">
-    <p>07:00 AM - 07:20 AM :</p>
-    <mat-checkbox class="example-margin" [(ngModel)]="t08"></mat-checkbox></div>
+    <p>07:20 AM - 07:40 AM :</p>
+    <mat-checkbox class="example-margin"  [(ngModel)]="item.editt0720"></mat-checkbox></div>
   </mat-card>
-  <button type="button"  class="btn btn-primary btn-xs">Edit</button>
-
-
+  <mat-card fxFlex="18">
+    <div fxLayout="row" fxLayoutAlign = "space-between">
+    <p>07:40 AM - 08:00 AM :</p>
+    <mat-checkbox class="example-margin"  [(ngModel)]="item.editt0740"></mat-checkbox></div>
+  </mat-card>
+  <mat-card fxFlex="18">
+    <div fxLayout="row" fxLayoutAlign = "space-between">
+    <p>08:00 AM - 08:20 AM :</p>
+    <mat-checkbox class="example-margin"   [(ngModel)]="item.editt0800"></mat-checkbox></div>
+  </mat-card>
+  <mat-card fxFlex="18">
+    <div fxLayout="row" fxLayoutAlign = "space-between">
+    <p>08:00 AM - 08:40 AM :</p>
+    <mat-checkbox class="example-margin"  [(ngModel)]="item.editt0820"></mat-checkbox></div>
+  </mat-card>
 </div><br>
+
+<div fxLayout="row" fxLayoutAlign = "space-between center" fxLayoutGap = "20px" class="stat-cards">
+
+  <mat-card fxFlex="18">
+    <div fxLayout="row" fxLayoutAlign = "space-between">
+    <p>08:40 AM - 09:00 AM :</p>
+    <mat-checkbox class="example-margin" [(ngModel)]="item.editt0840"></mat-checkbox></div>
+  </mat-card>
+  <mat-card fxFlex="18">
+    <div fxLayout="row" fxLayoutAlign = "space-between">
+    <p>09:00 AM - 09:20 AM :</p>
+    <mat-checkbox class="example-margin"  [(ngModel)]="item.editt0900"></mat-checkbox></div>
+  </mat-card>
+  <mat-card fxFlex="18">
+    <div fxLayout="row" fxLayoutAlign = "space-between">
+    <p>09:20 AM - 09:40 AM :</p>
+    <mat-checkbox class="example-margin"  [(ngModel)]="item.editt0920"></mat-checkbox></div>
+  </mat-card>
+  <mat-card fxFlex="18">
+    <div fxLayout="row" fxLayoutAlign = "space-between">
+    <p>09:40 AM - 10:00 AM :</p>
+    <mat-checkbox class="example-margin"  [(ngModel)]="item.editt0940"></mat-checkbox></div>
+  </mat-card>
+  <mat-card fxFlex="18">
+    <div fxLayout="row" fxLayoutAlign = "space-between">
+    <p>10:00 AM - 10:20 AM :</p>
+    <mat-checkbox class="example-margin" [(ngModel)]="item.editt1000"></mat-checkbox></div>
+  </mat-card>
+</div><br>
+
+<div fxLayout="row" fxLayoutAlign = "space-between center" fxLayoutGap = "20px" class="stat-cards">
+
+  <mat-card fxFlex="18">
+    <div fxLayout="row" fxLayoutAlign = "space-between">
+    <p>10:20 AM - 10:40 AM :</p>
+    <mat-checkbox class="example-margin" [(ngModel)]="item.editt1020"></mat-checkbox></div>
+  </mat-card>
+  <mat-card fxFlex="18">
+    <div fxLayout="row" fxLayoutAlign = "space-between">
+    <p>10:40 AM - 11:00 AM :</p>
+    <mat-checkbox class="example-margin" [(ngModel)]="item.editt1040"></mat-checkbox></div>
+  </mat-card>
+  <mat-card fxFlex="18">
+    <div fxLayout="row" fxLayoutAlign = "space-between">
+    <p>11:00 AM - 11:20 AM :</p>
+    <mat-checkbox class="example-margin" [(ngModel)]="item.editt1100"></mat-checkbox></div>
+  </mat-card>
+  <mat-card fxFlex="18">
+    <div fxLayout="row" fxLayoutAlign = "space-between">
+    <p>11:20 AM - 11:40 AM :</p>
+    <mat-checkbox class="example-margin"  [(ngModel)]="item.editt1120"></mat-checkbox></div>
+  </mat-card>
+  <mat-card fxFlex="18">
+    <div fxLayout="row" fxLayoutAlign = "space-between">
+    <p>11:40 AM - 12:00 PM :</p>
+    <mat-checkbox class="example-margin"  [(ngModel)]="item.editt1140"></mat-checkbox></div>
+  </mat-card>
+</div><br>
+
+<div fxLayout="row" fxLayoutAlign = "space-between center" fxLayoutGap = "20px" class="stat-cards">
+
+  <mat-card fxFlex="18">
+    <div fxLayout="row" fxLayoutAlign = "space-between">
+    <p>12:00 PM - 12:20 PM :</p>
+    <mat-checkbox class="example-margin"  [(ngModel)]="item.editt1200"></mat-checkbox></div>
+  </mat-card>
+  <mat-card fxFlex="18">
+    <div fxLayout="row" fxLayoutAlign = "space-between">
+    <p>12:20 PM - 12:40 PM :</p>
+    <mat-checkbox class="example-margin"  [(ngModel)]="item.editt1220"></mat-checkbox></div>
+  </mat-card>
+  <mat-card fxFlex="18">
+    <div fxLayout="row" fxLayoutAlign = "space-between">
+    <p>12:40 PM - 01:00 PM :</p>
+    <mat-checkbox class="example-margin" [(ngModel)]="item.editt1240"></mat-checkbox></div>
+  </mat-card>
+  <mat-card fxFlex="18">
+    <div fxLayout="row" fxLayoutAlign = "space-between">
+    <p>01:00 PM - 01:20 PM :</p>
+    <mat-checkbox class="example-margin" [(ngModel)]="item.editt1300"></mat-checkbox></div>
+  </mat-card>
+  <mat-card fxFlex="18">
+    <div fxLayout="row" fxLayoutAlign = "space-between">
+    <p>01:20 PM - 01:40 PM :</p>
+    <mat-checkbox class="example-margin"  [(ngModel)]="item.editt1320"></mat-checkbox></div>
+  </mat-card>
+</div><br>
+
+<div fxLayout="row" fxLayoutAlign = "space-between center" fxLayoutGap = "20px" class="stat-cards">
+
+  <mat-card fxFlex="18">
+    <div fxLayout="row" fxLayoutAlign = "space-between">
+    <p>01:40 PM - 02:00 PM :</p>
+    <mat-checkbox class="example-margin"  [(ngModel)]="item.editt1340"></mat-checkbox></div>
+  </mat-card>
+  <mat-card fxFlex="18">
+    <div fxLayout="row" fxLayoutAlign = "space-between">
+    <p>02:00 PM - 02:20 PM :</p>
+    <mat-checkbox class="example-margin"  [(ngModel)]="item.editt1400"></mat-checkbox></div>
+  </mat-card>
+  <mat-card fxFlex="18">
+    <div fxLayout="row" fxLayoutAlign = "space-between">
+    <p>02:20 PM - 02:40 PM :</p>
+    <mat-checkbox class="example-margin" [(ngModel)]="item.editt1420"></mat-checkbox></div>
+  </mat-card>
+  <mat-card fxFlex="18">
+    <div fxLayout="row" fxLayoutAlign = "space-between">
+    <p>02:40 PM - 03:00 PM :</p>
+    <mat-checkbox class="example-margin" [(ngModel)]="item.editt1440"></mat-checkbox></div>
+  </mat-card>
+  <mat-card fxFlex="18">
+    <div fxLayout="row" fxLayoutAlign = "space-between">
+    <p>03:00 PM - 03:20 PM :</p>
+    <mat-checkbox class="example-margin"  [(ngModel)]="item.editt1500"></mat-checkbox></div>
+  </mat-card>
+</div><br>
+
+<div fxLayout="row" fxLayoutAlign = "space-between center" fxLayoutGap = "20px" class="stat-cards">
+
+  <mat-card fxFlex="18">
+    <div fxLayout="row" fxLayoutAlign = "space-between">
+    <p>03:20 PM - 03:40 PM :</p>
+    <mat-checkbox class="example-margin"  [(ngModel)]="item.editt1520"></mat-checkbox></div>
+  </mat-card>
+  <mat-card fxFlex="18">
+    <div fxLayout="row" fxLayoutAlign = "space-between">
+    <p>03:40 PM - 04:00 PM :</p>
+    <mat-checkbox class="example-margin"  [(ngModel)]="item.editt1540"></mat-checkbox></div>
+  </mat-card>
+  <mat-card fxFlex="18">
+    <div fxLayout="row" fxLayoutAlign = "space-between">
+    <p>04:00 PM - 04:20 PM :</p>
+    <mat-checkbox class="example-margin"  [(ngModel)]="item.editt1600"></mat-checkbox></div>
+  </mat-card>
+  <mat-card fxFlex="18">
+    <div fxLayout="row" fxLayoutAlign = "space-between">
+    <p>04:20 PM - 04:40 PM :</p>
+    <mat-checkbox class="example-margin"  [(ngModel)]="item.editt1620"></mat-checkbox></div>
+  </mat-card>
+  <mat-card fxFlex="18">
+    <div fxLayout="row" fxLayoutAlign = "space-between">
+    <p>04:40 PM - 05:00 PM :</p>
+    <mat-checkbox class="example-margin"   [(ngModel)]="item.editt1640"></mat-checkbox></div>
+  </mat-card>
+</div><br>
+
+<div fxLayout="row" fxLayoutAlign = "space-between center" fxLayoutGap = "20px" class="stat-cards">
+
+  <mat-card fxFlex="18">
+    <div fxLayout="row" fxLayoutAlign = "space-between">
+    <p>05:20 PM - 05:40 PM :</p>
+    <mat-checkbox class="example-margin"  [(ngModel)]="item.editt1720"></mat-checkbox></div>
+  </mat-card>
+  <mat-card fxFlex="18">
+    <div fxLayout="row" fxLayoutAlign = "space-between">
+    <p>05:40 PM - 06:00 PM :</p>
+    <mat-checkbox class="example-margin"  [(ngModel)]="item.editt1740"></mat-checkbox></div>
+  </mat-card>
+  <mat-card fxFlex="18">
+    <div fxLayout="row" fxLayoutAlign = "space-between">
+    <p>06:00 PM - 06:20 PM :</p>
+    <mat-checkbox class="example-margin"  [(ngModel)]="item.editt1800"></mat-checkbox></div>
+  </mat-card>
+  <mat-card fxFlex="18">
+    <div fxLayout="row" fxLayoutAlign = "space-between">
+    <p>06:20 PM - 06:40 PM :</p>
+    <mat-checkbox class="example-margin" [(ngModel)]="item.editt1820"></mat-checkbox></div>
+  </mat-card>
+  <mat-card fxFlex="18">
+    <div fxLayout="row" fxLayoutAlign = "space-between">
+    <p>06:40 PM - 07:00 PM :</p>
+    <mat-checkbox class="example-margin"   [(ngModel)]="item.editt1840"></mat-checkbox></div>
+  </mat-card>
+</div><br>
+
+<div fxLayout="row" fxLayoutAlign = "space-between center" fxLayoutGap = "20px" class="stat-cards">
+
+  <mat-card fxFlex="18">
+    <div fxLayout="row" fxLayoutAlign = "space-between">
+    <p>07:00 PM - 07:20 PM :</p>
+    <mat-checkbox class="example-margin"  [(ngModel)]="item.editt1900"></mat-checkbox></div>
+  </mat-card>
+  <mat-card fxFlex="18">
+    <div fxLayout="row" fxLayoutAlign = "space-between">
+    <p>07:20 PM - 07:40 PM :</p>
+    <mat-checkbox class="example-margin" [(ngModel)]="item.editt1920"></mat-checkbox></div>
+  </mat-card>
+  <mat-card fxFlex="18">
+    <div fxLayout="row" fxLayoutAlign = "space-between">
+    <p>07:40 PM - 08:00 PM :</p>
+    <mat-checkbox class="example-margin" [(ngModel)]="item.editt1940"></mat-checkbox></div>
+  </mat-card>
+  <mat-card fxFlex="18">
+    <div fxLayout="row" fxLayoutAlign = "space-between">
+    <p>08:00 PM - 08:20 PM :</p>
+    <mat-checkbox class="example-margin" [(ngModel)]="item.editt2000"></mat-checkbox></div>
+  </mat-card>
+  <mat-card fxFlex="18">
+    <div fxLayout="row" fxLayoutAlign = "space-between">
+    <p>08:20 PM - 08:40 PM :</p>
+    <mat-checkbox class="example-margin" [(ngModel)]="item.editt2020"></mat-checkbox></div>
+  </mat-card>
+</div><br>
+
+<div fxLayout="row" fxLayoutAlign = "space-between center" fxLayoutGap = "20px" class="stat-cards">
+
+  <mat-card fxFlex="18">
+    <div fxLayout="row" fxLayoutAlign = "space-between">
+    <p>08:40 PM - 09:00 PM :</p>
+    <mat-checkbox class="example-margin" [(ngModel)]="item.editt2040"></mat-checkbox></div>
+  </mat-card>
+  <mat-card fxFlex="18">
+    <div fxLayout="row" fxLayoutAlign = "space-between">
+    <p>09:00 PM - 09:20 PM :</p>
+    <mat-checkbox class="example-margin" [(ngModel)]="item.editt2100"></mat-checkbox></div>
+  </mat-card>
+  <mat-card fxFlex="18">
+    <div fxLayout="row" fxLayoutAlign = "space-between">
+    <p>09:20 PM - 09:40 PM :</p>
+    <mat-checkbox class="example-margin" [(ngModel)]="item.editt2120"></mat-checkbox></div>
+  </mat-card>
+  <mat-card fxFlex="18">
+    <div fxLayout="row" fxLayoutAlign = "space-between">
+    <p>09:40 PM - 10:00 PM :</p>
+    <mat-checkbox class="example-margin" [(ngModel)]="item.editt2140"></mat-checkbox></div>
+  </mat-card>
+  <mat-card fxFlex="18">
+    <div fxLayout="row" fxLayoutAlign = "space-between">
+    <p>10:00 PM - 10:20 PM :</p>
+    <mat-checkbox class="example-margin" [(ngModel)]="item.editt2200"></mat-checkbox></div>
+  </mat-card>
+</div><br>
+
+<div fxLayout="row" fxLayoutAlign = "space-between center" fxLayoutGap = "20px" class="stat-cards">
+
+  <mat-card fxFlex="18">
+    <div fxLayout="row" fxLayoutAlign = "space-between">
+    <p>10:20 PM - 10:40 PM :</p>
+    <mat-checkbox class="example-margin"  [(ngModel)]="item.editt12220"></mat-checkbox></div>
+  </mat-card>
+  <mat-card fxFlex="18">
+    <div fxLayout="row" fxLayoutAlign = "space-between">
+    <p>10:40 PM - 11:00 PM :</p>
+    <mat-checkbox class="example-margin"  [(ngModel)]="item.editt2240"></mat-checkbox></div>
+  </mat-card>
+  <mat-card fxFlex="18">
+    <div fxLayout="row" fxLayoutAlign = "space-between">
+    <p>11:00 PM - 11:20 PM :</p>
+    <mat-checkbox class="example-margin"  [(ngModel)]="item.editt2300"></mat-checkbox></div>
+  </mat-card>
+  <mat-card fxFlex="18">
+    <div fxLayout="row" fxLayoutAlign = "space-between">
+    <p>11:20 PM - 11:40 PM :</p>
+    <mat-checkbox class="example-margin"  [(ngModel)]="item.editt2320"></mat-checkbox></div>
+  </mat-card>
+  <mat-card fxFlex="18">
+    <div fxLayout="row" fxLayoutAlign = "space-between">
+    <p>11:40 PM - 12:00 AM :</p>
+    <mat-checkbox class="example-margin"   [(ngModel)]="item.editt2340"></mat-checkbox></div>
+  </mat-card>
+</div><br>
+
+</ng-template>
+ </div>
