@@ -7,7 +7,7 @@
     flex-direction: column;
     display: flex;
     position: relative;
-    background-image: url('../../../assets/images/1112.jpg');
+    background-color: #84CEEB;
     background-position:center;
   	background-repeat:no-repeat;
   	background-size:cover;
@@ -15,12 +15,15 @@
   .btn-holder{
     justify-content: flex-end;
     display: flex;
-    padding-bottom: 50px;
+    padding-bottom: 10px;
     right: 210px;
+    border: none;
+    opacity: 1;
   }
+  
   .btn-group button {
-    background-color: #84CEEB; /* Green background */
-    border: 1px solid ; /* Green border */
+     background-color: #84CEEB;/* Green background */
+    border: none ; /* Green border */
     color: black; /* White text */
     padding: 10px 24px; /* Some padding */
     cursor: pointer; /* Pointer/hand icon */

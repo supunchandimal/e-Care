@@ -73,6 +73,8 @@ import { environment } from 'src/environments/environment';
 import { NgxAgoraModule } from 'ngx-agora';
 
 import { VconferenceComponent } from './video/vconference/vconference.component';
+import { ConditionsService } from './patientpages/services/conditions.service';
+import { OpoService } from './patientpages/services/opo.service';
 
 @NgModule({
   declarations: [
@@ -147,7 +149,9 @@ import { VconferenceComponent } from './video/vconference/vconference.component'
     ManageDoctorService,
     AccountService,
     PpicService,
-    MatDatepickerModule
+    MatDatepickerModule,
+    ConditionsService,
+    OpoService
 
     
   ],

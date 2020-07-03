@@ -17,6 +17,12 @@
   align-self: flex-start;
   
 }
+.icn{
+  position: absolute;
+  width: 2vw;
+  height: 100%;
+  align-self: center;
+}
 .subnavibar{
   position: fixed;
   align-self: flex-start;
@@ -26,7 +32,7 @@
 .bodyrest{
     width: 78%;
     height: 100%;
-    margin-left: 20%;
+    margin-left: 19%;
     display: flex;   
 }
 .submenu{
@@ -111,8 +117,8 @@
   box-shadow: 2px black;
 }
 .btn {
-  background-color: #4CAF50;
-  color: white;
+  
+  color: black;
   padding: 16px 20px;
   border: none;
   cursor: pointer;
@@ -203,7 +209,7 @@
     margin-right: 30px;
     margin-left:10px ;
     float: left;
-    background-color: #61892F;
+    
     border-radius: 5px;
     padding: 0px;
     /* float: left; */
@@ -213,7 +219,7 @@
     color:black;
     display: inline;
     float: left;
-    background-color:#BC4639 ;
+   
     border-radius: 5px;
     padding: 0px;
 }
