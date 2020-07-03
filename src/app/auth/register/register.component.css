@@ -95,6 +95,7 @@ input[type=text], input[type=password],input[type=number],input[type=date],input
       float: right;
       margin-right: 38%;
       border-radius: 5px;
+      color: black;
 
   }
   .ng-valid[required], .ng-valid.required  {

@@ -7,10 +7,12 @@
 
 #img{
     width: 100%;
-    height: 100vh;
+    height:100%;
     background-image: url('/assets/images/wallpaper1.jpg');
     background-size: cover;
     filter: opacity(0.7);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 #sidebar{
@@ -23,6 +25,7 @@
 
 
 #sidebar li{
+    
     color: white;
     font-size: 100%;
     padding: 30px;
@@ -67,3 +70,51 @@ h1{
     font-family: 'Times New Roman', Times, serif;
 }
 
+.container_a {
+    display: block;
+    margin-top: 4%;
+    background-color:black ;
+    opacity: 0.8;
+    color: white;
+}
+
+input[type=text]{
+    color: black;
+}
+
+.form_container{
+    display: block;
+    width: 100%;
+}
+
+.announcement_con2 {
+    display: block;
+    margin-top:2%;
+    height: 10%;
+    margin-left: 1%;
+    background-color:black ;
+    width: 50%;
+    opacity: 0.8;
+    color: white;
+
+}
+.audience{
+    display: block;
+    font-size: 15px;
+    margin-left: 2%;
+    margin-top: 2%;
+}
+
+.subject{
+    display: block;
+    font-size: 15px;
+    margin-left: 2%;
+    margin-top: 2%;
+}
+.message{
+    display: block;
+    font-size: 15px;
+    margin-left: 2%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
