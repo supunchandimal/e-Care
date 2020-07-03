@@ -1,3 +1,7 @@
+*{
+    margin: 0;
+    padding: 0;
+}
 
 .image_container_1{
     position: relative;
@@ -8,17 +12,20 @@
   position: absolute;
   top: 12%;
   left: 18%;
-  width: 25%;
+  width: 40%;
   
   background: rgb(0, 0, 0); /* Fallback color */
-  background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
-  color: #f1f1f1; /* Grey text */
+  background: rgba(0, 0, 0, 0.7); /* Black background with 0.5 opacity */
+  color: white; /* Grey text */
   padding-left: 5%;
   padding-right: 5%;
   
+  
 
 }
-
+.image_container_1 .text_block h3{
+    font-size: 25px;
+}
 
 #homeimage2{
     float: left;

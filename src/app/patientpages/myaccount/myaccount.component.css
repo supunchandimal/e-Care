@@ -53,7 +53,7 @@
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     width: 70%;
-    background-image: url("../../../assets/images/patient1.jpg");
+    background-color: #c1c8e4;
     background-size: cover;
     backface-visibility: 0.5;
     margin-left: 5%;
@@ -127,7 +127,7 @@ input[type=text], input[type=password],input[type=number],input[type=date],input
 .searchformfld input{
     width:20vw;
     padding-left: 10px;
-    color: blue;
+    color: black;
 }
 .searchformfld label,.searchformfld input{
     transition: all 0.2s;
@@ -152,6 +152,7 @@ input[type=text], input[type=password],input[type=number],input[type=date],input
  .formp1{
     width: 50%;
     height: 100%;
+    margin-top: 20px;
  
     
     margin-bottom: 10%;
@@ -160,14 +161,14 @@ input[type=text], input[type=password],input[type=number],input[type=date],input
     width: 50%;
     height: 100%;
    
-    
+    margin-top: 50px;
     margin-bottom: 10%;
  }
  .submit{
      width: 10vw;
      height: 5vh;
      background-color: #5680E9;
-     color: rgb(28, 30, 32);
+     color: black;
      font-size: larger;
  }
  .bton{
@@ -195,4 +196,18 @@ input[type=text], input[type=password],input[type=number],input[type=date],input
     width: 10vw;
     height: 80%;
     align-items: flex-start;
+}
+
+.mat-radio-button ~ .mat-radio-button {
+    margin-left: 20px;
+  }
+.dive{
+    margin-bottom: 40px;
+    margin-top: 30px;
+    margin-left: 20px;
+    color: black;
+    width:50%;
+}
+.radio-btn{
+    margin-right: 20px;
 }
