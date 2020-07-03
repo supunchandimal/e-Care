@@ -75,6 +75,8 @@ import { NgxAgoraModule } from 'ngx-agora';
 import { VconferenceComponent } from './video/vconference/vconference.component';
 import { ConditionsService } from './patientpages/services/conditions.service';
 import { OpoService } from './patientpages/services/opo.service';
+import { ConditionsComponent } from './patientpages/conditions/conditions.component';
+import { SurgeriesComponent } from './patientpages/surgeries/surgeries.component';
 
 @NgModule({
   declarations: [
@@ -118,6 +120,14 @@ import { OpoService } from './patientpages/services/opo.service';
     
 
     VconferenceComponent,
+
+    
+
+    ConditionsComponent,
+
+    
+
+    SurgeriesComponent,
   ],
   imports: [
     BrowserModule,

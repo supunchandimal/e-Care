@@ -128,6 +128,9 @@ export class HealthprofileComponent implements OnInit {
   calc(frm) {
     this.bmi = frm.value.weight / ((frm.value.height / 100) * (frm.value.height / 100));
   }
+  scroll(){
+    window.scrollTo(0,document.body.scrollHeight);
+  }
   public mark = 1;
 
   onClickhealth() {

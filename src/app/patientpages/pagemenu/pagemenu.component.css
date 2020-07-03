@@ -1,4 +1,4 @@
-.box{
+.box {
     width: 80vw;
     height: 20vh;
     padding-left: 4px;
@@ -7,46 +7,60 @@
     flex-direction: column;
     display: flex;
     position: relative;
-    background-color: #84CEEB;
-    background-position:center;
-  	background-repeat:no-repeat;
-  	background-size:cover;
+    background-color: #00b7e3;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
-  .btn-holder{
+
+.btn-holder {
     justify-content: flex-end;
     display: flex;
     padding-bottom: 10px;
     right: 210px;
     border: none;
     opacity: 1;
-  }
-  
-  .btn-group button {
-     background-color: #84CEEB;/* Green background */
-    border: none ; /* Green border */
-    color: black; /* White text */
-    padding: 10px 24px; /* Some padding */
-    cursor: pointer; /* Pointer/hand icon */
-    float: left; /* Float the buttons side by side */
+}
+
+.btn-group button {
+    background-color: #84CEEB;
+    /* Green background */
+    border: none;
+    /* Green border */
+    color: black;
+    /* White text */
+    padding: 10px 24px;
+    /* Some padding */
+    cursor: pointer;
+    /* Pointer/hand icon */
+    float: left;
+    /* Float the buttons side by side */
     height: 6vh;
     width: 16vw;
     padding-bottom: 10px;
     margin-right: 35px;
-  }
-  
-  .btn-group button:not(:last-child) {
-    border-right: none; /* Prevent double borders */
-  }
-  
-  /* Clear floats (clearfix hack) */
-  .btn-group:after {
+}
+
+.btn-group button:not(:last-child) {
+    border-right: none;
+    /* Prevent double borders */
+}
+
+
+/* Clear floats (clearfix hack) */
+
+.btn-group:after {
     content: "";
     clear: both;
     display: table;
-  }
-  
-  /* Add a background color on hover */
-  .btn-group button:hover {
-    background-color:#C1C8E4 ;
-  }
-  /* Dropdown Button */
+}
+
+
+/* Add a background color on hover */
+
+.btn-group button:hover {
+    background-color: #C1C8E4;
+}
+
+
+/* Dropdown Button */
