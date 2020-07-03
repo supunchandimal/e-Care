@@ -16,16 +16,13 @@ export class ContactusService {
   succornot = Number;       
   constructor( private db:AngularFirestore , private router:Router) { }
  
-  addmessage(message){
+  addmessage(message:Contactmessages){
    
   
     this.message= message;
-    
-  
-    
     this.db.collection("contactus_messages").add({
       firstname: message.firstname,
-      lastname: message.lastname,
+      lastname: message.secondname,
       email:message.email,
       phoneno: message.phoneno,
       subject:message.subject,
@@ -33,7 +30,7 @@ export class ContactusService {
       date:message.date,
       delete_or_not:message.delete_or_not
     }).then(()=>{
-      console.log("kljfsalkf");
+      // console.log("kljfsalkf");
       this.router.navigate(['/contactus']);
 
       
