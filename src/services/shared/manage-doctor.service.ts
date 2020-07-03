@@ -5,7 +5,9 @@ import { FormGroup, FormControl } from '@angular/forms';
 @Injectable({
   providedIn: 'root'
 })
+
 export class ManageDoctorService {
+  collections=["doctors","Users"];
 
   constructor(public firestore: AngularFirestore) { }
 
@@ -22,9 +24,17 @@ export class ManageDoctorService {
 
 // });
 
-create_Newdoctor(Record){
-  return this.firestore.collection('doctors').add(Record);
+
+create_Newdoctor(Record,collections){
+  const promises=collections.map(collectionName=>
+    this.firestore.collection(collectionName).add(Record)
+    );
+  return Promise.all(promises);
 }
+
+// create_Newdoctor(Record){
+//   return this.firestore.collection('doctors').add(Record);
+// }
 
 get_Alldoctors(){
   return this.firestore.collection('doctors').snapshotChanges();
@@ -37,4 +47,5 @@ update_doctor(recordid, record){
 delete_doctor(record_id){
   this.firestore.doc('doctors/'+record_id).delete();
 }
+
 }

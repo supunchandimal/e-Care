@@ -44,7 +44,11 @@ import { OurproviersComponent } from './ourproviers/ourproviers.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ManageDoctorComponent } from './manage-doctor/manage-doctor.component';
+import { ManageDoctorService } from 'src/services/shared/manage-doctor.service';
 import { ManagePatientComponent } from './manage-patient/manage-patient.component';
+import { ManagePatientService } from 'src/services/shared/manage-patient.service';
+import { PatientDeleteDialogComponent } from './manage-patient/patient-delete-dialog/patient-delete-dialog.component';
+import { PatientDeleteDialogService } from 'src/services/shared/patient-delete-dialog.service';
 
 import { AdminFeedbacksComponent } from './admin-feedbacks/admin-feedbacks.component';
 import { DropzoneDirective } from './patientpages/patientfiles/dropzone.directive';
@@ -61,7 +65,6 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MaterialModule } from './material/material.module';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
-import { ManageDoctorService } from 'src/services/shared/manage-doctor.service';
 import { MyaccountComponent } from './patientpages/myaccount/myaccount.component';
 import { PpicComponent } from './patientpages/myaccount/ppic/ppic.component';
 import { UploadererppicComponent } from './patientpages/myaccount/uploadererppic/uploadererppic.component';
@@ -117,6 +120,10 @@ import { VconferenceComponent } from './video/vconference/vconference.component'
     
 
     VconferenceComponent,
+
+    
+
+    PatientDeleteDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -147,6 +154,8 @@ import { VconferenceComponent } from './video/vconference/vconference.component'
     AuthService,
     ServiceService ,
     ManageDoctorService,
+    ManagePatientService,
+    PatientDeleteDialogService,
     AccountService,
     PpicService,
     MatDatepickerModule

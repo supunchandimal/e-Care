@@ -9,25 +9,12 @@
      
     <div id="sidebar">
         <ul>
-            <!-- <li  href="" routerLink="/manage-doctor" routerLinkActive="active">Manage Doctors</li> -->
-            <li>
-                <a routerLink="../manage-doctor"><i class="material-icons">people_outline</i>Manage Doctors</a>
-            </li>
-            <li>
-                <a routerLink="../manage-patient"><i class="material-icons">person_pin</i>Manage Patients</a>
-            </li> 
-            <li>
-                <a href=""><i class="material-icons">comment</i>Notifications</a>
-            </li>
-            <li>
-                <a href="" routerLink="../adminfeedbacks" routerLinkActive="active"><i class="material-icons">feedback</i>Feedbacks</a>
-            </li>
-            <li>
-                <a href=""><i class="material-icons">payment</i>Payment details</a>
-            </li>
-            <li>
-                <a routerLink="../admin-announcement"><i class="material-icons">announcement</i>Announcements</a>
-            </li>
+            <li><a routerLink="../manage-doctor"><i class="material-icons">people_outline</i>Manage Doctors</a></li>
+            <li><a routerLink="../manage-patient"><i class="material-icons">person_pin</i>Manage Patients</a></li> 
+            <!-- <li><a href=""><i class="material-icons">comment</i>Notifications</a></li> -->
+            <li><a href="" routerLink="../adminfeedbacks" routerLinkActive="active"><i class="material-icons">comment</i>Feedbacks</a></li>
+            <li><a href=""><i class="material-icons">payment</i>Payment details</a></li>
+            <li><a routerLink="../admin-announcement"><i class="material-icons">announcement</i>Announcements</a></li>
         </ul>
     </div>
     
@@ -50,7 +37,7 @@
                 <td>{{item.gender}}</td>
                 <td>{{item.email}}</td>
                 <td>{{item.phone}}</td>
-                <td class="btn btn-danger">delete</td>
+                <td class="btn btn-danger" (click)="DeleteDoctor(item.id)">Delete</td>
                 <!-- <td>Gender</td>
                 <td>Email</td>
                 <td>nic</td>
