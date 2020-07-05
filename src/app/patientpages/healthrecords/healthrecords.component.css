@@ -68,3 +68,8 @@
     display: table;
     clear: both;
 }
+
+.row{
+    padding-right: 0px;
+    justify-content: flex-end;
+}
