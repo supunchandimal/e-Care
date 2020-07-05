@@ -3,7 +3,7 @@ import { ManagePatientService } from 'src/services/shared/manage-patient.service
 import { AngularFirestore } from '@angular/fire/firestore'; 
 import { MatDialog, MatDialogConfig } from  '@angular/material/dialog';
 import { PatientDeleteDialogService } from 'src/services/shared/patient-delete-dialog.service';
-
+import { Subject, combineLatest } from 'rxjs';
 @Component({
   selector: 'app-manage-patient',
   templateUrl: './manage-patient.component.html',
@@ -11,6 +11,16 @@ import { PatientDeleteDialogService } from 'src/services/shared/patient-delete-d
 })
 export class ManagePatientComponent implements OnInit {
   patient: any;
+  searchterm: string;
+  startAt = new Subject();
+  endAt = new Subject();
+
+  doc;
+  docs;
+
+  startobs = this.startAt.asObservable();
+  endobs = this.endAt.asObservable();
+ 
   constructor(public PatientService: ManagePatientService, public firestore: AngularFirestore, private dialog: MatDialog, private DialogService: PatientDeleteDialogService) { }
 
   ngOnInit(): void {
@@ -20,17 +30,30 @@ export class ManagePatientComponent implements OnInit {
         return{
           id: e.payload.doc.id,
           firstname: e.payload.doc.data()['firstname'],
+          secondname: e.payload.doc.data()['secondname'],
           email: e.payload.doc.data()['email'],
           phone: e.payload.doc.data()['phone'],
-          // age: e.payload.doc.data()['age'],
-          // city: e.payload.doc.data()['city'],
           gender: e.payload.doc.data()['gender'],
-          // speciality: e.payload.doc.data()['speciality'],
         };
       })
       console.log(this.patient);
     })
-    
+    combineLatest(this.startobs, this.endobs).subscribe((value) => {
+      this.getalldocs(value[0], value[1]).subscribe((docs) => {
+        this.docs = docs;
+      })
+    })
+    combineLatest(this.startobs, this.endobs).subscribe((value) => {
+      this.firequery(value[0], value[1]).subscribe((docs) => {
+        this.doc = docs;
+      })
+    })
+    combineLatest(this.startobs, this.endobs).subscribe((value) => {
+      this.secondname(value[0], value[1]).subscribe((docs) => {
+        this.doc = docs;
+      })
+    })
+
   } 
   // DeleteDoctor(record_id){
   //   this.PatientService.delete_patient(record_id);
@@ -42,10 +65,26 @@ export class ManagePatientComponent implements OnInit {
     //  console.log(res);
     if(res){
       this.PatientService.delete_patient(record_id);
-    }
-    
-   });
-
+    }});
   }
     
+  search($event) {
+    let q = $event.target.value;
+    if (q != '') {
+      this.startAt.next(q);
+      this.endAt.next(q + "\uf8ff");
+    }
+  }
+  firequery(start, end) {
+    return this.firestore.collection('Users', ref => ref.limit(100).orderBy('phone').startAt(start).endAt(end)).valueChanges();
+  }
+  getalldocs(start, end) {
+    return this.firestore.collection('Users', ref => ref.limit(100).orderBy('firstname').startAt(start).endAt(end)).valueChanges();
+  }
+  secondname(start, end) {
+    return this.firestore.collection('Users', ref => ref.limit(100).orderBy('secondname').startAt(start).endAt(end)).valueChanges();
+  }
+
+
+
   }
