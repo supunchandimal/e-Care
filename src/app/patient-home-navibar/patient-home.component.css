@@ -92,11 +92,13 @@
     width: 2vw;
     height: 100%;
     align-self: center;
+    size: 20px;
 }
 
 #icon {
     width: 2vw;
     height: 80%;
     align-items: flex-start;
+    size: 50px;
     /* background-color: chartreuse; */
 }
