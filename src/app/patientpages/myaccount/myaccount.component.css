@@ -1,37 +1,58 @@
-.body{
+.body {
     display: flex;
 }
-.menu{
+
+.menu {
     width: 100vw;
     height: 10%;
     align-self: flex-start;
     background-color: lightblue;
 }
-.title{
+
+.bodyrest {
+    width: 82vw;
+    height: 80%;
+    display: flex;
+    margin-left: 19%;
+}
+
+.subnavibar {
+    position: fixed;
+    align-self: flex-start;
+    margin-left: -20px;
+    margin-top: -10px;
+}
+
+.title {
     font-size: xx-large;
 }
-.logoBox{
+
+.logoBox {
     margin-left: 1%;
 }
-.topic{
+
+.topic {
     margin-left: 43%;
     margin-top: -3%;
     color: lightblue;
-	background-color:rgb(221, 224, 226);
-	border: 0 none;
-    text-shadow: 0 -1px 0 #000;	
+    background-color: rgb(221, 224, 226);
+    border: 0 none;
+    text-shadow: 0 -1px 0 #000;
     width: 15vw;
     background-color: lightblue;
 }
-.ma{
+
+.ma {
     color: black;
     box-shadow: 5px black;
 }
-.cog{
+
+.cog {
     margin-left: 95%;
     margin-top: -3.5%;
 }
-.navbar{
+
+.navbar {
     width: 20%;
     height: 120%;
     border-right: 1px solid black;
@@ -39,18 +60,19 @@
     background-color: #84CEEB;
     background: -webkit-linear-gradient #84CEEB;
     background: linear-gradient #84CEEB;
-    font-size:medium;
-	font-weight: bold;
-   
+    font-size: medium;
+    font-weight: bold;
 }
-.mainbody{
+
+.mainbody {
     width: 100%;
     height: 100%;
-    display: flex; 
+    display: flex;
     margin-top: 1%;
 }
+
 .card {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
     width: 70%;
     background-color: #c1c8e4;
@@ -61,19 +83,22 @@
     border: 1px solid black;
     height: 120vh;
 }
+
 .card:hover {
-    box-shadow: 0 16px 32px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.2);
 }
+
 .container {
     padding: 2px 16px;
-    
 }
-.ppic{
+
+.ppic {
     width: 75%;
     height: 20vh;
     border: 1px solid black;
 }
-.photoholder{
+
+.photoholder {
     border-radius: 50%;
     border: 1px solid black;
     height: 75px;
@@ -83,131 +108,152 @@
     background-image: url("../../../assets/images/1.jpg");
     background-size: contain;
 }
-.form{
+
+.form {
     width: 45vw;
     height: 80vh;
-    margin-left:4%;
+    margin-left: 4%;
     margin-top: 3%;
 }
-input[type=text], input[type=password],input[type=number],input[type=date],input[type=email] {
-    display:inline-block;
-     padding: 6px;
-     margin: 0px 0 4px 0;
-     border: 1px solid black;
-    
-     width: 250px;
-    
-     padding-left: 45%;
-     border-radius: 5px;
-   }
-   .searchformfld{
+
+input[type=text],
+input[type=password],
+input[type=number],
+input[type=date],
+input[type=email] {
+    display: inline-block;
+    padding: 6px;
+    margin: 0px 0 4px 0;
+    border: 1px solid black;
+    width: 250px;
+    padding-left: 45%;
+    border-radius: 5px;
+}
+
+.searchformfld {
     position: relative;
     margin: 5px 0px;
 }
-.searchformfld label{
+
+.searchformfld label {
     position: absolute;
     padding-left: 10px;
-    top:15px;
+    top: 15px;
     cursor: text;
+}
 
-}
-.searchformfld input:focus + label,.searchformfld input:not(:placeholder-shown) + label{
-    opacity:1;
+.searchformfld input:focus+label,
+.searchformfld input:not(:placeholder-shown)+label {
+    opacity: 1;
     transform: scale(.9) translateY(-100%) translateX(-10px);
-    color:black;
+    color: black;
 }
-.searchformfld input:focus{
-    border:1px solid #000;
+
+.searchformfld input:focus {
+    border: 1px solid #000;
     outline-color: #000;
 }
-.searchformfld{
+
+.searchformfld {
     padding: 15px;
-    margin:15px 0px;
+    margin: 15px 0px;
 }
-.searchformfld input{
-    width:20vw;
+
+.searchformfld input {
+    width: 20vw;
     padding-left: 10px;
     color: black;
 }
-.searchformfld label,.searchformfld input{
+
+.searchformfld label,
+.searchformfld input {
     transition: all 0.2s;
     transition-timing-function: ease;
     transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
-    opacity:1;
+    opacity: 1;
 }
+
 .btn-group button {
-    background-color: rgb(243, 237, 237); /* Green background */
-    border: 1px solid rgb(243, 237, 237); /* Green border */
-    color: black; /* White text */
-    padding: 10px 24px; /* Some padding */
-    cursor: pointer; /* Pointer/hand icon */
+    background-color: rgb(243, 237, 237);
+    /* Green background */
+    border: 1px solid rgb(243, 237, 237);
+    /* Green border */
+    color: black;
+    /* White text */
+    padding: 10px 24px;
+    /* Some padding */
+    cursor: pointer;
+    /* Pointer/hand icon */
     border: 1px solid #000;
     height: 5vh;
     width: 8vw;
-  }
- .btn-holder{
-     width: 25vw;
-     
- }
- .formp1{
+}
+
+.btn-holder {
+    width: 25vw;
+}
+
+.formp1 {
     width: 50%;
     height: 100%;
     margin-top: 20px;
- 
-    
     margin-bottom: 10%;
- }
- .formp2{
+}
+
+.formp2 {
     width: 50%;
     height: 100%;
-   
     margin-top: 50px;
     margin-bottom: 10%;
- }
- .submit{
-     width: 10vw;
-     height: 5vh;
-     background-color: #5680E9;
-     color: black;
-     font-size: larger;
- }
- .bton{
-     width: 100%;
-     border: none;
-     background-color: #84CEEB;
-     font-size: medium;
-     
- }
+}
 
- .bton:hover{
-    background: -webkit-linear-gradient#5AB9EA ;
+.submit {
+    width: 10vw;
+    height: 5vh;
+    background-color: #5680E9;
+    color: black;
+    font-size: larger;
+}
+
+.bton {
+    width: 100%;
+    border: none;
+    background-color: #84CEEB;
+    font-size: medium;
+}
+
+.bton:hover {
+    background: -webkit-linear-gradient#5AB9EA;
     background: linear-gradient#5AB9EA;
     background-color: #5AB9EA;
- }
+}
 
- .icn{
+.icn {
     position: absolute;
     width: 10vw;
     height: 100%;
     align-self: center;
     margin-left: 30px;
 }
-#icon{
+
+#icon {
     width: 10vw;
     height: 80%;
     align-items: flex-start;
 }
 
-.mat-radio-button ~ .mat-radio-button {
+.mat-radio-button~.mat-radio-button {
     margin-left: 20px;
-  }
-.dive{
+}
+
+.dive {
     margin-bottom: 40px;
     margin-top: 30px;
     margin-left: 20px;
     color: black;
-    width:50%;
+    width: 50%;
 }
-.radio-btn{
+
+.radio-btn {
     margin-right: 20px;
 }

@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 })
 export class AppoinmentsComponent implements OnInit {
   searchterm: string;
-
+  flag = 6;
   startAt = new Subject();
   endAt = new Subject();
 
@@ -24,7 +24,7 @@ export class AppoinmentsComponent implements OnInit {
 
   }
 
-  public flag = 5;
+ ;
 
   ngOnInit(): void {
     combineLatest(this.startobs, this.endobs).subscribe((value) => {
