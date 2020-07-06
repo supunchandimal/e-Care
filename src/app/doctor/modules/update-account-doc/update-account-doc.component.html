@@ -39,7 +39,7 @@
       
       
       </h2>
-        <button type="button" (click)="EditRecord(item)" class="btn btn-primary btn-xs">Edit</button>
+        <button type="button" (click)="EditRecord(item)" class="btn btn-primary btn-md">Edit</button>
       </div>
 
       <ng-template #elseBlock>
@@ -76,8 +76,8 @@
               </mat-form-field></td>
             </tr></table></h2>
 
-      <button type="button" (click)="item.isedit = false" class="btn btn-danger btn-xs">Cancel</button>
-      <button type="button" (click)="Updatarecord(item)" class="btn btn-primary btn-xs">Update</button>
+      <button type="button" (click)="item.isedit = false" class="btn btn-danger btn-md">Cancel</button>
+      <button type="button" (click)="Updatarecord(item)" class="btn btn-primary btn-md">Update</button>
       </ng-template>
       
       
@@ -99,7 +99,7 @@
         <input type="password" matInput > 
       </mat-form-field></td>
     </tr></table></h2>
-    <button type="button"  class="btn btn-primary btn-xs">Change Password</button>
+    <button type="button"  class="btn btn-primary btn-md">Change Password</button>
  
   </div>
 
@@ -131,7 +131,7 @@
 
     <br>
    
-      <div *ngIf="!edit; else elseBlock">
+      <!-- <div *ngIf="!edit; else elseBlock">
         <button type="button" (click)="hello1()" class="btn btn-primary btn-xs">Edit</button>
       </div>
 
@@ -141,5 +141,5 @@
       <button type="button" (click)="edit=false" class="btn btn-danger btn-xs">Cancel</button>
       <button type="button" (click)="hello2()" class="btn btn-primary btn-xs">Update</button>
       </ng-template>
-      
+       -->
       

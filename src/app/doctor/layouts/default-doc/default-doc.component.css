@@ -1,4 +1,4 @@
- :host {
+ /* :host {
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -19,18 +19,18 @@
   mat-drawer-content {
     padding: 20px;
     background: #C1C8E4 ;
-  }
-/* 
+  } */
+
 :host {
     display: flex;
     flex-direction: column;
     height: 100%;
-    background: rgb(227, 243, 250) ;
+    background: rgb(208, 228, 251) ;
     
   }
   mat-drawer {
     width: 350px;
-    background: rgb(227, 243, 250) ;
+    background: rgb(208, 228, 251);
   }
   
   mat-drawer-container {
@@ -43,4 +43,4 @@
     background: rgb(227, 243, 250) ;
   }
 
-  */
+ 
