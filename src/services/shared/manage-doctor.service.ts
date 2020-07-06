@@ -4,8 +4,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { FormGroup, FormControl } from '@angular/forms';
-import { AngularFireAuth } from '@angular/fire/auth';
-import { BehaviorSubject } from 'rxjs';
+
 import { replace } from 'lodash';
 
 @Injectable({
@@ -29,7 +28,7 @@ fuck :any;
     ) { }
 
 
-  constructor(public firestore: AngularFirestore, private afAuth:AngularFireAuth,  private router:Router) { }
+ 
 
 
 
