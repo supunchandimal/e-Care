@@ -33,6 +33,7 @@
     height: 100%;
     /* left: -30%; */
     background-color: black;
+    align-items: left;
     
 }
 
@@ -48,7 +49,7 @@
     text-decoration: none;
     color: white;
     display: inline-flex;
-    align-items: center;
+    /* align-items: center; */
 
 }
 
@@ -148,6 +149,12 @@
     color: #fff;
 }
 
+.toolbar-space{
+    text-decoration: none;
+    color: white;
+    padding: 0 14px; 
+    font-size: 18px;
+}
 
 a{
     text-decoration: none;
