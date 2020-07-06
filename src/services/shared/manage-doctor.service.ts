@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore'; 
+import { AngularFireAuth } from '@angular/fire/auth';
+import { Router } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
 import { FormGroup, FormControl } from '@angular/forms';
 
 @Injectable({
@@ -9,20 +12,11 @@ import { FormGroup, FormControl } from '@angular/forms';
 export class ManageDoctorService {
   collections=["doctors","Users"];
 
-  constructor(public firestore: AngularFirestore) { }
+  private eventAuthError = new BehaviorSubject<string>("");
+  eventAuthError$ = this.eventAuthError.asObservable();
+  newUser: any;
 
-// form: FormGroup =  new FormGroup({
-//   $key : new FormControl(null),     //Prinamry key for the doctor
-//   fullName: new FormControl(''),
-//   email: new FormControl(''),
-//   mobile: new FormControl(''),
-//   city: new FormControl(''),
-//   gender: new FormControl('1'),
-//   department: new FormControl(0),
-//   hireDate: new FormControl(''),
-//   isPermanent: new FormControl(false)
-
-// });
+  constructor(public firestore: AngularFirestore, private afAuth:AngularFireAuth,  private router:Router) { }
 
 
 create_Newdoctor(Record,collections){
@@ -32,9 +26,6 @@ create_Newdoctor(Record,collections){
   return Promise.all(promises);
 }
 
-// create_Newdoctor(Record){
-//   return this.firestore.collection('doctors').add(Record);
-// }
 
 get_Alldoctors(){
   return this.firestore.collection('doctors').snapshotChanges();
@@ -47,5 +38,47 @@ update_doctor(recordid, record){
 delete_doctor(record_id){
   this.firestore.doc('doctors/'+record_id).delete();
 }
+
+// ---------------------------------------------------------
+
+createUser(Record){
+  this.afAuth.createUserWithEmailAndPassword(Record.email,Record.nic)
+    .then(userCredential =>{
+      this.newUser = Record;
+      // console.log(userCredential);
+      userCredential.user.updateProfile({
+          displayName:Record.fullName,
+      });
+      
+      this.insertUserData(userCredential)
+        .then(()=>{
+         // console.log(this.newUser.gender);
+          this.newUser=null;
+          userCredential=null;
+          this.router.navigate(['/login']);
+        });
+    })
+    .catch( error =>{
+      this.eventAuthError.next(error);
+    })
+}
+
+insertUserData(userCredential:firebase.auth.UserCredential){
+  return this.firestore.doc(`Users/${userCredential.user.uid}`).set({
+    email:this.newUser.email,
+    fullName:this.newUser.fullName,
+    // secondname:this.newUser.secondName,
+    nic:this.newUser.nic,
+    dob:this.newUser.dob,
+    gender:this.newUser.gender,
+    // phone:this.newUser.phone,
+    role:"doctor"
+  })
+
+}
+logout(){
+  return this.afAuth.signOut();
+}
+
 
 }
