@@ -3,16 +3,23 @@
         <app-patient-home class="subnavibar"></app-patient-home>
     </div>
     <div class="bodyrest">
-        <div style="align-self: flex-start;">
-            <app-pagemenu [parentData]="flag"></app-pagemenu>
+
+        <div style="align-self: flex-start;  width: 100%; margin-top:10% ;"> 
+           
             <div>
 
-                <div class="dropzone" appDropzone (hovered)="toggleHover($event)" (dropped)="onDrop($event)" [class.hovering]="isHovering">
+                <div class="dropzone" 
+                    appDropzone
+                     (hovered)="toggleHover($event)"
+                     (dropped)="onDrop($event)"
+                     [class.hovering]="isHovering">
+                
+                
+                     <h3>upload your file</h3>
+                     <p>Drag and Drop a File</p>
+                     <input type="file" placeholder="choosefile" (change)="onDrop($event.target.files)">
 
-
-                    <h3>AngularFire Drop Zone</h3>
-                    <p>Drag and Drop a File</p>
-                    <input type="file" placeholder="choosefile" (change)="onDrop($event.target.files)">
+        
                 </div>
 
 
@@ -22,10 +29,15 @@
                     <app-upload-task [file]="file"></app-upload-task>
                 </div>
 
-
-
-            </div>
+                </div>
+                <div class="announcement_con2 "*ngFor ="let am of allfiles ; let i = index">
+                    <br>
+                    <div class="audience">Audience : {{am.date}}</div>
+                    <div class="subject" > Subject :{{am.path}}</div>
+                    <div class="message">Message: {{am.downloadURL}}</div>
+                  </div>                
 
         </div>
+        
     </div>
 </body>

@@ -63,7 +63,9 @@ CreateRecord(docForm: NgForm){
   Record['speciality']=this.speciality;
   Record['role']="doctor";
 
-  this.DoctorService.create_Newdoctor(Record,this.collections).then(res=> {
+
+  this.DoctorService.create_Newdoctor(Record).then(res=> {
+   
 
     this.fullName="";
     this.email="";
