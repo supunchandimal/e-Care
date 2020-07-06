@@ -8,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class UploaderComponent implements OnInit {
 
   constructor() { }
-
+  flag=6;
+  
   ngOnInit(): void {
   }
   isHovering: boolean;
