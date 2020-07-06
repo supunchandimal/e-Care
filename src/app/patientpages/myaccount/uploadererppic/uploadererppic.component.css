@@ -1,20 +1,16 @@
-.dropzone { 
+.dropzone {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column; 
-    width:40% ;
+    flex-direction: column;
+    width: 40%;
     font-weight: 200;
     height: 20%;
-    
     border-radius: 5px;
-    background: black;
     margin-left: 30%;
-   
-  
-  
-  }
-  .photoholder{
+}
+
+.photoholder {
     border-radius: 50%;
     border: 1px solid black;
     height: 75px;
@@ -24,39 +20,42 @@
     background-size: contain;
 }
 
-  .hovering{
+.hovering {
     border: 2px solid #f16624;
     color: #dadada !important;
-  }
+}
 
-  .dropzone   .file-label {
+.dropzone .file-label {
     font-size: 1.2em;
 }
-  
-  progress::-webkit-progress-value {
-    transition: width 0.1s ease;
-  }
 
-  .body{
-    display: flex; 
-    overflow-x: hidden; 
-    margin-top: 2px;  
+progress::-webkit-progress-value {
+    transition: width 0.1s ease;
 }
-.naviBar{
-  width: 22.5%;
-  height: 100%;
-  align-self: flex-start;
-  background-color: #888, #555;
+
+.body {
+    display: flex;
+    overflow-x: hidden;
+    margin-top: 2px;
 }
-.subnavibar{
-  position: fixed;
-  align-self: flex-start;
-  margin-left: -20px;
-  margin-top: -10px;
+
+.naviBar {
+    width: 22.5%;
+    height: 100%;
+    align-self: flex-start;
+    background-color: #888, #555;
 }
-.bodyrest{
-  width: 78%;
-  height: 100%;
-  margin-left: 20%;
-  display: flex;   
+
+.subnavibar {
+    position: fixed;
+    align-self: flex-start;
+    margin-left: -20px;
+    margin-top: -10px;
+}
+
+.bodyrest {
+    width: 78%;
+    height: 100%;
+    margin-left: 20%;
+    display: flex;
 }

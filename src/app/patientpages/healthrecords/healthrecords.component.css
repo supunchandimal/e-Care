@@ -47,7 +47,7 @@
 .columnl {
     float: left;
     width: 10%;
-    margin-left: 8%;
+    margin-left: 10%;
     margin-top: 5%;
     margin-bottom: 20px;
 }
@@ -70,3 +70,10 @@
     clear: both;
 }
 
+<<<<<<< HEAD
+=======
+.row {
+    padding-right: 0px;
+    justify-content: flex-end;
+}
+>>>>>>> 92d6779d776849f29d394c4612c1a8ee2f917f6e

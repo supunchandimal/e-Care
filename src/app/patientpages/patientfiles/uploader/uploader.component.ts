@@ -6,9 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./uploader.component.css']
 })
 export class UploaderComponent implements OnInit {
-
+  flag =7;
   constructor() { }
-
+  
+  
   ngOnInit(): void {
   }
   isHovering: boolean;

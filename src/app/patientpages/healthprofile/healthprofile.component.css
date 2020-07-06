@@ -9,7 +9,6 @@
 
 .body {
     display: flex;
-    overflow-x: hidden;
 }
 
 .naviBar {
@@ -37,12 +36,11 @@
     height: 80%;
     margin-left: 19%;
     display: flex;
-
 }
 
 .submenu {
     width: 100%;
-    height: 10%;
+    height: 7%;
     margin-top: 50px;
     margin-bottom: 10px;
     color: #888, #555;
@@ -80,8 +78,6 @@
     display: flex;
     margin-top: -30px;
     padding-right: 0px;
-    
-
 }
 
 .btn-group button {
@@ -322,7 +318,7 @@
     color: white;
 }
 
-.bmi{
+.bmi {
     margin-bottom: 20px;
     /* margin-top: 20px; */
 }

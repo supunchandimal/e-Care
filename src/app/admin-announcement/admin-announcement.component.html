@@ -1,17 +1,19 @@
 <mat-toolbar color="primary">
-    <mat-toolbar-row>
-      <a href=""><span>eCare</span></a>
-    </mat-toolbar-row> 
+  <mat-toolbar-row>
+    <a href="" class="toolbar-space"><span>eCare</span></a>
+    <a routerLink="../admin" class="toolbar-space"><span>Home</span></a>
+  </mat-toolbar-row> 
 </mat-toolbar>
 
-<div id="img"> 
+<!-- 
+<div id="img">  -->
      
     <div id="sidebar">
         <ul>
             <li><a routerLink="../manage-doctor"><i class="material-icons">people_outline</i>Manage Doctors</a></li>
             <li><a routerLink="../manage-patient"><i class="material-icons">person_pin</i>Manage Patients</a></li> 
             <!-- <li><a href=""><i class="material-icons">comment</i>Notifications</a></li> -->
-            <li><a href="" routerLink="../adminfeedbacks" routerLinkActive="active"><i class="material-icons">comment</i>Feedbacks</a></li>
+            <li><a href="" routerLink="../adminfeedbacks" routerLinkActive="active" style="padding-right: 25px;"><i class="material-icons">comment</i>Feedbacks</a></li>
             <li><a href=""><i class="material-icons">payment</i>Payment details</a></li>
             <li><a routerLink="../admin-announcement"><i class="material-icons">announcement</i>Announcements</a></li>
         </ul>
@@ -63,5 +65,5 @@
         
       
         </div>
-</div> 
+<!-- </div>  -->
 
