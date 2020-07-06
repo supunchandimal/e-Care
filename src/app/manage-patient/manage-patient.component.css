@@ -13,13 +13,14 @@
 }
 
 #sidebar{
-    position: fixed;
+    position: absolute;
     display: block;
     width:20%;
     height: 100%;
     /* left: -20%; */
     background-color: black;
     filter: opacity(0.7);
+    align-items: left;
 }
 
 #sidebar li{
@@ -34,7 +35,7 @@
     text-decoration: none;
     color: white;
     display: inline-flex;
-    align-items: center;
+    /* align-items: center; */
 }
 
 #sidebar li:active{
@@ -150,3 +151,52 @@ a:hover {
     text-decoration: none;
 }
 
+.bodyrest{
+  /* width: 85%; */
+  margin-left: 20%;
+  display: flex; 
+  /* left: 50%; */
+  }
+
+  .search{   
+    width: 100%;
+    height: 10%;
+    /* margin-top: 50px; */
+    color: #888, #555;
+    text-shadow: 0 -1px 0 #000;	
+    opacity: 1;
+    display: flex;
+    margin-right: auto; 
+    margin-left:  auto; 
+    max-width: 960px; 
+    padding-top: 50px;
+    padding-right: 10px;
+    /* padding-left:  50px;  */
+    left: 50%;
+  }
+
+  .datacard{
+    display: flex;
+    grid-template-columns: 300px;
+    grid-template-rows: 200px 200px 80px;
+    grid-template-areas: "image" "text" "stats";
+    background: #84CEEB;
+    box-shadow: 15px 15px 25px rgba(0,0,0,0.9);
+    font-family: roboto;
+    text-align: center;
+    height: 25vh;
+    width: 90%;
+    margin-top: 5%;
+    margin-left: 1%;
+  }
+  
+  .pic{
+    width: 20%;
+    height: 100%;
+    background-color: #000;
+    align-self: flex-start;
+}
+.docname{
+    margin-left: 1%;
+
+}

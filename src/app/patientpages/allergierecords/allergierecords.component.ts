@@ -3,6 +3,7 @@ import { ServiceService } from '../services/service.service';
 import { Component, OnInit } from '@angular/core';
 import { from, Observable } from 'rxjs';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFirestore } from '@angular/fire/firestore';
 @Component({
   selector: 'app-allergierecords',
   templateUrl: './allergierecords.component.html',
@@ -17,8 +18,9 @@ export class AllergierecordsComponent implements OnInit {
     reaction:'',
     source:'',
   }
+  yes;
   allegs: Alleg[];
-  constructor(private afAuth:AngularFireAuth,private serviceService:ServiceService) { 
+  constructor(private afs: AngularFirestore,private afAuth:AngularFireAuth,private serviceService:ServiceService) { 
     this.authState = this.afAuth.authState;
   }
 
@@ -32,6 +34,10 @@ export class AllergierecordsComponent implements OnInit {
         this.serviceService.getAlegs().valueChanges().subscribe(allegs =>{
           //console.log(allegs);
         this.allegs= allegs;
+      });
+      this.getYes().subscribe(yes => {
+        console.log(yes);
+        this.yes = yes;
       });
         //this works
         
@@ -58,4 +64,11 @@ export class AllergierecordsComponent implements OnInit {
     }
   }
 
+  deleteItem(event ,item){
+    this.serviceService.deleteItem(item);
+    console.log('hii');
+  }
+  getYes() {
+    return this.afs.collection('Healthpro').doc(this.currentUser.uid).valueChanges();
+  }
 }

@@ -1,6 +1,11 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore'; 
+import { AngularFireAuth } from '@angular/fire/auth';
+import { Router } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
 import { FormGroup, FormControl } from '@angular/forms';
+
+import { replace } from 'lodash';
 
 @Injectable({
   providedIn: 'root'
@@ -9,32 +14,34 @@ import { FormGroup, FormControl } from '@angular/forms';
 export class ManageDoctorService {
   collections=["doctors","Users"];
 
-  constructor(public firestore: AngularFirestore) { }
-
-// form: FormGroup =  new FormGroup({
-//   $key : new FormControl(null),     //Prinamry key for the doctor
-//   fullName: new FormControl(''),
-//   email: new FormControl(''),
-//   mobile: new FormControl(''),
-//   city: new FormControl(''),
-//   gender: new FormControl('1'),
-//   department: new FormControl(0),
-//   hireDate: new FormControl(''),
-//   isPermanent: new FormControl(false)
-
-// });
 
 
-create_Newdoctor(Record,collections){
-  const promises=collections.map(collectionName=>
-    this.firestore.collection(collectionName).add(Record)
-    );
-  return Promise.all(promises);
+  private eventAuthError = new BehaviorSubject<string>("");
+  eventAuthError$ = this.eventAuthError.asObservable();
+  newUser: any;
+fuck :any;
+
+  constructor(public firestore: AngularFirestore,
+    private afAuth:AngularFireAuth,
+    private db:AngularFirestore
+    
+    ) { }
+
+
+ 
+
+
+
+create_Newdoctor(Record){
+    
+  console.log("fuccckkkkk")
+  this.createUser(Record);
+   
+   
+  return this.firestore.collection('doctors').add(Record);  
+
 }
 
-// create_Newdoctor(Record){
-//   return this.firestore.collection('doctors').add(Record);
-// }
 
 get_Alldoctors(){
   return this.firestore.collection('doctors').snapshotChanges();
@@ -48,4 +55,48 @@ delete_doctor(record_id){
   this.firestore.doc('doctors/'+record_id).delete();
 }
 
+
+
+
+createUser(record){
+  this.afAuth.createUserWithEmailAndPassword(record['email'],record['nic'])
+    .then(userCredential =>{
+      this.newUser =record;
+      // console.log(userCredential);
+      userCredential.user.updateProfile({
+          displayName:record['fullname'],
+      });
+      console.log("jlksjdflaflkasj")
+      this.insertUserData(userCredential)
+        return
+    }) 
+    .catch( error =>{
+      this.eventAuthError.next(error);
+      console.log(error)
+    })
+
 }
+
+insertUserData(userCredential:firebase.auth.UserCredential){
+
+  console.log(this.newUser['email']+'${userCredential.user.uid}')
+  
+  return this.db.doc(`Users/${userCredential.user.uid}`).set({
+    email:this.newUser['email'],
+    firstname:this.newUser['fullName'],
+
+    password:this.newUser['nic'],
+   
+    gender:this.newUser['gender'],
+    
+    role:"doctor"
+  })
+
+}
+
+
+
+
+}
+
+

@@ -3,6 +3,7 @@ import { Meds } from '../../models/medi';
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Observable } from 'rxjs';
+import { AngularFirestore } from '@angular/fire/firestore';
 @Component({
   selector: 'app-medication',
   templateUrl: './medication.component.html',
@@ -18,8 +19,9 @@ export class MedicationComponent implements OnInit {
     id:''
   }
   meds: Meds[];
+  yes;
   user:firebase.User;
-  constructor(private afAuth:AngularFireAuth,private mediService:MediService) { 
+  constructor(private afs: AngularFirestore, private afAuth:AngularFireAuth,private mediService:MediService) { 
     this.authState = this.afAuth.authState;
 
     // this.authState.subscribe(user => {
@@ -54,6 +56,10 @@ export class MedicationComponent implements OnInit {
           //console.log(allegs);
         this.meds= meds;
       });
+      this.getYes().subscribe(yes => {
+        console.log(yes);
+        this.yes = yes;
+      });
         //this works
         
       } else {
@@ -81,5 +87,8 @@ export class MedicationComponent implements OnInit {
     }else{
       
     }
+  }
+  getYes() {
+    return this.afs.collection('Healthpro').doc(this.currentUser.uid).valueChanges();
   }
 }
