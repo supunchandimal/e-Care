@@ -17,7 +17,7 @@ export class GetfeedbacksService {
   contactmessages:Observable<Contactmessages[]>
   
   constructor(  private db:AngularFirestore) {
-     this.Collection = db.collection<Contactmessages>('contactus_messages',ref=>ref.where("delete_or_not","==",0).orderBy('date',"desc").orderBy('mark',"asc"));
+     this.Collection= db.collection<Contactmessages>('contactus_messages',ref=>ref.where("delete_or_not","==",0).orderBy('date',"desc").orderBy('mark',"asc"));
      this.contactmessages =this.Collection.snapshotChanges().pipe(
        map(actions =>actions.map(a =>{
          const data = a.payload.doc.data() as Contactmessages;
