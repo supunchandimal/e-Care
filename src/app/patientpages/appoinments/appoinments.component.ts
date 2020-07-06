@@ -23,6 +23,9 @@ export class AppoinmentsComponent implements OnInit {
   constructor(private afs: AngularFirestore) {
 
   }
+
+  
+
   ngOnInit(): void {
     combineLatest(this.startobs, this.endobs).subscribe((value) => {
       this.getalldocs(value[0], value[1]).subscribe((docs) => {
