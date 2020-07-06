@@ -1,8 +1,8 @@
 <mat-nav-list>
     <div class="profile-card">
-        <div class="header">
-            <h2>OBAMA</h2>
-            <h4>obama@email.com</h4>
+        <div class="header"  *ngFor ="let item of doctor">
+            <h2><p>{{item.doctorFirstName}} {{item.doctorLastName}}</p></h2>
+            <h4>{{item.doctorEmail}}</h4>
         </div>
         <div class="img-circular"></div>
     </div>
