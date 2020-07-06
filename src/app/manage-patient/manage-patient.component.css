@@ -20,6 +20,7 @@
     /* left: -20%; */
     background-color: black;
     filter: opacity(0.7);
+    align-items: left;
 }
 
 #sidebar li{
@@ -34,7 +35,7 @@
     text-decoration: none;
     color: white;
     display: inline-flex;
-    align-items: center;
+    /* align-items: center; */
 }
 
 #sidebar li:active{

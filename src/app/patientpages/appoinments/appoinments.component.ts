@@ -24,7 +24,7 @@ export class AppoinmentsComponent implements OnInit {
 
   }
 
-  
+ ;
 
   ngOnInit(): void {
     combineLatest(this.startobs, this.endobs).subscribe((value) => {
