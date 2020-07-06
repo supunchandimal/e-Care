@@ -12,6 +12,7 @@ import { AccountService } from '../services/account.service';
   styleUrls: ['./myaccount.component.css']
 })
 export class MyaccountComponent implements OnInit {
+  flag = 5;
   MedCollection: AngularFirestoreCollection<User>;
   private authState: Observable<firebase.User>;
   public currentUser: firebase.User;

@@ -1,36 +1,60 @@
-<mat-toolbar color="primary">
-    <mat-toolbar-row>
-      <a href="" class="toolbar-space"><span>eCare</span></a>
-      <a routerLink="../admin" class="toolbar-space"><span>Home</span></a>
-    </mat-toolbar-row> 
-</mat-toolbar>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Squada+One&display=swap" rel="stylesheet">
+</head>
 
-<!-- <div id="img">  -->
-     
-    <div id="sidebar">
-        <ul>
-            <!-- <li  href="" routerLink="/manage-doctor" routerLinkActive="active">Manage Doctors</li> -->
-            <li>
-                <a routerLink="../manage-doctor"><i class="material-icons">people_outline</i>Manage Doctors</a>
-            </li>
-            <li>
-                <a routerLink="../manage-patient"><i class="material-icons">person_pin</i>Manage Patients</a>
-            </li> 
-            <li>
-                <a href=""><i class="material-icons">comment</i>Notifications</a>
-            </li>
-            <li>
-                <a href="" routerLink="../adminfeedbacks" routerLinkActive="active"><i class="material-icons">feedback</i>Feedbacks</a>
-            </li>
-            <li>
-                <a href=""><i class="material-icons">payment</i>Payment details</a>
-            </li>
-            <li>
-                <a routerLink="../admin-announcement"><i class="material-icons">announcement</i>Announcements</a>
-            </li>
-        </ul>
+<body>
+
+    <mat-toolbar color="primary">
+        <mat-toolbar-row>
+          <a href="" class="toolbar-space"><span>eCare</span></a>
+          <a routerLink="../admin" class="toolbar-space"><span>Home</span></a>
+        </mat-toolbar-row> 
+    </mat-toolbar>
+ 
+<div id="sidebar">
+    <ul>
+        <li><a routerLink="../manage-doctor"><i class="material-icons">people_outline</i>Manage Doctors</a></li>
+        <li><a routerLink="../manage-patient"><i class="material-icons">person_pin</i>Manage Patients</a></li> 
+        <!-- <li><a href=""><i class="material-icons">comment</i>Notifications</a></li> -->
+        <li><a href="" routerLink="../adminfeedbacks" routerLinkActive="active" style="padding-right: 25px;"><i class="material-icons">comment</i>Feedbacks</a></li>
+        <li><a href=""><i class="material-icons">payment</i>Payment details</a></li>
+        <li><a routerLink="../admin-announcement"><i class="material-icons">announcement</i>Announcements</a></li>
+    </ul>
+</div>
+<div class="bodyrest">
+    <div style="align-self: flex-start;width: 82vw;">
+<div class="search">
+    <div>
+        <input type="text" [(ngModel)]="searchterm" (keydown)="search($event)" placeholder="&#xf002; Search From Patient Name or Phone Number" style="font-family: FontAwesome, Arial; font-style: normal;width: 500%;">
+       
+    </div>    
+</div>
+<div class="data">
+    <div class="datacard" *ngFor="let doca of docs">
+        <div class="pic">
+            <img src="../../../assets/images/leda.png" alt="dasith" style="width: 100%;height: 100%;">
+        </div>
+        <div class="docname" *ngIf="doc?.length < 1">
+            <h1>Name- {{doca.firstname +" "+ doca.secondname}}</h1>
+            <h2>Phone No.- {{doca.phone}} </h2>
+        </div>
     </div>
-    
+    <div  class="datacard" *ngFor="let doca of doc">
+        <div class="pic">
+            <img src="../../../assets/images/leda.png" alt="dasith" style="width: 100%;height: 100%;">
+        </div>
+        <div class="docname" *ngIf="docs?.length < 1">
+            <h1>Name- {{doca.firstname +" "+ doca.secondname}}</h1>
+            <h2>{{doca.phone}} </h2>
+        </div>
+    </div>
+       
+</div>
+
+</div>
+</div>
+
 <div class="wrapper">    
 
 <div class="table-wrapper-scroll-y my-custom-scrollbar">
@@ -46,11 +70,11 @@
             </tr>
           
             <tr *ngFor="let item of patient">
-                <td>{{item.firstname}}</td>
+                <td>{{item.firstname +" "+item.secondname}}</td>
                 <td>{{item.gender}}</td>
                 <td>{{item.email}}</td>
                 <td>{{item.phone}}</td>
-                <td class="btn btn-danger">delete</td>
+                <td class="btn btn-danger" (click)="DeleteDoctor(item.id)">Delete</td>
                 <!-- <td>Gender</td>
                 <td>Email</td>
                 <td>nic</td>
@@ -93,4 +117,4 @@
             </div>
     <!-- </div>    -->
 </div>
-<!-- </div> -->
+</body>

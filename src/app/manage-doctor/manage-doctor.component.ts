@@ -10,7 +10,7 @@ import { FormGroup, FormControl, Validators, FormBuilder, AbstractControl,NgForm
 export class ManageDoctorComponent implements OnInit {
   
  docForm: FormGroup;
-
+ collections=["doctors","Users"];
   public genderList: string[];
   doctor: any;
   fullName: string;
@@ -63,8 +63,10 @@ CreateRecord(docForm: NgForm){
   Record['speciality']=this.speciality;
   Record['role']="doctor";
 
+
   this.DoctorService.create_Newdoctor(Record).then(res=> {
    
+
     this.fullName="";
     this.email="";
     this.nic="";

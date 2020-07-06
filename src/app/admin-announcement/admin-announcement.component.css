@@ -16,11 +16,14 @@
 }
 
 #sidebar{
-    position: fixed;
+    position: absolute;
     display: block;
     width:20%;
     height: 100%;
     background-color: black;
+    filter: opacity(0.7);
+    align-items: left;
+    
 }
 
 
@@ -42,19 +45,27 @@
     text-decoration: none;
     color: white;
     display: inline-flex;
-    align-items: center;
+    /* align-items: center; */
 
 }
 
 .material-icons{  
     margin-right: 10px; 
+    display: inline-flex;
     align-items: center;
 }
 
 .mat-toolbar.mat-primary {
     background: grey;
     color: #fff;
-  }
+}
+
+.toolbar-space{
+    text-decoration: none;
+    color: white;
+    padding: 0 14px;
+    font-size: 18px;
+}
 
 a{
     text-decoration: none;

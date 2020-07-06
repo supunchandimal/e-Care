@@ -7,7 +7,7 @@
         background: grey;
         color: #fff;
 }
-
+    
 .toolbar-space{
         text-decoration: none;
         color: white;
@@ -43,12 +43,14 @@ a:hover {
         height: 100%;
         /* left: -20%; */
         background-color: black;
+        align-items: left;
     }
 
 #sidebar li{
         color: white;
         font-size: 100%;
         padding: 30px;
+        /* padding-left: 80px; */
         border-bottom: 1px solid gray;
         text-align: center;
 }
@@ -62,12 +64,13 @@ a:hover {
         text-decoration: none;
         color: white;
         display: inline-flex;
-        align-items: center;
+        /* align-items: center; */
 
 }
 
 .material-icons{  
         margin-right: 10px; 
+        display: inline-flex;
         align-items: center;
 }
 

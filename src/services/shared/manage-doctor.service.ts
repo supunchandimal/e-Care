@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore'; 
+import { AngularFireAuth } from '@angular/fire/auth';
+import { Router } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
 import { FormGroup, FormControl } from '@angular/forms';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { BehaviorSubject } from 'rxjs';
@@ -8,7 +11,10 @@ import { replace } from 'lodash';
 @Injectable({
   providedIn: 'root'
 })
+
 export class ManageDoctorService {
+  collections=["doctors","Users"];
+
 
 
   private eventAuthError = new BehaviorSubject<string>("");
@@ -22,18 +28,10 @@ fuck :any;
     
     ) { }
 
-// form: FormGroup =  new FormGroup({
-//   $key : new FormControl(null),     //Prinamry key for the doctor
-//   fullName: new FormControl(''),
-//   email: new FormControl(''),
-//   mobile: new FormControl(''),
-//   city: new FormControl(''),
-//   gender: new FormControl('1'),
-//   department: new FormControl(0),
-//   hireDate: new FormControl(''),
-//   isPermanent: new FormControl(false)
 
-// });
+  constructor(public firestore: AngularFirestore, private afAuth:AngularFireAuth,  private router:Router) { }
+
+
 
 create_Newdoctor(Record){
     
@@ -42,7 +40,9 @@ create_Newdoctor(Record){
    
    
   return this.firestore.collection('doctors').add(Record);  
+
 }
+
 
 get_Alldoctors(){
   return this.firestore.collection('doctors').snapshotChanges();
@@ -55,6 +55,7 @@ update_doctor(recordid, record){
 delete_doctor(record_id){
   this.firestore.doc('doctors/'+record_id).delete();
 }
+
 
 
 
@@ -74,6 +75,7 @@ createUser(record){
       this.eventAuthError.next(error);
       console.log(error)
     })
+
 }
 
 insertUserData(userCredential:firebase.auth.UserCredential){

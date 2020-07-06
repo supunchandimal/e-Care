@@ -56,6 +56,12 @@
   </mat-radio-group>
 </div>
 <div class="div" *ngIf="mentalHealth=='1'">
+
+  <mat-form-field appearance="duration">
+    <mat-label>For How Long?</mat-label>
+    <input matInput placeholder="Type Duration">
+  </mat-form-field>
+  
   <mat-form-field>
     <mat-label>Choose a date</mat-label>
     <input matInput [matDatepicker]="picker">
@@ -63,10 +69,7 @@
     <mat-datepicker #picker></mat-datepicker>
   </mat-form-field>
   
-  <mat-form-field appearance="duration">
-    <mat-label>For How Long?</mat-label>
-    <input matInput placeholder="Type Duration">
-  </mat-form-field>
+  
 </div>
 
 <div class="dive">

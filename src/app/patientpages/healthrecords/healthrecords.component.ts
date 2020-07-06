@@ -22,4 +22,7 @@ export class HealthrecordsComponent implements OnInit {
   onClickRecord(){
     this.mark=3;
   }
+  onClickOpo(){
+    this.mark=4;
+  }
 }

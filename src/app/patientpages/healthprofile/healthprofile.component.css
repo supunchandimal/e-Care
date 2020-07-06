@@ -1,127 +1,161 @@
-.margin{
- width: 80%;
- height: 100%;
- align-self: flex-start;
- background-color: black;
- display: flex;
- overflow-x: hidden;
-}
-.body{
-    display: flex; 
-     
+.margin {
+    width: 80%;
+    height: 100%;
+    align-self: flex-start;
+    background-color: black;
+    display: flex;
     overflow-x: hidden;
 }
-.naviBar{
-  width: 22.5vw;
-  height: 100vh;
-  align-self: flex-start;
-  
-}
-.subnavibar{
-  position: fixed;
-  align-self: flex-start;
-  margin-left: -20px;
-  margin-top: -10px;
-}
-.bodyrest{
-    width: 78%;
-    height: 100%;
-    margin-left: 20%;
-    display: flex;   
-}
-.submenu{
-  width: 100%;
-  height: 35%;
-  margin-top: 50px;
-  color: #888, #555;
-  text-shadow: 0 -1px 0 #000;	
-  border-bottom: 1px solid black;
-  opacity: 1;
-}
-.photoholder{
-  margin-bottom: 70px;
-  margin-left: 20px;
-  width: 75px;
-  height: 75px;
-  align-self: center;
-}
-.addpoto{
-  border-radius: 50%;
-  height: 75px;
-  width: 75px;
-  background-color: #bbb;
-  margin-left: 50px;
-}
-.profilename{
-  display: flex;
-  align-self: center;
-  opacity: 1;
-  width: 100%;
-  padding-top: 20px;
-}
-.btn-holder{
-  justify-content:flex-end;
-  display: flex;
-  margin-top: -30px;
-  padding-right: 50px;
-}
-.btn-group button {
-  background-color: rgb(243, 237, 237); /* Green background */
-  border: 1px solid rgb(243, 237, 237); /* Green border */
-  color: black; /* White text */
-  padding: 10px 24px; /* Some padding */
-  cursor: pointer; /* Pointer/hand icon */
-  float: left; /* Float the buttons side by side */
-  height: 15vh;
-  width: 15vw;
-}
-.dive{
-  justify-content: flex-start;
-  display: flex;
-  width: 100%;
-  height: 5vh;
-  font-family: 'Squada One', cursive;
-  font-size: medium;
-  align-self: flex-start;
-  padding-left: 10px;
-  margin-top: 20px;
-}
-.btn-holder2{
-  justify-content:flex-start;
-  display: flex;
-  margin-top: -30px;
-  padding-right: 20px;
-}
-.btn-group2 button{
-  background-color: rgb(243, 237, 237); /* Green background */
-  border: 1px solid black; /* Green border */
-  color: black; /* White text */
-  padding: 10px 24px; /* Some padding */
-  cursor: pointer; /* Pointer/hand icon */
-  float: right; /* Float the buttons side by side */
-  height: 5vh;
-  width: 5vw;
-  font-family: 'Squada One', cursive;
-  font-size: medium;
-  display: flex;
-  align-self: flex-end;
-  margin-top: 5%;
-  margin-left: 0%;
-  border-radius: 0%;
-  box-shadow: 2px black;
-}
-.btn {
-  background-color: #4CAF50;
-  color: white;
-  padding: 16px 20px;
-  border: none;
-  cursor: pointer;
-  width: 15%;
-  opacity: 0.9;
-  
+
+.body {
+    display: flex;
 }
 
-.details{
+.naviBar {
+    width: 22.5vw;
+    height: 100vh;
+    align-self: flex-start;
+}
+
+.icn {
+    position: absolute;
+    width: 2vw;
+    height: 100%;
+    align-self: center;
+}
+
+.subnavibar {
+    position: fixed;
+    align-self: flex-start;
+    margin-left: -20px;
+    margin-top: -10px;
+}
+
+.bodyrest {
+    width: 78%;
+    height: 80%;
+    margin-left: 19%;
+    display: flex;
+}
+
+.submenu {
+    width: 100%;
+    height: 7%;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    color: #888, #555;
+    text-shadow: 0 -1px 0 #000;
+    border-bottom: 1px solid black;
+    opacity: 1;
+}
+
+.photoholder {
+    margin-bottom: 70px;
+    margin-left: 20px;
+    width: 75px;
+    height: 75px;
+    align-self: center;
+}
+
+.addpoto {
+    border-radius: 50%;
+    height: 75px;
+    width: 75px;
+    background-color: #bbb;
+    margin-left: 50px;
+}
+
+.profilename {
+    display: flex;
+    align-self: center;
+    opacity: 1;
+    width: 100%;
+    padding-top: 20px;
+}
+
+.btn-holder {
+    justify-content: flex-end;
+    display: flex;
+    margin-top: -30px;
+    padding-right: 0px;
+}
+
+.btn-group button {
+    background-color: rgb(243, 237, 237);
+    /* Green background */
+    border: 1px solid rgb(243, 237, 237);
+    /* Green border */
+    color: black;
+    /* White text */
+    padding: 10px 24px;
+    /* Some padding */
+    cursor: pointer;
+    /* Pointer/hand icon */
+    float: left;
+    /* Float the buttons side by side */
+    height: 8vh;
+    width: 16vw;
+}
+
+.dive {
+    justify-content: flex-start;
+    display: flex;
+    width: 100%;
+    height: 5vh;
+    font-family: 'Squada One', cursive;
+    font-size: medium;
+    align-self: flex-start;
+    padding-left: 10px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.btn-holder2 {
+    justify-content: flex-start;
+    display: flex;
+    margin-top: -30px;
+    padding-right: 20px;
+}
+
+.btn-group2 button {
+    background-color: rgb(243, 237, 237);
+    /* Green background */
+    border: 1px solid black;
+    /* Green border */
+    color: black;
+    /* White text */
+    padding: 10px 24px;
+    /* Some padding */
+    cursor: pointer;
+    /* Pointer/hand icon */
+    float: right;
+    /* Float the buttons side by side */
+    height: 5vh;
+    width: 5vw;
+    font-family: 'Squada One', cursive;
+    font-size: medium;
+    display: flex;
+    align-self: flex-end;
+    margin-top: 5%;
+    margin-left: 0%;
+    border-radius: 0%;
+    box-shadow: 2px black;
+}
+
+.btn {
+    color: black;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 20%;
+    opacity: 0.9;
+}
+
+.btn:hover {
+    background-color: #5680E9;
+}
+
+.details {
     display: inline-block;
     display: flex;
     position: relative;
@@ -132,98 +166,159 @@
     height: 30vh;
     background-color: rgb(243, 237, 237);
 }
-.menu{
-  display: inline-block;
-  display: flex;
-  position: relative;
-  bottom: -127.5px;
-  right:500px;
-  width: 100vw;
-  height: 30vh;
-  background-color: black;
+
+.menu {
+    display: inline-block;
+    display: flex;
+    position: relative;
+    bottom: -127.5px;
+    right: 500px;
+    width: 100vw;
+    height: 30vh;
+    background-color: black;
 }
 
-
-
-
-
-  .dive2{
+.dive2 {
     justify-content: flex-end;
     display: flex;
     position: relative;
     bottom: -320.5px;
-    right:1450px;
+    right: 1450px;
     width: 80vw;
     height: 1px;
     font-family: 'Squada One', cursive;
     font-size: medium;
-  }
-  .formcontrol{
+}
+
+.formcontrol {
     width: 1vw;
     height: 3vh;
     margin-top: 25px;
     margin-left: -92px;
     border: none;
-  }
-  
-  .btn-group button:not(:last-child) {
-    border-right: none; /* Prevent double borders */
-  }
-  
-  /* Clear floats (clearfix hack) */
-  .btn-group:after {
+}
+
+.btn-group button:not(:last-child) {
+    border-right: none;
+    /* Prevent double borders */
+}
+
+
+/* Clear floats (clearfix hack) */
+
+.btn-group:after {
     content: "";
     clear: both;
     display: table;
-  }
-  
-  /* Add a background color on hover */
-  .btn-group button:hover {
+}
+
+
+/* Add a background color on hover */
+
+.btn-group button:hover {
     background-color: #C1C8E4;
-  }
-  .btn-group button:not(:last-child) {
-    border-right: none; /* Prevent double borders */
-  }
-  
-  /* Clear floats (clearfix hack) */
-  .btn-group2:after {
+}
+
+.btn-group button:not(:last-child) {
+    border-right: none;
+    /* Prevent double borders */
+}
+
+
+/* Clear floats (clearfix hack) */
+
+.btn-group2:after {
     content: "";
     clear: both;
     display: table;
-  }
-  /* Add a background color on hover */
-  .btn-group2 button:hover {
+}
+
+
+/* Add a background color on hover */
+
+.btn-group2 button:hover {
     background-color: #C1C8E4;
-  }
-  
-  
-.btn-group2 .yes-btn{
+}
+
+.btn-group2 .yes-btn {
     display: inline;
-    color:black; 
+    color: black;
     margin-right: 30px;
-    margin-left:10px ;
+    margin-left: 10px;
     float: left;
-    background-color: #61892F;
     border-radius: 5px;
     padding: 0px;
     /* float: left; */
 }
-.btn-group2 .no-btn{
-  /* float: left; */
-    color:black;
+
+.btn-group2 .no-btn {
+    /* float: left; */
+    color: black;
     display: inline;
     float: left;
-    background-color:#BC4639 ;
     border-radius: 5px;
     padding: 0px;
 }
 
+.btn-group2 {
+    width: 100%;
+    /* background-color: yellow; */
+    padding: 0px;
+    float: left;
+}
 
-.btn-group2{
-  width:100%;
-  /* background-color: yellow; */
-  padding: 0px;
-  float: left;
+.columnl {
+    float: left;
+    width: 20%;
+    margin-left: 2%;
+}
+
+.columnr {
+    float: left;
+    width: 20%;
+    margin-left: 10%;
+    overflow-y: scroll;
+    max-height: 25vh;
+}
 
 
+/* Clear floats after the columns */
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#customers {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#customers td,
+#customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#customers tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#customers tr:hover {
+    background-color: #ddd;
+}
+
+#customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #5680E9;
+    color: white;
+}
+
+.bmi {
+    margin-bottom: 20px;
+    /* margin-top: 20px; */
 }

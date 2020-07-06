@@ -9,12 +9,14 @@ import { GetfilesService } from 'src/services/shared/getfiles.service';
 })
 export class UploaderComponent implements OnInit {
 
+
   constructor( private loadfiles:GetfilesService
     
   ) { }
 
 
   allfiles:Files[];
+
 
   ngOnInit(): void {
 

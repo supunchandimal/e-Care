@@ -9,7 +9,7 @@ export class ContentDocComponent implements OnInit {
   today: number = Date.now();
   minDate: Date;
   maxDate: Date;
-  t07 = false;
+  t07 = true;
   indeterminate = false;
   labelPosition: 'before' | 'after' = 'after';
   disabled = false;
