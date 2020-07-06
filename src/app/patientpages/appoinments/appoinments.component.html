@@ -21,11 +21,12 @@
             <div class="data">
                 <div class="datacard" *ngFor="let doca of docs">
                     <div class="pic">
-                        <img src="../../../assets/images/doca.jpg" alt="dasith" style="width: 100%;height: 100%;">
+                        <img [attr.src]= "doca.propic" alt="dasith" style="width: 100%;height: 100%;">
                     </div>
                     <div class="docname" *ngIf="doc?.length < 1">
                         <h1>Dr.  {{doca.fullName}}</h1>
                         <h2>Speciality - {{doca.speciality}} </h2>
+                       
                     </div>
                 </div>
                 <div  class="datacard" *ngFor="let doca of doc">

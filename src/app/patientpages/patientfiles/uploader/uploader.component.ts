@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Files } from 'src/services/files';
+import { GetfilesService } from 'src/services/shared/getfiles.service';
 
 @Component({
   selector: 'app-uploader',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UploaderComponent implements OnInit {
 
-  constructor() { }
+  constructor( private loadfiles:GetfilesService
+    
+  ) { }
+
+
+  allfiles:Files[];
 
   ngOnInit(): void {
+
+    this.loadfiles.getfiles().subscribe(
+      allfiles=>{
+        this.allfiles = allfiles as Files[];
+        console.log(this.allfiles[0].date)
+      }
+     
+    )
+  
   }
   isHovering: boolean;
 
