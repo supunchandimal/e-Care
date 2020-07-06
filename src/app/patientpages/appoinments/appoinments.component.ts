@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 })
 export class AppoinmentsComponent implements OnInit {
   searchterm: string;
-
+  flag = 6;
   startAt = new Subject();
   endAt = new Subject();
 
