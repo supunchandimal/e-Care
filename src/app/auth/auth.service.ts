@@ -59,7 +59,6 @@ fuck :any;
         phone:this.newUser.phone,
         role:"patient"
       })
-
     }
     logout(){
       return this.afAuth.signOut();

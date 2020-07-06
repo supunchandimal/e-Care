@@ -13,7 +13,7 @@
             <div class="submenu">
 
                 <div class="photoholder">
-                    <img src="{{ppic.downloadURL}}" alt="Girl in a jacket" width="100%" height="100%" style="border-radius: 50%;">
+                    <img src="{{ppic.downloadURL}}" width="100%" height="100%" style="border-radius: 50%;">
                     <div class="profilename">
                         <h1 *ngIf="user">{{ user?.displayName }}</h1>
                     </div>
@@ -47,7 +47,7 @@
                     <div class="btn-group2" *ngIf="yes.allergies==='yes'">
                         <button class="yes-btn" (click)=" onClickYesAlleg()" style="background-color: #8860D0;">yes</button><button class="no-btn" (click)=" onClickNoAlleg()">no</button>
                     </div>
-                    <div class="btn-group2" *ngIf="yes.allergies===''">
+                    <div class="btn-group2" *ngIf="yes.allergies==='a'">
                         <button class="yes-btn" (click)=" onClickYesAlleg()">yes</button><button class="no-btn" (click)=" onClickNoAlleg()">no</button>
                     </div>
                 </div>
