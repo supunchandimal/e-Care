@@ -7,7 +7,7 @@
     flex-direction: column;
     display: flex;
     position: relative;
-    background-color: #00b7e3;
+    background-color: #29648a;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -24,7 +24,7 @@
 }
 
 .btn-group button {
-    background-color: #84CEEB;
+    background-color: #2e9cca;
     /* Green background */
     border: none;
     /* Green border */
