@@ -31,6 +31,9 @@ import { UploadrecordsComponent } from './patientpages/uploadrecords/uploadrecor
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatButtonModule} from '@angular/material/button';
 import {MatRadioModule} from '@angular/material/radio';
+
+import {MatTabsModule} from '@angular/material/tabs';
+
 import {
   AngularFireStorageReference,
   AngularFireUploadTask,
@@ -81,6 +84,7 @@ import { ConditionsService } from './patientpages/services/conditions.service';
 import { OpoService } from './patientpages/services/opo.service';
 import { ConditionsComponent } from './patientpages/conditions/conditions.component';
 import { SurgeriesComponent } from './patientpages/surgeries/surgeries.component';
+import { MessagesComponent } from './patientpages/messages/messages.component';
 
 @NgModule({
   declarations: [
@@ -120,19 +124,13 @@ import { SurgeriesComponent } from './patientpages/surgeries/surgeries.component
     AdminAnnouncementComponent,
 
     PasswordComponent,
-
-    
-
     VconferenceComponent,
-
-    
 
     ConditionsComponent,
 
-    
-
     SurgeriesComponent,
     PatientDeleteDialogComponent,
+    MessagesComponent,
   ],
   imports: [
     BrowserModule,
@@ -149,6 +147,9 @@ import { SurgeriesComponent } from './patientpages/surgeries/surgeries.component
     MatSliderModule,
     MaterialModule,
     TextFieldModule,
+
+    MatTabsModule,
+
     MatFormFieldModule,
     MatButtonModule,
     MatInputModule,

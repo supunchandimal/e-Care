@@ -1,0 +1,30 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Squada+One&display=swap" rel="stylesheet">
+</head>
+
+<body class="body">
+    <div class="navibar">
+        <app-patient-home class="subnavibar"></app-patient-home>
+    </div>
+    <div class="bodyrest">
+        <div style="align-self: flex-start;width: 82vw;">
+            <app-pagemenu [parentData]="flag"></app-pagemenu>
+
+
+            <div class="dive">
+                <mat-tab-group animationDuration="0ms">
+                    <mat-tab label="Received">Content 1</mat-tab>
+                    <mat-tab label="Sent">Content 2</mat-tab>
+                </mat-tab-group>
+            </div>
+
+        </div>
+
+
+           
+    </div>
+
+    <!-- <h3>No animation</h3> -->  
+
+</body>
