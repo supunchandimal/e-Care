@@ -87,14 +87,58 @@ export class HealthprofileComponent implements OnInit {
       if (user) {
         this.currentUser = user;
         console.log('AUTHSTATE USER', user.uid);
-        this.getPpic().subscribe(allegs => {
-          console.log(allegs);
-          this.ppic = allegs;
+
+
+        this.afs.collection('ppic').doc(this.currentUser.uid).get().toPromise().then((docSnapshot) => {
+          if (docSnapshot.exists) {
+            this.getPpic().subscribe(ppic => {
+              console.log(ppic);
+              this.ppic = ppic;
+            });
+          }
+          else{
+            this.afs.collection('ppic').doc(this.currentUser.uid).set({
+              date:this.getToday(),
+              downloadURL:'a',
+              path:'',
+              
+            })
+          }
         });
-        this.getYes().subscribe(yes => {
-          console.log(yes);
-          this.yes = yes;
+        this.afs.collection('Healthpro').doc(this.currentUser.uid).get().toPromise().then((docSnapshot) => {
+          if (docSnapshot.exists) {
+            this.getYes().subscribe(yes => {
+              console.log(yes);
+              this.yes = yes;
+            });
+          }
+          else{
+            this.afs.collection('Healthpro').doc(this.currentUser.uid).set({
+              allergies:'No',
+              medication:'No',
+              conditions:'No',
+              operations:'No'
+            })
+          }
         });
+
+
+
+
+
+        // this.getPpic().subscribe(allegs => {
+          // console.log(allegs);
+          // this.ppic = allegs;
+        // });
+        // this.getYes().subscribe(yes => {
+          // console.log(yes);
+          // this.yes = yes;
+        // });
+
+
+
+
+
         this.getAl().subscribe(als => {
           console.log(als);
           this.als = als;
