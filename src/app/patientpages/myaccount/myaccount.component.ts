@@ -26,11 +26,12 @@ export class MyaccountComponent implements OnInit {
     id:''
   }
   
-  meds: User[];
+  meds;
   constructor(private auth:AuthService,private afAuth:AngularFireAuth,private accountService:AccountService,public afsal:AngularFirestore) { 
     this.authState = this.afAuth.authState;
+    
   }
-
+  
   ngOnInit(): void {
     console.log("hi")
     this.auth.getUserState()
@@ -42,11 +43,11 @@ export class MyaccountComponent implements OnInit {
       if (user) {
         this.currentUser = user;
         console.log('AUTHSTATE USER', user.uid); 
-        this.accountService.getAlegs().valueChanges().subscribe(meds =>{
+        this.getYes().subscribe(meds =>{
           //console.log(allegs);
         this.meds= meds;
-        console.log(this.user.displayName)
-        this.item.firstname = this.user.displayName;
+        this.item.phone = this.meds.phone;
+         
       });
         //this works
         
@@ -84,6 +85,9 @@ export class MyaccountComponent implements OnInit {
   }
   onClickBD(){
     this.mark =3;
+  }
+  getYes() {
+    return this.afsal.collection('Users').doc(this.currentUser.uid).valueChanges();
   }
  
 }

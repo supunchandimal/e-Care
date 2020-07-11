@@ -1,5 +1,5 @@
 .body {
-    background-color: rgb(0, 191, 255);
+    background-color: #25274D;
     width: 20vw;
     height: 100vh;
     display: flex;
@@ -10,7 +10,7 @@
 .naviBar {
     width: 20vw;
     height: 100vh;
-    background-color: #84CEEB;
+    background-color: #25274D;
     align-items: flex-start;
 }
 
@@ -24,7 +24,7 @@
 .margin {
     height: 100vh;
     width: 0.01vw;
-    background-color: rgb(0, 191, 255);
+    background-color: #25274D;
 }
 
 .naviButton {
@@ -33,7 +33,7 @@
     padding-bottom: 15px;
     height: 20%;
     align-self: center;
-    background-color: #84CEEB;
+    background-color: #25274d;
     align-items: center;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -43,10 +43,9 @@
     text-transform: uppercase;
     padding: 10px 15px;
     margin: 30px auto;
-    color: black;
-    background-color: #84CEEB;
-    background: -webkit-linear-gradient #84CEEB;
-    background: linear-gradient #84CEEB;
+    color: aliceblue;
+    background: -webkit-linear-gradient #25274d;
+    background: linear-gradient #25274d;
     border: 0 none;
     text-shadow: 0 -1px 0 #000;
     cursor: pointer;
@@ -69,9 +68,9 @@
     padding: 10px 15px;
     margin: 30px auto;
     color: rgb(12, 12, 12);
-    background-color: #5AB9EA;
-    background: -webkit-linear-gradient#5AB9EA;
-    background: linear-gradient#5AB9EA;
+    background-color: #464866;
+    background: -webkit-linear-gradient#464866;
+    background: linear-gradient#464866;
     border: 0 none;
     text-shadow: 0 -1px 0 #000;
     cursor: pointer;

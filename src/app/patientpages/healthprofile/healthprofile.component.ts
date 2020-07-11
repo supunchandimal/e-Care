@@ -90,6 +90,8 @@ export class HealthprofileComponent implements OnInit {
       if (user) {
         this.currentUser = user;
         console.log('AUTHSTATE USER', user.uid);
+
+
         this.afs.collection('ppic').doc(this.currentUser.uid).get().toPromise().then((docSnapshot) => {
           if (docSnapshot.exists) {
             this.getPpic().subscribe(ppic => {
@@ -122,6 +124,24 @@ export class HealthprofileComponent implements OnInit {
             })
           }
         });
+
+
+
+
+
+        // this.getPpic().subscribe(allegs => {
+          // console.log(allegs);
+          // this.ppic = allegs;
+        // });
+        // this.getYes().subscribe(yes => {
+          // console.log(yes);
+          // this.yes = yes;
+        // });
+
+
+
+
+
         this.getAl().subscribe(als => {
           console.log(als);
           this.als = als;

@@ -322,37 +322,3 @@
     margin-bottom: 20px;
     /* margin-top: 20px; */
 }
-
-.form-control {
-    height: 120px;
-    width: 1000px;
-    border: 1px solid black;
-    border-radius: 5px;
-    margin-bottom: 30px;
-}
-
-section {
-    display: table;
-    margin: 10px;
-    margin-bottom: 50px;
-}
-
-.mat-radio-button~.mat-radio-button {
-    margin-left: 50px;
-}
-
-.dive {
-    margin-bottom: 40px;
-    margin-top: 30px;
-}
-
-.radio-btn {
-    margin-right: 40px;
-    margin-left: 40px;
-}
-
-.mat-form-field {
-    font-size: medium;
-    border-radius: 10px;
-    margin-right: 50px;
-}

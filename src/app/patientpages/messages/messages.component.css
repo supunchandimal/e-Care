@@ -1,0 +1,100 @@
+
+*{
+    margin: 0px;
+}
+
+.body {
+    display: flex;
+}
+
+.naviBar {
+    width: 22.5vw;
+    height: 100vh;
+    align-self: flex-start;
+}
+
+.margin {
+    width: 80%;
+    height: 100%;
+    align-self: flex-start;
+    background-color: black;
+    display: flex;
+    overflow-x: hidden;
+}
+
+.bodyrest {
+    width: 78%;
+    height: 80%;
+    margin-left: 19%;
+    display: flex;
+}
+
+.subnavibar {
+    position: fixed;
+    align-self: flex-start;
+    margin-left: -20px;
+    margin-top: -10px;
+}
+
+.mat-tab-group {
+    margin-bottom: 48px;
+    margin-right: 50px;
+    font-size:larger;
+}
+
+.dive{
+    margin-left: 40px;
+    margin-top: 40px;
+    font-size: medium;
+}
+
+
+.mat-tab-label{
+    color:white;
+    min-width: 55px !important;
+    padding: 45px;
+    background-color:transparent;
+    color:white;
+    font-weight: 700;
+    font-size: large;
+  }
+
+  /* /deep/ .mat-tab-label{ */
+    /* min-width: 25px !important; */
+    /* padding: 5px; */
+       /* background-color:transparent; */
+        /* color:white; */
+        /* font-weight: 700; */
+/* } */
+
+/* .md-tab.ng-scope.ng-isolate-scope.md-ink-ripple.md-active{ */
+      /* background-color:transparent; */
+      /* color:white; */
+      /* font-weight: 700; */
+  /* } */
+
+/* .md-tab.ng-scope.ng-isolate-scope.md-ink-ripple{ */
+    /* background-color:transparent; */
+    /* color:white; */
+    /* font-weight: 700; */
+/* } */
+
+
+
+.mat-tab-label:active{
+    min-width: 55px !important;
+    padding: 45px;
+    background-color:transparent;
+    color:white;
+    font-weight: 700;
+    font-size: large;
+}
+
+.mat-tab-label:selected{
+    min-width: 55px !important;
+    padding: 45px;
+    background-color:transparent;
+    color:white;
+    font-weight: 700;
+    font-size: large;
+}

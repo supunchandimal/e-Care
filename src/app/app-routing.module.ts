@@ -41,6 +41,7 @@ import { DefaultAdminComponent } from './admin02/layouts/default-admin/default-a
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { from } from 'rxjs';
 import { VconferenceComponent } from './video/vconference/vconference.component';
+import { MessagesComponent } from './patientpages/messages/messages.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'/home' ,pathMatch:'full'},
@@ -72,7 +73,7 @@ const routes: Routes = [
   {path:'adminfeedbacks', component:AdminFeedbacksComponent},
   {path:'patientupload',component:UploaderComponent},
   {path:'video',component:VconferenceComponent},
-  
+  {path:'messages',component:MessagesComponent},
 
   //doctor's paths AppointmentScheduleComponent
 

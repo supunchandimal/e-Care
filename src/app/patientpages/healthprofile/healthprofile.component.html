@@ -24,16 +24,16 @@
                         <button *ngIf="mark==2" class="btn" (click)='onClickhealth()'>
                             MY HEALTH HISTORY
                         </button>
-                        <button *ngIf="mark==1" class="btn" (click)='onClickhealth()' style="background-color: #8860D0;">MY HEALTH HISTORY</button>
+                        <button *ngIf="mark==1" class="btn" (click)='onClickhealth()' style="background-color: #2e9cca;">MY HEALTH HISTORY</button>
                         <button *ngIf="mark==3" class="btn" (click)='onClickhealth()'>MY HEALTH HISTORY</button>
 
                         <button *ngIf="mark==1" class="btn" (click)='onClickbehavirol()'>MY BEHAVIROL HISTORY</button>
-                        <button *ngIf="mark==2" class="btn" (click)='onClickbehavirol()' style="background-color: #8860D0;">MY BEHAVIROL History</button>
+                        <button *ngIf="mark==2" class="btn" (click)='onClickbehavirol()' style="background-color: #2e9cca;">MY BEHAVIROL History</button>
                         <button *ngIf="mark==3" class="btn" (click)='onClickbehavirol()'>MY BEHAVIROL History</button>
 
                         <button *ngIf="mark==1" class="btn" (click)='onClickfamily()'>MY FAMILY HISTORY</button>
                         <button *ngIf="mark==2" class="btn" (click)='onClickfamily()'>MY FAMILY HISTORY</button>
-                        <button *ngIf="mark==3" class="btn" (click)='onClickfamily()' style="background-color: #8860D0;">MY FAMILY HISTORY</button>
+                        <button *ngIf="mark==3" class="btn" (click)='onClickfamily()' style="background-color: #2e9cca;">MY FAMILY HISTORY</button>
                     </div>
                 </div>
             </div>
@@ -142,10 +142,10 @@
                 </div>
                 <div class="btn-holder2">
                     <div class="btn-group2 button" *ngIf="yes.medication==='No'">
-                        <button class="yes-btn" (click)=" onClickYesMed()">yes</button><button class="no-btn" (click)=" onClickNoMed()" style="background-color: #8860D0;">no</button>
+                        <button class="yes-btn" (click)=" onClickYesMed()">yes</button><button class="no-btn" (click)=" onClickNoMed()" style="background-color: #5680E9;">no</button>
                     </div>
                     <div class="btn-group2 button" *ngIf="yes.medication==='yes'">
-                        <button class="yes-btn" (click)=" onClickYesMed()" style="background-color: #8860D0;">yes</button><button class="no-btn" (click)=" onClickNoMed()">no</button>
+                        <button class="yes-btn" (click)=" onClickYesMed()" style="background-color: #5680E9;">yes</button><button class="no-btn" (click)=" onClickNoMed()">no</button>
                     </div>
                     <div class="btn-group2 button" *ngIf="yes.medication===''">
                         <button class="yes-btn" (click)=" onClickYesMed()">yes</button><button class="no-btn" (click)=" onClickNoMed()">no</button>
@@ -189,10 +189,10 @@
                 </div>
                 <div class="btn-holder2">
                     <div class="btn-group2 button" *ngIf="yes.operations==='yes'">
-                        <button class="yes-btn" (click)=" onClickYesOpo()" style="background-color: #8860D0;">yes</button><button class="no-btn" (click)=" onClickNoOpo()">no</button>
+                        <button class="yes-btn" (click)=" onClickYesOpo()" style="background-color: #5680E9;">yes</button><button class="no-btn" (click)=" onClickNoOpo()">no</button>
                     </div>
                     <div class="btn-group2 button" *ngIf="yes.operations==='No'">
-                        <button class="yes-btn" (click)=" onClickYesOpo()">yes</button><button class="no-btn" (click)=" onClickNoOpo()" style="background-color: #8860D0;">no</button>
+                        <button class="yes-btn" (click)=" onClickYesOpo()">yes</button><button class="no-btn" (click)=" onClickNoOpo()" style="background-color: #5680E9;">no</button>
                     </div>
                     <div class="btn-group2 button" *ngIf="yes.operations===''">
                         <button class="yes-btn" (click)=" onClickYesOpo()">yes</button><button class="no-btn" (click)=" onClickNoOpo()">no</button>
