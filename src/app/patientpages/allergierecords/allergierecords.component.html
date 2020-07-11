@@ -6,7 +6,7 @@
                 <th>Description </th>
                 <th>Source </th>
             </tr>
-            <tr *ngFor="let alleg of allegs" class="collection" (dbclick)="deleteItem($event,item)">
+            <tr *ngFor="let alleg of allegs" class="collection" (dblclick)="deleteItem($event,alleg)">
                 <td>{{alleg.name}}</td>
                 <td>{{alleg.reaction}}</td>
                 <td>{{alleg.source}}</td>

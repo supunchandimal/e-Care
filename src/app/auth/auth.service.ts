@@ -32,7 +32,7 @@ fuck :any;
           this.newUser = user;
           // console.log(userCredential);
           userCredential.user.updateProfile({
-              displayName:user.firstName + user.secondName,
+              displayName:user.firstName +  user.secondName,
           });
           
           this.insertUserData(userCredential)

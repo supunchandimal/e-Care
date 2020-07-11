@@ -1,25 +1,21 @@
 <body class="body">
     <div class="bodyrest">
-        <div style="align-self: flex-start;">   
+        <div style="align-self: flex-start;">
             <div>
-                <div class="photoholder" > 
-                    <img src="{{allegs.downloadURL}}" alt="Girl in a jacket" width="100%" height="100%" style="border-radius: 50%;">
+                <div class="photoholder">
+                    <img src="{{allegs.downloadURL}}" width="100%" height="100%" style="border-radius: 50%;">
                 </div>
-                <div class="dropzone" 
-                    appDropzone
-                     (hovered)="toggleHover($event)"
-                     (dropped)="onDrop($event)"
-                     [class.hovering]="isHovering">
-                     
-                     <input type="file" placeholder="Select ProPic" (change)="onDrop($event.target.files)">
+                <div class="dropzone" appDropzone (hovered)="toggleHover($event)" (dropped)="onDrop($event)" [class.hovering]="isHovering">
+
+                    <input type="file" placeholder="Select ProPic" (change)="onDrop($event.target.files)">
                 </div>
-  
+
                 <div *ngFor="let file of files" style="display: inline-block; margin-left: 0vw;">
                     <app-ppic [file]="file"></app-ppic>
                 </div>
-  
-                </div>
+
+            </div>
 
         </div>
     </div>
- </body>
+</body>

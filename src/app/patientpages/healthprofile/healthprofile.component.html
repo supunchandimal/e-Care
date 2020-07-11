@@ -13,11 +13,12 @@
             <div class="submenu">
 
                 <div class="photoholder">
-                    <img src="{{ppic.downloadURL}}" width="100%" height="100%" style="border-radius: 50%;">
+                    <img src="{{ppic.downloadURL}}" alt="" width="100%" height="100%" style="border-radius: 50%;">
                     <div class="profilename">
                         <h1 *ngIf="user">{{ user?.displayName }}</h1>
                     </div>
                 </div>
+
                 <div class="btn-holder">
                     <div class="btn-group">
                         <button *ngIf="mark==2" class="btn" (click)='onClickhealth()'>
@@ -42,12 +43,12 @@
                 </div>
                 <div class="btn-holder2">
                     <div class="btn-group2" *ngIf="yes.allergies==='No'">
-                        <button class="yes-btn" (click)=" onClickYesAlleg()">yes</button><button class="no-btn" (click)=" onClickNoAlleg()" style="background-color: #8860D0;">no</button>
+                        <button class="yes-btn" (click)=" onClickYesAlleg()">yes</button><button class="no-btn" (click)=" onClickNoAlleg()" style="background-color: #5680E9;">no</button>
                     </div>
                     <div class="btn-group2" *ngIf="yes.allergies==='yes'">
-                        <button class="yes-btn" (click)=" onClickYesAlleg()" style="background-color: #8860D0;">yes</button><button class="no-btn" (click)=" onClickNoAlleg()">no</button>
+                        <button class="yes-btn" (click)=" onClickYesAlleg()" style="background-color: #5680E9;">yes</button><button class="no-btn" (click)=" onClickNoAlleg()">no</button>
                     </div>
-                    <div class="btn-group2" *ngIf="yes.allergies==='a'">
+                    <div class="btn-group2" *ngIf="yes.allergies===''">
                         <button class="yes-btn" (click)=" onClickYesAlleg()">yes</button><button class="no-btn" (click)=" onClickNoAlleg()">no</button>
                     </div>
                 </div>
@@ -95,10 +96,10 @@
                 </div>
                 <div class="btn-holder2">
                     <div class="btn-group2 button" *ngIf="yes.conditions==='yes'">
-                        <button class="yes-btn" (click)=" onClickYesCond()" style="background-color: #8860D0;">yes</button><button class="no-btn" (click)=" onClickNoCond()">no</button>
+                        <button class="yes-btn" (click)=" onClickYesCond()" style="background-color: #5680E9;">yes</button><button class="no-btn" (click)=" onClickNoCond()">no</button>
                     </div>
                     <div class="btn-group2 button" *ngIf="yes.conditions==='No'">
-                        <button class="yes-btn" (click)=" onClickYesCond()">yes</button><button class="no-btn" (click)=" onClickNoCond()" style="background-color: #8860D0;">no</button>
+                        <button class="yes-btn" (click)=" onClickYesCond()">yes</button><button class="no-btn" (click)=" onClickNoCond()" style="background-color: #5680E9;">no</button>
                     </div>
                     <div class="btn-group2 button" *ngIf="yes.conditions===''">
                         <button class="yes-btn" (click)=" onClickYesCond()">yes</button><button class="no-btn" (click)=" onClickNoCond()">no</button>

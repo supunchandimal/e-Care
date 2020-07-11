@@ -2,7 +2,7 @@ import { from, Observable } from 'rxjs';
 import { Ppic } from './../../models/propic';
 import { Rec } from './../../models/healthpro';
 import { HealthproService } from './../services/healthpro.service';
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, Input, ViewChild } from '@angular/core';
 import { AuthService } from 'src/app/auth/auth.service';
 import { Router } from '@angular/router';
 import * as _ from 'lodash';
@@ -16,12 +16,15 @@ import { ConditionsService } from '../services/conditions.service';
 import { Cond } from 'src/app/models/cond';
 import { Opo } from 'src/app/models/opo';
 import { OpoService } from '../services/opo.service';
+import { MatRadioButton } from '@angular/material/radio';
 @Component({
   selector: 'app-healthprofile',
   templateUrl: './healthprofile.component.html',
   styleUrls: ['./healthprofile.component.css']
 })
 export class HealthprofileComponent implements OnInit {
+
+
   private authState: Observable<firebase.User>;
   changingimg: boolean;
   files: FileList;
@@ -87,13 +90,37 @@ export class HealthprofileComponent implements OnInit {
       if (user) {
         this.currentUser = user;
         console.log('AUTHSTATE USER', user.uid);
-        this.getPpic().subscribe(allegs => {
-          console.log(allegs);
-          this.ppic = allegs;
+        this.afs.collection('ppic').doc(this.currentUser.uid).get().toPromise().then((docSnapshot) => {
+          if (docSnapshot.exists) {
+            this.getPpic().subscribe(ppic => {
+              console.log(ppic);
+              this.ppic = ppic;
+            });
+          }
+          else{
+            this.afs.collection('ppic').doc(this.currentUser.uid).set({
+              date:this.getToday(),
+              downloadURL:'a',
+              path:'',
+              
+            })
+          }
         });
-        this.getYes().subscribe(yes => {
-          console.log(yes);
-          this.yes = yes;
+        this.afs.collection('Healthpro').doc(this.currentUser.uid).get().toPromise().then((docSnapshot) => {
+          if (docSnapshot.exists) {
+            this.getYes().subscribe(yes => {
+              console.log(yes);
+              this.yes = yes;
+            });
+          }
+          else{
+            this.afs.collection('Healthpro').doc(this.currentUser.uid).set({
+              allergies:'No',
+              medication:'No',
+              conditions:'No',
+              operations:'No'
+            })
+          }
         });
         this.getAl().subscribe(als => {
           console.log(als);
@@ -116,11 +143,13 @@ export class HealthprofileComponent implements OnInit {
       } else {
         console.log('AUTHSTATE USER EMPTY', user);
         this.currentUser = null;
+        
       }
 
     },
       err => {
-        console.log('Please try again')
+        console.log('Please try again');
+       
       });
 
   }
@@ -145,38 +174,63 @@ export class HealthprofileComponent implements OnInit {
 
   onClickYesAlleg() {
     this.item.allergies = "yes";
+    this.item.medication = this.yes.medication;
+    this.item.conditions = this.yes.conditions;
+    this.item.operations = this.yes.operations;
     this.service.addItem(this.item);
+   
   }
 
   onClickNoAlleg() {
     this.item.allergies = 'No';
+    this.item.medication = this.yes.medication;
+    this.item.conditions = this.yes.conditions;
+    this.item.operations = this.yes.operations;
     this.service.addItem(this.item);
   }
   onClickYesMed() {
     this.item.medication = "yes";
+    this.item.conditions = this.yes.conditions;
+    this.item.operations = this.yes.operations;
+    this.item.allergies = this.yes.allergies;
     this.service.addItem(this.item);
   }
 
   onClickNoMed() {
     this.item.medication = 'No';
+    this.item.conditions = this.yes.conditions;
+    this.item.operations = this.yes.operations;
+    this.item.allergies = this.yes.allergies;
     this.service.addItem(this.item);
   }
   onClickYesCond() {
     this.item.conditions = "yes";
+    this.item.medication = this.yes.medication;
+    this.item.operations = this.yes.operations;
+    this.item.allergies = this.yes.allergies;
     this.service.addItem(this.item);
   }
 
   onClickNoCond() {
     this.item.conditions = 'No';
+    this.item.medication = this.yes.medication;
+    this.item.operations = this.yes.operations;
+    this.item.allergies = this.yes.allergies;
     this.service.addItem(this.item);
   }
   onClickYesOpo() {
     this.item.operations = "yes";
+    this.item.conditions = this.yes.conditions;
+    this.item.medication = this.yes.medication;
+    this.item.allergies = this.yes.allergies;
     this.service.addItem(this.item);
   }
 
   onClickNoOpo() {
     this.item.operations = 'No';
+    this.item.conditions = this.yes.conditions;
+    this.item.medication = this.yes.medication;
+    this.item.allergies = this.yes.allergies;
     this.service.addItem(this.item);
   }
   changingImage() {
@@ -189,7 +243,7 @@ export class HealthprofileComponent implements OnInit {
     return this.afs.collection('Healthpro').doc(this.currentUser.uid).valueChanges();
   }
   getAl() {
-    return this.afs.collection('Allegs', ref => ref.where('id', '==', this.currentUser.uid)).valueChanges();
+    return this.afs.collection('Allegs', ref => ref.where('did', '==', this.currentUser.uid)).valueChanges();
   }
   getMed() {
     return this.afs.collection('Meds', ref => ref.where('id', '==', this.currentUser.uid)).valueChanges();
@@ -203,7 +257,7 @@ export class HealthprofileComponent implements OnInit {
 
   onSubmit() {
     if (this.items.name != '' && this.items.reaction != '') {
-      this.items.id = this.currentUser.uid;
+      this.items.did = this.currentUser.uid;
       this.serviceService.addItem(this.items);
       this.items.name = '';
       this.items.reaction = '';
