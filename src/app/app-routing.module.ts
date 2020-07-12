@@ -22,6 +22,7 @@ import { ManageDoctorComponent } from './manage-doctor/manage-doctor.component';
 import { ManagePatientComponent } from './manage-patient/manage-patient.component';
 import { AdminFeedbacksComponent } from './admin-feedbacks/admin-feedbacks.component';
 import { AdminAnnouncementComponent } from './admin-announcement/admin-announcement.component';
+import {AdminPaymentdetailsComponent} from './admin-paymentdetails/admin-paymentdetails.component';
 import { UploaderComponent } from './patientpages/patientfiles/uploader/uploader.component';
 
 
@@ -63,6 +64,7 @@ const routes: Routes = [
   {path:'manage-doctor', component: ManageDoctorComponent},
   { path:'manage-patient', component: ManagePatientComponent},
   { path:'admin-announcement', component: AdminAnnouncementComponent},
+  { path:'admin-paymentdetails', component: AdminPaymentdetailsComponent},
   {path:'patientHome',component:PatientDefaultPageComponent},
   {path:'healthprofile',component:HealthprofileComponent},
   {path:'appoinments',component:AppoinmentsComponent},

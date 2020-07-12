@@ -14,7 +14,7 @@ import { FirstPageComponent } from './first-page/first-page.component';
 import { MainFooterComponent } from './main-footer/main-footer.component';
 import { MainNavigationBarComponent } from './main-navigation-bar/main-navigation-bar.component';
 import { LoginComponentComponent } from './auth/login-component/login-component.component';
-import { RegisterComponent } from './auth/register/register.component';
+import { RegisterCompone>>>>>>> masternt } from './auth/register/register.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { HowItWorksComponent } from './how-it-works/how-it-works.component';
 import { AngularFireModule } from '@angular/fire';
@@ -85,6 +85,8 @@ import { OpoService } from './patientpages/services/opo.service';
 import { ConditionsComponent } from './patientpages/conditions/conditions.component';
 import { SurgeriesComponent } from './patientpages/surgeries/surgeries.component';
 import { MessagesComponent } from './patientpages/messages/messages.component';
+import { AdminPaymentdetailsComponent } from './admin-paymentdetails/admin-paymentdetails.component';
+import { AdminGraphComponent } from './admin/admin-graph/admin-graph.component';
 
 @NgModule({
   declarations: [
@@ -131,6 +133,8 @@ import { MessagesComponent } from './patientpages/messages/messages.component';
     SurgeriesComponent,
     PatientDeleteDialogComponent,
     MessagesComponent,
+    AdminPaymentdetailsComponent,
+    AdminGraphComponent,
 
   ],
   imports: [
