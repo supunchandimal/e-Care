@@ -2,15 +2,43 @@
     display: flex;
     flex-direction: column;
     height: 100%;
+    background: rgb(100, 98, 98) ;
   }
   mat-drawer {
     width: 350px;
+    background: rgb(100, 98, 98) ;
   }
   
   mat-drawer-container {
     height: 100%;
+    
   }
   
   mat-drawer-content {
     padding: 20px;
+    
   }
+
+  /* :host {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: rgb(208, 228, 251) ;
+    
+  }
+  mat-drawer {
+    width: 350px;
+    background: rgb(208, 228, 251);
+  }
+  
+  mat-drawer-container {
+    height: 100%;
+    background: rgb(227, 243, 250) ;
+  }
+  
+  mat-drawer-content {
+    padding: 20px;
+    background: rgb(227, 243, 250) ;
+  } */
+
+ 

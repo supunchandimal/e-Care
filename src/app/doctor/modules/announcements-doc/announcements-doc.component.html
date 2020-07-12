@@ -1,0 +1,62 @@
+<h2>Announcements</h2>
+<mat-tab-group dynamicHeight>
+    <mat-tab label="Send Announcement">
+      <div class="example-small-box mat-elevation-z4">
+
+        <mat-card fxFlex="100">
+            <div fxLayoutAlign = "space-between">
+                <form class="example-form">
+                    <h3>
+                    <table class="example-full-width" cellspacing="0"><tr>
+                        <td><mat-form-field class="example-full-width">
+                          <mat-label>Subject</mat-label>
+                          <input matInput> 
+                        </mat-form-field></td>
+                      </tr></table>
+        
+                    <table class="example-full-width" cellspacing="0"><tr>
+                        <td><mat-form-field class="example-full-width">
+                          <mat-label>Messeage</mat-label>
+                          <textarea matInput></textarea>
+                        </mat-form-field></td>
+                      </tr></table></h3>
+                  </form>    
+           </div>
+           <button type="button" class="btn btn-primary btn-md">SEND</button>
+          </mat-card>
+      </div>
+    </mat-tab>
+
+    <mat-tab label="Recieved Announcement">
+      <div class="example-large-box mat-elevation-z4">
+
+        <mat-card fxFlex="100">
+        </mat-card>
+      </div>
+    </mat-tab>
+
+    <mat-tab label="Sent Announcement">
+        <div class="example-large-box mat-elevation-z4">
+            <div fxLayout="row" fxLayoutAlign = "space-between center" fxLayoutGap = "20px" class="stat-cards">
+                <mat-card fxFlex="100">
+                  <h2>Change Password</h2><br>
+                  <h2>
+                    <table class="example-full-width" cellspacing="0"><tr>
+                      <td><mat-form-field class="example-full-width">
+                        <mat-label>Current Password</mat-label>
+                        <input type="password" matInput> 
+                      </mat-form-field></td>
+                    </tr></table>
+                
+                    <table class="example-full-width" cellspacing="0"><tr>
+                      <td><mat-form-field class="example-full-width">
+                        <mat-label>Confirm Password</mat-label>
+                        <input type="password" matInput > 
+                      </mat-form-field></td>
+                    </tr></table></h2>
+                  <button type="button" class="btn btn-primary btn-md">Change Password</button>
+                </mat-card>
+                </div>
+        </div>
+    </mat-tab>
+  </mat-tab-group>

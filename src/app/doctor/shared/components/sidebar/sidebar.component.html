@@ -1,3 +1,11 @@
+<style>
+    mat-nav-list {
+      color:white;
+    }
+    mat-nav-list a {
+      color:white;
+    }
+</style>
 <mat-nav-list>
     <div class="profile-card">
         <div class="header"  *ngFor ="let item of doctor">
@@ -16,6 +24,10 @@
     <a mat-list-item routerLinkActive="list-item-active" routerLink="/updateAccount">Update Account</a>
     <a mat-list-item routerLinkActive="list-item-active" routerLink="/contentDoc">Content</a>
     <a mat-list-item routerLinkActive="list-item-active" routerLink="/appointmentSchedule">Appointment Schedule</a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/announcements">Announcements</a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/payments">Payments</a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/patients">My Patients</a>
+
 
     <mat-divider></mat-divider>
 

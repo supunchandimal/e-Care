@@ -24,6 +24,11 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { AppointmentScheduleComponent } from './../../modules/appointment-schedule/appointment-schedule.component';
+import { PatientsDocComponent } from './../../modules/patients-doc/patients-doc.component';
+import { PaymentsDocComponent } from './../../modules/payments-doc/payments-doc.component';
+import { AnnouncementsDocComponent } from './../../modules/announcements-doc/announcements-doc.component';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatStepperModule} from '@angular/material/stepper';
 
 
 @NgModule({
@@ -33,7 +38,10 @@ import { AppointmentScheduleComponent } from './../../modules/appointment-schedu
     ContentDocComponent,
     UpdateAccountDocComponent,
     AppointmentDocComponent,
-    AppointmentScheduleComponent
+    AppointmentScheduleComponent,
+    AnnouncementsDocComponent,
+    PaymentsDocComponent,
+    PatientsDocComponent
   ],
   imports: [
     CommonModule,
@@ -53,7 +61,9 @@ import { AppointmentScheduleComponent } from './../../modules/appointment-schedu
     MatFormFieldModule,
     MatCheckboxModule,
     MatRadioModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MatTabsModule,
+    MatStepperModule
     
   ],
   providers: [UpdateProfileService]
