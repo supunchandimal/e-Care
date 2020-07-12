@@ -14,7 +14,7 @@ import { FirstPageComponent } from './first-page/first-page.component';
 import { MainFooterComponent } from './main-footer/main-footer.component';
 import { MainNavigationBarComponent } from './main-navigation-bar/main-navigation-bar.component';
 import { LoginComponentComponent } from './auth/login-component/login-component.component';
-import { RegisterCompone>>>>>>> masternt } from './auth/register/register.component';
+import { RegisterComponent } from './auth/register/register.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { HowItWorksComponent } from './how-it-works/how-it-works.component';
 import { AngularFireModule } from '@angular/fire';
