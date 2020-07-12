@@ -32,16 +32,19 @@ import { ContentDocComponent } from './doctor/modules/content-doc/content-doc.co
 import { UpdateAccountDocComponent } from './doctor/modules/update-account-doc/update-account-doc.component';
 import { AppointmentDocComponent } from './doctor/modules/appointment-doc/appointment-doc.component';
 import { AppointmentScheduleComponent } from './doctor/modules/appointment-schedule/appointment-schedule.component';
+import { PatientsDocComponent } from './doctor/modules/patients-doc/patients-doc.component';
+import { PaymentsDocComponent } from './doctor/modules/payments-doc/payments-doc.component';
+import { AnnouncementsDocComponent } from './doctor/modules/announcements-doc/announcements-doc.component';
 
   //admin's new component
 import { DashboardAdminComponent } from './admin02/modules/dashboard-admin/dashboard-admin.component';
 import { DefaultAdminComponent } from './admin02/layouts/default-admin/default-admin.component';
 
 
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { from } from 'rxjs';
 import { VconferenceComponent } from './video/vconference/vconference.component';
 import { MessagesComponent } from './patientpages/messages/messages.component';
+import { from } from 'rxjs';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'/home' ,pathMatch:'full'},
@@ -75,7 +78,7 @@ const routes: Routes = [
   {path:'video',component:VconferenceComponent},
   {path:'messages',component:MessagesComponent},
 
-  //doctor's paths AppointmentScheduleComponent
+  //doctor's paths
 
   {path:'',component:DefaultDocComponent,
   children: [{ path :'docHome', component:DashboardDocComponent},
@@ -83,8 +86,11 @@ const routes: Routes = [
             {path:'updateAccount',component:UpdateAccountDocComponent},
             {path:'appointments',component:AppointmentDocComponent},
             {path:'appointmentSchedule',component:AppointmentScheduleComponent},
- ]
-},
+            {path:'announcements',component:AnnouncementsDocComponent},
+            {path:'payments',component:PaymentsDocComponent},
+            {path:'patients',component:PatientsDocComponent},          
+            ]
+  },
 
 
   //admin's new paths

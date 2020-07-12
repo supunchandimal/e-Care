@@ -131,6 +131,7 @@ import { MessagesComponent } from './patientpages/messages/messages.component';
     SurgeriesComponent,
     PatientDeleteDialogComponent,
     MessagesComponent,
+
   ],
   imports: [
     BrowserModule,
