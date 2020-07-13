@@ -29,7 +29,7 @@ import { PaymentsDocComponent } from './../../modules/payments-doc/payments-doc.
 import { AnnouncementsDocComponent } from './../../modules/announcements-doc/announcements-doc.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatStepperModule} from '@angular/material/stepper';
-
+import {MatIconModule} from '@angular/material/icon'
 
 @NgModule({
   declarations: [
@@ -63,7 +63,8 @@ import {MatStepperModule} from '@angular/material/stepper';
     MatRadioModule,
     MatDatepickerModule,
     MatTabsModule,
-    MatStepperModule
+    MatStepperModule,
+    MatIconModule
     
   ],
   providers: [UpdateProfileService]
