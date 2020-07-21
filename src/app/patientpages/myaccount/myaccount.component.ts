@@ -1,17 +1,18 @@
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { User } from '../../models/user';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, TemplateRef } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Observable } from 'rxjs';
 import { AuthService } from 'src/app/auth/auth.service';
 import { AccountService } from '../services/account.service';
-
+import { MatDialog } from '@angular/material/dialog';
 @Component({
   selector: 'app-myaccount',
   templateUrl: './myaccount.component.html',
   styleUrls: ['./myaccount.component.css']
 })
 export class MyaccountComponent implements OnInit {
+  @ViewChild('secondDialog') secondDialog: TemplateRef<any>;
   flag = 5;
   MedCollection: AngularFirestoreCollection<User>;
   private authState: Observable<firebase.User>;
@@ -27,7 +28,7 @@ export class MyaccountComponent implements OnInit {
   }
   
   meds;
-  constructor(private auth:AuthService,private afAuth:AngularFireAuth,private accountService:AccountService,public afsal:AngularFirestore) { 
+  constructor(private auth:AuthService,private afAuth:AngularFireAuth,private accountService:AccountService,public afsal:AngularFirestore,private dialog: MatDialog) { 
     this.authState = this.afAuth.authState;
     
   }
@@ -44,10 +45,11 @@ export class MyaccountComponent implements OnInit {
         this.currentUser = user;
         console.log('AUTHSTATE USER', user.uid); 
         this.getYes().subscribe(meds =>{
-          //console.log(allegs);
+          console.log(this.item.addr);
         this.meds= meds;
         this.item.phone = this.meds.phone;
-         
+        this.item.emercntct = this.meds.emercntct;
+        this.item.addr = this.meds.addr;
       });
         //this works
         
@@ -67,13 +69,15 @@ export class MyaccountComponent implements OnInit {
     // });
   }
   onSubmit(){
-    if(this.item.firstname != '' && this.item.secondname != '' ){
+   
       this.item.id=this.currentUser.uid;
+      this.item.firstname=this.meds.firstname;
+      this.item.secondname=this.meds.secondname;
+      this.item.email=this.meds.email;
+      this.item.dob=this.meds.dob;
+      this.item.gender=this.meds.gender;
       this.accountService.addItem(this.item);
       
-    }else{
-      
-    }
   }
   public mark =1;
 
@@ -88,6 +92,9 @@ export class MyaccountComponent implements OnInit {
   }
   getYes() {
     return this.afsal.collection('Users').doc(this.currentUser.uid).valueChanges();
+  }
+  openOtherDialog() {
+    this.dialog.open(this.secondDialog);
   }
  
 }

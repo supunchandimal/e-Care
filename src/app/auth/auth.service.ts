@@ -57,6 +57,8 @@ fuck :any;
         dob:this.newUser.dob,
         gender:this.newUser.gender,
         phone:this.newUser.phone,
+        addr:'',
+        emercntct:'',
         role:"patient"
       })
     }
