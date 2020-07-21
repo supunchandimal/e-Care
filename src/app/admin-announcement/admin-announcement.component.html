@@ -5,14 +5,11 @@
   </mat-toolbar-row> 
 </mat-toolbar>
 
-<!-- 
-<div id="img">  -->
      <div class="container-fluid">
       <div id="sidebar">
         <ul>
             <li><a routerLink="../manage-doctor"><i class="material-icons">people_outline</i>Manage Doctors</a></li>
             <li><a routerLink="../manage-patient"><i class="material-icons">person_pin</i>Manage Patients</a></li> 
-            <!-- <li><a href=""><i class="material-icons">comment</i>Notifications</a></li> -->
             <li><a href="" routerLink="../adminfeedbacks" routerLinkActive="active" style="padding-right: 25px;"><i class="material-icons">comment</i>Feedbacks</a></li>
             <li><a routerLink="../admin-paymentdetails"><i class="material-icons">payment</i>Payment details</a></li>
             <li><a routerLink="../admin-announcement"><i class="material-icons">announcement</i>Announcements</a></li>
@@ -58,14 +55,23 @@
         </div>
       </div>
        
-          <div class="announcement_con2 "*ngFor ="let am of announcements; let i = index">
+          <!-- <div class="announcement_con2 "*ngFor ="let am of announcements; let i = index">
             <br>
             <div class="audience">Audience : {{am.audience}}</div>
             <div class="subject" > Subject :{{am.subject}}</div>
             <div class="message">Message: {{am.message}}</div>
-          </div>
-        
+          </div> -->
       
         </div>
-<!-- </div>  -->
+      
+        <div class="scroll">
+        <div class="announcement_con2 " *ngFor ="let am of announcements; let i = index">
+          <br>
+          <div class="audience">Audience : {{am.audience}}</div>
+          <div class="subject" > Subject :{{am.subject}}</div>
+          <div class="message">Message: {{am.message}}</div>
+        </div>
+     
+    </div>
+
 

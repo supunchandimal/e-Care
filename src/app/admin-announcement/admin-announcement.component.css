@@ -105,8 +105,17 @@ input[type=text]{
 }
 
 .form_container{
+    position: fixed;
     display: block;
     width: 100%;
+}
+
+.scroll{
+    position: relative;
+    max-height: 50%;
+    overflow: auto;
+    margin-left: 30%;
+    margin-top: 20%;
 }
 
 .announcement_con2 {
