@@ -1,36 +1,13 @@
- /* :host {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    background: #C1C8E4 ;
-    
-  }
-  mat-drawer {
-    width: 350px;
-    background: #84CEEB ;
-  }
-
-  
-  mat-drawer-container {
-    height: 100%;
-    background: #C1C8E4 ;
-  }
-  
-  mat-drawer-content {
-    padding: 20px;
-    background: #C1C8E4 ;
-  } */
-
 :host {
     display: flex;
     flex-direction: column;
     height: 100%;
-    background: rgb(208, 228, 251) ;
+    background: rgb(47, 49, 97) ;
     
   }
   mat-drawer {
     width: 350px;
-    background: rgb(208, 228, 251);
+    background: rgb(47, 49, 97);
   }
   
   mat-drawer-container {
@@ -42,5 +19,3 @@
     padding: 20px;
     background: rgb(227, 243, 250) ;
   }
-
- 

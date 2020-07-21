@@ -33,7 +33,7 @@ export class AdminAnnouncementComponent implements OnInit {
   
     this.announcement.audience=form.value.audience;
     this.announcement.message= form.value.message;
-    this.announcement.subjcect = form.value.subject;
+    this.announcement.subject = form.value.subject;
 
     this.status=this.send.send(this.announcement);
     if(this.status=1){

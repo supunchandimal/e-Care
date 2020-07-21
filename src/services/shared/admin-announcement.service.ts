@@ -32,7 +32,7 @@ export class AdminAnnouncementService {
   send(announcement:Announcement){
     this.announcement = announcement;
     this.db.collection("announcement").add({
-      subjcect :this.announcement.subjcect,
+      subject :this.announcement.subject,
       audience : this.announcement.audience,
       message: this.announcement.message
 

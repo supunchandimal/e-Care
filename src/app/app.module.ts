@@ -85,6 +85,8 @@ import { OpoService } from './patientpages/services/opo.service';
 import { ConditionsComponent } from './patientpages/conditions/conditions.component';
 import { SurgeriesComponent } from './patientpages/surgeries/surgeries.component';
 import { MessagesComponent } from './patientpages/messages/messages.component';
+import { AdminPaymentdetailsComponent } from './admin-paymentdetails/admin-paymentdetails.component';
+import { AdminGraphComponent } from './admin/admin-graph/admin-graph.component';
 
 @NgModule({
   declarations: [
@@ -131,6 +133,9 @@ import { MessagesComponent } from './patientpages/messages/messages.component';
     SurgeriesComponent,
     PatientDeleteDialogComponent,
     MessagesComponent,
+    AdminPaymentdetailsComponent,
+    AdminGraphComponent,
+
   ],
   imports: [
     BrowserModule,
