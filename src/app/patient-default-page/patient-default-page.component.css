@@ -1,57 +1,59 @@
-.body{
+.body {
     background-color: rgb(243, 237, 237);
     width: 100vw;
     height: 100vh;
     display: flex;
     overflow-x: hidden;
 }
-.naviBar{
+
+.naviBar {
     width: 22.5vw;
     height: 100vh;
     align-self: flex-start;
     background-color: #888, #555;
 }
-.margin{
+
+.margin {
     width: 80%;
     height: 100%;
     margin-left: -2%;
     display: flex;
     background-image: url("../../assets/images/patienth.jpg");
-    background-position:center;
-  	background-repeat:no-repeat;
-    background-size:cover;  
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     overflow-x: hidden;
 }
-.change{
-  animation: chbg 15s infinite alternate;
-  display: flex; 
-  align-self: flex-end;
-  height: 25%;
-  width: 98.6%;
-  background-color: black;
-  margin-left: -95%;
-  padding-bottom: 10%;
+
+.change {
+    animation: chbg 15s infinite alternate;
+    display: flex;
+    align-self: flex-end;
+    height: 25%;
+    width: 98.6%;
+    background-color: black;
+    margin-left: -95%;
+    padding-bottom: 10%;
 }
+
 @keyframes chbg {
-  0% {
-    background-image:url("../../assets/images/covid19.png" );
-  background-size:cover
-  }
-  20% {
-    background-image:url("../../assets/images/covid.jpg" );
-  background-size:cover
-  }
-  40% {
-    background-image:url("../../assets/images/backgroundimage_howitworks.jpg" );
-  background-size:cover
-  }
-  100% {
-    background:url("../../assets/images/contactuspic.jpg" );
-  background-size:cover
-  }
+    0% {
+        background-image: url("../../assets/images/covid19.png");
+        background-size: cover
+    }
+    20% {
+        background-image: url("../../assets/images/covid.jpg");
+        background-size: cover
+    }
+    40% {
+        background-image: url("../../assets/images/backgroundimage_howitworks.jpg");
+        background-size: cover
+    }
+    100% {
+        background: url("../../assets/images/contactuspic.jpg");
+        background-size: cover
+    }
 }
-
-
 
 .btn {
     align-items: flex-end;
@@ -66,8 +68,9 @@
     border-radius: 5px;
     margin-left: 720%;
     margin-top: 5%;
-  }
-  .addr{
+}
+
+.addr {
     align-items: flex-end;
     opacity: 1.5;
     color: white;
@@ -77,69 +80,78 @@
     cursor: pointer;
     width: 15vw;
     color: black;
-  }
-  .card {
+}
+
+.card {
     display: grid;
     grid-template-columns: 300px;
     grid-template-rows: 210px 210px 80px;
     grid-template-areas: "image" "text" "stats";
     background: white;
-    box-shadow: 15px 15px 25px rgba(0,0,0,0.9);
+    box-shadow: 15px 15px 25px rgba(0, 0, 0, 0.9);
     font-family: roboto;
     text-align: center;
     height: 45vh;
     margin-top: 15%;
     margin-left: -23%;
-    margin-right: 35%;
-  }
-  .card2 {
+    margin-right: 40%;
+}
+
+.card2 {
     display: grid;
     grid-template-columns: 300px;
     grid-template-rows: 210px 210px 80px;
     grid-template-areas: "image" "text" "stats";
     background: white;
-    box-shadow: 15px 15px 25px rgba(0,0,0,0.9);
+    box-shadow: 15px 15px 25px rgba(0, 0, 0, 0.9);
     font-family: roboto;
     text-align: center;
     height: 45vh;
     margin-top: 15%;
-  }
-  .card-image {
+}
+
+.card-image {
     grid-area: image;
-  }
-  .card-text {
+}
+
+.card-text {
     grid-area: text;
-  }
-  .card-stats {
-    grid-area: stats; 
-  }
-  .card-image {
+}
+
+.card-stats {
+    grid-area: stats;
+}
+
+.card-image {
     grid-area: image;
     background: url("../../assets/images/doc.jpg");
-   
     background-size: cover;
-  }
-  .card-image2 {
+}
+
+.card-image2 {
     grid-area: image;
     background: url("../../assets/images/doc2.jpg");
     grid-area: image;
     background-size: cover;
-  }
-  .card-text {
+}
+
+.card-text {
     grid-area: text;
     margin: 25px;
-  }
-  .card-text .date {
+}
+
+.card-text .date {
     color: rgb(255, 7, 110);
-    font-size:13px;
-  }
-  .card-text p {
+    font-size: 13px;
+}
+
+.card-text p {
     color: grey;
-    font-size:15px;
+    font-size: 15px;
     font-weight: 300;
-  }
-  .card-text h2 {
-    margin-top:0px;
-    font-size:28px;
-  }
-  
+}
+
+.card-text h2 {
+    margin-top: 0px;
+    font-size: 28px;
+}

@@ -26,7 +26,7 @@ export class GetfilesService {
   allfiles: Observable<getfilesid[]>;
   private authState: Observable<firebase.User>;
   public currentUser: firebase.User;
-  uid:string="";
+  uid;
   constructor(  private db:AngularFirestore,private afAuth:AngularFireAuth ) {
     this.authState = this.afAuth.authState;
     this.authState.subscribe( async user => {

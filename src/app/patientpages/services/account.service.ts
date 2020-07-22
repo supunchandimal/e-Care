@@ -51,7 +51,7 @@ export class AccountService {
   }
 
    addItem(item:User){
-    return this.MedCollection.doc(this.currentUser.uid).update(item);
+    return this.MedCollection.doc(this.currentUser.uid).set(item);
   }
 }
 
