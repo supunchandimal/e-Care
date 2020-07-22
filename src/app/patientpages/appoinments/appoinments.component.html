@@ -37,9 +37,17 @@
                     <div style="align-self: flex-end;display: flex;margin-left: 30vw;">
                         <button (click)="openOtherDialog(doca.nic)">dsads</button>
                         <ng-template #secondDialog>
-                            <ul *ngFor="let time of times">
-                                <li>{{time.time}}</li>
-                            </ul>
+                            <table>
+                                <tr>
+                                    <th>date</th>
+                                    <th>time</th>
+                                    <!-- <th>status</th> -->
+                                </tr>
+                                <tr *ngFor="let time of times">
+                                    <td>{{time.date}}</td>
+                                    <td>{{time.time}}</td>
+                                </tr>
+                            </table>
 
                             <mat-dialog-actions align="end">
                                 <button mat-button matDialogClose>Dismiss</button>
@@ -63,9 +71,20 @@
                     <div style="align-self: flex-end;display: flex;margin-left: 30vw;">
                         <button (click)="openOtherDialog(doca.nic)">dsads</button>
                         <ng-template #secondDialog>
-                            <ul *ngFor="let time of times">
-                                <li>{{time.time}}</li>
-                            </ul>
+
+                            <!-- <li>{{time.time}}</li> -->
+                            <table>
+                                <tr>
+                                    <th>date</th>
+                                    <th>time</th>
+                                    <!-- <th>status</th> -->
+                                </tr>
+                                <tr *ngFor="let time of times">
+                                    <td>{{time.date}}</td>
+                                    <td>{{time.time}}</td>
+                                </tr>
+                            </table>
+
 
                             <mat-dialog-actions align="end">
                                 <button mat-button matDialogClose>Dismiss</button>
