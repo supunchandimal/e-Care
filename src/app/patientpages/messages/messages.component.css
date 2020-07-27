@@ -9,7 +9,7 @@
 
 .naviBar {
     width: 22.5vw;
-    height: 100vh;
+    height: 120vh;
     align-self: flex-start;
 }
 
@@ -25,7 +25,7 @@
 .bodyrest {
     width: 78%;
     height: 80%;
-    margin-left: 19%;
+    margin-left: 18.5%;
     display: flex;
 }
 
