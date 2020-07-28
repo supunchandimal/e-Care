@@ -75,7 +75,7 @@
     justify-content: flex-en
 
 
-
+}
 .mat-tab-label:active{
     min-width: 55px !important;
     padding: 45px;
@@ -110,4 +110,3 @@
     font-weight: 700;
     font-size: large;
   }
-====

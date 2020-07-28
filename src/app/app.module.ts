@@ -86,7 +86,6 @@ import { ConditionsComponent } from './patientpages/conditions/conditions.compon
 import { SurgeriesComponent } from './patientpages/surgeries/surgeries.component';
 import { MessagesComponent } from './patientpages/messages/messages.component'
 import { HelpComponent } from './patientpages/help/help.component';
-=======
 import { AdminPaymentdetailsComponent } from './admin-paymentdetails/admin-paymentdetails.component';
 import { AdminGraphComponent } from './admin/admin-graph/admin-graph.component';
 
@@ -137,7 +136,6 @@ import { AdminGraphComponent } from './admin/admin-graph/admin-graph.component';
     PatientDeleteDialogComponent,
     MessagesComponent,
     HelpComponent,
-=======
     AdminPaymentdetailsComponent,
     AdminGraphComponent,
 
