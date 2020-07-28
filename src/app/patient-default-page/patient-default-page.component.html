@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    </head>
-    <STYLE>A {text-decoration: none;} </STYLE>
-<body class="body"> 
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<STYLE>
+    A {
+        text-decoration: none;
+    }
+</STYLE>
+
+<body class="body">
     <div class="naviBar">
         <app-patient-home></app-patient-home>
     </div>
     <div class="margin">
-        <div  class="addr">
+        <div class="addr">
             <i class="fa fa-street-view" id="icon"></i>
             <label for="cars">Current Location:</label>
-                <select>
+            <select>
                      <option value="volvo">Maharagama</option>
                     <option value="saab">Nugegoda</option>
                     <option value="mercedes">Narahenpita</option>
@@ -20,37 +26,38 @@
                 </select>
         </div>
         <div>
-            <button *ngIf="user" class="btn" (click)="logout()">SignOut</button>
+            <button *ngIf="user" class="btn" (click)="logout()" style="margin-right: -5%;">SignOut</button>
         </div>
-        
-        <div class="card" >
+
+        <div class="card">
             <div class="card-image">
 
             </div>
             <div class="card-text">
                 <h1>
-                    <a routerLink = '/appoinments'>
+                    <a routerLink='/appoinments'>
                     YOUR PROVIDERS
                     </a>
                 </h1>
             </div>
-          </div>
-          <div class="card2">
-            <div class="card-image2" >
+        </div>
+        <div class="card2">
+            <div class="card-image2">
 
             </div>
             <div class="card-text">
                 <h1>
-                    <a routerLink = '/appoinments'>
+                    <a routerLink='/appoinments'>
                     YOUR APPOINMENTS
                     </a>
                 </h1>
             </div>
-          </div>
-       
-         
-        
-    </div>  
-   
+        </div>
+
+
+
+    </div>
+
 </body>
+
 </html>

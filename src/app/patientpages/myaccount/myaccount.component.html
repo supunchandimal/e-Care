@@ -22,7 +22,7 @@
                         </div>
                     </div>
                     <div>
-                        <form *ngFor="let user of meds" (ngSubmit)="onSubmit()" class="col s6" class="mainbody" style="width: 68vw;height: 85vh;align-self: flex-start;color: blue;margin-top: 1%;">
+                        <form (ngSubmit)="onSubmit()" class="col s6" class="mainbody" style="width: 68vw;height: 85vh;align-self: flex-start;color: blue;margin-top: 1%;">
                             <div class="formp1">
                                 <h1 style="color: black;"><b> UPDATE YOUR DETAILS</b></h1>
 
@@ -36,19 +36,19 @@
                                 </div>
                                 <div style="width: 35%;">
                                     <div class="searchformfld">
-                                        <input [(ngModel)]="item.firstname" width="50vw" type="text" class="firstname" id="firstname" name="firstname" value="fuck off" placeholder=" " />
+                                        <input width="50vw" type="text" class="firstname" id="firstname" name="firstname" value="{{meds.firstname}}" placeholder=" " disabled />
                                         <label for="firstname"><b>First Name</b></label>
                                     </div>
                                 </div>
                                 <div style="width: 35%;">
                                     <div class="searchformfld">
-                                        <input value={{user.secondname}} [(ngModel)]="item.secondname" width="50vw" type="text" class="lastName" id="lastName" name="lastName" placeholder=" " />
+                                        <input value={{meds.secondname}} width="50vw" type="text" class="lastName" id="lastName" name="lastName" placeholder=" " disabled />
                                         <label for="lastName"><b>Last Name</b></label>
                                     </div>
                                 </div>
                                 <div style="width: 35%;">
                                     <div class="searchformfld">
-                                        <input [(ngModel)]="item.phone" value={{user.phone}} width="50vw" type="text" class="phoneNumber" id="phoneNumber" name="phoneNumber" placeholder=" " />
+                                        <input [(ngModel)]="item.phone" value={{meds.phone}} width="50vw" type="text" class="phoneNumber" id="phone" name="phone" placeholder=" " />
                                         <label for="phoneNumber"><b>Phone Number</b></label>
                                     </div>
                                 </div>
@@ -57,47 +57,38 @@
 
                                 <div style="width: 35%;">
                                     <div class="searchformfld">
-                                        <input [(ngModel)]="item.addr" value={{user.addr}} width="50vw" type="text" class="addr" id="addr" name="addr" placeholder=" " />
+                                        <input [(ngModel)]="item.addr" value={{meds.addr}} width="50vw" type="text" class="addr" id="addr" name="addr" placeholder=" " />
                                         <label for="addr"><b>Address </b></label>
                                     </div>
                                 </div>
                                 <div style="width: 35%;">
                                     <div class="searchformfld">
-                                        <input [(ngModel)]="item.emercntct" value={{user.emercntct}} width="50vw" type="text" class="emergency" id="emergency" name="emergency" placeholder=" " />
+                                        <input [(ngModel)]="item.emercntct" value={{meds.emercntct}} width="50vw" type="text" class="emergency" id="emergency" name="emergency" placeholder=" " />
                                         <label for="emergency"><b>Emergency Contact </b></label>
                                     </div>
                                 </div>
                                 <div style="width: 35%;">
                                     <div class="searchformfld">
-                                        <input width="50vw" value={{user.dob}} type="date" class="dob" id="dob" name="dob" placeholder=" " />
+                                        <input width="50vw" value={{meds.dob}} type="date" class="dob" id="dob" name="dob" disabled placeholder=" " />
                                         <label for="dob"><b>DATE OF Birth </b></label>
                                     </div>
                                 </div>
-                                <!-- <div style="width: 35%;"> -->
-                                <!-- <div class="searchformfld"> -->
-                                <!-- <div class="btn-holder"> -->
-                                <!-- <div class="btn-group"> -->
-                                <!-- <button style="border-bottom-left-radius: 50%;border-top-left-radius: 50%;">Male</button> -->
-                                <!-- <button>Female</button> -->
-                                <!-- <button style="border-bottom-right-radius: 50%;border-top-right-radius: 50%;">Other</button> -->
-                                <!-- </div> -->
-                                <!-- </div> -->
-                                <!-- </div> -->
-                                <!-- </div> -->
-                                <div class="dive">
-                                    <h3><b>Gender</b></h3>
-
-                                    <mat-radio-group aria-label="Select an option">
-                                        <mat-radio-button class="radio-btn" value="1">Male</mat-radio-button>
-                                        <mat-radio-button class="radio-btn" value="2">female</mat-radio-button>
-
-                                    </mat-radio-group>
-
+                                <div style="width: 35%;">
+                                    <div class="searchformfld">
+                                        <input width="50vw" value={{meds.gender}} type="text" class="gender" id="gender" name="gender" disabled placeholder=" " />
+                                        <label for="gender"><b>GENDER </b></label>
+                                    </div>
                                 </div>
                                 <div style="width: 100%;margin-left: 20%;margin-top: 20%;">
                                     <div class="submit">
-                                        <input width="10vw" type="submit" class="submit" id="phoneNumber" name="phoneNumber" placeholder=" " />
+                                        <input width="10vw" type="submit" class="submit" id="phoneNumber" name="phoneNumber" placeholder=" " (click)="openOtherDialog()" />
+                                        <ng-template #secondDialog>
+                                            <h2 matDialogTitle>Profile Updated Successfully</h2>
 
+                                            <mat-dialog-actions align="end">
+                                                <button mat-button matDialogClose>Dismiss</button>
+                                            </mat-dialog-actions>
+                                        </ng-template>
                                     </div>
                                 </div>
                             </div>

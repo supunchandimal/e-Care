@@ -4,5 +4,5 @@ export interface Alleg{
     name?:string;
     reaction?:string;
     source?:string;
-    
+    did?:string;
 }

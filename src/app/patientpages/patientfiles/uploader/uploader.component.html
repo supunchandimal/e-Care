@@ -4,22 +4,18 @@
     </div>
     <div class="bodyrest">
 
-        <div style="align-self: flex-start;  width: 100%; margin-top:10% ;"> 
-           
+        <div style="align-self: flex-start;  width: 100%; margin-top:10% ;">
+
             <div>
 
-                <div class="dropzone" 
-                    appDropzone
-                     (hovered)="toggleHover($event)"
-                     (dropped)="onDrop($event)"
-                     [class.hovering]="isHovering">
-                
-                
-                     <h3>upload your file</h3>
-                     <p>Drag and Drop a File</p>
-                     <input type="file" placeholder="choosefile" (change)="onDrop($event.target.files)">
+                <div class="dropzone" appDropzone (hovered)="toggleHover($event)" (dropped)="onDrop($event)" [class.hovering]="isHovering">
 
-        
+
+                    <h3>upload your file</h3>
+                    <p>Drag and Drop a File</p>
+                    <input type="file" placeholder="choosefile" (change)="onDrop($event.target.files)">
+
+
                 </div>
 
 
@@ -29,15 +25,14 @@
                     <app-upload-task [file]="file"></app-upload-task>
                 </div>
 
-                </div>
-                <div class="announcement_con2 "*ngFor ="let am of allfiles ; let i = index">
-                    <br>
-                    <div class="audience">Audience : {{am.date}}</div>
-                    <div class="subject" > Subject :{{am.path}}</div>
-                    <div class="message">Message: {{am.downloadURL}}</div>
-                  </div>                
+            </div>
+            <div class="announcement_con2 ">
+                <h1>sdsdsa</h1>
+                <br>
+                <ul *ngFor="let files of allfiles"><a href="{{files.downloadURL}}">click</a></ul>
+            </div>
 
         </div>
-        
+
     </div>
 </body>

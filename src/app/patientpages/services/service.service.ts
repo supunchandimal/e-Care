@@ -42,7 +42,7 @@ export class ServiceService {
    }
 
    getAlegs(){
-    return this.afsal.collection('Allegs', ref => ref.where('id', '==', this.currentUser.uid).orderBy('name','asc'));
+    return this.afsal.collection('Allegs', ref => ref.where('did', '==', this.currentUser.uid).orderBy('name','asc'));
    }
 
    addItem(item:Alleg){
@@ -50,7 +50,7 @@ export class ServiceService {
   }
 
   deleteItem(item : Alleg){
-    console.log('hii');
+    console.log(`${item.did}`);
     this.Allegdoc = this.afsal.doc(`Allegs/${item.id}`);
     this.Allegdoc.delete();
   }

@@ -27,3 +27,11 @@
   background-color: #5AB9EA;
 	border: 0 none;
  }
+
+
+.mat-nav-list {
+      color:white;
+    }
+.mat-nav-list a {
+      color:white;
+    }
