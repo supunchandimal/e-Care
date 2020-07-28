@@ -72,5 +72,42 @@
 
 .row {
     padding-right: 0px;
-    justify-content: flex-end;
+    justify-content: flex-en
+
+
+
+.mat-tab-label:active{
+    min-width: 55px !important;
+    padding: 45px;
+    background-color:transparent;
+    color:white;
+    font-weight: 700;
+    font-size: large;
 }
+
+.mat-tab-label:selected{
+    min-width: 55px !important;
+    padding: 45px;
+    background-color:transparent;
+    color:white;
+    font-weight: 700;
+    font-size: large;
+}
+
+.dive{
+    margin-left: 40px;
+    margin-top: 40px;
+    font-size: medium;
+}
+
+
+.mat-tab-label{
+    color:white;
+    min-width: 55px !important;
+    padding: 45px;
+    background-color:transparent;
+    color:white;
+    font-weight: 700;
+    font-size: large;
+  }
+====
