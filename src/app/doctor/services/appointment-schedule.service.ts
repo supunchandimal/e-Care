@@ -9,14 +9,14 @@ export class AppointmentScheduleService {
   constructor( public fireservice : AngularFirestore ) { }
 
 
-  // create_Newemployee(Record)
-  // {
-  //   return this.fireservice.collection('hiiii').add(Record);
-  // }
-
-  getSchedule()
+  add(Record)
   {
-    return this.fireservice.collection('hiii', ref=>ref.where("doctorID","==",1).where( "tt","==","fuck") ).snapshotChanges();
+    return this.fireservice.collection('hiii').add(Record);
+  }
+
+  getSchedule(date)
+  {
+    return this.fireservice.collection('hiii', ref=>ref.where("doctorID","==",1).where( "date","==",date) ).snapshotChanges();
   }
   
   updateSchedule(recordid, record)
