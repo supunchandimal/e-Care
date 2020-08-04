@@ -14,6 +14,7 @@ export class AllergierecordsComponent implements OnInit {
   public currentUser: firebase.User;
   loader=false;
   item:Alleg={
+    did:'',
     name:'',
     reaction:'',
     source:'',
@@ -56,7 +57,7 @@ export class AllergierecordsComponent implements OnInit {
 
   onSubmit(){
     if(this.item.name != '' && this.item.reaction != ''){
-      this.item.id=this.currentUser.uid;
+      this.item.did=this.currentUser.uid;
       this.serviceService.addItem(this.item);
       this.item.name = '';
       this.item.reaction = '';
@@ -64,8 +65,8 @@ export class AllergierecordsComponent implements OnInit {
     }
   }
 
-  deleteItem(event ,item){
-    this.serviceService.deleteItem(item);
+  deleteItem(event ,allegs){
+    this.serviceService.deleteItem(allegs);
     console.log('hii');
   }
   getYes() {

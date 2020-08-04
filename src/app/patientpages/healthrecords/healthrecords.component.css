@@ -37,6 +37,7 @@
 .btn {
     font-size: 1em;
     width: 15vw;
+    
 }
 
 .btn:hover {
@@ -48,7 +49,7 @@
     width: 10%;
     margin-left: 10%;
     margin-top: 5%;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .columnr {
@@ -57,7 +58,7 @@
     margin-left: 10%;
     max-height: 25vh;
     margin-top: 5%;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 
@@ -71,5 +72,41 @@
 
 .row {
     padding-right: 0px;
-    justify-content: flex-end;
+    justify-content: flex-en
+
+
 }
+.mat-tab-label:active{
+    min-width: 55px !important;
+    padding: 45px;
+    background-color:transparent;
+    color:white;
+    font-weight: 700;
+    font-size: large;
+}
+
+.mat-tab-label:selected{
+    min-width: 55px !important;
+    padding: 45px;
+    background-color:transparent;
+    color:white;
+    font-weight: 700;
+    font-size: large;
+}
+
+.dive{
+    margin-left: 40px;
+    margin-top: 40px;
+    font-size: medium;
+}
+
+
+.mat-tab-label{
+    color:white;
+    min-width: 55px !important;
+    padding: 45px;
+    background-color:transparent;
+    color:white;
+    font-weight: 700;
+    font-size: large;
+  }
