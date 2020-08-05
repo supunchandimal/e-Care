@@ -110,3 +110,7 @@
     font-weight: 700;
     font-size: large;
   }
+
+  ::ng-deep .mat-tab-label {
+    font-size: 22px;
+}

@@ -98,3 +98,10 @@
     font-weight: 700;
     font-size: large;
 }
+
+.mat-tab-label{
+    font-size: 20px !important;
+ } 
+ ::ng-deep .mat-tab-label {
+    font-size: 23px;
+}
