@@ -10,7 +10,7 @@
     </div>
     <div class="bodyrest">
 
-        <div style="align-self: flex-start;width: 82vw;">
+        <div style="align-self: flex-start;width: 82vw;" *ngIf="mark==1">
 
             <app-pagemenu [parentData]="flag"></app-pagemenu>
 
@@ -30,22 +30,25 @@
                     </div>
                     <div class="docname" *ngIf="doc?.length < 1">
                         <h1>Dr. {{doca.fullName}}</h1>
-                        <h1>Speciality - {{doca.speciality}} </h1>
-                        <h5 style="margin-left: -70%;">Consultations</h5>
-                        <h5 style="margin-left: -70%;">Price</h5>
+                        <h1>{{doca.speciality}} </h1>
+                        <h2>Consultations</h2>
+                        <h2>Price</h2>
                     </div>
                     <div style="align-self: flex-end;display: flex;margin-left: 30vw;">
-                        <button (click)="openOtherDialog(doca.nic)">dsads</button>
+                        <button (click)="openOtherDialog(doca.nic)" class="VS">View Schedule</button>
                         <ng-template #secondDialog>
-                            <table>
+                            <h1 style="color: red;">Pick a free time slot for an appoinment</h1>
+
+                            <table id="customers">
                                 <tr>
                                     <th>date</th>
                                     <th>time</th>
-                                    <!-- <th>status</th> -->
+                                    <th>status</th>
                                 </tr>
-                                <tr *ngFor="let time of times">
+                                <tr *ngFor="let time of times;let i = index">
                                     <td>{{time.date}}</td>
                                     <td>{{time.time}}</td>
+                                    <td><button (click)="Onfree($event,time)" mat-button matDialogClose>{{time.status}}</button></td>
                                 </tr>
                             </table>
 
@@ -53,6 +56,7 @@
                                 <button mat-button matDialogClose>Dismiss</button>
                             </mat-dialog-actions>
                         </ng-template>
+
                     </div>
 
 
@@ -64,24 +68,26 @@
                     </div>
                     <div class="docname" *ngIf="docs?.length < 1">
                         <h1>Dr. {{doca.fullName}}</h1>
-                        <h1> Speciality - {{doca.speciality}} </h1>
-                        <h5 style="margin-left: -70%;">Consultations</h5>
-                        <h5 style="margin-left: -70%;">Price</h5>
+                        <h1>{{doca.speciality}} </h1>
+                        <h2>Consultations</h2>
+                        <h2>Price</h2>
                     </div>
                     <div style="align-self: flex-end;display: flex;margin-left: 30vw;">
-                        <button (click)="openOtherDialog(doca.nic)">dsads</button>
+                        <button (click)="openOtherDialog(doca.nic)" class="VS">View Schedule</button>
                         <ng-template #secondDialog>
-
+                            <h1 style="color: red;">Pick a free time slot for an appoinment</h1>
                             <!-- <li>{{time.time}}</li> -->
-                            <table>
+
+                            <table id="customers">
                                 <tr>
                                     <th>date</th>
                                     <th>time</th>
-                                    <!-- <th>status</th> -->
+                                    <th>status</th>
                                 </tr>
-                                <tr *ngFor="let time of times">
+                                <tr *ngFor="let time of times;let i = index">
                                     <td>{{time.date}}</td>
                                     <td>{{time.time}}</td>
+                                    <td><button (click)="Onfree($event,time)" mat-button matDialogClose>{{time.status}}</button></td>
                                 </tr>
                             </table>
 
@@ -90,11 +96,38 @@
                                 <button mat-button matDialogClose>Dismiss</button>
                             </mat-dialog-actions>
                         </ng-template>
+
                     </div>
                 </div>
 
             </div>
         </div>
+        <div style="align-self: flex-start;width: 82vw;" *ngIf="mark==2">
 
+            <app-pagemenu [parentData]="flag"></app-pagemenu>
+
+            <table id="customers">
+                <tr>
+                    <th>date</th>
+                    <th>time</th>
+                    <th>status</th>
+                </tr>
+                <tr *ngFor="let time of times;let i = index">
+                    <td>{{time.date}}</td>
+                    <td>{{time.time}}</td>
+                    <td>{{time.status}}</td>
+                    <button (click)="Onpay($event,time)" style="background-color: darkblue;">pay here</button>
+                    <button (click)="Oncancel($event,time)" style="background-color: darkblue;">cancel</button>
+                </tr>
+            </table>
+
+        </div>
+        <div style="align-self: flex-start;width: 82vw;" *ngIf="mark==3">
+
+            <app-pagemenu [parentData]="flag"></app-pagemenu>
+
+
+
+        </div>
     </div>
 </body>

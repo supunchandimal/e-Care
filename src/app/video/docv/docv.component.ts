@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { AgoraClient, ClientEvent, NgxAgoraService, Stream, StreamEvent } from 'ngx-agora';
 
 @Component({
-  selector: 'app-vconference',
-  templateUrl: './vconference.component.html',
-  styleUrls: ['./vconference.component.css']
+  selector: 'app-docv',
+  templateUrl: './docv.component.html',
+  styleUrls: ['./docv.component.css']
 })
-export class VconferenceComponent implements OnInit {
+export class DocvComponent implements OnInit {
+
   title = 'angular-video';
   localCallId = 'agora_local';
   remoteCalls: string[] = [];
@@ -14,19 +15,12 @@ export class VconferenceComponent implements OnInit {
   private client: AgoraClient;
   private localStream: Stream;
   private uid: number;
-  channelID: string;
 
   constructor(private ngxAgoraService: NgxAgoraService) {
     this.uid = Math.floor(Math.random() * 100);
-    this.channelID = localStorage.getItem("patient_appointmentID")
-
   }
 
   ngOnInit() {
-    this.startCall();
-  }
-
-  startCall(){
     this.client = this.ngxAgoraService.createClient({ mode: 'rtc', codec: 'h264' });
     this.assignClientHandlers();
 
@@ -40,7 +34,7 @@ export class VconferenceComponent implements OnInit {
    * Attempts to connect to an online chat room where users can host and receive A/V streams.
    */
   join(onSuccess?: (uid: number | string) => void, onFailure?: (error: Error) => void): void {
-    this.client.join(null, this.channelID, this.uid, onSuccess, onFailure);
+    this.client.join(null, 'foo-bar', this.uid, onSuccess, onFailure);
   }
 
   /**

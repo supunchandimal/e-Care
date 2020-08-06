@@ -46,6 +46,9 @@ import { VconferenceComponent } from './video/vconference/vconference.component'
 import { MessagesComponent } from './patientpages/messages/messages.component';
 import { from } from 'rxjs';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { PayhereComponent } from './patientpages/payhere/payhere.component';
+import { BookedComponent } from './patientpages/appoinments/booked/booked.component';
+import { DocvComponent } from './video/docv/docv.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'/home' ,pathMatch:'full'},
@@ -79,6 +82,9 @@ const routes: Routes = [
   {path:'patientupload',component:UploaderComponent},
   {path:'video',component:VconferenceComponent},
   {path:'messages',component:MessagesComponent},
+  {path:'payement',component:PayhereComponent},
+  {path:'book',component:BookedComponent},
+  {path:'docvideo',component:DocvComponent},
 
   //doctor's paths
 

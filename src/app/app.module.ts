@@ -87,6 +87,11 @@ import { SurgeriesComponent } from './patientpages/surgeries/surgeries.component
 import { MessagesComponent } from './patientpages/messages/messages.component';
 import { AdminPaymentdetailsComponent } from './admin-paymentdetails/admin-paymentdetails.component';
 import { AdminGraphComponent } from './admin/admin-graph/admin-graph.component';
+import { PayhereComponent } from './patientpages/payhere/payhere.component';
+import { BookedComponent } from './patientpages/appoinments/booked/booked.component';
+
+import { DocvComponent } from './video/docv/docv.component';
+
 
 @NgModule({
   declarations: [
@@ -135,6 +140,10 @@ import { AdminGraphComponent } from './admin/admin-graph/admin-graph.component';
     MessagesComponent,
     AdminPaymentdetailsComponent,
     AdminGraphComponent,
+    PayhereComponent,
+    BookedComponent,
+   
+    DocvComponent,
 
   ],
   imports: [
