@@ -44,11 +44,13 @@ import { DefaultAdminComponent } from './admin02/layouts/default-admin/default-a
 
 import { VconferenceComponent } from './video/vconference/vconference.component';
 import { MessagesComponent } from './patientpages/messages/messages.component';
+import { HelpComponent } from './patientpages/help/help.component';
 import { from } from 'rxjs';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { PayhereComponent } from './patientpages/payhere/payhere.component';
 import { BookedComponent } from './patientpages/appoinments/booked/booked.component';
 import { DocvComponent } from './video/docv/docv.component';
+
 
 const routes: Routes = [
   {path:'',redirectTo:'/home' ,pathMatch:'full'},
@@ -85,6 +87,7 @@ const routes: Routes = [
   {path:'payement',component:PayhereComponent},
   {path:'book',component:BookedComponent},
   {path:'docvideo',component:DocvComponent},
+  {path:'help',component:HelpComponent},
 
   //doctor's paths
 
