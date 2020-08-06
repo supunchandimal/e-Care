@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   agora: {
-    appId: '75d2964da18e41ddb117d48a00d410d3'
+    appId: '75d2964da18e41ddb117d48a00d410d3',
+    channelId:'sdasds',
   },
   
   firebase:{

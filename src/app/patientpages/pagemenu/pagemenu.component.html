@@ -7,8 +7,9 @@
     <h1 *ngIf="parentData==6" style="color:aliceblue;font-size: large;">APPOINTMENTS</h1>
     <h1 *ngIf="parentData==7" style="color:aliceblue;font-size: large;">PHOTOS AND FILES</h1>
     <h1 *ngIf="parentData==8" style="color:aliceblue;font-size: large;">MESSAGES</h1>
-    <h1 *ngIf="parentData==9" style="color:aliceblue;font-size: large;">HELP & SUPPORT</h1>
-
+    <h1 *ngIf="parentData==9" style="color:aliceblue;font-size: large;">APPOINMENTS</h1>
+    <h1 *ngIf="parentData==10" style="color:aliceblue;font-size: large;">HELP & SUPPORT</h1>
+    <!-- eroor ekak enna puluwan -->
 
     <div class="btn-holder">
         <div class="btn-group">
@@ -36,9 +37,14 @@
                 <button *ngIf="parentData==2" style="background-color: #aaabb8;"><b>HEALTH RECORDS</b></button>
                 <button *ngIf="parentData==4"><b>HEALTH RECORDS</b></button>
             </a>
-
-            <button *ngIf="parentData==6" style="margin-left: -80%;"><b>SEARCH DOC</b></button>
-            <button *ngIf="parentData==6"><b>YOUR APPOINMENTS</b></button>
+            <a routerLink='/appoinments'>
+                <button *ngIf="parentData==6 " style="margin-left: -80%;background-color: #aaabb8;"><b>SEARCH DOC</b></button>
+                <button *ngIf="parentData==9 " style="margin-left: -80%;"><b>SEARCH DOC</b></button>
+            </a>
+            <a routerLink='/book'>
+                <button *ngIf="parentData==6"><b>YOUR APPOINMENTS</b></button>
+                <button *ngIf="parentData==9" style="background-color: #aaabb8;"><b>YOUR APPOINMENTS</b></button>
+            </a>
         </div>
     </div>
 </div>
