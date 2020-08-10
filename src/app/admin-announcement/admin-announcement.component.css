@@ -14,13 +14,9 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
-.container-fluid{
-    padding-left: 0px;
-    padding-top: 64px;
 
-}
 #sidebar{
-    position: fixed;
+    position: absolute;
     display: block;
     width:20%;
     height: 100%;
@@ -58,13 +54,6 @@
     display: inline-flex;
     align-items: center;
 }
-
- /* .affix {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index:10;
-} */
 
 .mat-toolbar.mat-primary {
     background: grey;
@@ -105,17 +94,8 @@ input[type=text]{
 }
 
 .form_container{
-    position: fixed;
     display: block;
     width: 100%;
-}
-
-.scroll{
-    position: relative;
-    max-height: 50%;
-    overflow: auto;
-    margin-left: 30%;
-    margin-top: 20%;
 }
 
 .announcement_con2 {

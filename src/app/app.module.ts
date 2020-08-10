@@ -52,6 +52,7 @@ import { ManagePatientComponent } from './manage-patient/manage-patient.componen
 import { ManagePatientService } from 'src/services/shared/manage-patient.service';
 import { PatientDeleteDialogComponent } from './manage-patient/patient-delete-dialog/patient-delete-dialog.component';
 import { PatientDeleteDialogService } from 'src/services/shared/patient-delete-dialog.service';
+import { ViewDoctorComponent } from './manage-doctor/view-doctor/view-doctor.component';
 
 import { AdminFeedbacksComponent } from './admin-feedbacks/admin-feedbacks.component';
 import { DropzoneDirective } from './patientpages/patientfiles/dropzone.directive';
@@ -87,6 +88,7 @@ import { SurgeriesComponent } from './patientpages/surgeries/surgeries.component
 import { MessagesComponent } from './patientpages/messages/messages.component';
 import { AdminPaymentdetailsComponent } from './admin-paymentdetails/admin-paymentdetails.component';
 import { AdminGraphComponent } from './admin/admin-graph/admin-graph.component';
+
 
 @NgModule({
   declarations: [
@@ -135,6 +137,7 @@ import { AdminGraphComponent } from './admin/admin-graph/admin-graph.component';
     MessagesComponent,
     AdminPaymentdetailsComponent,
     AdminGraphComponent,
+    ViewDoctorComponent,
 
   ],
   imports: [
