@@ -146,14 +146,11 @@ import { DocvComponent } from './video/docv/docv.component';
     HelpComponent,
     AdminPaymentdetailsComponent,
     AdminGraphComponent,
-<<<<<<< HEAD
     ViewDoctorComponent,
-=======
     PayhereComponent,
     BookedComponent,
    
     DocvComponent,
->>>>>>> f381eeb20b25facbd9c716929e70bdd1a4546464
 
   ],
   imports: [
