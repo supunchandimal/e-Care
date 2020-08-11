@@ -15,8 +15,12 @@
     background-attachment: fixed;
 }
 
+.container-fluid{
+    padding-left: 0px;
+    padding-top: 64px;
+}
+
 #sidebar{
-    position: absolute;
     display: block;
     width:20%;
     height: 100%;
@@ -94,17 +98,29 @@ input[type=text]{
 }
 
 .form_container{
+    position: fixed;
     display: block;
-    width: 100%;
+    width: 1000px;
+    height: 50%;
+}
+
+.scroll{
+    display: block;
+    /* position: initial; */
+    max-height: 50%;
+    overflow: auto;
+    margin-left: 30%;
+    margin-top: 20%;
+    max-height: 50%;
 }
 
 .announcement_con2 {
     display: block;
     margin-top:2%;
     height: 10%;
-    margin-left: 1%;
+    margin-left: 10%;
     background-color:black ;
-    width: 50%;
+    width: 40%;
     opacity: 0.8;
     color: white;
 
@@ -113,7 +129,8 @@ input[type=text]{
     display: block;
     font-size: 15px;
     margin-left: 2%;
-    margin-top: 2%;
+    /* margin-top: 2%; */
+    padding-top: 2px;
 }
 
 .subject{
@@ -127,5 +144,6 @@ input[type=text]{
     font-size: 15px;
     margin-left: 2%;
     margin-top: 2%;
-    margin-bottom: 2%;
+    margin-bottom: 5%;
+    padding-bottom: 5px;
 }

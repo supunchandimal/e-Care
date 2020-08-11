@@ -53,6 +53,7 @@ import { ManagePatientComponent } from './manage-patient/manage-patient.componen
 import { ManagePatientService } from 'src/services/shared/manage-patient.service';
 import { PatientDeleteDialogComponent } from './manage-patient/patient-delete-dialog/patient-delete-dialog.component';
 import { PatientDeleteDialogService } from 'src/services/shared/patient-delete-dialog.service';
+import { ViewDoctorComponent } from './manage-doctor/view-doctor/view-doctor.component';
 
 import { AdminFeedbacksComponent } from './admin-feedbacks/admin-feedbacks.component';
 import { DropzoneDirective } from './patientpages/patientfiles/dropzone.directive';
@@ -93,6 +94,7 @@ import { PayhereComponent } from './patientpages/payhere/payhere.component';
 import { BookedComponent } from './patientpages/appoinments/booked/booked.component';
 
 import { DocvComponent } from './video/docv/docv.component';
+
 
 
 
@@ -144,6 +146,7 @@ import { DocvComponent } from './video/docv/docv.component';
     HelpComponent,
     AdminPaymentdetailsComponent,
     AdminGraphComponent,
+    ViewDoctorComponent,
     PayhereComponent,
     BookedComponent,
    

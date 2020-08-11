@@ -19,6 +19,7 @@ import { WhatwetreatComponent } from './whatwetreat/whatwetreat.component';
 import { ForgotpassComponent } from './forgotpass/forgotpass.component';
 import { OurproviersComponent } from './ourproviers/ourproviers.component';
 import { ManageDoctorComponent } from './manage-doctor/manage-doctor.component';
+import { ViewDoctorComponent } from './manage-doctor/view-doctor/view-doctor.component';
 import { ManagePatientComponent } from './manage-patient/manage-patient.component';
 import { AdminFeedbacksComponent } from './admin-feedbacks/admin-feedbacks.component';
 import { AdminAnnouncementComponent } from './admin-announcement/admin-announcement.component';
@@ -67,9 +68,10 @@ const routes: Routes = [
     ]
   },
   {path:'manage-doctor', component: ManageDoctorComponent},
-  { path:'manage-patient', component: ManagePatientComponent},
-  { path:'admin-announcement', component: AdminAnnouncementComponent},
-  { path:'admin-paymentdetails', component: AdminPaymentdetailsComponent},
+  {path:'view-doctor', component: ViewDoctorComponent},
+  {path:'manage-patient', component: ManagePatientComponent},
+  {path:'admin-announcement', component: AdminAnnouncementComponent},
+  {path:'admin-paymentdetails', component: AdminPaymentdetailsComponent},
   {path:'patientHome',component:PatientDefaultPageComponent},
   {path:'healthprofile',component:HealthprofileComponent},
   {path:'appoinments',component:AppoinmentsComponent},

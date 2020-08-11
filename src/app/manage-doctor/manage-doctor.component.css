@@ -1,28 +1,10 @@
-/* @import '@angular/material/prebuilt-themes/indigo-pink.css';
-
-div.container{
-    margin: 20px 40px;
-}
-
-.fill-remaining-space{
-    flex: 5 1 10;
-}
-
-form.normal-form{
-    margin: 10px;
-}
-
-.controles-container{
-    width: 100%;
-    padding: 5%;
-} */
-
 @import "~bootstrap/dist/css/bootstrap.css";
 
 *{
     margin: 0;
     padding: 0;
     max-width: 100%;
+
 }
 
 
@@ -215,3 +197,24 @@ a:hover {
     text-decoration: none;
 }
 
+.label-doc {
+float: right;
+display: inline;
+}
+
+.label-doc label {
+    /* background-image: linear-gradient(125deg, #595e64,#659adb); */
+    background-image:  linear-gradient(125deg, #c4380d, #c4380d);
+    filter: opacity(0.8);
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 16px;
+    font-weight: normal;
+    padding: 8px 16px;
+    margin-right: 10px;
+    border: none;
+    width: 260px;
+   
+}
+/* label:after { content: ": " } */
