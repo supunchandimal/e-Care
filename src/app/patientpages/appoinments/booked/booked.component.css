@@ -1,0 +1,60 @@
+.body {
+    display: flex;
+}
+
+.naviBar {
+    width: 22.5vw;
+    height: 100vh;
+    align-self: flex-start;
+    background-color: #888, #555;
+}
+
+.subnavibar {
+    position: fixed;
+    align-self: flex-start;
+    margin-left: -20px;
+    margin-top: -10px;
+}
+
+.bodyrest {
+    width: 85%;
+    height: 100%;
+    margin-left: 19%;
+    display: flex;
+}
+
+.datacard {
+    display: flex;
+    grid-template-columns: 300px;
+    grid-template-rows: 200px 200px 80px;
+    grid-template-areas: "image" "text" "stats";
+    background: #84CEEB;
+    box-shadow: 15px 15px 25px rgba(0, 0, 0, 0.9);
+    font-family: roboto;
+    text-align: center;
+    height: 25vh;
+    width: 90%;
+    margin-top: 5%;
+    margin-left: 1%;
+}
+
+.pic {
+    width: 20%;
+    height: 100%;
+    background-color: #000;
+    align-self: flex-start;
+}
+
+.docname {
+    margin-left: 1%;
+}
+
+.VS {
+    background-color: darkblue;
+    width: 10vw;
+    height: 5vh;
+    color: white;
+    position: absolute;
+    margin-left: 30%;
+    margin-top: -5%;
+}

@@ -32,6 +32,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatButtonModule} from '@angular/material/button';
 import {MatRadioModule} from '@angular/material/radio';
 
+
 import {MatTabsModule} from '@angular/material/tabs';
 
 import {
@@ -85,9 +86,16 @@ import { ConditionsService } from './patientpages/services/conditions.service';
 import { OpoService } from './patientpages/services/opo.service';
 import { ConditionsComponent } from './patientpages/conditions/conditions.component';
 import { SurgeriesComponent } from './patientpages/surgeries/surgeries.component';
-import { MessagesComponent } from './patientpages/messages/messages.component';
+import { MessagesComponent } from './patientpages/messages/messages.component'
+import { HelpComponent } from './patientpages/help/help.component';
 import { AdminPaymentdetailsComponent } from './admin-paymentdetails/admin-paymentdetails.component';
 import { AdminGraphComponent } from './admin/admin-graph/admin-graph.component';
+import { PayhereComponent } from './patientpages/payhere/payhere.component';
+import { BookedComponent } from './patientpages/appoinments/booked/booked.component';
+
+import { DocvComponent } from './video/docv/docv.component';
+
+
 
 
 @NgModule({
@@ -135,9 +143,17 @@ import { AdminGraphComponent } from './admin/admin-graph/admin-graph.component';
     SurgeriesComponent,
     PatientDeleteDialogComponent,
     MessagesComponent,
+    HelpComponent,
     AdminPaymentdetailsComponent,
     AdminGraphComponent,
+<<<<<<< HEAD
     ViewDoctorComponent,
+=======
+    PayhereComponent,
+    BookedComponent,
+   
+    DocvComponent,
+>>>>>>> f381eeb20b25facbd9c716929e70bdd1a4546464
 
   ],
   imports: [

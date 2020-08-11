@@ -1,5 +1,5 @@
-import { NgxAgoraService,Stream, AgoraClient, ClientEvent, StreamEvent } from 'ngx-agora';
 import { Component, OnInit } from '@angular/core';
+import { AgoraClient, ClientEvent, NgxAgoraService, Stream, StreamEvent } from 'ngx-agora';
 
 @Component({
   selector: 'app-vconference',
@@ -7,59 +7,49 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./vconference.component.css']
 })
 export class VconferenceComponent implements OnInit {
-   title = 'video';
-   remoteCalls: string[] = [];
-   localCallId = 'agora_local';
+  title = 'angular-video';
+  localCallId = 'agora_local';
+  remoteCalls: string[] = [];
 
   private client: AgoraClient;
   private localStream: Stream;
   private uid: number;
-  constructor(private AgoraService: NgxAgoraService) {
-    this.uid = Math.floor(Math.random() * 100);
-   }
+  channelID: string;
 
-  ngOnInit(): void {
-    this.client = this.AgoraService.createClient({ mode: 'rtc', codec: 'h264' });
+  constructor(private ngxAgoraService: NgxAgoraService) {
+    this.uid = Math.floor(Math.random() * 100);
+    this.channelID = localStorage.getItem("patient_appointmentID")
+
+  }
+
+  ngOnInit() {
+    this.startCall();
+  }
+
+  startCall(){
+    this.client = this.ngxAgoraService.createClient({ mode: 'rtc', codec: 'h264' });
     this.assignClientHandlers();
 
-    this.localStream = this.AgoraService.createStream({ streamID: this.uid, audio: true, video: true, screen: false });
+    this.localStream = this.ngxAgoraService.createStream({ streamID: this.uid, audio: true, video: true, screen: false });
     this.assignLocalStreamHandlers();
-    this.initLocalStream();
+    // Join and publish methods added in this step
     this.initLocalStream(() => this.join(uid => this.publish(), error => console.error(error)));
   }
+
+  /**
+   * Attempts to connect to an online chat room where users can host and receive A/V streams.
+   */
   join(onSuccess?: (uid: number | string) => void, onFailure?: (error: Error) => void): void {
-    this.client.join(null, 'foo-bar', this.uid, onSuccess, onFailure);
+    this.client.join(null, this.channelID, this.uid, onSuccess, onFailure);
   }
-  
+
   /**
    * Attempts to upload the created local A/V stream to a joined chat room.
    */
   publish(): void {
     this.client.publish(this.localStream, err => console.log('Publish local stream error: ' + err));
   }
-  private assignLocalStreamHandlers(): void {
-    this.localStream.on(StreamEvent.MediaAccessAllowed, () => {
-      console.log('accessAllowed');
-    });
 
-    // The user has denied access to the camera and mic.
-    this.localStream.on(StreamEvent.MediaAccessDenied, () => {
-      console.log('accessDenied');
-    });
-  }
-
-private initLocalStream(onSuccess?: () => any): void {
-  this.localStream.init(
-    () => {
-       // The user has granted access to the camera and mic.
-       this.localStream.play(this.localCallId);
-       if (onSuccess) {
-         onSuccess();
-       }
-    },
-    err => console.error('getUserMedia failed', err)
-  );
-}
   private assignClientHandlers(): void {
     this.client.on(ClientEvent.LocalStreamPublished, evt => {
       console.log('Publish local stream successfully');
@@ -109,6 +99,30 @@ private initLocalStream(onSuccess?: () => any): void {
         console.log(`${evt.uid} left from this channel`);
       }
     });
+  }
+
+  private assignLocalStreamHandlers(): void {
+    this.localStream.on(StreamEvent.MediaAccessAllowed, () => {
+      console.log('accessAllowed');
+    });
+
+    // The user has denied access to the camera and mic.
+    this.localStream.on(StreamEvent.MediaAccessDenied, () => {
+      console.log('accessDenied');
+    });
+  }
+
+  private initLocalStream(onSuccess?: () => any): void {
+    this.localStream.init(
+      () => {
+        // The user has granted access to the camera and mic.
+        this.localStream.play(this.localCallId);
+        if (onSuccess) {
+          onSuccess();
+        }
+      },
+      err => console.error('getUserMedia failed', err)
+    );
   }
 
   private getRemoteId(stream: Stream): string {
