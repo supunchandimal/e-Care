@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ManageDoctorService } from 'src/services/shared/manage-doctor.service';
-import { FormGroup, FormControl, Validators, FormBuilder, AbstractControl,NgForm } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormBuilder, AbstractControl } from '@angular/forms';
 
 @Component({
   selector: 'app-view-doctor',
