@@ -1,12 +1,12 @@
-<mat-toolbar color="primary">
+<mat-toolbar color="primary"  style="position: fixed;">
   <mat-toolbar-row>
     <a href="" class="toolbar-space"><span>eCare</span></a>
     <a routerLink="../admin" class="toolbar-space"><span>Home</span></a>
   </mat-toolbar-row> 
 </mat-toolbar>
 
-
-      <div id="sidebar">
+<div class="container-fluid">
+      <div id="sidebar" style="position: fixed;">
         <ul>
             <li><a routerLink="../manage-doctor"><i class="material-icons">people_outline</i>Manage Doctors</a></li>
             <li><a routerLink="../manage-patient"><i class="material-icons">person_pin</i>Manage Patients</a></li> 
@@ -15,10 +15,11 @@
             <li><a routerLink="../admin-announcement"><i class="material-icons">announcement</i>Announcements</a></li>
         </ul>
     </div>
-    
+  </div>    
 
     <div  class="row justify-content-center p-2">
-        
+
+
       <div class="form_container">
         <div class="container_a container w-50 p-3 ">
             <h1>Announcements</h1>
@@ -51,17 +52,27 @@
                   </div>
                 </div>
               </form>
-        </div>
-      </div>
-       
-          <div class="announcement_con2 "*ngFor ="let am of announcements; let i = index">
-            <br>
-            <div class="audience">Audience : {{am.audience}}</div>
-            <div class="subject" > Subject :{{am.subject}}</div>
-            <div class="message">Message: {{am.message}}</div>
           </div>
-      
         </div>
-    
+           
+              <!-- <div class="announcement_con2 "*ngFor ="let am of announcements; let i = index">
+                <br>
+                <div class="audience">Audience : {{am.audience}}</div>
+                <div class="subject" > Subject :{{am.subject}}</div>
+                <div class="message">Message: {{am.message}}</div>
+              </div> -->
+          
+            </div>
+          
+            <div class="scroll">
+            <div class="announcement_con2 " *ngFor ="let am of announcements; let i = index">
+              <br>
+              <div class="audience">Audience : {{am.audience}}</div>
+              <div class="subject" > Subject :{{am.subject}}</div>
+              <div class="message">Message: {{am.message}}</div>
+            </div>
+         
+        </div>
+
 
 
