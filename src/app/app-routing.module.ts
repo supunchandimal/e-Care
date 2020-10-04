@@ -20,6 +20,7 @@ import { ForgotpassComponent } from './forgotpass/forgotpass.component';
 import { OurproviersComponent } from './ourproviers/ourproviers.component';
 import { ManageDoctorComponent } from './manage-doctor/manage-doctor.component';
 import { ViewDoctorComponent } from './manage-doctor/view-doctor/view-doctor.component';
+import { AdminGraphComponent } from './admin/admin-graph/admin-graph.component';
 import { ManagePatientComponent } from './manage-patient/manage-patient.component';
 import { AdminFeedbacksComponent } from './admin-feedbacks/admin-feedbacks.component';
 import { AdminAnnouncementComponent } from './admin-announcement/admin-announcement.component';
@@ -69,6 +70,7 @@ const routes: Routes = [
   },
   {path:'manage-doctor', component: ManageDoctorComponent},
   {path:'view-doctor', component: ViewDoctorComponent},
+  {path:'admin-graph', component: AdminGraphComponent},
   {path:'manage-patient', component: ManagePatientComponent},
   {path:'admin-announcement', component: AdminAnnouncementComponent},
   {path:'admin-paymentdetails', component: AdminPaymentdetailsComponent},
