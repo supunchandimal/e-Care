@@ -93,6 +93,8 @@ import { PayhereComponent } from './patientpages/payhere/payhere.component';
 import { BookedComponent } from './patientpages/appoinments/booked/booked.component';
 
 import { DocvComponent } from './video/docv/docv.component';
+import { PaymentSuccessComponent } from './patientpages/payment-success/payment-success.component';
+import { PaymentFailedComponent } from './patientpages/payment-failed/payment-failed.component';
 
 
 
@@ -148,6 +150,10 @@ import { DocvComponent } from './video/docv/docv.component';
     BookedComponent,
    
     DocvComponent,
+   
+    PaymentSuccessComponent,
+   
+    PaymentFailedComponent,
 
   ],
   imports: [

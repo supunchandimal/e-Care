@@ -8,6 +8,16 @@ import { Time } from 'src/app/models/time';
 import { Appoinments } from 'src/app/models/appoinments';
 import { map } from 'rxjs/operators';
 import { AppoinmentsService } from '../services/appoinments.service';
+
+interface InputData {
+  name: string
+  value: string
+}
+
+interface FormInputData {
+  inputData: Array<InputData>
+}
+
 @Component({
   selector: 'app-appoinments',
   templateUrl: './appoinments.component.html',
@@ -42,6 +52,7 @@ export class AppoinmentsComponent implements OnInit {
   user: firebase.User;
   Timedoc: AngularFirestoreDocument<Time>;
   TimeCollection: AngularFirestoreCollection<Time>;
+  currentPatientData: any;
   constructor(public afs: AngularFirestore, private dialog: MatDialog, private auth: AuthService, private afAuth: AngularFireAuth, private appoinmentService: AppoinmentsService) {
     this.authState = this.afAuth.authState;
   }
@@ -65,6 +76,12 @@ export class AppoinmentsComponent implements OnInit {
       if (user) {
         this.currentUser = user;
         console.log('AUTHSTATE USER', user.uid);
+
+        this.afs.collection('Users').doc(this.currentUser.uid).valueChanges()
+        .subscribe(res => {
+          this.currentPatientData = res;
+          console.log("current patient data - ",this.currentPatientData);
+        })
 
 
         combineLatest(this.startobs, this.endobs).subscribe((value) => {
@@ -164,6 +181,113 @@ export class AppoinmentsComponent implements OnInit {
       status: 'free'
     })
   }
+
+  doPayment() {
+    const data = new Array<InputData>()
+    data.push({ name: 'merchant_id', value: "1215308"  })
+    data.push({ name: 'return_url', value: "http://localhost:4200/payment-completed" })
+    data.push({ name: 'cancel_url', value: "http://localhost:4200/payment-failed" })
+    data.push({ name: 'notify_url', value: "https://us-central1-e-care-96a24.cloudfunctions.net/paymentStatus" })
+    data.push({ name: 'first_name', value:this.currentPatientData.firstname })
+    data.push({ name: 'last_name', value: this.currentPatientData.lastname })
+    data.push({ name: 'email', value: this.currentPatientData.email })
+    data.push({ name: 'phone', value: this.currentPatientData.phone })
+    data.push({ name: 'address', value: "enterAProperAddress" })
+    data.push({ name: 'city', value: "enterACity" })
+    data.push({ name: 'country', value: "Sri Lanka" })
+    data.push({ name: 'order_id', value: "noOrderID" })
+    data.push({ name: 'items', value: "noItems" })
+    data.push({ name: 'currency', value: "LKR" })
+    data.push({ name: 'amount', value: "900" })
+    data.push({ name: 'custom_1', value: "cust1" })
+    data.push({ name: 'custom_2', value: "cust2" })
+    // data.push({ name: 'hash', value: `${pd.hash}` })
+
+    // this.payNow();
+
+    const form = this.createForm({ inputData: data })
+    // You have to create hidden(style="display:none") div element with this "submit-form-container" id (id="submit-form-container") in the component
+    // <div style="display:none" id="submit-form-container"></div>
+    document.querySelector('#submit-form-container').appendChild(form)
+    form.submit()
+  }
+
+
+  createForm(data: FormInputData): HTMLFormElement {
+    const form: HTMLFormElement = document.createElement('form')
+    form.setAttribute('action', `https://sandbox.payhere.lk/pay/checkout`)
+    form.setAttribute('method', 'POST')
+
+    form.append(
+      ...data.inputData.map((d) => {
+        return this.createInput(d)
+      })
+    )
+
+    return form
+  }
+
+  createInput(data: InputData): HTMLInputElement {
+    const input = document.createElement('input')
+    input.setAttribute('type', 'hidden')
+    input.setAttribute('name', `${data.name}`)
+    input.setAttribute('value', `${data.value}`)
+    return input
+  }
+
+  // payNow(){
+    
+  //   var appointmentDatex = this.datePipe.transform(this.selectedAppointmentDate, "yyyy-MM-dd");
+  //   console.log("results from paynow() - ",this.results);
+  //   if (this.results.role == 'doctor'){
+  //     this.currentUserID = this.results.doctorID;
+
+  //   }
+  //   else if(this.results.role == 'patient'){
+  //     this.currentUserID = this.results.patientID;
+  //   }    
+  //   var data = {
+  //     appointmentID:this.appointmentID,
+  //     patientID:this.currentUserID,
+  //     patientName:this.results.name,
+  //     doctorID:this.data.doctorID,
+  //     doctorName:this.data.name,
+  //     appointmentDate:new Date(this.selectedAppointmentDate),
+  //     doctorProPic:this.data.proPicURL,
+  //     appointmentTime:this.finalEstimatedAppointmentTime,
+  //     totalFee:this.totalFee,
+  //     appointmentShortDate:this.appointmentShortDate,
+  //     appointmentNo:this.appointmentsCount,
+  //     doctorSpeciality:this.data.speciality,
+  //     consultationStarted:"false",
+  //     availabilityStatus:'Absent',
+  //     paymentStatus:'Pending',
+  //     status:'Active'
+  //   }    
+
+  //   this.db.collection('Appointments').doc(this.appointmentID).set(data)
+  //   .then(()=>{
+  //     console.log("successfully updated - Appointments")
+  //     this.db.collection('Users').doc(localStorage.getItem("selectedDocID")).collection('appointmentCounts').doc(this.datePipe.transform(this.selectedAppointmentDate, "yyyy-MM-dd")).set({
+  //       patientsCount:this.appointmentsCount
+  //     }).then(()=>{
+  //       console.log("successfully updated - doctor appointments count")
+  //     });
+  //   });
+
+
+  //   // this.db.collection('Users').doc(localStorage.getItem('uid')).collection('Appointments').doc(this.appointmentID).set(data)
+  //   // .then(()=>{
+  //   //   console.log("successfully updated - patient Appointments")
+  //   // })
+
+  //   this.db.collection('Users').doc(localStorage.getItem('selectedDocID')).collection('Appointments').doc(appointmentDatex.toString()).collection('dayAppointments').doc(this.appointmentID).set(data)
+  //   .then(()=>{
+  //     console.log("successfully updated - doctor Appointments")
+  //   })
+
+  //   console.log("data to be saved from paynow() - ",data);
+  // }
 
 
 }

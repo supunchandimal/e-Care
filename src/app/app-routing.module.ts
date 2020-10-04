@@ -51,6 +51,9 @@ import { PayhereComponent } from './patientpages/payhere/payhere.component';
 import { BookedComponent } from './patientpages/appoinments/booked/booked.component';
 import { DocvComponent } from './video/docv/docv.component';
 
+import { PaymentSuccessComponent } from './patientpages/payment-success/payment-success.component';
+import { PaymentFailedComponent } from './patientpages/payment-failed/payment-failed.component';
+
 
 const routes: Routes = [
   {path:'',redirectTo:'/home' ,pathMatch:'full'},
@@ -88,6 +91,8 @@ const routes: Routes = [
   {path:'book',component:BookedComponent},
   {path:'docvideo',component:DocvComponent},
   {path:'help',component:HelpComponent},
+  {path:'payment-completed',component:PaymentSuccessComponent},
+  {path:'payment-failed',component:PaymentFailedComponent},
 
   //doctor's paths
 

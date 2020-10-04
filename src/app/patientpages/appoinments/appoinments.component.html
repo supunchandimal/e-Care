@@ -4,7 +4,7 @@
 </head>
 
 <body class="body">
-
+    <div style="display:none" id="submit-form-container"></div>
     <div class="navibar">
         <app-patient-home class="subnavibar"></app-patient-home>
     </div>
@@ -116,7 +116,7 @@
                     <td>{{time.date}}</td>
                     <td>{{time.time}}</td>
                     <td>{{time.status}}</td>
-                    <button (click)="Onpay($event,time)" style="background-color: darkblue;">pay here</button>
+                    <button (click)="doPayment()" style="background-color: darkblue;">pay here</button>
                     <button (click)="Oncancel($event,time)" style="background-color: darkblue;">cancel</button>
                 </tr>
             </table>
