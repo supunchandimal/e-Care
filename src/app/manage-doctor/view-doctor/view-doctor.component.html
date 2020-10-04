@@ -1,0 +1,83 @@
+<!-- <p>view-doctor works!</p> -->
+<input  type="button" class="btn-back" value="<--Go Back" onclick="history.back(-1)" />
+
+<div class="row p-2">
+    <div class="col-md-12 p-2 justify-content-center">
+      <h4 style="padding: 20px;">All Doctor Data</h4>
+    </div>
+
+    <div class="col-md-3"  *ngFor="let item of doctor">
+
+
+        <div class="card" *ngIf="!item.isedit; else elseBlock">
+            <div class="card-body">
+            <div class="card-title">
+                Name: {{item.fullName}}
+            </div>
+
+            <div class="card-text">
+                Email: {{item.email}}
+            </div>
+
+            <div class="card-text">
+                NIC: {{item.nic}}
+             </div>
+
+             <div class="card-text">
+                Age: {{item.age}}
+            </div>
+
+            <div class="card-text">
+                City: {{item.city}}
+            </div>
+
+            <div class="card-text">
+                Gender: {{item.gender}}
+            </div>
+
+            <div class="card-text">
+                Speciality: {{item.speciality}}
+            </div>
+
+             <span>
+                <a  (click)="EditRecord(item)" class="btn btn-primary btn-xs" style="color: white;">Edit Doctor</a>
+                <a  (click)= "DeleteDoctor(item.id)" class="btn btn-danger btn-xs" style="color: white;">Delete Doctor</a>
+            </span>
+            </div>
+        </div>
+             
+<ng-template #elseBlock>
+<div class="card">
+<div class="card-body">
+    <div class="card-title">
+        Edit
+    </div>
+    <div class="row">
+        <div class="form-group">
+            <div class="col-md-12">
+                <input type="text" [(ngModel)]="item.editname" class="form-control" placeholder="Full Name">
+            </div>
+            <div class="col-md-12">
+                <input type="text" [(ngModel)]="item.editnic" class="form-control" placeholder="NIC">
+            </div>
+            <div class="col-md-12">
+                <input type="number" [(ngModel)]="item.editage" class="form-control" placeholder="Age">
+            </div>
+            <div class="col-md-12">
+                <input type="text" [(ngModel)]="item.editcity" class="form-control" placeholder="City">
+            </div>
+          
+            
+        </div>
+    </div>
+    <a  class="btn btn-danger btn-xs" (click)="item.isedit = false">Cancel</a>
+    <a  class="btn btn-primary btn-xs" (click)="UpdateRecord(item)">Update</a>
+
+
+</div>
+</div>
+</ng-template>
+
+</div>
+
+</div>
