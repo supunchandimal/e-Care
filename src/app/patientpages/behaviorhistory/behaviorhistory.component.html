@@ -1,121 +1,157 @@
-
 <div class="dive">
-  <h2>What is your reason for seeking Behavioral Health Care? </h2>
-  <div class="checkbox">
-    <label><h4><input type="checkbox" value="">Emotional Problem</h4></label>
-  </div>
-  <div class="checkbox">
-    <label><h4><input type="checkbox" value="">Substance Abuse</h4></label>
-  </div>
-  <div class="checkbox">
-    <label><h4><input type="checkbox" value="">Relationship Issue</h4></label>
-  </div>
-  <div class="checkbox">
-    <label><h4><input type="checkbox" value="">Other</h4></label>
-  </div>
-
   <div class="form-group">
-    <label for="explain"><h3>Please Explain:</h3></label>
-    <input type="explain" class="form-control" id="explain">
+    <h2>What is your reason for seeking Behavioral Health Care? </h2>
+    <div class="checkbox" >
+      <label>
+        <h4><input type="checkbox" value="Emotional_Problem">Emotional Problem</h4>
+      </label>
+    </div>
+    <div class="checkbox">
+      <label>
+        <h4><input type="checkbox" value="Substance_Abuse">Substance Abuse</h4>
+      </label>
+    </div>
+    <div class="checkbox">
+      <label>
+        <h4><input type="checkbox" value="Relationshi_Issue">Relationship Issue</h4>
+      </label>
+    </div>
+    <div class="checkbox">
+      <label>
+        <h4><input type="checkbox" value="Other">Other</h4>
+      </label>
+    </div>
+
+   
+      <label for="explain">
+        <h3>Please Explain:</h3>
+      </label>
+      <input class="form-control" id="explain" name="Explain">
+    </div>
+
   </div>
-  
+<div class="form-group">
+  <div class="dive">
+    <h2>Have you ever been diagnosed with any of the following conditions? </h2>
+    <div class="checkbox">
+      <label>
+        <h4><input type="checkbox" value="Alcohol">Alcohol Dependence</h4>
+      </label>
+    </div>
+    <div class="checkbox">
+      <label>
+        <h4><input type="checkbox" value="Anxiety">Anxiety</h4>
+      </label>
+    </div>
+    <div class="checkbox">
+      <label>
+        <h4><input type="checkbox" value="Bipolar">Bipolar Disorder</h4>
+      </label>
+    </div>
+    <div class="checkbox">
+      <label>
+        <h4><input type="checkbox" value="Depression">Depression</h4>
+      </label>
+    </div>
+    <div class="checkbox">
+      <label>
+        <h4><input type="checkbox" value="Obsessive">Obsessive Compulsive Disorder (OCD)</h4>
+      </label>
+    </div>
+    <div class="checkbox">
+      <label>
+        <h4><input type="checkbox" value="Panic">Panic Attacks</h4>
+      </label>
+    </div>
+    <div class="checkbox">
+      <label>
+        <h4><input type="checkbox" value="Schizophrenia">Schizophrenia</h4>
+      </label>
+    </div>
+  </div>
 </div>
 
-<div class="dive">
-  <h2>Have you ever been diagnosed with any of the following conditions? </h2>
-  <div class="checkbox">
-    <label><h4><input type="checkbox" value="">Alcohol Dependence</h4></label>
-  </div>
-  <div class="checkbox">
-    <label><h4><input type="checkbox" value="">Anxiety</h4></label>
-  </div>
-  <div class="checkbox">
-    <label><h4><input type="checkbox" value="">Bipolar Disorder</h4></label>
-  </div>
-  <div class="checkbox">
-    <label><h4><input type="checkbox" value="">Depression</h4></label>
-  </div>
-  <div class="checkbox">
-    <label><h4><input type="checkbox" value="">Obsessive Compulsive Disorder (OCD)</h4></label>
-  </div>
-  <div class="checkbox">
-    <label><h4><input type="checkbox" value="">Panic Attacks</h4></label>
-  </div>
-  <div class="checkbox">
-    <label><h4><input type="checkbox" value="">Schizophrenia</h4></label>
-  </div>
-</div>
+  <div class="dive">
+    <h2>Has any family member ever been hospitalized for mental health or substance abuse treatment?</h2>
 
-<div class="dive">
-  <h2>Has any family member ever been hospitalized for mental health or substance abuse treatment?</h2>
-  
-  <mat-radio-group aria-label="Select an option" [(ngModel)]="mentalHealth">
-    <mat-radio-button class="radio-btn" value="1">Yes</mat-radio-button>
-    <mat-radio-button class="radio-btn" value="2">No</mat-radio-button>
-    <mat-radio-button  class="radio-btn" value="3">Unknown</mat-radio-button>
-  </mat-radio-group>
-</div>
-<div class="div" *ngIf="mentalHealth=='1'">
-
-  <mat-form-field appearance="duration">
-    <mat-label>For How Long?</mat-label>
-    <input matInput placeholder="Type Duration">
-  </mat-form-field>
-  
-  <mat-form-field>
-    <mat-label>Choose a date</mat-label>
-    <input matInput [matDatepicker]="picker">
-    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker #picker></mat-datepicker>
-  </mat-form-field>
-  
-  
-</div>
-
-<div class="dive">
-  <h2>Has anyone in your family been diagnosed with any of the following?</h2>
-  <div class="checkbox">
-    <label><h4><input type="checkbox" value="">Alcohol Dependence</h4></label>
+    <mat-radio-group aria-label="Select an option" [(ngModel)]="mentalHealth">
+      <mat-radio-button class="radio-btn" value="1">Yes</mat-radio-button>
+      <mat-radio-button class="radio-btn" value="2">No</mat-radio-button>
+      <mat-radio-button class="radio-btn" value="3">Unknown</mat-radio-button>
+    </mat-radio-group>
   </div>
-  <div class="checkbox">
-    <label><h4><input type="checkbox" value="">Bipolar Disorder</h4></label>
-  </div>
-  <div class="checkbox">
-    <label><h4><input type="checkbox" value="">Depression</h4></label>
-  </div>
-  <div class="checkbox">
-    <label><h4><input type="checkbox" value="">Obsessive Compulsive Disorder (OCD)</h4></label>
-  </div>
-  <div class="checkbox">
-    <label><h4><input type="checkbox" value="">Schizophrenia</h4></label>
-  </div>
-  <div class="checkbox">
-    <label><h4><input type="checkbox" value="">Unknown</h4></label>
-  </div>
-  
-</div>
+  <div class="div" *ngIf="mentalHealth=='1'">
 
-<div class="dive">
-  <h2>Has any family member ever been hospitalized for mental health or substance abuse treatment?</h2>
-  
-  <mat-radio-group aria-label="Select an option">
-    <mat-radio-button class="radio-btn" value="1">Yes</mat-radio-button>
-    <mat-radio-button class="radio-btn" value="2">No</mat-radio-button>
-    <mat-radio-button class="radio-btn" value="3">Unknown</mat-radio-button>
-  </mat-radio-group>
+    <mat-form-field appearance="duration">
+      <mat-label>For How Long?</mat-label>
+      <input matInput placeholder="Type Duration">
+    </mat-form-field>
 
-</div>
-
-<div class="dive">
-  <h2>Do you have a gender preference for a provider?</h2>
-  
-  <mat-radio-group aria-label="Select an option">
-    <mat-radio-button class="radio-btn" value="1">No</mat-radio-button>
-    <mat-radio-button class="radio-btn" value="2">Female</mat-radio-button>
-    <mat-radio-button class="radio-btn" value="3">Male</mat-radio-button>
-  </mat-radio-group>
-
-</div>
+    <mat-form-field>
+      <mat-label>Choose a date</mat-label>
+      <input matInput [matDatepicker]="picker">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
 
 
+  </div>
 
+  <div class="dive">
+    <h2>Has anyone in your family been diagnosed with any of the following?</h2>
+    <div class="checkbox">
+      <label>
+        <h4><input type="checkbox" value="">Alcohol Dependence</h4>
+      </label>
+    </div>
+    <div class="checkbox">
+      <label>
+        <h4><input type="checkbox" value="">Bipolar Disorder</h4>
+      </label>
+    </div>
+    <div class="checkbox">
+      <label>
+        <h4><input type="checkbox" value="">Depression</h4>
+      </label>
+    </div>
+    <div class="checkbox">
+      <label>
+        <h4><input type="checkbox" value="">Obsessive Compulsive Disorder (OCD)</h4>
+      </label>
+    </div>
+    <div class="checkbox">
+      <label>
+        <h4><input type="checkbox" value="">Schizophrenia</h4>
+      </label>
+    </div>
+    <div class="checkbox">
+      <label>
+        <h4><input type="checkbox" value="">Unknown</h4>
+      </label>
+    </div>
+
+  </div>
+
+  <div class="dive">
+    <h2>Has any family member ever been hospitalized for mental health or substance abuse treatment?</h2>
+
+    <mat-radio-group aria-label="Select an option">
+      <mat-radio-button class="radio-btn" value="1">Yes</mat-radio-button>
+      <mat-radio-button class="radio-btn" value="2">No</mat-radio-button>
+      <mat-radio-button class="radio-btn" value="3">Unknown</mat-radio-button>
+    </mat-radio-group>
+
+  </div>
+
+  <div class="dive">
+    <h2>Do you have a gender preference for a provider?</h2>
+
+    <mat-radio-group aria-label="Select an option">
+      <mat-radio-button class="radio-btn" value="1">No</mat-radio-button>
+      <mat-radio-button class="radio-btn" value="2">Female</mat-radio-button>
+      <mat-radio-button class="radio-btn" value="3">Male</mat-radio-button>
+    </mat-radio-group>
+
+  </div>
+
+  <button class="button">SUBMIT</button>

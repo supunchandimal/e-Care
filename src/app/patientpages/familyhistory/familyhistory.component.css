@@ -57,3 +57,26 @@ section {
   margin-left: 20px;
   size: 40px;
 }
+
+.button {
+  padding: 13px 20px;
+  font-size: 15px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #4c74af;
+  border: none;
+  border-radius: 13px;
+  box-shadow: 0 9px #999;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.button:hover {background-color: #5387c2}
+
+.button:active {
+  background-color: #5387c2;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
