@@ -11,17 +11,17 @@ export class AppointmentScheduleService {
 
   add(Record)
   {
-    return this.fireservice.collection('hiii').add(Record);
+    return this.fireservice.collection('appointmentSchedule').add(Record);
   }
 
   getSchedule(date)
   {
-    return this.fireservice.collection('hiii', ref=>ref.where("doctorID","==",1).where( "date","==",date) ).snapshotChanges();
+    return this.fireservice.collection('appointmentSchedule', ref=>ref.where("doctorID","==",1).where( "date","==",date) ).snapshotChanges();
   }
   
   updateSchedule(recordid, record)
   {
-    this.fireservice.doc('hiii/' + recordid).update(record);
+    this.fireservice.doc('appointmentSchedule/' + recordid).update(record);
   }
 
 

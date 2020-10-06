@@ -2,6 +2,15 @@ import { Component, OnInit,SimpleChanges } from '@angular/core';
 import { AppointmentScheduleService } from './../../services/appointment-schedule.service';
 import { convertActionBinding } from '@angular/compiler/src/compiler_util/expression_converter';
 
+interface Food {
+  value: string;
+  viewValue: string;
+}
+
+interface Car {
+  value: string;
+  viewValue: string;
+}
 
 @Component({
   selector: 'app-appointment-schedule',
@@ -68,6 +77,24 @@ export class AppointmentScheduleComponent implements OnInit {
   t2340 = false;
   scheduleDate : number;
 
+  TimeFrom : number;
+  TimeTo : number;
+
+  // selectedValue: string;
+  // selectedCar: string;
+
+  // foods: Food[] = [
+  //   {value: 'steak-0', viewValue: 'Steak'},
+  //   {value: 'pizza-1', viewValue: 'Pizza'},
+  //   {value: 'tacos-2', viewValue: 'Tacos'}
+  // ];
+
+  // cars: Car[] = [
+  //   {value: 'volvo', viewValue: 'Volvo'},
+  //   {value: 'saab', viewValue: 'Saab'},
+  //   {value: 'mercedes', viewValue: 'Mercedes'}
+  // ];
+
 
   constructor(public AppointmentScheduleService : AppointmentScheduleService) { 
     const currentYear = new Date().getFullYear();
@@ -82,6 +109,28 @@ export class AppointmentScheduleComponent implements OnInit {
     ngOnInit(): void {
       this.Test();
     }
+
+    AddTimeSlot(){
+      // alert(this.TimeFrom);
+      // alert(this.TimeTo);
+      let Record = {};
+      Record['appointment'] = {};
+      Record['appointment']['TimeFrom'] = this.TimeFrom;
+      Record['appointment']['TimeTo'] = this.TimeTo;
+      Record['date'] = this.selectedDate;
+      Record['doctorID'] = 1;
+
+      
+        this.AppointmentScheduleService.add(Record).then(data=>{
+          console.log(data)
+        }).catch(er=>{
+          console.log(er);
+        });
+     
+      
+    }
+
+
 
 
 
