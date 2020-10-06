@@ -13,5 +13,8 @@ export class BehaviorhistoryComponent implements OnInit {
   ngOnInit(): void {
 
   }
+  addData(){
+    
+  }
 
 }
