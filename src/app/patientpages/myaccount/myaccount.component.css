@@ -198,6 +198,8 @@ input[type=email] {
     height: 100%;
     margin-top: 20px;
     margin-bottom: 10%;
+    font-size: medium;
+    
 }
 
 .formp2 {
@@ -205,6 +207,7 @@ input[type=email] {
     height: 100%;
     margin-top: 50px;
     margin-bottom: 10%;
+    font-size: medium;
 }
 
 .submit {

@@ -3,22 +3,22 @@
     <h2>What is your reason for seeking Behavioral Health Care? </h2>
     <div class="checkbox" >
       <label>
-        <h4><input type="checkbox" value="Emotional_Problem">Emotional Problem</h4>
+        <h4><input type="checkbox" value="" [(ngModel)]="Emotional_Problem">Emotional Problem</h4>
       </label>
     </div>
     <div class="checkbox">
       <label>
-        <h4><input type="checkbox" value="Substance_Abuse">Substance Abuse</h4>
+        <h4><input type="checkbox" value="" [(ngModel)]="Substance_Abuse">Substance Abuse</h4>
       </label>
     </div>
     <div class="checkbox">
       <label>
-        <h4><input type="checkbox" value="Relationshi_Issue">Relationship Issue</h4>
+        <h4><input type="checkbox" value=""[(ngModel)]="Relationship_Issue">Relationship Issue</h4>
       </label>
     </div>
     <div class="checkbox">
       <label>
-        <h4><input type="checkbox" value="Other">Other</h4>
+        <h4><input type="checkbox" value="" [(ngModel)]="Other">Other</h4>
       </label>
     </div>
 
@@ -26,7 +26,7 @@
       <label for="explain">
         <h3>Please Explain:</h3>
       </label>
-      <input class="form-control" id="explain" name="Explain">
+      <input class="form-control" id="explain" name="Explain" [(ngModel)]="explain">
     </div>
 
   </div>
@@ -35,46 +35,46 @@
     <h2>Have you ever been diagnosed with any of the following conditions? </h2>
     <div class="checkbox">
       <label>
-        <h4><input type="checkbox" value="Alcohol">Alcohol Dependence</h4>
+        <h4><input type="checkbox" value="Alcohol" [(ngModel)]="Alcohol">Alcohol Dependence</h4>
       </label>
     </div>
     <div class="checkbox">
       <label>
-        <h4><input type="checkbox" value="Anxiety">Anxiety</h4>
+        <h4><input type="checkbox" value="Anxiety" [(ngModel)]="Anxiety">Anxiety</h4>
       </label>
     </div>
     <div class="checkbox">
       <label>
-        <h4><input type="checkbox" value="Bipolar">Bipolar Disorder</h4>
+        <h4><input type="checkbox" value="Bipolar" [(ngModel)]="Bipolar">Bipolar Disorder</h4>
       </label>
     </div>
     <div class="checkbox">
       <label>
-        <h4><input type="checkbox" value="Depression">Depression</h4>
+        <h4><input type="checkbox" value="Depression" [(ngModel)]="Depression">Depression</h4>
       </label>
     </div>
     <div class="checkbox">
       <label>
-        <h4><input type="checkbox" value="Obsessive">Obsessive Compulsive Disorder (OCD)</h4>
+        <h4><input type="checkbox" value="Obsessive" [(ngModel)]="Obsessive">Obsessive Compulsive Disorder (OCD)</h4>
       </label>
     </div>
     <div class="checkbox">
       <label>
-        <h4><input type="checkbox" value="Panic">Panic Attacks</h4>
+        <h4><input type="checkbox" value="Panic" [(ngModel)]="Panic">Panic Attacks</h4>
       </label>
     </div>
     <div class="checkbox">
       <label>
-        <h4><input type="checkbox" value="Schizophrenia">Schizophrenia</h4>
+        <h4><input type="checkbox" value="Schizophrenia" [(ngModel)]="Schizophrenia">Schizophrenia</h4>
       </label>
     </div>
   </div>
 </div>
 
   <div class="dive">
-    <h2>Has any family member ever been hospitalized for mental health or substance abuse treatment?</h2>
+    <h2>Have you ever been hospitalized for mental health or substance abuse treatment?</h2>
 
-    <mat-radio-group aria-label="Select an option" [(ngModel)]="mentalHealth">
+    <mat-radio-group aria-label="Select an option" [(ngModel)]="YourMentalHealth">
       <mat-radio-button class="radio-btn" value="1">Yes</mat-radio-button>
       <mat-radio-button class="radio-btn" value="2">No</mat-radio-button>
       <mat-radio-button class="radio-btn" value="3">Unknown</mat-radio-button>
@@ -101,32 +101,32 @@
     <h2>Has anyone in your family been diagnosed with any of the following?</h2>
     <div class="checkbox">
       <label>
-        <h4><input type="checkbox" value="">Alcohol Dependence</h4>
+        <h4><input type="checkbox" value="" [(ngModel)]="Alcohol_1">Alcohol Dependence</h4>
       </label>
     </div>
     <div class="checkbox">
       <label>
-        <h4><input type="checkbox" value="">Bipolar Disorder</h4>
+        <h4><input type="checkbox" value="" [(ngModel)]="Bipolar_1">Bipolar Disorder</h4>
       </label>
     </div>
     <div class="checkbox">
       <label>
-        <h4><input type="checkbox" value="">Depression</h4>
+        <h4><input type="checkbox" value="" [(ngModel)]="Depression_1">Depression</h4>
       </label>
     </div>
     <div class="checkbox">
       <label>
-        <h4><input type="checkbox" value="">Obsessive Compulsive Disorder (OCD)</h4>
+        <h4><input type="checkbox" value="" [(ngModel)]="Obsessive_1">Obsessive Compulsive Disorder (OCD)</h4>
       </label>
     </div>
     <div class="checkbox">
       <label>
-        <h4><input type="checkbox" value="">Schizophrenia</h4>
+        <h4><input type="checkbox" value="" [(ngModel)]="Schizophrenia_1">Schizophrenia</h4>
       </label>
     </div>
     <div class="checkbox">
       <label>
-        <h4><input type="checkbox" value="">Unknown</h4>
+        <h4><input type="checkbox" value="" [(ngModel)]="Unknown">Unknown</h4>
       </label>
     </div>
 
@@ -135,7 +135,7 @@
   <div class="dive">
     <h2>Has any family member ever been hospitalized for mental health or substance abuse treatment?</h2>
 
-    <mat-radio-group aria-label="Select an option">
+    <mat-radio-group aria-label="Select an option" [(ngModel)]="Substance">
       <mat-radio-button class="radio-btn" value="1">Yes</mat-radio-button>
       <mat-radio-button class="radio-btn" value="2">No</mat-radio-button>
       <mat-radio-button class="radio-btn" value="3">Unknown</mat-radio-button>
@@ -146,7 +146,7 @@
   <div class="dive">
     <h2>Do you have a gender preference for a provider?</h2>
 
-    <mat-radio-group aria-label="Select an option">
+    <mat-radio-group aria-label="Select an option" [(ngModel)]="gender_preference">
       <mat-radio-button class="radio-btn" value="1">No</mat-radio-button>
       <mat-radio-button class="radio-btn" value="2">Female</mat-radio-button>
       <mat-radio-button class="radio-btn" value="3">Male</mat-radio-button>
@@ -154,4 +154,4 @@
 
   </div>
 
-  <button class="button">SUBMIT</button>
+  <button class="button" (click)="addData()">SUBMIT</button>
