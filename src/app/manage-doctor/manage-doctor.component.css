@@ -9,7 +9,7 @@
 
 
 .mat-toolbar.mat-primary {
-    background: grey;
+    background:  #29648a;
     color: #fff;
   }
 
@@ -151,8 +151,8 @@
     width:20%;
     height: 100%;
     /* left: -30%; */
-    background-color: black;
-    filter: opacity(0.7);
+    background-color: #25274D;
+    /* filter: opacity(0.7); */
     align-items: left;
     
 }
