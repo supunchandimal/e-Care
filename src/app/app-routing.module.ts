@@ -52,7 +52,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { PayhereComponent } from './patientpages/payhere/payhere.component';
 import { BookedComponent } from './patientpages/appoinments/booked/booked.component';
 import { DocvComponent } from './video/docv/docv.component';
-
+import { PrescriptionpdfComponent } from './patientpages/prescriptionpdf/prescriptionpdf.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'/home' ,pathMatch:'full'},
@@ -61,6 +61,7 @@ const routes: Routes = [
   {path:'joinnow', component:RegisterComponent},
   {path:'contactus',component:ContactusComponent},
   {path:'howitworks', component:HowItWorksComponent},
+  {path:'prescriptionpdf',component:PrescriptionpdfComponent},
   {path:'admin', component:AdminComponent,
   children:[
       { path:'manage-doctor', component: ManageDoctorComponent},
@@ -121,6 +122,7 @@ const routes: Routes = [
 
 
   {path:"**",component:PageNotFoundComponent},
+  
   
 
   

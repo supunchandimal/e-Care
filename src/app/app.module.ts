@@ -94,8 +94,9 @@ import { PayhereComponent } from './patientpages/payhere/payhere.component';
 import { BookedComponent } from './patientpages/appoinments/booked/booked.component';
 
 import { DocvComponent } from './video/docv/docv.component';
+import { PrescriptionpdfComponent } from './patientpages/prescriptionpdf/prescriptionpdf.component';
 
-
+import { NgxQRCodeModule } from 'ngx-qrcode2';
 
 
 @NgModule({
@@ -151,6 +152,8 @@ import { DocvComponent } from './video/docv/docv.component';
     BookedComponent,
    
     DocvComponent,
+   
+    PrescriptionpdfComponent,
 
   ],
   imports: [
@@ -179,6 +182,8 @@ import { DocvComponent } from './video/docv/docv.component';
     DefaultAdminModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    NgxQRCodeModule,
+ 
     NgxAgoraModule.forRoot({ AppID: environment.agora.appId }) ,
   ],
   providers: [

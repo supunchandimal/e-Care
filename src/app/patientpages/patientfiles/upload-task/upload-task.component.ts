@@ -81,7 +81,8 @@ export class UploadTaskComponent implements OnInit {
         this.file2.uid=this.currentUser.uid;
         this.file2.downloadURL= this.downloadURL;
         this.file2.path = path;
-        this.file2.date = Date.now().toString();
+        this.file2.date = new Date().toLocaleString();
+        console.log(this.file2.date)
         this.db.collection('files').add( { 
           downloadURL: this.file2.downloadURL,
           path:this.file2.path ,
