@@ -27,6 +27,7 @@
     height: 80%;
     margin-left: 18.5%;
     display: flex;
+    
 }
 
 .subnavibar {
@@ -100,8 +101,14 @@
 }
 
 .mat-tab-label{
-    font-size: 20px !important;
+    font-size: 18px !important;
  } 
+
  ::ng-deep .mat-tab-label {
-    font-size: 23px;
+    font-size: 18px;
+}
+
+.card{
+    margin-top: 20px;
+    margin-left: 18px;
 }

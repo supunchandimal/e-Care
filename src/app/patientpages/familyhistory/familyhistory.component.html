@@ -5,46 +5,46 @@
     </div>
     
     <div class="checkbox">
-        <label><h3><input type="checkbox" value="">Asthma</h3></label>
+        <label><h3><input type="checkbox" value="" [(ngModel)]='Asthma' >Asthma</h3></label>
     </div>
     <div class="checkbox">
-        <label><h3><input type="checkbox" value="">Cancer</h3></label>
+        <label><h3><input type="checkbox" value="" [(ngModel)]='Cancer'>Cancer</h3></label>
     </div>
     <div class="checkbox">
-        <label><h3><input type="checkbox" value="">Cystic Fibros</h3></label>
+        <label><h3><input type="checkbox" value="" [(ngModel)]='Cystic'>Cystic Fibros</h3></label>
     </div>
     <div class="checkbox">
-        <label><h3><input type="checkbox" value="">Diabetes</h3></label>
+        <label><h3><input type="checkbox" value="" [(ngModel)]="Diabetes">Diabetes</h3></label>
     </div>
     <div class="checkbox">
-        <label><h3><input type="checkbox" value="">Early / Unexpected Death</h3></label>
+        <label><h3><input type="checkbox" value="" [(ngModel)]='Early'>Early / Unexpected Death</h3></label>
     </div>
     <div class="checkbox">
-        <label><h3><input type="checkbox" value="">Elevated Cholestrol</h3></label>
+        <label><h3><input type="checkbox" value="" [(ngModel)]='Elevated'>Elevated Cholestrol</h3></label>
     </div>
     <div class="checkbox">
-        <label><h3><input type="checkbox" value="">Heart Diease</h3></label>
+        <label><h3><input type="checkbox" value="" [(ngModel)]='Heart'>Heart Diesease</h3></label>
     </div>
     <div class="checkbox">
-        <label><h3><input type="checkbox" value="">High Blood Presure</h3></label>
+        <label><h3><input type="checkbox" value="" [(ngModel)]='Blood'>High Blood Presure</h3></label>
     </div>
     <div class="checkbox">
-        <label><h3><input type="checkbox" value="">Metabolic Diease</h3></label>
+        <label><h3><input type="checkbox" value="" [(ngModel)]='Metabolic'>Metabolic Diesease</h3></label>
     </div>
     <div class="checkbox">
-        <label><h3><input type="checkbox" value="">Seasonal Allergies</h3></label>
+        <label><h3><input type="checkbox" value="" [(ngModel)]='Seasonal'>Seasonal Allergies</h3></label>
     </div>
     <div class="checkbox">
-        <label><h3><input type="checkbox" value="">Sickie Cell Anemia</h3></label>
+        <label><h3><input type="checkbox" value="" [(ngModel)]='Sickie'>Sickie Cell Anemia</h3></label>
     </div>
     <div class="checkbox">
-        <label><h3><input type="checkbox" value="">Stroke</h3></label>
+        <label><h3><input type="checkbox" value="" [(ngModel)]='Stroke'>Stroke</h3></label>
     </div>
     <div class="checkbox">
-        <label><h3><input type="checkbox" value="">Thyroid Diease</h3></label>
+        <label><h3><input type="checkbox" value="" [(ngModel)]='Thyroid'>Thyroid Diesease</h3></label>
     </div>
     <div class="checkbox">
-        <label><h3><input type="checkbox" value="">Other</h3></label>
+        <label><h3><input type="checkbox" value=""[(ngModel)]='Other'>Other</h3></label>
     </div>
     
     <div class="form-group">
@@ -52,16 +52,19 @@
             <mat-label>Please Explain:</mat-label>
             <input matInput>
           </mat-form-field> -->
-        <label for="explain"><h2>Please Explain:</h2></label>
-        <input type="explain" class="form-control" id="explain">
+        <label for="explain"><h2>Any Explanations:</h2></label>
+        <input type="explain" class="form-control" id="explain" [(ngModel)]="explain">
       </div>
 
-      <section>
+      <!-- <section> -->
 
-            <button mat-button-raised color="accent" style="color:blue; size: 50px;">Submit</button>
+            <!-- <button mat-button-raised color="accent" style="color:rgb(0, 68, 255); font-size: larger;">Submit -->
+            <!-- </button> -->
             <!-- <button style="color: blue;">Add</button> -->
  
-        </section>
+        <!-- </section> -->
+
+        <button class="button" (click)="addData()">SUBMIT</button>
     
 
     
