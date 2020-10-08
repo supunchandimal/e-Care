@@ -30,6 +30,9 @@ export class LoginserviceService {
         console.log(userCredential)
         if(userCredential){
           this.afAuth.authState.subscribe(user=>{
+            console.log('from login - ',user.uid)
+            localStorage.setItem('currentUserEmail',email);
+            localStorage.setItem('currentUserID',user.uid)
             this.db.collection("Users").doc(`${user.uid}`).valueChanges().subscribe(
               data=>{
                 if(data != null){

@@ -1,3 +1,4 @@
+import { DatePipe } from '@angular/common';
 import { AccountService } from './patientpages/services/account.service';
 import { ServiceService } from './patientpages/services/service.service';
 import { DefaultDocModule } from './doctor/layouts/default-doc/default-doc.module';
@@ -191,7 +192,8 @@ import { DocvComponent } from './video/docv/docv.component';
     PpicService,
     MatDatepickerModule,
     ConditionsService,
-    OpoService
+    OpoService,
+    DatePipe
 
     
   ],
