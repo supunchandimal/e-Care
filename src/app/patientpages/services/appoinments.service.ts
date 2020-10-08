@@ -61,4 +61,10 @@ export class AppoinmentsService {
   addItem(item:Appoinments){
     return this.AppoinmentCollection.add(item);
   }
+
+  searchUsers(searchValue){
+    return this.afsal.collection('doctors',ref => ref.where('fullName', '>=', searchValue)
+      .where('fullName', '<=', searchValue + '\uf8ff'))
+      .valueChanges()
+  }
 }

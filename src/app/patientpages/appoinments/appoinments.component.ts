@@ -24,6 +24,7 @@ interface FormInputData {
   styleUrls: ['./appoinments.component.css']
 })
 export class AppoinmentsComponent implements OnInit {
+  selectedOption: string;
   Times: Observable<Time[]>;
   Appoinment: Observable<Appoinments[]>;
   item: Appoinments = {
@@ -53,20 +54,26 @@ export class AppoinmentsComponent implements OnInit {
   Timedoc: AngularFirestoreDocument<Time>;
   TimeCollection: AngularFirestoreCollection<Time>;
   currentPatientData: any;
+  allDocData: any[];
+  searchValue: any;
   constructor(public afs: AngularFirestore, private dialog: MatDialog, private auth: AuthService, private afAuth: AngularFireAuth, private appoinmentService: AppoinmentsService) {
     this.authState = this.afAuth.authState;
   }
 
   ngOnInit(): void {
-    this.TimeCollection = this.afs.collection('freetimes');
-    this.Times = this.TimeCollection.snapshotChanges().pipe(map(changes => {
-      return changes.map(a => {
-        const data = a.payload.doc.data() as Time
-        data.id = a.payload.doc.id;
-        return data;
+    // this.TimeCollection = this.afs.collection('doctors');
+    // this.Times = this.TimeCollection.snapshotChanges().pipe(map(changes => {
+    //   return changes.map(a => {
+    //     const data = a.payload.doc.data() as Time
+    //     data.id = a.payload.doc.id;
+    //     return data;
 
+    //   });
+    // }));
+    this.afs.collection('doctors').valueChanges()
+      .subscribe(output => {
+        this.allDocData = output;
       });
-    }));
     this.auth.getUserState()
       .subscribe(user => {
         this.user = user;
@@ -78,10 +85,10 @@ export class AppoinmentsComponent implements OnInit {
         console.log('AUTHSTATE USER', user.uid);
 
         this.afs.collection('Users').doc(this.currentUser.uid).valueChanges()
-        .subscribe(res => {
-          this.currentPatientData = res;
-          console.log("current patient data - ",this.currentPatientData);
-        })
+          .subscribe(res => {
+            this.currentPatientData = res;
+            console.log("current patient data - ", this.currentPatientData);
+          })
 
 
         combineLatest(this.startobs, this.endobs).subscribe((value) => {
@@ -109,6 +116,23 @@ export class AppoinmentsComponent implements OnInit {
       });
 
   }
+
+  filterSpeciality() {
+    console.log("selected filter option - ", this.selectedOption);
+    if (this.selectedOption == "All") {
+      this.afs.collection('doctors').valueChanges()
+        .subscribe(output => {
+          this.allDocData = output;
+        });
+    }
+    else {
+      this.afs.collection('doctors', ref => ref.where('speciality', '==', this.selectedOption)).valueChanges()
+        .subscribe(output => {
+          this.allDocData = output;
+        })
+    }
+  }
+  
   search($event) {
     let q = $event.target.value;
     if (q != '') {
@@ -116,6 +140,25 @@ export class AppoinmentsComponent implements OnInit {
       this.endAt.next(q + "\uf8ff");
     }
   }
+
+  searchByName() {
+    let value = this.searchValue;
+    this.appoinmentService.searchUsers(value).subscribe(result => {
+      // this.name_filtered_items = result;
+      this.allDocData = result;
+      // this.items = this.combineLists(result, this.age_filtered_items);
+    });
+  }
+
+  filterBySpeciality(speciality) {
+    this.afs.collection("doctors", (ref) => (ref.where("speciality", "==", speciality))).valueChanges()
+      .subscribe(result => {
+        this.allDocData = result;
+        // console.log(this.items);
+      })
+
+  }
+
   firequery(start, end) {
     return this.afs.collection('doctors', ref => ref.limit(100).orderBy('speciality').startAt(start).endAt(end)).valueChanges();
   }
@@ -166,7 +209,7 @@ export class AppoinmentsComponent implements OnInit {
     this.item.docNic = time.nic;
     this.item.date = time.date;
     this.item.time = time.time;
-    let channelID = time.date+"_"+this.currentUser.uid+"_"+time.nic;
+    let channelID = time.date + "_" + this.currentUser.uid + "_" + time.nic;
     console.log(channelID)
     this.item.channelID = channelID;
     this.appoinmentService.addItem(this.item);
@@ -184,11 +227,11 @@ export class AppoinmentsComponent implements OnInit {
 
   doPayment() {
     const data = new Array<InputData>()
-    data.push({ name: 'merchant_id', value: "1215308"  })
-    data.push({ name: 'return_url', value: "http://localhost:4200/payment-completed" })
+    data.push({ name: 'merchant_id', value: "1215308" })
+    data.push({ name: 'return_url', value: "http://localhost:4200/book" })
     data.push({ name: 'cancel_url', value: "http://localhost:4200/payment-failed" })
     data.push({ name: 'notify_url', value: "https://us-central1-e-care-96a24.cloudfunctions.net/paymentStatus" })
-    data.push({ name: 'first_name', value:this.currentPatientData.firstname })
+    data.push({ name: 'first_name', value: this.currentPatientData.firstname })
     data.push({ name: 'last_name', value: this.currentPatientData.lastname })
     data.push({ name: 'email', value: this.currentPatientData.email })
     data.push({ name: 'phone', value: this.currentPatientData.phone })
@@ -236,7 +279,7 @@ export class AppoinmentsComponent implements OnInit {
   }
 
   // payNow(){
-    
+
   //   var appointmentDatex = this.datePipe.transform(this.selectedAppointmentDate, "yyyy-MM-dd");
   //   console.log("results from paynow() - ",this.results);
   //   if (this.results.role == 'doctor'){

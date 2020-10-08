@@ -32,6 +32,7 @@
     opacity: 1;
     align-self: flex-start;
     display: flex;
+    right: 50px;
 }
 
 .datacard {
@@ -43,7 +44,7 @@
     box-shadow: 15px 15px 25px rgba(0, 0, 0, 0.9);
     font-family: roboto;
     text-align: center;
-    height: 25vh;
+    height: 30vh;
     width: 90%;
     margin-top: 5%;
     margin-left: 1%;

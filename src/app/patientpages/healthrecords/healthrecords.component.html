@@ -5,11 +5,11 @@
     <div class="bodyrest">
         <div style="align-self: flex-start;width: 88vw;">
             <app-pagemenu [parentData]="flag2"></app-pagemenu>
-            <!-- <div class="submenu">  -->
-                <!-- <div class="row"> -->
+            <div class="submenu">
+                <div class="row">
 
 
-                    <div class="dive">
+                    <!-- <div class="dive">
                         <mat-tab-group animationDuration="0ms">
                             <mat-tab label="Allergy Records">
                                 <div style="width: 80vw;height: 80vh;margin-top: 10%; " *ngIf="mark==1">
@@ -21,7 +21,7 @@
                                     <app-conditions></app-conditions>
                                 </div>
                             </mat-tab>
-                            <mat-tab label="Medication History">
+                            <mat-tab label="Medication History" >
                                 <div style="width: 80vw;height: 80vh;margin-top: 10%; " *ngIf="mark==2">
                                     <app-medication></app-medication>
                                 </div>
@@ -32,52 +32,52 @@
                                 </div>
                             </mat-tab>
                         </mat-tab-group>
+                    </div> -->
+
+                    <div class="columnl">
+                        <h2 *ngIf="mark==2"><button class="btn" (click)='onClickAlleg()'>Allergie Record</button></h2>
+                        <h2 *ngIf="mark==1"><button class="btn" (click)='onClickAlleg()' style="background-color: #2e9cca;">Allergie Records</button>
+                        </h2>
+                        <h2 *ngIf="mark==3"><button class="btn" (click)='onClickAlleg()'>Allergie Record</button></h2>
+                        <h2 *ngIf="mark==4"><button class="btn" (click)='onClickAlleg()'>Allergie Record</button></h2>
+                    </div>
+                    <div class="columnl">
+                        <h2 *ngIf="mark==1"><button class="btn" (click)='onClickMedic()'>Medication History</button>
+                        </h2>
+                        <h2 *ngIf="mark==2"><button class="btn" (click)='onClickMedic()' style="background-color: #2e9cca;">Medication History</button>
+                        </h2>
+                        <h2 *ngIf="mark==3"><button class="btn" (click)='onClickMedic()'>Medication History</button>
+                        </h2>
+                        <h2 *ngIf="mark==4"><button class="btn" (click)='onClickMedic()'>Medication History</button>
+                        </h2>
+                    </div>
+                    <div class="columnl">
+                        <h2 *ngIf="mark==1"><button class="btn" (click)='onClickRecord()'>Health Conditions</button></h2>
+                        <h2 *ngIf="mark==2"><button class="btn" (click)='onClickRecord()'>Health Conditions</button></h2>
+                        <h2 *ngIf="mark==4"><button class="btn" (click)='onClickRecord()'>Health Conditions</button></h2>
+                        <h2 *ngIf="mark==3"><button class="btn" (click)='onClickRecord()' style="background-color: #2e9cca;">Health Conditions</button></h2>
+                    </div>
+                    <div class="columnl">
+                        <h2 *ngIf="mark==1"><button class="btn" (click)='onClickOpo()'>Surgeries</button></h2>
+                        <h2 *ngIf="mark==2"><button class="btn" (click)='onClickOpo()'>Surgeries</button></h2>
+                        <h2 *ngIf="mark==3"><button class="btn" (click)='onClickOpo()'>Surgeries</button></h2>
+                        <h2 *ngIf="mark==4"><button class="btn" (click)='onClickOpo()' style="background-color: #2c9cca;">Surgeries</button></h2>
                     </div>
 
-                    <!-- <div class="columnl"> -->
-                        <!-- <h2 *ngIf="mark==2"><button class="btn" (click)='onClickAlleg()'>Allergie Record</button></h2> -->
-                        <!-- <h2 *ngIf="mark==1"><button class="btn" (click)='onClickAlleg()' style="background-color: #2e9cca;">Allergie Records</button> -->
-                        <!-- </h2> -->
-                        <!-- <h2 *ngIf="mark==3"><button class="btn" (click)='onClickAlleg()'>Allergie Record</button></h2> -->
-                        <!-- <h2 *ngIf="mark==4"><button class="btn" (click)='onClickAlleg()'>Allergie Record</button></h2> -->
-                    <!-- </div> -->
-                    <!-- <div class="columnl"> -->
-                        <!-- <h2 *ngIf="mark==1"><button class="btn" (click)='onClickMedic()'>Medication History</button> -->
-                        <!-- </h2> -->
-                        <!-- <h2 *ngIf="mark==2"><button class="btn" (click)='onClickMedic()' style="background-color: #2e9cca;">Medication History</button> -->
-                        <!-- </h2> -->
-                        <!-- <h2 *ngIf="mark==3"><button class="btn" (click)='onClickMedic()'>Medication History</button> -->
-                        <!-- </h2> -->
-                        <!-- <h2 *ngIf="mark==4"><button class="btn" (click)='onClickMedic()'>Medication History</button> -->
-                        <!-- </h2> -->
-                    <!-- </div> -->
-                    <!-- <div class="columnl"> -->
-                        <!-- <h2 *ngIf="mark==1"><button class="btn" (click)='onClickRecord()'>Health Conditions</button></h2> -->
-                        <!-- <h2 *ngIf="mark==2"><button class="btn" (click)='onClickRecord()'>Health Conditions</button></h2> -->
-                        <!-- <h2 *ngIf="mark==4"><button class="btn" (click)='onClickRecord()'>Health Conditions</button></h2> -->
-                        <!-- <h2 *ngIf="mark==3"><button class="btn" (click)='onClickRecord()' style="background-color: #2e9cca;">Health Conditions</button></h2> -->
-                    <!-- </div> -->
-                    <!-- <div class="columnl"> -->
-                        <!-- <h2 *ngIf="mark==1"><button class="btn" (click)='onClickOpo()'>Surgeries</button></h2> -->
-                        <!-- <h2 *ngIf="mark==2"><button class="btn" (click)='onClickOpo()'>Surgeries</button></h2> -->
-                        <!-- <h2 *ngIf="mark==3"><button class="btn" (click)='onClickOpo()'>Surgeries</button></h2> -->
-                        <!-- <h2 *ngIf="mark==4"><button class="btn" (click)='onClickOpo()' style="background-color: #2c9cca;">Surgeries</button></h2> -->
-                    <!-- </div> -->
-
-                <!-- </div> -->
-                <div style="width: 80vw;height: 80vh;margin-top: 10%; " *ngIf="mark==1"> 
-                    <app-allergierecords></app-allergierecords> 
-                </div> 
+                </div>
+                <div style="width: 80vw;height: 80vh;margin-top: 10%; " *ngIf="mark==1">
+                    <app-allergierecords></app-allergierecords>
+                </div>
                 <div style="width: 80vw;height: 80vh;margin-top: 10%; " *ngIf="mark==2">
-                     <app-medication></app-medication> 
-                </div> 
-                <div style="width: 80vw;height: 80vh;margin-top: 10%; " *ngIf="mark==3"> 
-                     <app-conditions></app-conditions> 
-                </div> 
+                    <app-medication></app-medication>
+                </div>
+                <div style="width: 80vw;height: 80vh;margin-top: 10%; " *ngIf="mark==3">
+                    <app-conditions></app-conditions>
+                </div>
                 <div style="width: 80vw;height: 80vh;margin-top: 10%; " *ngIf="mark==4">
-                    <app-surgeries></app-surgeries> 
-                </div> 
-            <!-- </div>  -->
+                    <app-surgeries></app-surgeries>
+                </div>
+            </div>
         </div>
     </div>
 
