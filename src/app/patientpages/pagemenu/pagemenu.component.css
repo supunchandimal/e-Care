@@ -1,8 +1,9 @@
 .box {
     width: 80vw;
-    height: 20vh;
+    height: 17vh;
     padding-left: 4px;
     padding-top: 1px;
+    padding-right: 0px;
     justify-content: space-between;
     flex-direction: column;
     display: flex;
@@ -11,6 +12,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    
     
 }
 
@@ -21,6 +23,7 @@
     right: 210px;
     border: none;
     opacity: 1;
+
 }
 
 .btn-group button {

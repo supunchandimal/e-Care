@@ -103,6 +103,11 @@
     /* background-color: chartreuse; */
 }
 
-.abc{
-    padding-top: 20px;
+.sideNav{
+    padding-top: 15px;
+    padding-bottom: 5px;
 }
+
+/* .abc{ */
+    /* padding-top: 7px; */
+/* } */

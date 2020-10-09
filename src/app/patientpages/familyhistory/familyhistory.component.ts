@@ -8,22 +8,22 @@ import { PatientHealthHistoryService} from './../../../services/shared/patient-h
 })
 export class FamilyhistoryComponent implements OnInit {
 
-  Asthma : Boolean;
-  Cancer :Boolean;
-  Cystic : Boolean;
-  Diabetes : Boolean;
-  Early : Boolean;
-  Elevated : Boolean;
-  Heart : Boolean;
-  Blood : Boolean;
-  Metabolic : Boolean;
-  Seasonal : Boolean;
-  Sickie : Boolean;
-  Stroke : Boolean;
-  Thyroid : Boolean;
-  Other : Boolean;
+  Asthma : false;
+  Cancer :false;
+  Cystic : false;
+  Diabetes : false;
+  Early : false;
+  Elevated : false;
+  Heart : false;
+  Blood : false;
+  Metabolic : false;
+  Seasonal : false;
+  Sickie : false;
+  Stroke : false;
+  Thyroid : false;
+  Other : false;
 
-  explain : string;
+  explain : any;
 
   constructor(public PatientHealthHistiryService : PatientHealthHistoryService) { }
 
@@ -31,22 +31,25 @@ export class FamilyhistoryComponent implements OnInit {
   }
   addData(){
 
+    alert(this.Stroke);
+    alert(this.Heart);
+
     let Record = {};
     Record ['type']='family';
-    Record ['Asthma']= this.Asthma;
-    Record ['Cancer']= this.Cancer;
-    Record ['Cystic']= this.Cystic;
-    Record ['Diabetes']= this.Diabetes;
-    Record ['Early']= this.Early;
-    Record ['Elevated']= this.Elevated;
-    Record ['Heart']= this.Heart;
-    Record ['Blood']= this.Blood;
-    Record ['Metabolic']= this.Metabolic;
-    Record ['Seasonal']= this.Seasonal;
-    Record ['Sickie']= this.Sickie;
-    Record ['Stroke']= this.Stroke;
-    Record ['Thyroid']= this.Thyroid;
-    Record ['Other']= this.Other;
+    Record ['Asthma']= this.Asthma==undefined?false:this.Asthma;
+    Record ['Cancer']= this.Cancer==undefined?false:this.Cancer;
+    Record ['Cystic']= this.Cystic==undefined?false:this.Cystic;
+    Record ['Diabetes']= this.Diabetes==undefined?false:this.Diabetes;
+    Record ['Early']= this.Early==undefined?false:this.Early;
+    Record ['Elevated']= this.Elevated==undefined?false:this.Elevated;
+    Record ['Heart']= this.Heart==undefined?false:this.Heart;
+    Record ['Blood']= this.Blood==undefined?false:this.Blood;
+    Record ['Metabolic']= this.Metabolic==undefined?false:this.Metabolic;
+    Record ['Seasonal']= this.Seasonal==undefined?false:this.Seasonal;
+    Record ['Sickie']= this.Sickie==undefined?false:this.Sickie;
+    Record ['Stroke']= this.Stroke==undefined?false:this.Stroke;
+    Record ['Thyroid']= this.Thyroid==undefined?false:this.Thyroid;
+    Record ['Other']= this.Other==undefined?false:this.Other;
 
     Record ['explain']= this.explain;
 
