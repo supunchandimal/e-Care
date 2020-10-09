@@ -39,7 +39,7 @@
 }
 
 .navigation_bar li a:hover , .dropdown:hover .dropbtn{
-    background-color:floralwhite;
+    background-color:gray;
 }
 
 .navigation_bar a.active{
@@ -112,6 +112,7 @@ input[type=text], input[type=password],input[type=number],input[type=date],input
       border-radius: 10px;
       background-color: blue;
       color: white;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
   input[type=submit]:disabled{
     background-color: rgb(187, 187, 228);
@@ -140,7 +141,9 @@ input[type=number] {
 
   label{
     display:inline-block;
-     font-size: 20px;
+    font-weight: normal;
+    font-size: 17px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     padding: 12px 16px;
     clear: left;
     text-align: right;

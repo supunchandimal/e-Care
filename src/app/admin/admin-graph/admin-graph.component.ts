@@ -15,7 +15,11 @@ export class AdminGraphComponent implements OnInit {
   Usercount:any;
   Patientcount:any;
 
-  constructor(public AdminGraphService: AdminGraphService, public firestore: AngularFirestore, private afAuth: AngularFireAuth, private db: AngularFirestore) { }
+  
+
+  constructor(public AdminGraphService: AdminGraphService, public firestore: AngularFirestore, private afAuth: AngularFireAuth, private db: AngularFirestore) { 
+  
+  }
 
   ngOnInit(): void {
     this.count=this.get_AllDocCount();
