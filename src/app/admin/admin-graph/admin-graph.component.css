@@ -1,0 +1,17 @@
+.wrapper{
+    padding-left: 50px;
+    padding-top: 100px;
+}
+
+.mat-toolbar.mat-primary {
+    position: fixed;
+    background: #29648a;
+    color: #fff;
+}
+
+.toolbar-space{
+    text-decoration: none;
+    color: white;
+    padding: 0 14px;
+    font-size: 18px;
+}

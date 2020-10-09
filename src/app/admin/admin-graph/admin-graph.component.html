@@ -1,33 +1,18 @@
-<p>admin-graph works!</p>
+<!-- <p>admin-graph works!</p> -->
+<!-- <div class="col-md-3"  *ngFor="let item of doctor">
+	<div class="card-title">
+		Count of doctors: {{item.count}}
+	</div>
+</div> -->
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <a href="" class="toolbar-space"><span>eCare</span></a>
+      <a routerLink="../admin" class="toolbar-space"><span>Home</span></a>
+    </mat-toolbar-row> 
+</mat-toolbar>
 
-<script>
-window.onload = function() {
-
-var chart = new CanvasJS.Chart("chartContainer", {
-	animationEnabled: true,
-	title: {
-		text: "Desktop Search Engine Market Share - 2016"
-	},
-	data: [{
-		type: "pie",
-		startAngle: 240,
-		yValueFormatString: "##0.00\"%\"",
-		indexLabel: "{label} {y}",
-		dataPoints: [
-			{y: 79.45, label: "Google"},
-			{y: 7.31, label: "Bing"},
-			{y: 7.06, label: "Baidu"},
-			{y: 4.91, label: "Yahoo"},
-			{y: 1.26, label: "Others"}
-		]
-	}]
-});
-chart.render();
-
-}
-</script>
-
-<body>
-<div id="chartContainer" style="height: 370px; width: 100%;"></div>
-<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-</body>
+<div class="wrapper">
+	<h2>Doctors count <span class="badge badge-secondary">{{count}}</span></h2>
+	<h2>Patient count <span class="badge badge-secondary">{{Patientcount}}</span></h2>
+	<h2>All User count <span class="badge badge-secondary">{{Usercount}}</span></h2>
+</div>
