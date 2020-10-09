@@ -90,6 +90,7 @@ import { MessagesComponent } from './patientpages/messages/messages.component'
 import { HelpComponent } from './patientpages/help/help.component';
 import { AdminPaymentdetailsComponent } from './admin-paymentdetails/admin-paymentdetails.component';
 import { AdminGraphComponent } from './admin/admin-graph/admin-graph.component';
+import { AdminGraphService } from 'src/services/shared/admin-graph.service';
 import { PayhereComponent } from './patientpages/payhere/payhere.component';
 import { BookedComponent } from './patientpages/appoinments/booked/booked.component';
 
@@ -187,6 +188,7 @@ import { DocvComponent } from './video/docv/docv.component';
     ManageDoctorService,
     ManagePatientService,
     PatientDeleteDialogService,
+    AdminGraphService,
     AccountService,
     PpicService,
     MatDatepickerModule,
