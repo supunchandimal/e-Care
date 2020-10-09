@@ -5,8 +5,8 @@
 
     <mat-form-field class="example-full-width">
       <mat-label><b>Choose a date</b></mat-label>
-      <input matInput [min]="minDate" [max]="maxDate" [(ngModel)]="selectedDate" [matDatepicker]="picker" (dateChange)="Test(
-      )">
+      <!-- <input matInput [min]="minDate" [max]="maxDate" [(ngModel)]="selectedDate" [matDatepicker]="picker" (change)="dateChange()" (dateChange)="Test()"> -->
+      <input matInput [min]="minDate" [max]="maxDate" [(ngModel)]="selectedDate" [matDatepicker]="picker" (dateChange)="dateChange()">
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
@@ -21,51 +21,24 @@
     <mat-form-field appearance="fill">
       <mat-label><b>TIME - FROM</b></mat-label>
       <mat-select name="from" [(ngModel)]="TimeFrom">
-        <mat-option value="1">07.00 AM</mat-option>
-        <mat-option value="2">07.20 AM</mat-option>
-        <mat-option value="3">07.40 AM</mat-option>
-        <mat-option value="4">08.00 AM</mat-option>
-        <mat-option value="5">08.20 AM</mat-option>
-        <mat-option value="6">08.40 AM</mat-option>
-        <mat-option value="7">09.00 AM</mat-option>
-        <mat-option value="8">09.20 AM</mat-option>
-        <mat-option value="9">09.40 AM</mat-option>
-        <mat-option value="10">10.00 AM</mat-option>
-        <mat-option value="11">10.20 AM</mat-option>
-        <mat-option value="12">10.40 AM</mat-option>
-        <mat-option value="13">11.00 AM</mat-option>
-        <mat-option value="14">11.20 AM</mat-option>
-        <mat-option value="15">11.40 AM</mat-option>
-        <mat-option value="16">12.00 PM</mat-option>
-        <mat-option value="17">12.20 PM</mat-option>
-        <mat-option value="18">12.40 PM</mat-option>
-        <mat-option value="19">13.00 PM</mat-option>
-        <mat-option value="20">13.20 PM</mat-option>
-        <mat-option value="21">13.40 PM</mat-option>
-        <mat-option value="22">14.00 PM</mat-option>
-        <mat-option value="22">14.20 PM</mat-option>
-        <mat-option value="23">14.40 PM</mat-option>
-        <mat-option value="24">15.00 PM</mat-option>
-        <mat-option value="25">15.20 PM</mat-option>
-        <mat-option value="26">15.40 PM</mat-option>
-        <mat-option value="27">16.00 PM</mat-option>
-        <mat-option value="28">17.20 PM</mat-option>
-        <mat-option value="29">18.40 PM</mat-option>
-        <mat-option value="30">19.00 PM</mat-option>
-        <mat-option value="31">19.20 PM</mat-option>
-        <mat-option value="32">19.40 PM</mat-option>
-        <mat-option value="33">20.00 PM</mat-option>
-        <mat-option value="34">20.20 PM</mat-option>
-        <mat-option value="35">20.40 PM</mat-option>
-        <mat-option value="36">21.00 PM</mat-option>
-        <mat-option value="37">21.20 PM</mat-option>
-        <mat-option value="38">21.40 PM</mat-option>
-        <mat-option value="39">22.00 PM</mat-option>
-        <mat-option value="40">22.20 PM</mat-option>
-        <mat-option value="41">22.40 PM</mat-option>
-        <mat-option value="42">23.00 PM</mat-option>
-        <mat-option value="43">23.20 PM</mat-option>
-        <mat-option value="44">23.40 PM</mat-option>
+        <mat-option value=7>07.00</mat-option>        
+        <mat-option value=8>08.00</mat-option>        
+        <mat-option value=9>09.00</mat-option>       
+        <mat-option value=10>10.00</mat-option>        
+        <mat-option value=11>11.00</mat-option>       
+        <mat-option value=12>12.00</mat-option>      
+        <mat-option value=13>13.00</mat-option>        
+        <mat-option value=14>14.00</mat-option>       
+        <mat-option value=15>15.00</mat-option>        
+        <mat-option value=16>16.00</mat-option>
+        <mat-option value=17>17.00</mat-option>
+        <mat-option value=18>18.00</mat-option>
+        <mat-option value=19>19.00</mat-option>        
+        <mat-option value=20>20.00</mat-option>        
+        <mat-option value=21>21.00</mat-option>        
+        <mat-option value=22>22.00</mat-option>        
+        <mat-option value=23>23.00</mat-option>
+       
        
       </mat-select>
     </mat-form-field>
@@ -74,51 +47,23 @@
     <mat-form-field appearance="fill">
       <mat-label><b>TIME - TO</b></mat-label>
       <mat-select name="TimeTo" [(ngModel)]="TimeTo">
-        <mat-option value="1">07.00 AM</mat-option>
-        <mat-option value="2">07.20 AM</mat-option>
-        <mat-option value="3">07.40 AM</mat-option>
-        <mat-option value="4">08.00 AM</mat-option>
-        <mat-option value="5">08.20 AM</mat-option>
-        <mat-option value="6">08.40 AM</mat-option>
-        <mat-option value="7">09.00 AM</mat-option>
-        <mat-option value="8">09.20 AM</mat-option>
-        <mat-option value="9">09.40 AM</mat-option>
-        <mat-option value="10">10.00 AM</mat-option>
-        <mat-option value="11">10.20 AM</mat-option>
-        <mat-option value="12">10.40 AM</mat-option>
-        <mat-option value="13">11.00 AM</mat-option>
-        <mat-option value="14">11.20 AM</mat-option>
-        <mat-option value="15">11.40 AM</mat-option>
-        <mat-option value="16">12.00 PM</mat-option>
-        <mat-option value="17">12.20 PM</mat-option>
-        <mat-option value="18">12.40 PM</mat-option>
-        <mat-option value="19">13.00 PM</mat-option>
-        <mat-option value="20">13.20 PM</mat-option>
-        <mat-option value="21">13.40 PM</mat-option>
-        <mat-option value="22">14.00 PM</mat-option>
-        <mat-option value="22">14.20 PM</mat-option>
-        <mat-option value="23">14.40 PM</mat-option>
-        <mat-option value="24">15.00 PM</mat-option>
-        <mat-option value="25">15.20 PM</mat-option>
-        <mat-option value="26">15.40 PM</mat-option>
-        <mat-option value="27">16.00 PM</mat-option>
-        <mat-option value="28">17.20 PM</mat-option>
-        <mat-option value="29">18.40 PM</mat-option>
-        <mat-option value="30">19.00 PM</mat-option>
-        <mat-option value="31">19.20 PM</mat-option>
-        <mat-option value="32">19.40 PM</mat-option>
-        <mat-option value="33">20.00 PM</mat-option>
-        <mat-option value="34">20.20 PM</mat-option>
-        <mat-option value="35">20.40 PM</mat-option>
-        <mat-option value="36">21.00 PM</mat-option>
-        <mat-option value="37">21.20 PM</mat-option>
-        <mat-option value="38">21.40 PM</mat-option>
-        <mat-option value="39">22.00 PM</mat-option>
-        <mat-option value="40">22.20 PM</mat-option>
-        <mat-option value="41">22.40 PM</mat-option>
-        <mat-option value="42">23.00 PM</mat-option>
-        <mat-option value="43">23.20 PM</mat-option>
-        <mat-option value="44">23.40 PM</mat-option>
+        <mat-option value=7>07.00</mat-option>        
+        <mat-option value=8>08.00</mat-option>        
+        <mat-option value=9>09.00</mat-option>       
+        <mat-option value=10>10.00</mat-option>        
+        <mat-option value=11>11.00</mat-option>       
+        <mat-option value=12>12.00</mat-option>      
+        <mat-option value=13>13.00</mat-option>        
+        <mat-option value=14>14.00</mat-option>       
+        <mat-option value=15>15.00</mat-option>        
+        <mat-option value=16>16.00</mat-option>
+        <mat-option value=17>17.00</mat-option>
+        <mat-option value=18>18.00</mat-option>
+        <mat-option value=19>19.00</mat-option>        
+        <mat-option value=20>20.00</mat-option>        
+        <mat-option value=21>21.00</mat-option>        
+        <mat-option value=22>22.00</mat-option>        
+        <mat-option value=23>23.00</mat-option>
       </mat-select>
     </mat-form-field>
 
@@ -127,9 +72,28 @@
     <button class="btn btn-primary" (click)="AddTimeSlot()">ADD</button>
 
     <br><br> 
+    
 
-
-
+    <div class="col" *ngFor ="let item of scheduleData">
+      <div class="list-group">
+        <div class="list-group-item">
+          <div class="row">
+            <div class="col">
+              Time: {{item.payload.doc.data().time}}
+            </div>
+            <div class="col">
+              <button class="btn btn-danger" (click)="deleteFreeSlot(item.payload.doc.data().id)">Delete</button>
+            </div>
+            <!-- <div class="col">
+              Date: {{item.payload.doc.data().date}}
+            </div> -->
+          </div>
+        </div>
+      </div>             
+                  
+          
+              
+      </div>
 
 
 <div class="form-group">
