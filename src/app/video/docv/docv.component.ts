@@ -15,12 +15,19 @@ export class DocvComponent implements OnInit {
   private client: AgoraClient;
   private localStream: Stream;
   private uid: number;
+  channelID: string;
 
   constructor(private ngxAgoraService: NgxAgoraService) {
+    this.channelID = localStorage.getItem('selectedChannelID_doctor');
     this.uid = Math.floor(Math.random() * 100);
   }
 
   ngOnInit() {
+    console.log('channelIDDDDDDDDDDDDDDDD - ',this.channelID);
+    this.startCall();
+  }
+
+  startCall(){
     this.client = this.ngxAgoraService.createClient({ mode: 'rtc', codec: 'h264' });
     this.assignClientHandlers();
 
@@ -34,7 +41,7 @@ export class DocvComponent implements OnInit {
    * Attempts to connect to an online chat room where users can host and receive A/V streams.
    */
   join(onSuccess?: (uid: number | string) => void, onFailure?: (error: Error) => void): void {
-    this.client.join(null, 'foo-bar', this.uid, onSuccess, onFailure);
+    this.client.join(null, this.channelID, this.uid, onSuccess, onFailure);
   }
 
   /**

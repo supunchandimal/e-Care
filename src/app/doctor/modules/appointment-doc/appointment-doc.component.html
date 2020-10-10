@@ -1,2 +1,46 @@
 <h1>Appointments</h1>
 
+<mat-form-field class="example-full-width">
+    <mat-label><b>Choose a date</b></mat-label>
+    <!-- <input matInput [min]="minDate" [max]="maxDate" [(ngModel)]="selectedDate" [matDatepicker]="picker" (change)="dateChange()" (dateChange)="Test()"> -->
+    <input matInput [(ngModel)]="selectedDate" [matDatepicker]="picker" (dateChange)="dateChange()">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <!-- <mat-selection-list #shoes [multiple]="false">
+    <mat-list-option *ngFor="let item of scheduleData">
+        <div class="row">
+            <div class="col">
+                <div class="col-3">
+                    {{item?.patientname}}
+                </div>
+                <div class="col-3">
+                    {{item?.time}}
+                </div>
+                <div class="col-3">
+                    <button class="btn btn-primary" (click)="joinVideo(item.channelID)">Join</button>
+                </div>
+            </div>
+        </div>
+    </mat-list-option>
+  </mat-selection-list> -->
+
+<div class="list-group">
+    <div class="list-group-item" *ngFor="let item of scheduleData">
+        <div class="col">
+            <div class="row">
+                <div class="col">
+                    {{item?.patientname}}
+                </div>
+                <div class="col">
+                    {{item?.time}}
+                </div>
+                <div class="col">
+                    <button class="btn btn-primary" (click)="joinVideo(item.channelID)">Join</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

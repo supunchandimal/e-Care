@@ -5,6 +5,7 @@
 
 .body {
     display: flex;
+    padding-bottom: 0px;
 }
 
 .naviBar {
@@ -20,13 +21,15 @@
     background-color: black;
     display: flex;
     overflow-x: hidden;
+    padding-bottom: 0px;
 }
 
 .bodyrest {
-    width: 78%;
+    width: 90%;
     height: 80%;
     margin-left: 18.5%;
     display: flex;
+    padding-bottom: 0px;
     
 }
 
@@ -35,6 +38,7 @@
     align-self: flex-start;
     margin-left: -20px;
     margin-top: -10px;
+    padding-bottom: 0px;
 }
 
 .mat-tab-group {
