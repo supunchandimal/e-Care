@@ -32,7 +32,7 @@
     width:20%;
     height: 100%;
     /* left: -30%; */
-    background-color: #25274D;
+    background-color:rgb(47, 49, 97);
     align-items: left;
     
 }
@@ -145,7 +145,7 @@
 
 
 .mat-toolbar.mat-primary {
-    background: #29648a;
+    background:#3f51b5;
     color: #fff;
 }
 
