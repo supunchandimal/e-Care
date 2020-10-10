@@ -1,3 +1,7 @@
+import { DashboardPatientComponent } from './patientNew/modules/dashboard-patient/dashboard-patient.component';
+import { DefaultPatientComponent } from './patientNew/layouts/default-patient/default-patient.component';
+
+
 import { MyaccountComponent } from './patientpages/myaccount/myaccount.component';
 import { ConsultationhistoryComponent } from './patientpages/consultationhistory/consultationhistory.component';
 import { MyprovidersComponent } from './patientpages/myproviders/myproviders.component';
@@ -118,6 +122,17 @@ const routes: Routes = [
            
  ]
 },
+
+//patient's new paths
+
+{path:'',component:DefaultPatientComponent,
+  children: [{ path :'PHome', component:DashboardPatientComponent},
+  {path:'patientHome2',component:PatientDefaultPageComponent},
+  {path:'healthrecords2',component:HealthrecordsComponent},
+  {path:'healthprofile2',component:HealthprofileComponent},
+                      
+            ]
+  },
 
 
   {path:"**",component:PageNotFoundComponent},

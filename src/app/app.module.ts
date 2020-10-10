@@ -1,3 +1,4 @@
+import { DefaultPatientModule } from './patientNew/layouts/default-patient/default-patient.module';
 import { DatePipe } from '@angular/common';
 import { AccountService } from './patientpages/services/account.service';
 import { ServiceService } from './patientpages/services/service.service';
@@ -164,6 +165,7 @@ import { DocvComponent } from './video/docv/docv.component';
     AngularFireStorageModule, // storage
     FormsModule, BrowserAnimationsModule,
     DefaultDocModule,
+    DefaultPatientModule,
     MatProgressSpinnerModule,
     MatButtonModule,
     MatRadioModule,

@@ -1,0 +1,37 @@
+.mat-icon {
+    vertical-align: middle;
+    margin-right: 20px;
+  }
+.profile-card {
+    text-align: center;
+    padding: 0 20px 20px 20px;
+}
+
+
+.img-circular{
+  text-align: center;
+ 
+  margin: 0px 0px 0px 100px;
+  width: 100px;
+  height: 100px;
+  background-image: url('https://material.angular.io/assets/img/examples/shiba2.jpg');
+  background-size: cover;
+  display: block;
+  border-radius: 50%;
+  
+ }
+
+ .mat-list-item:hover{
+  background: -webkit-linear-gradient#5AB9EA;
+  background: linear-gradient#5AB9EA;
+  background-color: #5AB9EA;
+	border: 0 none;
+ }
+
+
+.mat-nav-list {
+      color:white;
+    }
+.mat-nav-list a {
+      color:white;
+    }
