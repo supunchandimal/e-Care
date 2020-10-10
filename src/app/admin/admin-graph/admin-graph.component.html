@@ -10,9 +10,63 @@
       <a routerLink="../admin" class="toolbar-space"><span>Home</span></a>
     </mat-toolbar-row> 
 </mat-toolbar>
-
+<!-- 
 <div class="wrapper">
 	<h2>Doctors count <span class="badge badge-secondary">{{count}}</span></h2>
 	<h2>Patient count <span class="badge badge-secondary">{{Patientcount}}</span></h2>
 	<h2>All User count <span class="badge badge-secondary">{{Usercount}}</span></h2>
+</div> -->
+
+
+<div class="tbl_container">     
+	<table class="table table-striped table-bordered">
+	  <thead>
+		<tr>
+		  <th>Users</th>
+		  <th>April</th>
+		  <th>May</th>
+		  <th>June</th>
+		  <th>July</th>
+		  <th>Aug</th>
+		  <th>Sept</th>
+		  <th>Oct</th>
+		</tr>
+	  </thead>
+	  <tbody>
+		<tr>
+		  <td>Doctors</td>
+		  <td>10</td>
+		  <td>5</td>
+		  <td>24</td>
+		  <td>14</td>
+		  <td>34</td>
+		  <td>8</td>
+		  <td>{{count}}</td>
+		</tr>
+		<tr>
+			<td>Patients</td>
+			<td>2</td>
+			<td>4</td>
+			<td>13</td>
+			<td>12</td>
+			<td>15</td>
+			<td>18</td>
+			<td>{{Patientcount}}</td>
+		</tr>
+		<tr>
+			<td>All Users</td>
+			<td>20</td>
+			<td>13</td>
+			<td>25</td>
+			<td>15</td>
+			<td>35</td>
+			<td>28</td>
+			<td>{{Usercount}}</td>
+		</tr>
+	  </tbody>
+	</table>
+  </div>
+  
+<div class="graph_wrapper">
+    <canvas id="myChart" width="800" height="300"></canvas>
 </div>
