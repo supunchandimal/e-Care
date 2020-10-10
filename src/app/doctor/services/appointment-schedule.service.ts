@@ -21,6 +21,11 @@ export class AppointmentScheduleService {
   {
     return this.fireservice.collection('freetimes', ref=>ref.where("docid","==",this.currentUserID).where("date","==",date).orderBy('time')).snapshotChanges();
   }
+
+  getBookedAppointments(date)
+  {
+    return this.fireservice.collection('freetimes', ref=>ref.where("docid","==",this.currentUserID).where("date","==",date).orderBy('time')).snapshotChanges();
+  }
   
   updateSchedule(recordid, record)
   {
