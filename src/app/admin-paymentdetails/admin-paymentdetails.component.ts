@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore'; 
 import { AngularFireAuth } from '@angular/fire/auth';
 import * as Chart from 'chart.js';
+import {AdminPaymentDetailsService} from 'src/services/shared/admin-payment-details.service';
+import { MatDialog, MatDialogConfig } from  '@angular/material/dialog';
+
 
 @Component({
   selector: 'app-admin-paymentdetails',
@@ -9,27 +12,43 @@ import * as Chart from 'chart.js';
   styleUrls: ['./admin-paymentdetails.component.css']
 })
 export class AdminPaymentdetailsComponent implements OnInit {
+  price: any;
   AppointCount: any;
 
   public canvas: any;
   public ctx: any;
-  // public labels: any = ['Doc 1', 'Doc 2', 'Doc 3'];
-  public labels: any = [];
+  public labels: any = ['1', '2', '3', '4', '5', '6', '7'];
   public dataCases: any = {
-    chart1: [900, 1800, 2700],
-    chart2: [0, 900, 1800],
-    chart3: [900, 900, 1800]
+    chart1: [900, 1800, 2700, 3600, 4500, 5400, 6300],
+    // chart2: [2,4, 13, 12, 15, 18, 20],
+    // chart3: [20,13, 25, 15, 35, 25, 62]
+    // chart1: [this.get_AllPatientCount(), this.get_AllDocCount()],
+    // chart2: [this.get_AllUserCount()]
   };
+  
 
-  constructor(public firestore: AngularFirestore, private afAuth: AngularFireAuth, private db: AngularFirestore) { }
+  constructor(public AdminPaymentService: AdminPaymentDetailsService, public firestore: AngularFirestore, private afAuth: AngularFireAuth, private db: AngularFirestore) { }
 
   ngOnInit(): void {
-    this.AppointCount=this.get_AppointCount();
-    let labels=[];
-    for(var i=0; i< this.AppointCount; i++){
-      labels[i];
-    }
+
+
+    this.AdminPaymentService.get_AppPrice().subscribe(data => {
+
+      this.price=data.map(e=> {
+        return{
+          id: e.payload.doc.id,
+          docid: e.payload.doc.data()['docid'],
+          channelID: e.payload.doc.data()['channelID'],
+          docName: e.payload.doc.data()['docName'],
+          patientname: e.payload.doc.data()['patientname'],
+          price: e.payload.doc.data()['price']
+        };
+      })
+      console.log(this.price);
+    })
+
     this.createLineChart(this.labels, this.dataCases, 'myChart');
+
   }
 
 
@@ -48,26 +67,26 @@ export class AdminPaymentdetailsComponent implements OnInit {
       data: {
         labels: labels,
         datasets: [{
-          label: "Doc 1",
+          label: "Raththa",
           data: dataCases.chart1,
-          backgroundColor: '#ffbb33',
-          borderColor: '#ffbb33',
+          backgroundColor: '#ff4da6',
+          borderColor: '#ff4da6',
           fill: false,
           borderWidth: 2
         },
         {
-          label: "Doc 2",
+          label: "Doctor2",
           data: dataCases.chart2,
-          backgroundColor: '#ff4444',
-          borderColor: '#ff4444',
+          backgroundColor: '#4d4dff',
+          borderColor: '#4d4dff',
           fill: false,
           borderWidth: 2
         },
         {
-          label: "Doc 3",
+          label: "Doctor3",
           data: dataCases.chart3,
-          backgroundColor: '#2277e0',
-          borderColor: '#2277e0',
+          backgroundColor: '#009999',
+          borderColor: '#009999',
           fill: false,
           borderWidth: 2
         }
@@ -76,7 +95,7 @@ export class AdminPaymentdetailsComponent implements OnInit {
       options: {
         title: {
           display: true,
-          text: "Users"
+          text: "Total Appointments price"
         },
         tooltips: {
           mode: 'index',
