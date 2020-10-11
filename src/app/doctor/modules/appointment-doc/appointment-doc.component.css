@@ -5,3 +5,8 @@ table {
   th.mat-sort-header-sorted {
     color: black;
   }
+
+  #time {
+    margin-top: 10px;
+    margin-left: 20px;
+  }

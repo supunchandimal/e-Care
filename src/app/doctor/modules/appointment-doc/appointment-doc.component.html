@@ -27,7 +27,7 @@
     </mat-list-option>
   </mat-selection-list> -->
 
-<div class="list-group">
+<!-- <div class="list-group">
     <div class="list-group-item" *ngFor="let item of scheduleData">
         <div class="col">
             <div class="row">
@@ -43,5 +43,23 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
+
+
+<div *ngFor="let item of scheduleData">
+    <div fxLayout="row" fxLayoutAlign = "space-between center" fxLayoutGap = "20px" class="stat-cards">
+    
+      <mat-card fxFlex=51%>
+        <div fxLayout="row" fxLayoutAlign = "space-between">
+        <p id="time" id="time">Time  :   {{item?.time}}</p>
+        <p id="time" id="time">Patient Name :   {{item?.patientname}}</p>
+        <button class="btn btn-primary" (click)="joinVideo(item.channelID)">Join</button>
+    </div>
+      </mat-card>
+    
+    </div><br>
+    
+    
+    
+    </div>
 
