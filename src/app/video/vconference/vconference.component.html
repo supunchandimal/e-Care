@@ -1,6 +1,11 @@
-<div [id]="localCallId" class="local"></div>
+<div [id]="localCallId" class="local">
+</div>
 
 <div *ngFor="let callId of remoteCalls" [id]="callId" class="remote"></div>
 <div>
-    <h1 class="info">dsada</h1>
+    <button class="" (click)="Oncollapse()">SHOW VITALS</button>
+    <button class="" (click)="Onexpand()">HIDE</button>
+    <div *ngIf="mark ==2">
+        <h1>dfsdfs</h1>
+    </div>
 </div>

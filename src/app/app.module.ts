@@ -96,6 +96,7 @@ import { BookedComponent } from './patientpages/appoinments/booked/booked.compon
 import { DocvComponent } from './video/docv/docv.component';
 import { PaymentSuccessComponent } from './patientpages/payment-success/payment-success.component';
 import { PaymentFailedComponent } from './patientpages/payment-failed/payment-failed.component';
+import { DatePipe } from '@angular/common';
 
 
 
@@ -197,9 +198,8 @@ import { PaymentFailedComponent } from './patientpages/payment-failed/payment-fa
     PpicService,
     MatDatepickerModule,
     ConditionsService,
-    OpoService
-
-    
+    OpoService,
+    DatePipe    
   ],
   bootstrap: [AppComponent]
 })

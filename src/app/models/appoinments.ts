@@ -9,4 +9,8 @@ export interface Appoinments{
     docName?:string;
     timestamp?:number;
     channelID?:string
+    patientname?:string;
+    status?:string;
+    docid?:string;
+    price?:number;
 }

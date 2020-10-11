@@ -21,6 +21,7 @@
     height: 100%;
     margin-left: 18.5%;
     display: flex;
+    overflow-x: hidden;
 }
 
 .search {
@@ -33,6 +34,7 @@
     align-self: flex-start;
     display: flex;
     right: 50px;
+    margin-left: 50px;
 }
 
 .datacard {

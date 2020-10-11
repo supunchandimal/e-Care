@@ -5,8 +5,13 @@ import { AngularFirestore } from '@angular/fire/firestore';
   providedIn: 'root'
 })
 export class AppointmentScheduleService {
+  currentUserID: string;
 
-  constructor( public fireservice : AngularFirestore ) { }
+  constructor(
+    public fireservice : AngularFirestore,
+    ) {
+      this.currentUserID = localStorage.getItem('currentUserID');
+     }
 
 
   add(Record)
@@ -16,7 +21,7 @@ export class AppointmentScheduleService {
 
   getSchedule(date)
   {
-    return this.fireservice.collection('appointmentSchedule', ref=>ref.where("doctorID","==",1).where( "date","==",date) ).snapshotChanges();
+    return this.fireservice.collection('freetimes', ref=>ref.where("docid","==",this.currentUserID).where( "date","==",date).orderBy('time')).snapshotChanges();
   }
   
   updateSchedule(recordid, record)

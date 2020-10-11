@@ -8,6 +8,7 @@ import { Time } from 'src/app/models/time';
 import { Appoinments } from 'src/app/models/appoinments';
 import { map } from 'rxjs/operators';
 import { AppoinmentsService } from '../services/appoinments.service';
+import { DatePipe } from '@angular/common';
 
 interface InputData {
   name: string
@@ -34,7 +35,8 @@ export class AppoinmentsComponent implements OnInit {
     date: '',
     time: '',
     timestamp: null,
-    channelID: ''
+    channelID: '',
+    patientname: '',
   }
   mark = 1;
   @ViewChild('secondDialog') secondDialog: TemplateRef<any>;
@@ -43,6 +45,7 @@ export class AppoinmentsComponent implements OnInit {
   startAt = new Subject();
   endAt = new Subject();
   free;
+  frees:any[];
   doc;
   docs;
   times;
@@ -56,7 +59,7 @@ export class AppoinmentsComponent implements OnInit {
   currentPatientData: any;
   allDocData: any[];
   searchValue: any;
-  constructor(public afs: AngularFirestore, private dialog: MatDialog, private auth: AuthService, private afAuth: AngularFireAuth, private appoinmentService: AppoinmentsService) {
+  constructor(public afs: AngularFirestore, private dialog: MatDialog, private auth: AuthService, private afAuth: AngularFireAuth, private appoinmentService: AppoinmentsService, private datePipe: DatePipe) {
     this.authState = this.afAuth.authState;
   }
 
@@ -70,9 +73,16 @@ export class AppoinmentsComponent implements OnInit {
 
     //   });
     // }));
+    // let channelDateFormat = this.datePipe.transform("2020/02/12","yyyy-MM-dd");
+    // console.log("channel date format - ",channelDateFormat);
     this.afs.collection('doctors').valueChanges()
       .subscribe(output => {
         this.allDocData = output;
+      });
+      this.getfreetime()
+      .subscribe(free => {
+        this.frees = free;
+        console.log(this.frees);
       });
     this.auth.getUserState()
       .subscribe(user => {
@@ -207,11 +217,16 @@ export class AppoinmentsComponent implements OnInit {
     this.item.id = time.id;
     this.item.docName = time.docName;
     this.item.docNic = time.nic;
+    this.item.docid = time.docid;
+    this.item.price = 900;
     this.item.date = time.date;
     this.item.time = time.time;
-    let channelID = time.date + "_" + this.currentUser.uid + "_" + time.nic;
+    let channelDateFormat = this.datePipe.transform(time.date,"yyyy-MM-dd")
+    let channelID = channelDateFormat + "_" + time.nic + "_" + time.time;
     console.log(channelID)
     this.item.channelID = channelID;
+    this.item.patientname = this.user.displayName;
+    this.item.status = 'Active'; 
     this.appoinmentService.addItem(this.item);
 
 

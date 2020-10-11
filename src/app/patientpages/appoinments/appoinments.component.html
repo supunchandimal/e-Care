@@ -10,20 +10,20 @@
     </div>
     <div class="bodyrest">
 
-        <div style="align-self: flex-start;width: 82vw;" *ngIf="mark==1">
+        <div style="align-self: flex-start;width: 82vw;margin-left: 3px;" *ngIf="mark==1">
 
             <app-pagemenu [parentData]="flag"></app-pagemenu>
 
             <div class="search">
                 <div>
-                    <input id="txtBox" class="form-control" [(ngModel)]="searchValue" [ngModelOptions]="{standalone: true}" (keyup)="searchByName()" placeholder="Search" type="text" style="right: 100px;">
+                    <input id="txtBox" class="form-control" [(ngModel)]="searchValue" [ngModelOptions]="{standalone: true}" (keyup)="searchByName()" placeholder="Search" type="text" style="right: 100px;width: 200%;">
                     <!-- <div style="margin-left: 25%;">
                         <input type="text" [(ngModel)]="searchterm" (keydown)="search($event)" placeholder="&#xf002; Search From Doctor Name or Speciality" style="font-family: FontAwesome, Arial; font-style: normal;width: 500%; ;">
                     </div> -->
 
                 </div>
                 <div class="col">
-                    <label for="cars">Filter by Speciality:</label>
+                    <label for="cars" style="margin-left: 500px;">Filter by Speciality :</label>
 
                     <select [(ngModel)]="selectedOption" name="cars" id="cars" (change)="filterSpeciality()">
                         <option value="All">All</option>
@@ -171,7 +171,7 @@
 
             <app-pagemenu [parentData]="flag"></app-pagemenu>
 
-            <table id="customers">
+            <table id="customers" style="margin-top: 10%;margin-left: 20%;">
                 <tr>
                     <th>date</th>
                     <th>time</th>
@@ -181,9 +181,10 @@
                     <td>{{time.date}}</td>
                     <td>{{time.time}}</td>
                     <td>{{time.status}}</td>
-                    <button (click)="doPayment();Onpay($event,time)" style="background-color: darkblue;">pay
+                    <button class="btn btn-primary" (click)="doPayment();Onpay($event,time)" *ngIf="time.status==='booking'">pay
                         here</button>
-                    <button (click)="Oncancel($event,time)" style="background-color: darkblue;">cancel</button>
+
+                    <button class="btn btn-primary" (click)="Oncancel($event,time)" *ngIf="time.status==='booking'">cancel</button>
                 </tr>
             </table>
 
