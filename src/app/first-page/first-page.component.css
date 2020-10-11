@@ -14,17 +14,19 @@
   left: 18%;
   width: 40%;
   
-  background: rgb(0, 0, 0); /* Fallback color */
-  background: rgba(0, 0, 0, 0.7); /* Black background with 0.5 opacity */
-  color: white; /* Grey text */
+  background: rgb(164, 189, 226); /* Fallback color */
+  background: rgba(116, 148, 179, 0.7); /* Black background with 0.5 opacity */
+  color: black; /* Grey text */
   padding-left: 5%;
   padding-right: 5%;
+  border-radius: 10px;
   
   
 
 }
 .image_container_1 .text_block h3{
     font-size: 25px;
+    margin-top: 20px;
 }
 
 #homeimage2{
