@@ -10,7 +10,7 @@ export class VconferenceComponent implements OnInit {
   title = 'angular-video';
   localCallId = 'agora_local';
   remoteCalls: string[] = [];
-
+  mark = 1;
   private client: AgoraClient;
   private localStream: Stream;
   private uid: number;
@@ -23,6 +23,7 @@ export class VconferenceComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log('channelIDDDDDDDD - ',this.channelID);
     this.startCall();
   }
 
@@ -127,5 +128,12 @@ export class VconferenceComponent implements OnInit {
 
   private getRemoteId(stream: Stream): string {
     return `agora_remote-${stream.getId()}`;
+  }
+  Oncollapse(){
+      this.mark =2;  
+  }
+
+  Onexpand(){
+    this.mark =1;
   }
 }

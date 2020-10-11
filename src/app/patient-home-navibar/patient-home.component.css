@@ -88,10 +88,11 @@
 
 .icn {
     position: absolute;
-    width: 2vw;
+    width: 2.5vw;
     height: 100%;
     align-self: center;
     size: 20px;
+    margin-left: 5px;
 }
 
 #icon {
@@ -101,3 +102,12 @@
     size: 50px;
     /* background-color: chartreuse; */
 }
+
+.sideNav{
+    padding-top: 15px;
+    padding-bottom: 5px;
+}
+
+/* .abc{ */
+    /* padding-top: 7px; */
+/* } */

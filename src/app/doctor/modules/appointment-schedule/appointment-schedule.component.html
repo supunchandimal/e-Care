@@ -1,24 +1,134 @@
 <h1>Appointment Schedule</h1>
 
-<div fxLayout="row" fxLayoutAlign = "space-between center" fxLayoutGap = "20px" class="stat-cards">
-  <mat-card fxFlex="20">
+<div fxLayout="row"  fxLayoutGap = "20px" class="stat-cards">
+
+
     <mat-form-field class="example-full-width">
-      <mat-label>Choose a date</mat-label>
-      <input matInput [min]="minDate" [max]="maxDate" [(ngModel)]="selectedDate" [matDatepicker]="picker" (dateChange)="Test(
-      )">
+      <mat-label><b>Choose a date</b></mat-label>
+      <!-- <input matInput [min]="minDate" [max]="maxDate" [(ngModel)]="selectedDate" [matDatepicker]="picker" (change)="dateChange()" (dateChange)="Test()"> -->
+      <input matInput [min]="minDate" [max]="maxDate" [(ngModel)]="selectedDate" [matDatepicker]="picker" (dateChange)="dateChange()">
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
-  </mat-card>
+
+
+
 </div><br>
-<div *ngFor ="let item of schedule">
+
+<div fxLayoutGap = "30px">
+
+
+    <mat-form-field appearance="fill">
+      <mat-label><b>TIME - FROM</b></mat-label>
+      <mat-select name="from" [(ngModel)]="TimeFrom">
+        <mat-option value=7>07.00</mat-option>        
+        <mat-option value=8>08.00</mat-option>        
+        <mat-option value=9>09.00</mat-option>       
+        <mat-option value=10>10.00</mat-option>        
+        <mat-option value=11>11.00</mat-option>       
+        <mat-option value=12>12.00</mat-option>      
+        <mat-option value=13>13.00</mat-option>        
+        <mat-option value=14>14.00</mat-option>       
+        <mat-option value=15>15.00</mat-option>        
+        <mat-option value=16>16.00</mat-option>
+        <mat-option value=17>17.00</mat-option>
+        <mat-option value=18>18.00</mat-option>
+        <mat-option value=19>19.00</mat-option>        
+        <mat-option value=20>20.00</mat-option>        
+        <mat-option value=21>21.00</mat-option>        
+        <mat-option value=22>22.00</mat-option>        
+        <mat-option value=23>23.00</mat-option>
+       
+       
+      </mat-select>
+    </mat-form-field>
+
+
+    <mat-form-field appearance="fill">
+      <mat-label><b>TIME - TO</b></mat-label>
+      <mat-select name="TimeTo" [(ngModel)]="TimeTo">
+        <mat-option value=7>07.00</mat-option>        
+        <mat-option value=8>08.00</mat-option>        
+        <mat-option value=9>09.00</mat-option>       
+        <mat-option value=10>10.00</mat-option>        
+        <mat-option value=11>11.00</mat-option>       
+        <mat-option value=12>12.00</mat-option>      
+        <mat-option value=13>13.00</mat-option>        
+        <mat-option value=14>14.00</mat-option>       
+        <mat-option value=15>15.00</mat-option>        
+        <mat-option value=16>16.00</mat-option>
+        <mat-option value=17>17.00</mat-option>
+        <mat-option value=18>18.00</mat-option>
+        <mat-option value=19>19.00</mat-option>        
+        <mat-option value=20>20.00</mat-option>        
+        <mat-option value=21>21.00</mat-option>        
+        <mat-option value=22>22.00</mat-option>        
+        <mat-option value=23>23.00</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    
+
+    <button class="btn btn-primary" (click)="AddTimeSlot()">ADD</button>
+
+    <br><br> 
+    
+
+    <div class="col" *ngFor ="let item of scheduleData">
+      <div class="list-group">
+        <div class="list-group-item">
+          <div class="row">
+            <div class="col">
+              Time: {{item.payload.doc.data().time}}
+            </div>
+            <div class="col">
+              <button class="btn btn-danger" (click)="deleteFreeSlot(item.payload.doc.data().id)">Delete</button>
+            </div>
+            <!-- <div class="col">
+              Date: {{item.payload.doc.data().date}}
+            </div> -->
+          </div>
+        </div>
+      </div>             
+                  
+          
+              
+      </div>
+
+
+<div class="form-group">
   
+</div>
 
 
 
 
 
-  <div *ngIf="!item.isedit; else elseBlock">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div *ngFor ="let item of schedule">
+   <div *ngIf="!item.isedit; else elseBlock">
   <button type="button" (click)="EditSchedule(item)" class="btn btn-primary btn-md">Edit</button><br><br>
 
   
@@ -27,7 +137,7 @@
     <mat-card fxFlex="18">
       <div fxLayout="row" fxLayoutAlign = "space-between">
       <p>07:00 AM - 07:20 AM :</p>
-      <mat-checkbox class="example-margin" [disabled]="true"  [(ngModel)]="item.t0700"></mat-checkbox></div>
+      <mat-checkbox class="example-   margin" [disabled]="true"  [(ngModel)]="item.t0700"></mat-checkbox></div>
     </mat-card>
     <mat-card fxFlex="18">
       <div fxLayout="row" fxLayoutAlign = "space-between">
@@ -613,4 +723,4 @@
 </div><br>
 
 </ng-template>
- </div>
+ </div> -->

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { CdoctorsService } from '../services/cdoctors.service';
+import { PatientMessagesService  } from './../../../services/shared/patient-messages.service';
 
 
 @Component({
@@ -10,18 +10,34 @@ import { CdoctorsService } from '../services/cdoctors.service';
 })
 export class MessagesComponent implements OnInit {
 
-  flag =8;
+  flag=8;
 
-  constructor(private service:CdoctorsService) { 
+  sentAnnouncements : any;
+  receivedAnnouncements : any;
+  subject: string;
+  message: string;
+  reply : string;
 
+  constructor(public AnnouncementsDocService: PatientMessagesService) { }
+
+  ngOnInit() {
+
+    
+
+    this.AnnouncementsDocService.GetReceivedAnnouncement().subscribe(data => {
+
+      this.receivedAnnouncements = data.map(e => {
+        return {
+          subject: e.payload.doc.data()['subject'],
+          message: e.payload.doc.data()['message'],
+        };
+      })
+      console.log(this.receivedAnnouncements);
+
+    });
   }
 
-  ngOnInit(): void {
-    // this.service.getPetion().subscribe((data)=>{
-      // data.docs.map(data=>{
-        // console.log(data.data);
-      // });
-    // })
-  }
 
-}
+  
+    
+  }

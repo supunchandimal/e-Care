@@ -12,8 +12,10 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./myaccount.component.css']
 })
 export class MyaccountComponent implements OnInit {
+  
   @ViewChild('secondDialog') secondDialog: TemplateRef<any>;
   flag = 5;
+
   MedCollection: AngularFirestoreCollection<User>;
   private authState: Observable<firebase.User>;
   public currentUser: firebase.User;

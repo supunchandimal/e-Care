@@ -21,6 +21,7 @@
     height: 100%;
     margin-left: 18.5%;
     display: flex;
+    overflow-x: hidden;
 }
 
 .search {
@@ -32,6 +33,8 @@
     opacity: 1;
     align-self: flex-start;
     display: flex;
+    right: 50px;
+    margin-left: 50px;
 }
 
 .datacard {
@@ -43,7 +46,7 @@
     box-shadow: 15px 15px 25px rgba(0, 0, 0, 0.9);
     font-family: roboto;
     text-align: center;
-    height: 25vh;
+    height: 30vh;
     width: 90%;
     margin-top: 5%;
     margin-left: 1%;

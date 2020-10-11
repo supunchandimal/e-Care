@@ -1,90 +1,141 @@
-
-
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Squada+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Squada+One&display=swap" rel="stylesheet">
 </head>
 
 <body class="body">
-    <div class="navibar">
-        <app-patient-home class="subnavibar"></app-patient-home>
-    </div>
-    <div class="bodyrest">
-        <div style="align-self: flex-start;width: 1000px;">
-            <app-pagemenu [parentData]="flag"></app-pagemenu>
-            
+  <div class="navibar">
+    <app-patient-home class="subnavibar"></app-patient-home>
+  </div>
+  <div class="bodyrest">
+    <div style="align-self: flex-start;width: 1000px;">
+      <app-pagemenu [parentData]="flag"></app-pagemenu>
 
-            <div class="dive">
-                <h1><u>Frequently Asked Questions</u></h1>
+
+      <div class="dive">
+        <h1><u>Frequently Asked Questions</u></h1>
+      </div>
+
+      <mat-card-content>
+
+        <div class="card">
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+              style="font-size: larger; width: 750px;text-align: left;">
+              How Do I connect e-Care Customer Service?
+              <i class="fa fa-sort-desc" aria-hidden="true" style="font-size: 27px;float:right"></i>
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" style="font-size: large;">You may contact Customer Service toll free at
+                888-632-2738.</a><br>
+              <a class="dropdown-item" style="font-size: large;"> You may also email us at customerservice@e-Care.com
+              </a>
+
             </div>
+          </div>
 
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: larger; width: 750px;text-align: left;">
-                  How Do I connect e-Care Customer Service?  
-                  <i class="fa fa-sort-desc" aria-hidden="true" style="font-size: 27px;float:right"></i>
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" style="font-size: large;" >You may contact Customer Service toll free at 888-632-2738.</a><br>
-                  <a class="dropdown-item" style="font-size: large;" > You may also email us at customerservice@e-Care.com </a>
-                  
-                </div>
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+              style="font-size: larger; width: 750px;text-align: left;">
+              Will You keep my information Confidential?
+              <i class="fa fa-sort-desc" aria-hidden="true" style="font-size: 27px;float:right"></i>
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" style="font-size: large;">Confidentiality is a respected part of e-Care's Code of
+                Ethics. We take your privacy very seriously. Laws are also in place to protect your privacy. The HIPAA
+                Privacy Rule is designed to be a minimum level of protection. Some states have even stricter laws in
+                place
+                to protect your personal health information. e-Care can share your information with your PCP in
+                accordance
+                with applicable state and federal laws.</a>
+
             </div>
+          </div>
 
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: larger; width: 750px;text-align: left;">
-                  Will You keep my information Confidential? 
-                  <i class="fa fa-sort-desc" aria-hidden="true" style="font-size: 27px;float:right"></i>
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" style="font-size: large;" >Confidentiality is a respected part of MDLIVE's Code of Ethics. We take your privacy very seriously. Laws are also in place to protect your privacy. The HIPAA Privacy Rule is designed to be a minimum level of protection. Some states have even stricter laws in place to protect your personal health information. e-Care can share your information with your PCP in accordance with applicable state and federal laws.</a>
-                  
-                </div>
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+              style="font-size: larger; width: 750px;text-align: left;">
+              What happens after my consultation with your network provider?
+              <i class="fa fa-sort-desc" aria-hidden="true" style="font-size: 27px;float:right"></i>
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" style="font-size: large;">The session is recorded in our secure database. If your
+                provider ordered medication, the prescription is sent electronically to the pharmacy of your choice. If
+                your
+                provider requested medical tests, you can select a medical testing facility.</a>
+
             </div>
+          </div>
 
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: larger; width: 750px;text-align: left;">
-                  What happens after my consultation with your network provider? 
-                  <i class="fa fa-sort-desc" aria-hidden="true" style="font-size: 27px;float:right"></i>
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" style="font-size: large;" >The session is recorded in our secure database. If your provider ordered medication, the prescription is sent electronically to the pharmacy of your choice. If your provider requested medical tests, you can select a medical testing facility.</a>
-                  
-                </div>
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+              style="font-size: larger; width: 750px;text-align: left;">
+              Will I receive a prescription after the consultation?
+              <i class="fa fa-sort-desc" aria-hidden="true" style="font-size: 27px;float:right"></i>
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" style="font-size: large;">If indicated, the consulting doctor will prescribe
+                medicine
+                or antibiotics and provide a prescription to the patient. This will be done shortly after your
+                consultation.
+                It's important to understand that e-Care is restricted from prescribing certain kinds of medicines and
+                is
+                not able to provide refills on your current prescriptions. We are not a prescription refill service. It
+                is
+                also important that you understand that you will only receive a prescription when it is legally
+                appropriate
+                and medically necessary as determined by the consulting provider. In many instances your particular
+                chief
+                complaint and condition will not warrant any prescriptions and there is no guarantee that you will
+                receive
+                a
+                prescription from the consult.</a>
+
             </div>
+          </div>
 
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: larger; width: 750px;text-align: left;">
-                  Will I receive a prescription after the consultation? 
-                  <i class="fa fa-sort-desc" aria-hidden="true" style="font-size: 27px;float:right"></i>
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" style="font-size: large;" >If indicated, the consulting doctor will prescribe medicine or antibiotics and provide a prescription to the patient. This will be done shortly after your consultation. It's important to understand that e-Care is restricted from prescribing certain kinds of medicines and is not able to provide refills on your current prescriptions. We are not a prescription refill service. It is also important that you understand that you will only receive a prescription when it is legally appropriate and medically necessary as determined by the consulting provider. In many instances your particular chief complaint and condition will not warrant any prescriptions and there is no guarantee that you will receive a prescription from the consult.</a>
-                  
-                </div>
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+              style="font-size: larger; width: 750px;text-align: left;">
+              Do your providers refer to other providers or facilities?
+              <i class="fa fa-sort-desc" aria-hidden="true" style="font-size: 27px; float:right"></i>
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" style="font-size: large;">Yes. During the consultation, our providers may
+                recommend
+                that you seek further care.</a>
+
             </div>
+          </div>
 
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: larger; width: 750px;text-align: left;">
-                  Do your providers refer to other providers or facilities?
-                  <i class="fa fa-sort-desc" aria-hidden="true" style="font-size: 27px; float:right"></i>
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" style="font-size: large;" >Yes. During the consultation, our providers may recommend that you seek further care.</a>
-                  
-                </div>
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+              style="font-size: larger; width: 750px;text-align: left;">
+              Do patient have to pay if they are told to seek an in person appointment?
+              <i class="fa fa-sort-desc" aria-hidden="true" style="font-size: 27px;float:right"></i>
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" style="font-size: large;">Patients are generally required to pay for consultation
+                services even when it is recommended they receive an in-person examination or a referral. A few insurers
+                may
+                have made special arrangements with e-Care, so there are exceptions.</a>
+
             </div>
+          </div>
 
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: larger; width: 750px;text-align: left;">
-                  Do patient have to pay if they are told to seek an in person appointment?
-                  <i class="fa fa-sort-desc" aria-hidden="true" style="font-size: 27px;float:right"></i>
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" style="font-size: large;" >Patients are generally required to pay for consultation services even when it is recommended they receive an in-person examination or a referral. A few insurers may have made special arrangements with e-Care, so there are exceptions.</a>
-                  
-                </div>
+          <div class="card bg-warning">
+            <div class="card-body text-center">
+              <p class="card-text">Some text inside the second card</p>
             </div>
-
+          </div>
         </div>
+      </mat-card-content>
     </div>
+  </div>
 </body>

@@ -1,3 +1,5 @@
+import { DefaultPatientModule } from './patientNew/layouts/default-patient/default-patient.module';
+import { DatePipe } from '@angular/common';
 import { AccountService } from './patientpages/services/account.service';
 import { ServiceService } from './patientpages/services/service.service';
 import { DefaultDocModule } from './doctor/layouts/default-doc/default-doc.module';
@@ -90,11 +92,15 @@ import { MessagesComponent } from './patientpages/messages/messages.component'
 import { HelpComponent } from './patientpages/help/help.component';
 import { AdminPaymentdetailsComponent } from './admin-paymentdetails/admin-paymentdetails.component';
 import { AdminGraphComponent } from './admin/admin-graph/admin-graph.component';
+import { AdminGraphService } from 'src/services/shared/admin-graph.service';
 import { PayhereComponent } from './patientpages/payhere/payhere.component';
 import { BookedComponent } from './patientpages/appoinments/booked/booked.component';
 
 import { DocvComponent } from './video/docv/docv.component';
 import { PrescriptionpdfComponent } from './patientpages/prescriptionpdf/prescriptionpdf.component';
+import { PaymentSuccessComponent } from './patientpages/payment-success/payment-success.component';
+import { PaymentFailedComponent } from './patientpages/payment-failed/payment-failed.component';
+
 
 import { NgxQRCodeModule } from 'ngx-qrcode2';
 
@@ -150,10 +156,10 @@ import { NgxQRCodeModule } from 'ngx-qrcode2';
     ViewDoctorComponent,
     PayhereComponent,
     BookedComponent,
-   
     DocvComponent,
-   
     PrescriptionpdfComponent,
+    PaymentSuccessComponent,
+    PaymentFailedComponent,
 
   ],
   imports: [
@@ -165,6 +171,7 @@ import { NgxQRCodeModule } from 'ngx-qrcode2';
     AngularFireStorageModule, // storage
     FormsModule, BrowserAnimationsModule,
     DefaultDocModule,
+    DefaultPatientModule,
     MatProgressSpinnerModule,
     MatButtonModule,
     MatRadioModule,
@@ -192,11 +199,13 @@ import { NgxQRCodeModule } from 'ngx-qrcode2';
     ManageDoctorService,
     ManagePatientService,
     PatientDeleteDialogService,
+    AdminGraphService,
     AccountService,
     PpicService,
     MatDatepickerModule,
     ConditionsService,
-    OpoService
+    OpoService,
+    DatePipe
 
     
   ],

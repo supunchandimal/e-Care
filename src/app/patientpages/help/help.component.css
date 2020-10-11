@@ -33,7 +33,7 @@
 }
 
 .dropdown{
-    margin-left: 250px;
+    margin-left: 50px;
     margin-bottom: 25px;
 }
 
@@ -51,9 +51,12 @@
 }
 .dropdown-item{
     margin-left: 30px;
-    margin-right: 20px;
+    margin-right: 30px;
 }
 
 .dropdown-menu{
-    margin-right: 20px;
+    margin-right: 30px;
+    margin-left: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
 }

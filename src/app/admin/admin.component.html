@@ -6,28 +6,16 @@
     </mat-toolbar-row> 
 </mat-toolbar>
 
-<div id="img"> 
+<div class="img"> 
      
     <div id="sidebar">
- 
-        <!-- <div class="toggle-btn"  (click)="toggleCollapse()" >
-            <span></span>
-            <span></span>
-            <span></span>
-        </div> -->
-    <div *ngIf="isCollapsed">
         <ul>
-            <!-- <li  href="" routerLink="/manage-doctor" routerLinkActive="active">Manage Doctors</li> -->
-
             <li>
                 <a routerLink="../manage-doctor"><i class="material-icons">people_outline</i>Manage Doctors</a>
             </li>
             <li>
                 <a routerLink="../manage-patient"><i class="material-icons">person_pin</i>Manage Patients</a>
             </li> 
-            <!-- <li>
-                <a href=""><i class="material-icons">comment</i>Notifications</a>
-            </li> -->
             <li>
                 <a href="" routerLink="../adminfeedbacks" routerLinkActive="active" style="padding-right: 25px;"><i class="material-icons" >comment</i>Feedbacks</a>
             </li>
@@ -41,7 +29,22 @@
         </ul>
     </div>
     <!-- <label> <a routerLink="../admin-graph" >Click to view doctors</a></label> -->
-    </div>
-
-    
+    <div class="text_block">
+        <br>
+        <h3>eCare the WorldWide telemedicine site</h3>
+        <p>
+        Healthcare should be simple,fast and uncomplicated.
+        E-care makes it easy to visit a doctor in minutes 
+        through our mobile app,online and by phone. Get access 
+        to quality healthcare without ever leaving your home,
+        your job or whereever you. Find out how easy it is 
+        to receive affordable,quality care without traveling 
+        to the doctor's office. 
+        <br>
+        <br>
+        <br>
+        <button  class="button1"><b><a href="" routerLink="../admin-graph" routerLinkActive="active">Learn More</a></b></button>
+      </p>
+      </div>
+        
 </div> 

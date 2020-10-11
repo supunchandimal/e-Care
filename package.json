@@ -25,6 +25,7 @@
     "@angular/router": "~9.1.4",
     "@techiediaries/ngx-qrcode": "^9.1.0",
     "agora-rtc-sdk": "latest",
+    "chart.js": "^2.9.3",
     "firebase": "^7.15.4",
     "font-awesome": "^4.7.0",
     "highcharts": "^8.1.2",
