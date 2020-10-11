@@ -27,9 +27,18 @@
 
             </div>
             <div class="announcement_con2 ">
-                <h1>sdsdsa</h1>
+                <h1 id="previosfilesheader">Previous files</h1>
                 <br>
-                <ul *ngFor="let files of allfiles"><a href="{{files.downloadURL}}">click</a></ul>
+                <ul *ngFor="let files of allfiles">
+                    <div style="height: 200px; width: 80%; background-color: rgb(217, 239, 247); border-radius: 20px; margin-left: 10%;"> 
+                
+                    
+                    <img src="{{files.downloadURL}}" alt="" width="150px" height="100px" style=" margin-left: 40%; margin-top: 5%;;" alt="image is unavailble  please click here
+                    to view on a tab">
+                    <br>
+                    <a href="{{files.downloadURL}}" style="margin-left: 40%;" target="_blank" rel="noopener noreferrer">{{files.date}}</a>
+                    </div>
+                </ul>
             </div>
 
         </div>

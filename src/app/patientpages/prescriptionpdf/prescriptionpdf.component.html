@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row">
+  
+
+      <div  id="htmlData" style="border:solid 6px blue ; width:595px; height: 840px;" #htmlData>
+        
+       <h1 style="margin-left: 45%;">E care</h1>
+            <div style="margin-left: 10%;">
+              issued date: <br>
+              channel id: <br>
+             patient Name:<br>
+              doctor Name:<br>
+            </div>
+           
+         
+          <hr>
+<!-- QR CODE PART STARTS-->
+        <div style="margin-top: 450px;">
+          <ngx-qrcode 
+          [elementType]="elementType" 
+          [value] = "value"
+          cssClass = "aclass"
+          errorCorrectionLevel = "L">
+         </ngx-qrcode>
+        </div>
+        scan qr code check validity of this pdf
+      <!-- QR CODE PART ENDS -->
+    </div>
+    <div class="col-md-5 text-right">
+      <button class="btn btn-success btn-block" (click)="openPDF()">Open PDF</button>
+      <button class="btn btn-danger btn-block" (click)="downloadPDF()">Download PDF</button>
+    </div>
+  </div>
