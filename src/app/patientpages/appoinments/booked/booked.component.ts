@@ -66,8 +66,9 @@ export class BookedComponent implements OnInit {
   }
   
   joinVideo(channelID){
-    console.log(channelID);
+    console.log('channelID - ',channelID);
     localStorage.setItem("patient_appointmentID",channelID);
+    this.router.navigate(['/video']);
   }
 
 }

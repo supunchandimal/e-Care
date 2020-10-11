@@ -12,8 +12,6 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    
-    
 }
 
 .btn-holder {
@@ -23,11 +21,9 @@
     right: 210px;
     border: none;
     opacity: 1;
-
 }
 
 .btn-group button {
-    background-color: #2e9cca;
     /* Green background */
     border: none;
     /* Green border */
