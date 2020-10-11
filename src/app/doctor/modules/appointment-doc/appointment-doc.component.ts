@@ -1,26 +1,19 @@
+import { Router } from '@angular/router';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { DatePipe } from '@angular/common';
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
+import { AppointmentScheduleService } from './../../services/appointment-schedule.service';
 
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
+
+
+
+export interface appointmentDetails {
+  date: string,
+  docName: string,
+  time: string,
 }
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C'},
-  {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
-  {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
-  {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
-  {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
-];
 
 
 @Component({
@@ -28,15 +21,46 @@ const ELEMENT_DATA: PeriodicElement[] = [
   templateUrl: './appointment-doc.component.html',
   styleUrls: ['./appointment-doc.component.css']
 })
+
 export class AppointmentDocComponent implements OnInit {
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = new MatTableDataSource(ELEMENT_DATA);
 
   @ViewChild(MatSort, {static: true}) sort: MatSort;
+  selectedDate: any;
+  scheduleData: any;
+  currentUserID: string;
 
+  constructor(
+    private datePipe: DatePipe,
+    public AppointmentScheduleService: AppointmentScheduleService,
+    private db: AngularFirestore,
+    private router: Router
+  ){
+    this.currentUserID = localStorage.getItem("currentUserID");
+  }
   
-  ngOnInit() {
-    this.dataSource.sort = this.sort;
+  ngOnInit() { }
+
+  dateChange(){
+    console.log("selected date - ",this.selectedDate);
+    var date = this.datePipe.transform(this.selectedDate,"yyyy/MM/dd");
+    this.db.collection('Appoinments', ref=>ref.where("docid","==",this.currentUserID).where("date","==",date).where('status','==','Active').orderBy('time')).valueChanges()
+    .subscribe(output => {
+      this.scheduleData = output;
+      // this.scheduleData.array.forEach(element => {
+      //   console.log('element - ',element.payload.doc.data())
+      // });
+      console.log("updated scheduleDat - ",this.scheduleData);
+    })
+    // this.AppointmentScheduleService.getSchedule(date).subscribe(data => {
+    //   this.scheduleData = data
+    //   console.log("updated scheduleDat - ",this.scheduleData)
+    // })
+  }
+
+  joinVideo(channelID){
+    console.log('channelID - ',channelID);
+    localStorage.setItem('selectedChannelID_doctor',channelID);
+    this.router.navigate(['/docvideo']);
   }
 
 }

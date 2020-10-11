@@ -1,3 +1,5 @@
+import { DefaultPatientModule } from './patientNew/layouts/default-patient/default-patient.module';
+import { DatePipe } from '@angular/common';
 import { AccountService } from './patientpages/services/account.service';
 import { ServiceService } from './patientpages/services/service.service';
 import { DefaultDocModule } from './doctor/layouts/default-doc/default-doc.module';
@@ -90,6 +92,7 @@ import { MessagesComponent } from './patientpages/messages/messages.component'
 import { HelpComponent } from './patientpages/help/help.component';
 import { AdminPaymentdetailsComponent } from './admin-paymentdetails/admin-paymentdetails.component';
 import { AdminGraphComponent } from './admin/admin-graph/admin-graph.component';
+import { AdminGraphService } from 'src/services/shared/admin-graph.service';
 import { PayhereComponent } from './patientpages/payhere/payhere.component';
 import { BookedComponent } from './patientpages/appoinments/booked/booked.component';
 
@@ -169,6 +172,7 @@ import { DatePipe } from '@angular/common';
     AngularFireStorageModule, // storage
     FormsModule, BrowserAnimationsModule,
     DefaultDocModule,
+    DefaultPatientModule,
     MatProgressSpinnerModule,
     MatButtonModule,
     MatRadioModule,
@@ -194,12 +198,19 @@ import { DatePipe } from '@angular/common';
     ManageDoctorService,
     ManagePatientService,
     PatientDeleteDialogService,
+    AdminGraphService,
     AccountService,
     PpicService,
     MatDatepickerModule,
     ConditionsService,
     OpoService,
+<<<<<<< HEAD
     DatePipe    
+=======
+    DatePipe
+
+    
+>>>>>>> b6e3c3d0968bec5c3c5abba7f9e7bb257be0b2a8
   ],
   bootstrap: [AppComponent]
 })

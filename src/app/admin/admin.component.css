@@ -5,7 +5,8 @@
 
 .mat-toolbar.mat-primary {
         position: fixed;
-        background: #29648a;
+        /* background: #29648a; */
+        background: #3f51b5;
         color: #fff;
 }
     
@@ -28,8 +29,7 @@ a:hover {
 }
     
     
-
-#img{
+.img{
         width: 100%;
         height: 100vh;
         background-image: url('/assets/images/wallpaper1.jpg');
@@ -37,13 +37,47 @@ a:hover {
         /* filter: opacity(0.7); */
 }
 
+
+.img .text_block{
+        position: absolute;
+        top: 23%;
+        left: 36%;
+        width: 40%;
+        
+        background: rgb(0, 0, 0); /* Fallback color */
+        background: rgba(0, 0, 0, 0.7); /* Black background with 0.5 opacity */
+        color: white; /* Grey text */
+        padding-left: 5%;
+        padding-right: 5%;
+        
+        
+      
+}
+.img .text_block h3{
+        font-size: 25px;
+}
+ 
+.button1{
+        padding: 8px 10px;
+        background-color:black;
+        margin-left: 30%;
+        border-radius: 8px;
+}
+    
+.button1 a{
+        text-decoration:  none;
+}
+    
+
+
 #sidebar{
         display: block;
         padding-top: 4.3%;
         width:20%;
         height: 100%;
         /* left: -20%; */
-        background-color: #25274D;
+        /* background-color: #25274D; */
+        background-color: rgb(47, 49, 97);
         align-items: left;
     }
 

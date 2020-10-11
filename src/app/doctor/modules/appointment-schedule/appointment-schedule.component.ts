@@ -1,6 +1,10 @@
+import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFireAuth } from '@angular/fire/auth';
 import { Component, OnInit,SimpleChanges } from '@angular/core';
 import { AppointmentScheduleService } from './../../services/appointment-schedule.service';
 import { convertActionBinding } from '@angular/compiler/src/compiler_util/expression_converter';
+import { DatePipe } from '@angular/common';
+import * as firebase from 'firebase';
 
 interface Food {
   value: string;
@@ -79,56 +83,145 @@ export class AppointmentScheduleComponent implements OnInit {
 
   TimeFrom : number;
   TimeTo : number;
+  currentUserID: string;
+  currentUserEmail: string;
+  docData: any;
+  scheduleData: any;
 
-  // selectedValue: string;
-  // selectedCar: string;
-
-  // foods: Food[] = [
-  //   {value: 'steak-0', viewValue: 'Steak'},
-  //   {value: 'pizza-1', viewValue: 'Pizza'},
-  //   {value: 'tacos-2', viewValue: 'Tacos'}
-  // ];
-
-  // cars: Car[] = [
-  //   {value: 'volvo', viewValue: 'Volvo'},
-  //   {value: 'saab', viewValue: 'Saab'},
-  //   {value: 'mercedes', viewValue: 'Mercedes'}
-  // ];
-
-
-  constructor(public AppointmentScheduleService : AppointmentScheduleService) { 
+  constructor(
+    public AppointmentScheduleService : AppointmentScheduleService,
+    private datePipe:DatePipe,
+    private afAuth:AngularFireAuth,
+    private db:AngularFirestore
+    ) { 
     const currentYear = new Date().getFullYear();
     this.minDate = new Date(this.today);
     var temp=new Date();
     temp.setDate(temp.getDate()+7);
     this.maxDate = temp;
+    this.currentUserID = localStorage.getItem('currentUserID');
+    this.currentUserEmail = localStorage.getItem('currentUserEmail');
+    console.log('user - ',this.currentUserEmail);
   
   }
 
 
     ngOnInit(): void {
-      this.Test();
+      this.getSchedule();
+      this.db.collection('doctors',ref => ref.where('email','==',this.currentUserEmail)).valueChanges()
+      .subscribe(output => {
+        this.docData = output[0];
+        console.log('docData - ',this.docData)
+      })
+      // this.Test();
+    }
+
+    dateChange(){
+      console.log("selected date - ",this.selectedDate);
+      var date = this.datePipe.transform(this.selectedDate,"yyyy/MM/dd");
+      this.AppointmentScheduleService.getSchedule(date).subscribe(data => {
+        this.scheduleData = data
+        console.log("updated scheduleDat - ",this.scheduleData)
+      })
     }
 
     AddTimeSlot(){
-      // alert(this.TimeFrom);
-      // alert(this.TimeTo);
-      let Record = {};
-      Record['appointment'] = {};
-      Record['appointment']['TimeFrom'] = this.TimeFrom;
-      Record['appointment']['TimeTo'] = this.TimeTo;
-      Record['date'] = this.selectedDate;
-      Record['doctorID'] = 1;
+
+      // console.log(this.selectedDate.);
+      var numSlots = (this.TimeTo - this.TimeFrom)*3;
+      var i = 0;
+      var slot:number;
+      var currentMins = 0;
+      var hour:number = this.TimeFrom;
+      var time:string
+      var array = [];
+      var documentID;
+      var hourString: string;
+
+
+      for(i=0; i < numSlots; i++){
+
+        // hour = hour + (i3);
+        if(i%3 == 0 && i != 0){
+          hour++;
+          // console.log('hour - ',hour)
+        }
+        // console.log('hour - ',i/3);
+        currentMins = currentMins % 60;
+        if(hour < 10){
+          hourString = 0+hour.toString();
+        }
+        else{
+          hourString = hour.toString();
+        }
+        if(currentMins == 0){
+          time = hourString+".00";
+          currentMins = currentMins + 20;
+        }
+
+        else if(currentMins == 20){
+          time = hourString+".20";
+          currentMins = currentMins + 20;
+        }
+        else if(currentMins == 40){
+          time = hourString+".40";
+          currentMins = currentMins + 20;
+        }
+        documentID = this.db.createId();
+        var dataObj = {
+          date: this.datePipe.transform(this.selectedDate,"yyyy/MM/dd"),
+          docName: this.docData.fullName,
+          docid: this.currentUserID,
+          nic: this.docData.nic,
+          status: 'free',
+          time: time,
+          id: documentID
+        }
+
+        array.push(dataObj)
+
+        this.db.collection('freetimes').doc(documentID).set(dataObj);
+
+        // console.log(time)
+      }
+      console.log('array - ',array)
+
+
+    }
+
+    deleteFreeSlot(id){
+      if(confirm("Are you sure you want to delete?")){
+        this.db.collection('freetimes').doc(id).delete()
+        .then(()=>{
+          console.log('doc deleted!')
+        })
+      }      
+    }
+
+    createFreetimes(){
+      // this.AppointmentScheduleService.
+    }
+    
+
+    // AddTimeSlot(){
+    //   // alert(this.TimeFrom);
+    //   // alert(this.TimeTo);
+    //   let Record = {};
+    //   Record['appointment'] = {};
+    //   Record['appointment']['TimeFrom'] = this.TimeFrom;
+    //   Record['appointment']['TimeTo'] = this.TimeTo;
+    //   Record['date'] = this.selectedDate;
+    //   Record['doctorID'] = 1;
 
       
-        this.AppointmentScheduleService.add(Record).then(data=>{
-          console.log(data)
-        }).catch(er=>{
-          console.log(er);
-        });
+    //     this.AppointmentScheduleService.add(Record).then(data=>{
+    //       console.log(data)
+    //     }).catch(er=>{
+    //       console.log(er);
+    //     });
      
       
-    }
+    // }
 
 
 
@@ -266,6 +359,47 @@ export class AppointmentScheduleComponent implements OnInit {
     }
     
   }
+
+
+  getSchedule(){
+    console.log(this.selectedDate)
+    var date = this.datePipe.transform(this.selectedDate,"yyyy/MM/dd");
+    this.AppointmentScheduleService.getSchedule(date).subscribe(data => {
+      this.scheduleData = data;
+      // console.log('data - ',dataaa)
+      if(data.length==0){
+        this.schedule =[ {
+            isedit: false,
+            t0700 : false,
+            t0720 : false,
+            
+            scheduleDate: this.selectedDate,
+            id:null,
+            
+  
+          }];
+
+
+      }else{
+
+        this.schedule = data.map(e => {
+          return {
+            TimeFrom : e.payload.doc.data()['doctorID'],
+            // TimeFrom : e.payload.doc.data()['appointment']['TimeFrom'],
+            // TimeTo : e.payload.doc.data()['appointment']['TimeTo'],
+            // scheduleDate: new Date(e.payload.doc.data()['date'].seconds*1000),
+            id: e.payload.doc.id,
+          };
+        })
+      }
+      console.log(this.schedule);
+      
+      console.log("heloo1");
+      
+
+    });
+  }
+
   Test(){
     console.log(this.selectedDate)
     this.AppointmentScheduleService.getSchedule(this.selectedDate).subscribe(data => {
