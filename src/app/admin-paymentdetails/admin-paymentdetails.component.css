@@ -97,3 +97,57 @@ a:hover {
   margin-left: 380px;
   
 }
+
+
+.wrapper{
+    position: absolute;
+    display: flex;
+    margin-right: auto; 
+    margin-left:  auto; 
+    max-width: 960px; 
+    padding-top: 50px;
+    padding-right: 10px;
+    padding-left:  50px; 
+    color: black;
+    left: 50%;
+    transform: translate(100%, 0);
+     
+}
+
+table{
+    width: 800px;
+    table-layout: initial;
+    
+    /* overflow-y:scroll; */
+    /* border-spacing: 40px ; */
+}
+
+th{
+    text-align: left;
+}
+
+table, th, td {
+    border: 1px solid #000;
+    border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  color: black;
+}
+
+caption{
+    text-align: center;
+    font-family: Verdana;
+    font-weight: bold;
+    color: black;
+}
+
+tr:nth-child(even){
+    background-color: #fff;
+}
+
+tr:nth-child(odd){
+    background-color: #ddd;
+}
+

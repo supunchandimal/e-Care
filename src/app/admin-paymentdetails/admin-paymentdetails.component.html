@@ -17,46 +17,60 @@
             <li><a routerLink="../admin-announcement"><i class="material-icons">announcement</i>Announcements</a></li>
         </ul>
     </div>
-
+<div id="content">
     <div class="tbl_container">     
         <table class="table table-striped table-bordered">
           <thead>
             <tr>
-              <th>DocID</th>
-              <th>App 1</th>
-              <th>App 2</th>
-              <th>App 3</th>
-              <!-- <th>{{AppointCount}}</th> -->
-             
+                <th>Channel ID</th>
+                <th>Doctor Name</th>
+                <th>Patient Name</th>
+                <th>Price</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Doc 1</td>
-              <td>900</td>
-              <td>1800</td>
-              <td>2700</td>
-             
-              <!-- <td>{{count}}</td> -->
-            </tr>
-            <tr>
-                <td>Doc 2</td>
-                <td>0</td>
-                <td>900</td>
-                <td>1800</td>
-                <!-- <td>{{Patientcount}}</td> -->
-            </tr>
-            <tr>
-                <td>Doc 3</td>
-                <td>900</td>
-                <td>900</td>
-                <td>1800</td>
-                <!-- <td>{{Usercount}}</td> -->
+            <tr *ngFor="let item of price">
+                <td>{{item.channelID}}</td>
+                <td>{{item.docName}}</td>
+                <td>{{item.patientname}}</td>
+                <td>LKR.{{item.price}}</td>
+                <!-- <td>Gender</td>
+                <td>Email</td>
+                <td>nic</td>
+                <td>city</td> -->
             </tr>
           </tbody>
         </table>
+      </div>
       </div>
 
       <div class="graph_wrapper">
         <canvas id="myChart" width="800" height="300"></canvas>
     </div>
+
+<!-- 
+    
+<div class="wrapper">    
+   
+    <div class="table-wrapper-scroll-y my-custom-scrollbar">
+            <table>
+                <caption>Price list</caption>
+                
+                <tr>
+                    <th>docID</th>
+                    <th>channelID</th>
+                    <th>docName</th>
+                    <th>price</th>
+                </tr>
+              
+                <tr *ngFor="let item of price">
+                    <td>{{item.docid}}</td>
+                    <td>{{item.channelID}}</td>
+                    <td>{{item.docName}}</td>
+                    <td>{{item.price}}</td>
+                   
+                </tr>
+          
+            </table>    
+    </div>
+    </div> -->
