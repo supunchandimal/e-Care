@@ -1,0 +1,68 @@
+End User License Agreement for eCare 
+Please read carefully before using this site. This End User License Agreement is a legal 
+agreement between you and Storage Appliance Co-operation that governs your use of any 
+software product, installed on or made available by it. 
+INTRODUCTION 
+This End User License Agreement sets forth the provision under which eCare telemedicine site 
+and/or its corporate affiliates is willing to grant to you , a single business entity, certain licenses 
+to client software and server software consisting of such software as eCare or subsequently 
+provides. client software is eCare provided software that operates on an eCare Badge or other 
+client device supported by eCare. Server software is eCare provided software that operates on 
+server hardware platforms at your site, including both standard and optional components. Hosted 
+service means the provision of and access to eCare telemedicine website and related services 
+either at your site and/or via secure electronic access over the internet provided to you by eCare 
+and/or its designee. 
+USES AND RESTRICTIONS 
+RESTRICTIONS ON USE-You shall use the Application strictly abiding with the rules of the 
+agreement and shall not 
+(i)decompile,reverse engineer,disassemble, attempt to derive the source code of ,or decrypt the 
+Application;(ii)make any modification,adaptation,improvement,enhancement,translation or 
+derivative work from the Application;(iii)violate any applicable laws,rules or regulations in 
+connection with your access or use of the application;(iv)remove,alter or obscure any proprietary 
+notice of company or its affiliates,partners,suppliers or the licensors of the Application;(v)Using 
+the application for any revenue generating purpose other than what the application is intended to 
+do(vi)Distribute the the application in multiple devices(vi)make the application available over a 
+network or other environmental permitting access or use by multiple users at the same 
+time;(vii)Duplicating the application for any other competitive or non-competitive application or 
+duplicating any individual service provided by the application.(viii)Use the application to send 
+automated queries to any website or to send any unsolicited commercial e-mail;2 
+PAYMENTS 
+eCare, we are developing a web application for e-channeling by using video conferencing and at 
+the end of the meeting there is a valid prescription. We are not charging any cost when the users 
+use this website for searching some details about the doctors or the services which are provided 
+by eCare. e-Care only charges only when making an appointment. 
+CONSENT OF USER 
+IMPORTANT - PLEASE READ CAREFULLY: This License agreement is a legal agreement 
+between you and e-Care and its affiliates.Form the agreement your use of the software and any 
+third party software that is connected with the software is governed.e-Care agrees to license the 
+software to you (personally and/or on behalf of your employer)only if you accept all the terms 
+contained in the agreement,By installing,using,copying or distributing all or any portion of the 
+software , you accept and agree to be bound by all of the terms and conditions of this 
+agreement.IF YOU DO NOT AGREE PLEASE DO NOT DOWNLOAD OR USE THE 
+SOFTWARE. 
+Your use of the software is also subject to your agreement with us concerning your use of the 
+https://e-care-96a24.web.app/home (site)and the services provided through the site.Please also 
+see the e-Care Privacy policy embedded in the site. 
+TERMINATION 
+Termination- eCare may in its sole and absolute discretion,at any time and for any or no 
+reason,suspend or terminate this License and the rights afforded to you hereunder with or 
+without prior notice.Furthermore, if you fail to comply with ant terms and conditions of this 
+License,then this License and any right afforded to you hereunder shall terminate 
+automatically,without any notice or other action by company.Upon the termination of this 
+license,you shall cease all use of the Application and uninstall the application.3 
+CONFIDENTIALITY 
+You acknowledge that the Software and the documentation are appropriate to eCare. You further 
+acknowledge and agree that, as between you and e-Care, e-Care and its third party licensors own 
+and shall continue to own all right own and shall continue to own all right, title and interest in 
+and to the Software and Documentation, including associated intellectual property rights under 
+copyright, trade secret, patent or trademark laws. 
+e-Care we mostly interact with the patients’ sensitive data of their health. We keep that sensitive 
+data after conversion to be encrypted. As well as all the passwords are to be hashed. 
+In our system there is an agreement to the doctors to view the previous health records of the 
+patient only in the video conference. And also the doctor accepts an agreement not to generate 
+any copies of the patients’ health records. Other outside world except the report owned patient 
+will not be able to view the health records. 
+Any and all trademarks or service marks that e-Care uses in connection with the software or with 
+services rendered by e-Care are marks owned by e-Care. This Agreement does not grant you any 
+right, license or interest in such marks and you shall not assert any right, license or interest in 
+such marks or any words or designs that are confusingly similar to such marks.
