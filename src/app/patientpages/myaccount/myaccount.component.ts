@@ -34,7 +34,7 @@ export class MyaccountComponent implements OnInit {
   }
   
   ngOnInit(): void {
-    console.log("hi")
+   // console.log("hi")
     this.auth.getUserState()
       .subscribe(user =>{
         this.user = user;
