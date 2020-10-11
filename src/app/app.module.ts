@@ -99,7 +99,7 @@ import { BookedComponent } from './patientpages/appoinments/booked/booked.compon
 import { DocvComponent } from './video/docv/docv.component';
 import { PaymentSuccessComponent } from './patientpages/payment-success/payment-success.component';
 import { PaymentFailedComponent } from './patientpages/payment-failed/payment-failed.component';
-import { DatePipe } from '@angular/common';
+
 
 
 
@@ -204,13 +204,9 @@ import { DatePipe } from '@angular/common';
     MatDatepickerModule,
     ConditionsService,
     OpoService,
-<<<<<<< HEAD
-    DatePipe    
-=======
     DatePipe
 
     
->>>>>>> b6e3c3d0968bec5c3c5abba7f9e7bb257be0b2a8
   ],
   bootstrap: [AppComponent]
 })
