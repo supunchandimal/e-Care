@@ -100,12 +100,23 @@
           <input type="password" matInput > 
         </mat-form-field></td>
       </tr></table></h2>
-    <button type="button" class="btn btn-primary btn-md">Change Password</button>
+    <button type="button" (click)="passwordreply()" class="btn btn-primary btn-md">Change Password</button>
+    <div class="form-group">
+      <br>
+      <h4><b>{{reply}}</b></h4>
+    </div>
   </mat-card>
 
   <mat-card fxFlex="50">
     <h2>Change Profile Picture</h2><br>
-   
+    <progress max="100" [value]="(uploadProgress | async)"></progress>
+    <form action="/action_page.php">
+      <input type="file" id="myFile" name="filename" (change)="detectFiles($event)"
+        accept=".png,.jpg,.jpeg" />
+    </form>
+    <div class="row">
+      <button id="upload" type="submit" class="btn btn-primary btn-md" data-dismiss="modal" (click)="upload()">Submit</button>
+    </div>
     
   </mat-card>
   </div>

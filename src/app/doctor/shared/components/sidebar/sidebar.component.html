@@ -1,10 +1,12 @@
 <mat-nav-list>
     <div class="profile-card">
-        <div class="header"  *ngFor ="let item of doctor">
-            <h2><p>{{item.doctorFirstName}} {{item.doctorLastName}}</p></h2>
-            <h4>{{item.doctorEmail}}</h4>
+        <div class="header">
+            <h2><p>{{doctor?.firstname}}</p></h2>
+            <h4>{{doctor?.email}}</h4>
         </div>
-        <div class="img-circular"></div>
+        <!-- <div class="img-circular"></div> -->
+        <img id="imgcss" src= "{{doctor?.proPicURL}}" alt="Profile Picture">
+        <!-- <div class="rounded-circle" [src]="doctor.proPicURL"></div> -->
     </div>
 
     <mat-divider></mat-divider>
