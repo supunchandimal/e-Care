@@ -1,323 +1,274 @@
-<head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Squada+One&display=swap" rel="stylesheet">
-</head>
+<div style="align-self: flex-start;width: 82vw;">
+    <app-pagemenu [parentData]="flag"></app-pagemenu>
+    <div class="submenu">
 
-<body class="body">
-    <div class="navibar">
-        <app-patient-home class="subnavibar"></app-patient-home>
-    </div>
-    <div class="bodyrest">
-        <div style="align-self: flex-start;width: 82vw;">
-            <app-pagemenu [parentData]="flag"></app-pagemenu>
-            <div class="submenu">
-
-                <div class="photoholder">
-                    <img src="{{ppic.downloadURL}}" alt="" width="100%" height="100%" style="border-radius: 50%;">
-                    <div class="profilename">
-                        <h1 *ngIf="user">{{ user?.displayName }}</h1>
-                    </div>
-                </div>
-
-                <div class="btn-holder">
-                    <div class="btn-group">
-                        <button *ngIf="mark==2" class="btn" (click)='onClickhealth()'>
-                            MY HEALTH HISTORY
-                        </button>
-                        <button *ngIf="mark==1" class="btn" (click)='onClickhealth()'
-                            style="background-color: #2e9cca;">MY HEALTH HISTORY</button>
-                        <button *ngIf="mark==3" class="btn" (click)='onClickhealth()'>MY HEALTH HISTORY</button>
-
-                        <button *ngIf="mark==1" class="btn" (click)='onClickbehavirol()'>MY BEHAVIROL HISTORY</button>
-                        <button *ngIf="mark==2" class="btn" (click)='onClickbehavirol()'
-                            style="background-color: #2e9cca;">MY BEHAVIROL History</button>
-                        <button *ngIf="mark==3" class="btn" (click)='onClickbehavirol()'>MY BEHAVIROL History</button>
-
-                        <button *ngIf="mark==1" class="btn" (click)='onClickfamily()'>MY FAMILY HISTORY</button>
-                        <button *ngIf="mark==2" class="btn" (click)='onClickfamily()'>MY FAMILY HISTORY</button>
-                        <button *ngIf="mark==3" class="btn" (click)='onClickfamily()'
-                            style="background-color: #2e9cca;">MY FAMILY HISTORY</button>
-                    </div>
-                </div>
+        <div class="photoholder">
+            <img src="{{ppic?.proPicURL}}" alt="" width="100%" height="100%" style="border-radius: 50%;">
+            <div class="profilename">
+                <h1 *ngIf="user">{{ user?.displayName }}</h1>
             </div>
-            <div *ngIf="mark==1" style="margin-left: 1%;">
-                <div class="dive">
-                    <h2>Do you have any allergies or drug sensivities?</h2>
-                </div>
-                <div class="btn-holder2">
-                    <div class="btn-group2" *ngIf="yes.allergies==='No'">
-                        <button class="yes-btn" (click)=" onClickYesAlleg()">yes</button><button class="no-btn"
-                            (click)=" onClickNoAlleg()" style="background-color: #5680E9;">no</button>
-                    </div>
-                    <div class="btn-group2" *ngIf="yes.allergies==='yes'">
-                        <button class="yes-btn" (click)=" onClickYesAlleg()"
-                            style="background-color: #5680E9;">yes</button><button class="no-btn"
-                            (click)=" onClickNoAlleg()">no</button>
-                    </div>
-                    <div class="btn-group2" *ngIf="yes.allergies===''">
-                        <button class="yes-btn" (click)=" onClickYesAlleg()">yes</button><button class="no-btn"
-                            (click)=" onClickNoAlleg()">no</button>
-                    </div>
-                </div>
-                <div class="card" style="border-bottom:1px solid black ;margin-top: 2%;" *ngIf="yes.allergies==='yes'">
-                    <div class="row">
-                        <div class="columnl">
-                            <div class="card-content" style="margin-top: 5%;">
-                                <form (ngSubmit)="onSubmit()" class="col s6">
-                                    <div class="row" style="width: 500px;">
-                                        <div class="input-field col s6">
-                                            <label style="margin-right: 10px;">Allergie </label>
-                                            <input type="text" placeholder="Add Allergie" [(ngModel)]="items.name"
-                                                name="name" style="margin-left: 30px;" style="color: black;">
-                                        </div>
-                                        <div class="input-field">
-                                            <label style="margin-top: 25px;">Reaction </label>
-                                            <input type="text" placeholder="Add Reaction" [(ngModel)]="items.reaction"
-                                                name="description"
-                                                style="margin-left: 6px;margin-top: 25px; color: black;">
-                                        </div>
-                                        <div class="input-field">
-                                            <label style="margin-top: 25px;">Source </label>
-                                            <input type="text" placeholder="Add Source" [(ngModel)]="items.source"
-                                                name="source" style="margin-left: 18px;margin-top: 25px; color: black;">
-                                        </div>
-                                        <input type="submit" value="ADD" class="btn"
-                                            style="margin-top: 2%;margin-bottom: 2%;">
-                                        <button class="btn"
-                                            style="margin-top: 2%;margin-left: 10%;margin-bottom: 2%;">VIEW ALL</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="columnr">
-                            <table id="customers">
-                                <tr>
-                                    <th> Allergies</th>
-                                </tr>
-                                <tr *ngFor="let alleg of als" class="collection">
-                                    <td>{{alleg.name}}</td>
+        </div>
 
-                                </tr>
+        <div class="btn-holder">
+            <div class="btn-group">
+                <button *ngIf="mark==2" class="btn" (click)='onClickhealth()'><b>
+                        MY HEALTH HISTORY</b>
+                </button>
+                <button *ngIf="mark==1" class="btn" (click)='onClickhealth()' style="background-color: #2e9cca;"><b>MY
+                        HEALTH HISTORY</b></button>
+                <button *ngIf="mark==3" class="btn" (click)='onClickhealth()'><b>MY HEALTH HISTORY</b></button>
 
-                            </table>
-                        </div>
-                    </div>
-                </div>
+                <button *ngIf="mark==1" class="btn" (click)='onClickbehavirol()'><b>MY BEHAVIROL HISTORY</b></button>
+                <button *ngIf="mark==2" class="btn" (click)='onClickbehavirol()' style="background-color: #2e9cca;"><b>MY BEHAVIROL History</b></button>
+                <button *ngIf="mark==3" class="btn" (click)='onClickbehavirol()'><b>MY BEHAVIROL History</b></button>
 
-                <div class="dive">
-                    <h2>Do you have any health conditions?</h2>
-                </div>
-                <div class="btn-holder2">
-                    <div class="btn-group2 button" *ngIf="yes.conditions==='yes'">
-                        <button class="yes-btn" (click)=" onClickYesCond()"
-                            style="background-color: #5680E9;">yes</button><button class="no-btn"
-                            (click)=" onClickNoCond()">no</button>
-                    </div>
-                    <div class="btn-group2 button" *ngIf="yes.conditions==='No'">
-                        <button class="yes-btn" (click)=" onClickYesCond()">yes</button><button class="no-btn"
-                            (click)=" onClickNoCond()" style="background-color: #5680E9;">no</button>
-                    </div>
-                    <div class="btn-group2 button" *ngIf="yes.conditions===''">
-                        <button class="yes-btn" (click)=" onClickYesCond()">yes</button><button class="no-btn"
-                            (click)=" onClickNoCond()">no</button>
-                    </div>
-                </div>
-                <div class="card" style="border-bottom:1px solid black ;margin-top: 2%;" *ngIf="yes.conditions==='yes'">
-                    <div class="row">
-                        <div class="columnl">
-                            <div class="card-content">
-                                <form (ngSubmit)="onSubmitC()" class="col s6">
-                                    <div class="row" style="width: 500px;">
-                                        <div class="input-field">
-                                            <label>Condition</label>
-                                            <input type="text" placeholder="condition eg-Diabities"
-                                                [(ngModel)]="it.name" name="name" style="margin-left: 20px;">
-                                        </div>
-                                        <div class="input-field">
-                                            <label style="margin-top: 25px;">Description</label>
-                                            <input type="text" placeholder="180/100 mm/Hg" [(ngModel)]="it.description"
-                                                name="description" style="margin-left: 10px;margin-top: 25px;">
-                                        </div>
-                                        <input type="submit" value="ADD" class="btn"
-                                            style="margin-top: 2%;margin-bottom: 2%;">
-                                        <button class="btn"
-                                            style="margin-top: 2%;margin-left: 10%;margin-bottom: 2%;">VIEW ALL</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="columnr">
-                            <table id="customers">
-                                <tr>
-                                    <th> Conditions</th>
-                                </tr>
-                                <tr *ngFor="let alleg of cnds" class="collection">
-                                    <td>{{alleg.name}}</td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                <div class="dive">
-                    <h2>Are you currently taking any Medication?</h2>
-                </div>
-                <div class="btn-holder2">
-                    <div class="btn-group2 button" *ngIf="yes.medication==='No'">
-                        <button class="yes-btn" (click)=" onClickYesMed()">yes</button><button class="no-btn"
-                            (click)=" onClickNoMed()" style="background-color: #5680E9;">no</button>
-                    </div>
-                    <div class="btn-group2 button" *ngIf="yes.medication==='yes'">
-                        <button class="yes-btn" (click)=" onClickYesMed()"
-                            style="background-color: #5680E9;">yes</button><button class="no-btn"
-                            (click)=" onClickNoMed()">no</button>
-                    </div>
-                    <div class="btn-group2 button" *ngIf="yes.medication===''">
-                        <button class="yes-btn" (click)=" onClickYesMed()">yes</button><button class="no-btn"
-                            (click)=" onClickNoMed()">no</button>
-                    </div>
-                </div>
-                <div class="card" style="border-bottom:1px solid black ;margin-top: 2%;" *ngIf="yes.medication==='yes'">
-                    <div class="row">
-                        <div class="columnl">
-                            <div class="card-content">
-                                <form (ngSubmit)="onSubmitM()" class="col s6">
-                                    <div class="row" style="width: 500px;">
-                                        <div class="input-field">
-                                            <label>Medication</label>
-                                            <input type="text" placeholder="Medication" [(ngModel)]="ite.name"
-                                                name="name" style="margin-left: 10px;">
-                                        </div>
-                                        <div class="input-field">
-                                            <label style="margin-top: 25px;">Frequency</label>
-                                            <input type="text" placeholder="Frequency(eg:- once a day)"
-                                                [(ngModel)]="ite.description" name="description"
-                                                style="margin-left: 15px;margin-top: 25px;">
-                                        </div>
-                                        <input type="submit" value="ADD" class="btn"
-                                            style="margin-top: 2%;margin-bottom: 2%;">
-                                        <button class="btn"
-                                            style="margin-top: 2%;margin-left: 10%;margin-bottom: 2%;">VIEW ALL</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="columnr">
-                            <table id="customers">
-                                <tr>
-                                    <th> Medication</th>
-                                </tr>
-                                <tr *ngFor="let alleg of mds" class="collection">
-                                    <td>{{alleg.name}}</td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="dive">
-                    <h2>Have you ever had any surgeries or medical procedures?</h2>
-                </div>
-                <div class="btn-holder2">
-                    <div class="btn-group2 button" *ngIf="yes.operations==='yes'">
-                        <button class="yes-btn" (click)=" onClickYesOpo()"
-                            style="background-color: #5680E9;">yes</button><button class="no-btn"
-                            (click)=" onClickNoOpo()">no</button>
-                    </div>
-                    <div class="btn-group2 button" *ngIf="yes.operations==='No'">
-                        <button class="yes-btn" (click)=" onClickYesOpo()">yes</button><button class="no-btn"
-                            (click)=" onClickNoOpo()" style="background-color: #5680E9;">no</button>
-                    </div>
-                    <div class="btn-group2 button" *ngIf="yes.operations===''">
-                        <button class="yes-btn" (click)=" onClickYesOpo()">yes</button><button class="no-btn"
-                            (click)=" onClickNoOpo()">no</button>
-                    </div>
-                </div>
-                <div class="card" style="border-bottom:1px solid black ;margin-top: 2%;" *ngIf="yes.operations==='yes'">
-                    <div class="row">
-                        <div class="columnl">
-                            <div class="card-content">
-                                <form (ngSubmit)="onSubmitO()" class="col s6">
-                                    <div class="row" style="width: 500px;">
-                                        <div class="input-field">
-                                            <label>SURGERY</label>
-                                            <input type="text" placeholder="eg - Plastic surgery" [(ngModel)]="i.name"
-                                                name="name" style="margin-left: 20px;">
-                                        </div>
-                                        <div class="input-field">
-                                            <label style="margin-top: 25px;">YEAR</label>
-                                            <input type="date" placeholder="Year" [(ngModel)]="i.date"
-                                                name="description"
-                                                style="margin-left: 45px;margin-top: 25px;margin-right: 100px;"
-                                                [max]="getToday()">
-                                        </div>
-                                        <input type="submit" value="ADD" class="btn"
-                                            style="margin-top: 2%;margin-bottom: 2%;">
-                                        <button class="btn"
-                                            style="margin-top: 2%;margin-left: 10%;margin-bottom: 2%;">VIEW ALL</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="columnr">
-                            <table id="customers">
-                                <tr>
-                                    <th> Surgeries</th>
-                                </tr>
-                                <tr *ngFor="let alleg of opos" class="collection">
-                                    <td>{{alleg.name}}</td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                <div class="bmi">
-                    <div class="dive">
-                        <h1>Calculate your BMI</h1>
-                    </div>
-                    <form action="" #bmiForm="ngForm" (ngSubmit)="calc(bmiForm)">
-                        <div style="padding-top: 3%;padding-left: 5%;">
-                            <label style="font-family: Arial, Helvetica, sans-serif;padding-right: 17px;">
-                                Current Body Weight (kg) :
-                            </label>
-                            <input ngModel #weight="ngModel" name="weight" type="text" class=""
-                                placeholder="Enter Weight">
-                        </div>
-                        <div style="padding-top: 3%;padding-left: 5%;">
-                            <label style="font-family: Arial, Helvetica, sans-serif;padding-right: 50px;">
-                                Current Height (cm) :
-                            </label>
-                            <input ngModel #height="ngModel" name="height" type="text" class=""
-                                placeholder="Enter Height">
-                        </div>
-                        <div style="padding-top: 3%;padding-left: 10%;">
-                            <button type="submit" class="btn" (click)="scroll()" color="blue"
-                                style="font-size: medium;"><b>Calculate</b></button>
-                        </div>
-                        <div style="padding-top: 2%;padding-left: 5%;">
-                            <label style="font-family: Arial, Helvetica, sans-serif;padding-right: 140px;">
-                                BMI :{{bmi| number:'1.0-1'}}
-                            </label>
-                            <div>
-                                <p *ngIf="bmi<=18.5" style="color: red;"><b>YOU ARE UNDERWEIGHT</b></p>
-                                <p *ngIf="bmi>18.5 && bmi<=24.9" style="color: blue;"><b>YOU ARE HEALTHY</b></p>
-                                <p *ngIf="bmi>24.9 && bmi<=29.9" style="color: purple;"><b>YOU ARE SLIGHTLY
-                                        OVERWEIGHT</b></p>
-                                <p *ngIf="bmi>29.9" style="color: red;"><b>YOU ARE OVERWEIGHT</b></p>
-                            </div>
-                        </div>
-                    </form>
-                    <div>
-                    </div>
-                </div>
+                <button *ngIf="mark==1" class="btn" (click)='onClickfamily()'><b>MY FAMILY HISTORY</b></button>
+                <button *ngIf="mark==2" class="btn" (click)='onClickfamily()'><b>MY FAMILY HISTORY</b></button>
+                <button *ngIf="mark==3" class="btn" (click)='onClickfamily()' style="background-color: #2e9cca;"><b>MY
+                        FAMILY HISTORY</b></button>
             </div>
-
-            <div *ngIf="mark==2">
-                <app-behaviorhistory></app-behaviorhistory>
-            </div>
-            <div *ngIf="mark==3">
-                <app-familyhistory></app-familyhistory>
-            </div>
-
         </div>
     </div>
-</body>
+    <div *ngIf="mark==1" style="margin-left: 1%;">
+        <div class="dive">
+            <h2>Do you have any allergies or drug sensivities?</h2>
+        </div>
+        <div class="btn-holder2">
+            <div class="btn-group2" *ngIf="yes.allergies==='No'">
+                <button class="yes-btn" (click)=" onClickYesAlleg()">yes</button><button class="no-btn" (click)=" onClickNoAlleg()" style="background-color: #5680E9;">no</button>
+            </div>
+            <div class="btn-group2" *ngIf="yes.allergies==='yes'">
+                <button class="yes-btn" (click)=" onClickYesAlleg()" style="background-color: #5680E9;">yes</button><button class="no-btn" (click)=" onClickNoAlleg()">no</button>
+            </div>
+            <div class="btn-group2" *ngIf="yes.allergies===''">
+                <button class="yes-btn" (click)=" onClickYesAlleg()">yes</button><button class="no-btn" (click)=" onClickNoAlleg()">no</button>
+            </div>
+        </div>
+        <div class="card" style="border-bottom:1px solid black ;margin-top: 2%;" *ngIf="yes.allergies==='yes'">
+            <div class="row">
+                <div class="columnl">
+                    <div class="card-content" style="margin-top: 5%;">
+                        <form (ngSubmit)="onSubmit()" class="col s6">
+                            <div class="row" style="width: 500px;">
+                                <div class="input-field col s6">
+                                    <label style="margin-right: 10px;">Allergie </label>
+                                    <input type="text" placeholder="Add Allergie" [(ngModel)]="items.name" name="name" style="margin-left: 30px;" style="color: black;">
+                                </div>
+                                <div class="input-field">
+                                    <label style="margin-top: 25px;">Reaction </label>
+                                    <input type="text" placeholder="Add Reaction" [(ngModel)]="items.reaction" name="description" style="margin-left: 6px;margin-top: 25px; color: black;">
+                                </div>
+                                <div class="input-field">
+                                    <label style="margin-top: 25px;">Source </label>
+                                    <input type="text" placeholder="Add Source" [(ngModel)]="items.source" name="source" style="margin-left: 18px;margin-top: 25px; color: black;">
+                                </div>
+                                <input type="submit" value="ADD" class="btn" style="margin-top: 2%;margin-bottom: 2%;">
+                                <button class="btn" style="margin-top: 2%;margin-left: 10%;margin-bottom: 2%;">VIEW
+                                    ALL</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="columnr">
+                    <table id="customers">
+                        <tr>
+                            <th> Allergies</th>
+                        </tr>
+                        <tr *ngFor="let alleg of als" class="collection">
+                            <td>{{alleg.name}}</td>
+
+                        </tr>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="dive">
+            <h2>Do you have any health conditions?</h2>
+        </div>
+        <div class="btn-holder2">
+            <div class="btn-group2 button" *ngIf="yes.conditions==='yes'">
+                <button class="yes-btn" (click)=" onClickYesCond()" style="background-color: #5680E9;">yes</button><button class="no-btn" (click)=" onClickNoCond()">no</button>
+            </div>
+            <div class="btn-group2 button" *ngIf="yes.conditions==='No'">
+                <button class="yes-btn" (click)=" onClickYesCond()">yes</button><button class="no-btn" (click)=" onClickNoCond()" style="background-color: #5680E9;">no</button>
+            </div>
+            <div class="btn-group2 button" *ngIf="yes.conditions===''">
+                <button class="yes-btn" (click)=" onClickYesCond()">yes</button><button class="no-btn" (click)=" onClickNoCond()">no</button>
+            </div>
+        </div>
+        <div class="card" style="border-bottom:1px solid black ;margin-top: 2%;" *ngIf="yes.conditions==='yes'">
+            <div class="row">
+                <div class="columnl">
+                    <div class="card-content">
+                        <form (ngSubmit)="onSubmitC()" class="col s6">
+                            <div class="row" style="width: 500px;">
+                                <div class="input-field">
+                                    <label>Condition</label>
+                                    <input type="text" placeholder="condition eg-Diabities" [(ngModel)]="it.name" name="name" style="margin-left: 20px;">
+                                </div>
+                                <div class="input-field">
+                                    <label style="margin-top: 25px;">Description</label>
+                                    <input type="text" placeholder="180/100 mm/Hg" [(ngModel)]="it.description" name="description" style="margin-left: 10px;margin-top: 25px;">
+                                </div>
+                                <input type="submit" value="ADD" class="btn" style="margin-top: 2%;margin-bottom: 2%;">
+                                <button class="btn" style="margin-top: 2%;margin-left: 10%;margin-bottom: 2%;">VIEW
+                                    ALL</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="columnr">
+                    <table id="customers">
+                        <tr>
+                            <th> Conditions</th>
+                        </tr>
+                        <tr *ngFor="let alleg of cnds" class="collection">
+                            <td>{{alleg.name}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="dive">
+            <h2>Are you currently taking any Medication?</h2>
+        </div>
+        <div class="btn-holder2">
+            <div class="btn-group2 button" *ngIf="yes.medication==='No'">
+                <button class="yes-btn" (click)=" onClickYesMed()">yes</button><button class="no-btn" (click)=" onClickNoMed()" style="background-color: #5680E9;">no</button>
+            </div>
+            <div class="btn-group2 button" *ngIf="yes.medication==='yes'">
+                <button class="yes-btn" (click)=" onClickYesMed()" style="background-color: #5680E9;">yes</button><button class="no-btn" (click)=" onClickNoMed()">no</button>
+            </div>
+            <div class="btn-group2 button" *ngIf="yes.medication===''">
+                <button class="yes-btn" (click)=" onClickYesMed()">yes</button><button class="no-btn" (click)=" onClickNoMed()">no</button>
+            </div>
+        </div>
+        <div class="card" style="border-bottom:1px solid black ;margin-top: 2%;" *ngIf="yes.medication==='yes'">
+            <div class="row">
+                <div class="columnl">
+                    <div class="card-content">
+                        <form (ngSubmit)="onSubmitM()" class="col s6">
+                            <div class="row" style="width: 500px;">
+                                <div class="input-field">
+                                    <label>Medication</label>
+                                    <input type="text" placeholder="Medication" [(ngModel)]="ite.name" name="name" style="margin-left: 10px;">
+                                </div>
+                                <div class="input-field">
+                                    <label style="margin-top: 25px;">Frequency</label>
+                                    <input type="text" placeholder="Frequency(eg:- once a day)" [(ngModel)]="ite.description" name="description" style="margin-left: 15px;margin-top: 25px;">
+                                </div>
+                                <input type="submit" value="ADD" class="btn" style="margin-top: 2%;margin-bottom: 2%;">
+                                <button class="btn" style="margin-top: 2%;margin-left: 10%;margin-bottom: 2%;">VIEW
+                                    ALL</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="columnr">
+                    <table id="customers">
+                        <tr>
+                            <th> Medication</th>
+                        </tr>
+                        <tr *ngFor="let alleg of mds" class="collection">
+                            <td>{{alleg.name}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="dive">
+            <h2>Have you ever had any surgeries or medical procedures?</h2>
+        </div>
+        <div class="btn-holder2">
+            <div class="btn-group2 button" *ngIf="yes.operations==='yes'">
+                <button class="yes-btn" (click)=" onClickYesOpo()" style="background-color: #5680E9;">yes</button><button class="no-btn" (click)=" onClickNoOpo()">no</button>
+            </div>
+            <div class="btn-group2 button" *ngIf="yes.operations==='No'">
+                <button class="yes-btn" (click)=" onClickYesOpo()">yes</button><button class="no-btn" (click)=" onClickNoOpo()" style="background-color: #5680E9;">no</button>
+            </div>
+            <div class="btn-group2 button" *ngIf="yes.operations===''">
+                <button class="yes-btn" (click)=" onClickYesOpo()">yes</button><button class="no-btn" (click)=" onClickNoOpo()">no</button>
+            </div>
+        </div>
+        <div class="card" style="border-bottom:1px solid black ;margin-top: 2%;" *ngIf="yes.operations==='yes'">
+            <div class="row">
+                <div class="columnl">
+                    <div class="card-content">
+                        <form (ngSubmit)="onSubmitO()" class="col s6">
+                            <div class="row" style="width: 500px;">
+                                <div class="input-field">
+                                    <label>SURGERY</label>
+                                    <input type="text" placeholder="eg - Plastic surgery" [(ngModel)]="i.name" name="name" style="margin-left: 20px;">
+                                </div>
+                                <div class="input-field">
+                                    <label style="margin-top: 25px;">YEAR</label>
+                                    <input type="date" placeholder="Year" [(ngModel)]="i.date" name="description" style="margin-left: 45px;margin-top: 25px;margin-right: 100px;" [max]="getToday()">
+                                </div>
+                                <input type="submit" value="ADD" class="btn" style="margin-top: 2%;margin-bottom: 2%;">
+                                <button class="btn" style="margin-top: 2%;margin-left: 10%;margin-bottom: 2%;">VIEW
+                                    ALL</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="columnr">
+                    <table id="customers">
+                        <tr>
+                            <th> Surgeries</th>
+                        </tr>
+                        <tr *ngFor="let alleg of opos" class="collection">
+                            <td>{{alleg.name}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="bmi">
+            <div class="dive">
+                <h1>Calculate your BMI</h1>
+            </div>
+            <form action="" #bmiForm="ngForm" (ngSubmit)="calc(bmiForm)">
+                <div style="padding-top: 3%;padding-left: 5%;">
+                    <label style="font-family: Arial, Helvetica, sans-serif;padding-right: 17px;">
+                        Current Body Weight (kg) :
+                    </label>
+                    <input ngModel #weight="ngModel" name="weight" type="text" class="" placeholder="Enter Weight">
+                </div>
+                <div style="padding-top: 3%;padding-left: 5%;">
+                    <label style="font-family: Arial, Helvetica, sans-serif;padding-right: 50px;">
+                        Current Height (cm) :
+                    </label>
+                    <input ngModel #height="ngModel" name="height" type="text" class="" placeholder="Enter Height">
+                </div>
+                <div style="padding-top: 3%;padding-left: 10%;">
+                    <button type="submit" class="btn" (click)="scroll()" color="blue" style="font-size: medium;"><b>Calculate</b></button>
+                </div>
+                <div style="padding-top: 2%;padding-left: 5%;">
+                    <label style="font-family: Arial, Helvetica, sans-serif;padding-right: 140px;">
+                        BMI :{{bmi| number:'1.0-1'}}
+                    </label>
+                    <div>
+                        <p *ngIf="bmi<=18.5" style="color: red;"><b>YOU ARE UNDERWEIGHT</b></p>
+                        <p *ngIf="bmi>18.5 && bmi<=24.9" style="color: blue;"><b>YOU ARE HEALTHY</b></p>
+                        <p *ngIf="bmi>24.9 && bmi<=29.9" style="color: purple;"><b>YOU ARE SLIGHTLY
+                                OVERWEIGHT</b></p>
+                        <p *ngIf="bmi>29.9" style="color: red;"><b>YOU ARE OVERWEIGHT</b></p>
+                    </div>
+                </div>
+            </form>
+            <div>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="mark==2">
+        <app-behaviorhistory></app-behaviorhistory>
+    </div>
+    <div *ngIf="mark==3">
+        <app-familyhistory></app-familyhistory>
+    </div>
+
+</div>

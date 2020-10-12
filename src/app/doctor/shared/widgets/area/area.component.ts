@@ -15,46 +15,50 @@ export class AreaComponent implements OnInit {
 
   ngOnInit(): void {
     this.chartOptions = 
-      {
-        chart: {
-            type: 'area'
-        },
-        title: {
-            text: 'Patient Details'
-        },
-        subtitle: {
-            text: 'patient'
-        },
-
-        tooltip: {
-            split: true,
-            valueSuffix: ' millions'
-        },
-        credits: {
-          enabled : false
-        },
-
-        exporting: {
-          enabled : true
-        },
-
-        series: [{
-            name: '',
-            data: [502, 635, 809, 947, 1402, 3634, 5268]
-        }, {
-            name: '',
-            data: [106, 107, 111, 133, 221, 767, 1766]
-        }, {
-            name: '',
-            data: [163, 203, 276, 408, 547, 729, 628]
-        }, {
-            name: '',
-            data: [18, 31, 54, 156, 339, 818, 1201]
-        }, {
-            name: '',
-            data: [2, 2, 2, 6, 13, 30, 46]
-        }]
-    };
+    {
+      chart: {
+          type: 'area'
+      },
+      title: {
+          text: 'Income Details'
+      },
+      xAxis: {
+          categories: ['March', 'April', 'May', 'June', 'July', 'August', 'October'],
+          tickmarkPlacement: 'on',
+          title: {
+              enabled: false
+          }
+      },
+      yAxis: {
+          title: {
+              text: 'Thousands'
+          },
+          labels: {
+              formatter: function () {
+                  return this.value / 1000;
+              }
+          }
+      },
+      tooltip: {
+          split: true,
+          valueSuffix: ' Thousands'
+      },
+      plotOptions: {
+          area: {
+              stacking: 'normal',
+              lineColor: '#666666',
+              lineWidth: 1,
+              marker: {
+                  lineWidth: 1,
+                  lineColor: '#666666'
+              }
+          }
+      },
+      series: [{
+          name: 'Month',
+          data: [18000, 25000, 44000, 42000, 56000, 60000, 54000]
+      }]
+  };
     HC_exporting(Highcharts);
 
     setTimeout(() =>{

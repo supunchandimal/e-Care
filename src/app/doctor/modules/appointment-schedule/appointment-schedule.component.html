@@ -74,7 +74,7 @@
     <br><br> 
     
 
-    <div class="col" *ngFor ="let item of scheduleData">
+    <!-- <div class="col" *ngFor ="let item of scheduleData">
       <div class="list-group">
         <div class="list-group-item">
           <div class="row">
@@ -84,29 +84,39 @@
             <div class="col">
               <button class="btn btn-danger" (click)="deleteFreeSlot(item.payload.doc.data().id)">Delete</button>
             </div>
-            <!-- <div class="col">
+             <div class="col">
               Date: {{item.payload.doc.data().date}}
             </div> -->
-          </div>
+          <!-- </div>
         </div>
       </div>             
                   
           
               
-      </div>
+      </div> --> 
 
+
+<!-- <div class="form-group">
+  
+</div> -->
 
 <div class="form-group">
-  
+    <h4 *ngIf = "msg" ><b>No Appointment Schedule For Today</b></h4>
+  </div>
+<div *ngFor ="let item of scheduleData">
+<div fxLayout="row" fxLayoutAlign = "space-between center" fxLayoutGap = "20px" class="stat-cards">
+
+  <mat-card fxFlex=80%>
+    <div fxLayout="row" fxLayoutAlign = "space-between">
+    <p id="time">Time:  {{item.payload.doc.data().time}}</p>
+    <button class="btn btn-danger" (click)="deleteFreeSlot(item.payload.doc.data().id)">Delete</button></div>
+  </mat-card>
+
+</div><br>
+
+
+
 </div>
-
-
-
-
-
-
-
-
 
 
 

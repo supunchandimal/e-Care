@@ -93,6 +93,7 @@ import { HelpComponent } from './patientpages/help/help.component';
 import { AdminPaymentdetailsComponent } from './admin-paymentdetails/admin-paymentdetails.component';
 import { AdminGraphComponent } from './admin/admin-graph/admin-graph.component';
 import { AdminGraphService } from 'src/services/shared/admin-graph.service';
+import {AdminPaymentDetailsService} from 'src/services/shared/admin-payment-details.service';
 import { PayhereComponent } from './patientpages/payhere/payhere.component';
 import { BookedComponent } from './patientpages/appoinments/booked/booked.component';
 
@@ -202,6 +203,7 @@ import { PrescriptionformComponent } from './doctor/modules/prescriptionform/pre
     ManagePatientService,
     PatientDeleteDialogService,
     AdminGraphService,
+    AdminPaymentDetailsService,
     AccountService,
     PpicService,
     MatDatepickerModule,

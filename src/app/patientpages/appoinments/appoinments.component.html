@@ -1,79 +1,52 @@
-<head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Squada+One&display=swap" rel="stylesheet">
-</head>
+<div style="align-self: flex-start;width: 82vw;margin-left: 3px;" *ngIf="mark==1">
 
-<body class="body">
-    <div style="display:none" id="submit-form-container"></div>
-    <div class="navibar">
-        <app-patient-home class="subnavibar"></app-patient-home>
-    </div>
-    <div class="bodyrest">
-
-        <div style="align-self: flex-start;width: 82vw;margin-left: 3px;" *ngIf="mark==1">
-
-            <app-pagemenu [parentData]="flag"></app-pagemenu>
-
-            <div class="search">
-                <div>
-                    <input id="txtBox" class="form-control" [(ngModel)]="searchValue" [ngModelOptions]="{standalone: true}" (keyup)="searchByName()" placeholder="Search" type="text" style="right: 100px;width: 200%;">
-                    <!-- <div style="margin-left: 25%;">
-                        <input type="text" [(ngModel)]="searchterm" (keydown)="search($event)" placeholder="&#xf002; Search From Doctor Name or Speciality" style="font-family: FontAwesome, Arial; font-style: normal;width: 500%; ;">
-                    </div> -->
-
-                </div>
-                <div class="col">
-                    <label for="cars" style="margin-left: 500px;">Filter by Speciality :</label>
-
-                    <select [(ngModel)]="selectedOption" name="cars" id="cars" (change)="filterSpeciality()">
-                        <option value="All">All</option>
-                        <option value="Pediatricians">Pediatricians</option>
-                        <option value="Dermatologists">Dermatologists</option>
-                        <option value="Nephrologists">Nephrologists</option>
-                        <option value="Gastroenterologists">Gastroenterologists</option>
-                        <option value="Allergists">Allergists</option>
-                        <option value="Cardiologists">Cardiologists</option>
-                        <option value="Otolaryngologists">Otolaryngologists</option>                        
-                    </select>
-
-                    <!-- <p>Selected option: {{ selectedOption }}</p> -->
-                    <!-- <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Specialized in
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="Specialized_in">
-                        
-                        <div class="dropdown-item" (click)='filterBySpeciality("All")'> All </div>
-                        <div class="dropdown-item" (click)='filterBySpeciality("General Physician")'>General Physician
-                        </div>
-                        <div class="dropdown-item" (click)='filterBySpeciality("Family practice physician")'>Family
-                            practice physician" </div>
-                        <div class="dropdown-item" (click)='filterBySpeciality("Pediatricians")'> Pediatricians </div>
-                        <div class="dropdown-item" (click)='filterBySpeciality("Allergists")'>Allergists </div>
-                        <div class="dropdown-item" (click)='filterBySpeciality("Dermatologists")'> Dermatologists </div>
-                        <div class="dropdown-item" (click)='filterBySpeciality("Infectious disease doctors")'>
-                            Infectious disease doctors </div>
-                        <div class="dropdown-item" (click)='filterBySpeciality("Ophthalmologists")'> Ophthalmologists
-                        </div>
-                        <div class="dropdown-item" (click)='filterBySpeciality("Obstetrician/gynecologists")'>
-                            Obstetrician/gynecologists </div>
-                        <div class="dropdown-item" (click)='filterBySpeciality("Cardiologists")'> Cardiologists </div>
-                        <div class="dropdown-item" (click)='filterBySpeciality("Endocrinologists")'> Endocrinologists
-                        </div>
-                        <div class="dropdown-item" (click)='filterBySpeciality("Gastroenterologists")'>
-                            Gastroenterologists </div>
-                        <div class="dropdown-item" (click)='filterBySpeciality("Nephrologists")'> Nephrologists </div>
-                        <div class="dropdown-item" (click)='filterBySpeciality("Urologists")'> Urologists </div>
-                        <div class="dropdown-item" (click)='filterBySpeciality("Pulmonologists")'> Pulmonologists </div>
-                        <div class="dropdown-item" (click)='filterBySpeciality("Otolaryngologists")'> Otolaryngologists
-                        </div>
-
-                    </div> -->
-                </div>
+    <app-pagemenu [parentData]="flag"></app-pagemenu>
+    <!-- <div class="row">
+        <div class="col">
+            <div>
+                <input id="txtBox" class="form-control" [(ngModel)]="searchValue" [ngModelOptions]="{standalone: true}"
+                    (keyup)="searchByName()" placeholder="Search" type="text" style="right: 100px;width: 200%;">
             </div>
-            <div class="data">
+        </div>
+        <div class="col">
+            <label for="cars" style="margin-left: 500px;">Filter by Speciality :</label>
 
-                <!-- <div class="list-group">
+            <select [(ngModel)]="selectedOption" name="cars" id="cars" (change)="filterSpeciality()">
+                <option value="All">All</option>
+                <option value="Pediatricians">Pediatricians</option>
+                <option value="Dermatologists">Dermatologists</option>
+                <option value="Nephrologists">Nephrologists</option>
+                <option value="Gastroenterologists">Gastroenterologists</option>
+                <option value="Allergists">Allergists</option>
+                <option value="Cardiologists">Cardiologists</option>
+                <option value="Otolaryngologists">Otolaryngologists</option>
+            </select>
+        </div>
+    </div> -->
+
+    <div class="search">
+        <div>
+            <input id="txtBox" class="form-control" [(ngModel)]="searchValue" [ngModelOptions]="{standalone: true}" (keyup)="searchByName()" placeholder="Search" type="text" style="right: 100px;width: 200%;">
+        </div>
+        <div class="col">
+            <label for="cars" style="margin-left: 500px;">Filter by Speciality :</label>
+
+            <select [(ngModel)]="selectedOption" name="cars" id="cars" (change)="filterSpeciality()">
+                <option value="All">All</option>
+                <option value="Pediatricians">Pediatricians</option>
+                <option value="Dermatologists">Dermatologists</option>
+                <option value="Nephrologists">Nephrologists</option>
+                <option value="Gastroenterologists">Gastroenterologists</option>
+                <option value="Allergists">Allergists</option>
+                <option value="Cardiologists">Cardiologists</option>
+                <option value="Otolaryngologists">Otolaryngologists</option>
+            </select>
+
+        </div>
+    </div>
+    <div class="data">
+
+        <!-- <div class="list-group">
                     <div class="list-item" *ngFor="let item of allDocData">
                         <div class="row">
                             <div class="col-2">
@@ -88,45 +61,46 @@
                         </div>
                     </div>
                 </div> -->
-                <div class="datacard" *ngFor="let item of allDocData">
-                    <div class="pic">
-                        <img src="{{item?.propic}}" alt="dasith" style="width: 100%;height: 100%;">
-                    </div>
-                    <div class="docname" *ngIf="doc?.length < 1">
-                        <h1>Dr. {{item?.fullName}}</h1>
-                        <h1>{{item?.speciality}} </h1>
-                        <h2>Consultations</h2>
-                        <h2>Price</h2>
-                    </div>
-                    <div style="align-self: flex-end;display: flex;margin-left: 30vw;">
-                        <button (click)="openOtherDialog(item?.nic)" class="VS">View Schedule</button>
-                        <ng-template #secondDialog>
-                            <h1 style="color: red;">Pick a free time slot for an appoinment</h1>
+        <div class="datacard" *ngFor="let item of allDocData">
+            <div class="pic">
+                <img src="{{item?.proPicURL}}" alt="dasith" style="width: 100%;height: 100%;">
+            </div>
+            <div class="docname" *ngIf="doc?.length < 1">
+                <h1>Dr. {{item?.fullName}}</h1>
+                <h1>{{item?.speciality}} </h1>
+                <h2>Consultations</h2>
+                <h2>Price</h2>
+            </div>
+            <div style="align-self: flex-end;display: flex;margin-left: 30vw;">
+                <button (click)="openOtherDialog(item?.nic)" class="VS">View Schedule</button>
+                <ng-template #secondDialog>
+                    <h1 style="color: red;">Pick a free time slot for an appoinment</h1>
 
-                            <table id="customers">
-                                <tr>
-                                    <th>date</th>
-                                    <th>time</th>
-                                    <th>status</th>
-                                </tr>
-                                <tr *ngFor="let time of times;let i = index">
-                                    <td>{{time.date}}</td>
-                                    <td>{{time.time}}</td>
-                                    <td><button (click)="Onfree($event,time)" mat-button matDialogClose>{{time.status}}</button></td>
-                                </tr>
-                            </table>
+                    <table id="customers">
+                        <tr>
+                            <th>date</th>
+                            <th>time</th>
+                            <th>status</th>
+                        </tr>
+                        <tr *ngFor="let time of times;let i = index">
+                            <td>{{time.date}}</td>
+                            <td>{{time.time}}</td>
+                            <td><button (click)="Onfree($event,time)" mat-button matDialogClose>{{time.status}}</button>
+                            </td>
+                        </tr>
+                    </table>
 
-                            <mat-dialog-actions align="end">
-                                <button mat-button matDialogClose>Dismiss</button>
-                            </mat-dialog-actions>
-                        </ng-template>
+                    <mat-dialog-actions align="end">
+                        <button mat-button matDialogClose>Dismiss</button>
+                    </mat-dialog-actions>
+                </ng-template>
 
-                    </div>
+            </div>
 
 
-                </div>
+        </div>
 
-                <!-- <div class="datacard" *ngFor="let doca of doc">
+        <!-- <div class="datacard" *ngFor="let doca of doc">
                     <div class="pic">
                         <img src="../../../assets/images/doca.jpg" alt="dasith" style="width: 100%;height: 100%;">
                     </div>
@@ -165,36 +139,34 @@
                     </div>
                 </div> -->
 
-            </div>
-        </div>
-        <div style="align-self: flex-start;width: 82vw;" *ngIf="mark==2">
-
-            <app-pagemenu [parentData]="flag"></app-pagemenu>
-
-            <table id="customers" style="margin-top: 10%;margin-left: 20%;">
-                <tr>
-                    <th>date</th>
-                    <th>time</th>
-                    <th>status</th>
-                </tr>
-                <tr *ngFor="let time of times;let i = index">
-                    <td>{{time.date}}</td>
-                    <td>{{time.time}}</td>
-                    <td>{{time.status}}</td>
-                    <button class="btn btn-primary" (click)="doPayment();Onpay($event,time)" *ngIf="time.status==='booking'">pay
-                        here</button>
-
-                    <button class="btn btn-primary" (click)="Oncancel($event,time)" *ngIf="time.status==='booking'">cancel</button>
-                </tr>
-            </table>
-
-        </div>
-        <div style="align-self: flex-start;width: 82vw;" *ngIf="mark==3">
-
-            <app-pagemenu [parentData]="flag"></app-pagemenu>
-
-
-
-        </div>
     </div>
-</body>
+</div>
+<div style="align-self: flex-start;width: 82vw;" *ngIf="mark==2">
+
+    <app-pagemenu [parentData]="flag"></app-pagemenu>
+
+    <table id="customers" style="margin-top: 10%;margin-left: 20%;">
+        <tr>
+            <th>date</th>
+            <th>time</th>
+            <th>status</th>
+        </tr>
+        <tr *ngFor="let time of times;let i = index">
+            <td>{{time.date}}</td>
+            <td>{{time.time}}</td>
+            <td>{{time.status}}</td>
+            <button class="btn btn-primary" (click)="doPayment();Onpay($event,time)" *ngIf="time.status==='booking'">pay
+                here</button>
+
+            <button class="btn btn-primary" (click)="Oncancel($event,time)" *ngIf="time.status==='booking'">cancel</button>
+        </tr>
+    </table>
+
+</div>
+<div style="align-self: flex-start;width: 82vw;" *ngIf="mark==3">
+
+    <app-pagemenu [parentData]="flag"></app-pagemenu>
+
+
+
+</div>

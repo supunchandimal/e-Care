@@ -17,3 +17,60 @@
             <li><a routerLink="../admin-announcement"><i class="material-icons">announcement</i>Announcements</a></li>
         </ul>
     </div>
+<div id="content">
+    <div class="tbl_container">     
+        <table class="table table-striped  table-hover table-bordered">
+          <thead>
+            <tr>
+                <th>Channel ID</th>
+                <th>Doctor Name</th>
+                <th>Patient Name</th>
+                <th>Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of price">
+                <td>{{item.channelID}}</td>
+                <td>{{item.docName}}</td>
+                <td>{{item.patientname}}</td>
+                <td>LKR.{{item.price}}</td>
+                <!-- <td>Gender</td>
+                <td>Email</td>
+                <td>nic</td>
+                <td>city</td> -->
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      </div>
+
+      <div class="graph_wrapper">
+        <canvas id="myChart" width="800" height="300"></canvas>
+    </div>
+
+<!-- 
+    
+<div class="wrapper">    
+   
+    <div class="table-wrapper-scroll-y my-custom-scrollbar">
+            <table>
+                <caption>Price list</caption>
+                
+                <tr>
+                    <th>docID</th>
+                    <th>channelID</th>
+                    <th>docName</th>
+                    <th>price</th>
+                </tr>
+              
+                <tr *ngFor="let item of price">
+                    <td>{{item.docid}}</td>
+                    <td>{{item.channelID}}</td>
+                    <td>{{item.docName}}</td>
+                    <td>{{item.price}}</td>
+                   
+                </tr>
+          
+            </table>    
+    </div>
+    </div> -->

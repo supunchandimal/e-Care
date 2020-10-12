@@ -1,77 +1,62 @@
-<head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Squada+One&display=swap" rel="stylesheet">
-</head>
+<div style="align-self: flex-start;width: 1220px;">
+    <app-pagemenu [parentData]="flag"></app-pagemenu>
 
-<body class="body">
-    <div class="navibar">
-        <app-patient-home class="subnavibar"></app-patient-home>
-    </div>
-    <div class="bodyrest" style="width: 1000%;">
-        <div style="align-self: flex-start;width: 1220px;">
-            <app-pagemenu [parentData]="flag"></app-pagemenu>
-            
 
-            <div class="dive">
-                <mat-tab-group animationDuration="0ms">
-                    <mat-tab label="Received Messages">
+    <div class="dive">
+        <mat-tab-group animationDuration="0ms">
+            <mat-tab label="Received Messages">
 
 
 
-                        <div class="example-large-box mat-elevation-z4">
-                            <div *ngFor="let item of receivedAnnouncements">
-                                <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px"
-                                    class="stat-cards">
-                                    <mat-card fxFlex="100">
-                                        <h3>
-                                            <table>
-                                                <tr>
-                                                    <td> <b>Subject :</b></td>
-                                                    <td></td>
-                                                    <td>{{item.subject}}</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><b>Message :</b></td>
-                                                    <td></td>
-                                                    <td>{{item.message}}</td>
-                                                </tr>
-                                            </table>
-                                        </h3>
-                                    </mat-card>
-                                </div><br>
-                            </div>
-                        </div>
+                <div class="example-large-box mat-elevation-z4">
+                    <div *ngFor="let item of receivedAnnouncements">
+                        <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" class="stat-cards">
+                            <mat-card fxFlex="100">
+                                <h3>
+                                    <table>
+                                        <tr>
+                                            <td> <b>Subject :</b></td>
+                                            <td></td>
+                                            <td>{{item.subject}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>Message :</b></td>
+                                            <td></td>
+                                            <td>{{item.message}}</td>
+                                        </tr>
+                                    </table>
+                                </h3>
+                            </mat-card>
+                        </div><br>
+                    </div>
+                </div>
 
-                    </mat-tab>
+            </mat-tab>
 
-                    <!-- <mat-tab label="Sent Messages"> -->
-                        <!-- <div class="card"> -->
-                            <!-- <div class="card-body"> -->
-                                <!-- <p class="card-text">With supporting text below as a natural lead-in to additional -->
-                                    <!-- content.</p> -->
+            <!-- <mat-tab label="Sent Messages"> -->
+            <!-- <div class="card"> -->
+            <!-- <div class="card-body"> -->
+            <!-- <p class="card-text">With supporting text below as a natural lead-in to additional -->
+            <!-- content.</p> -->
 
-                            <!-- </div> -->
-                        <!-- </div> -->
-                    <!-- </mat-tab> -->
+            <!-- </div> -->
+            <!-- </div> -->
+            <!-- </mat-tab> -->
 
-                    <!-- <mat-tab label="Send Messages"> -->
-                        <!-- <div class="card"> -->
-                            <!-- <div class="card-body"> -->
-                                <!-- <p class="card-text">With supporting text below as a natural lead-in to additional -->
-                                    <!-- content. -->
-                                    <!-- <a href="#" class="btn btn-primary" -->
-                                        <!-- style="float: right ; font-size: medium;">SEND</a> -->
-                                <!-- </p> -->
+            <!-- <mat-tab label="Send Messages"> -->
+            <!-- <div class="card"> -->
+            <!-- <div class="card-body"> -->
+            <!-- <p class="card-text">With supporting text below as a natural lead-in to additional -->
+            <!-- content. -->
+            <!-- <a href="#" class="btn btn-primary" -->
+            <!-- style="float: right ; font-size: medium;">SEND</a> -->
+            <!-- </p> -->
 
-                            <!-- </div> -->
-                        <!-- </div> -->
-                    <!-- </mat-tab> -->
-                </mat-tab-group>
-            
-        </div>
-
-        </div>
+            <!-- </div> -->
+            <!-- </div> -->
+            <!-- </mat-tab> -->
+        </mat-tab-group>
 
     </div>
 
-</body>
+</div>

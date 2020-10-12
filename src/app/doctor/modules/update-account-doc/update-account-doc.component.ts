@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFireStorage, AngularFireUploadTask } from '@angular/fire/storage';
+import { Observable } from 'rxjs';
+import { finalize } from 'rxjs/operators';
 import { UpdateProfileService } from './../../services/update-profile.service';
 
 
@@ -8,6 +12,11 @@ import { UpdateProfileService } from './../../services/update-profile.service';
   styleUrls: ['./update-account-doc.component.css']
 })
 export class UpdateAccountDocComponent implements OnInit {
+  uploadProgress: Observable<number>; //view progress of the upload
+  downloadURL: Observable<string>; //firebase url of the uploaded document
+  selectedFile: File = null;  //file selected to upload
+  task: AngularFireUploadTask;
+  fb;
   edit : boolean;
 
   employee: any;
@@ -17,7 +26,15 @@ export class UpdateAccountDocComponent implements OnInit {
   doctorSpeciality:string;
   doctorWorkingHospital:string;
   password : string;
-  constructor( public updateprofileservice : UpdateProfileService ) { }
+  currentUserID: string;
+  reply : string;
+  constructor( 
+    public updateprofileservice : UpdateProfileService,
+    private db:AngularFirestore,
+    private afStorage: AngularFireStorage
+ ) {
+   this.currentUserID = localStorage.getItem('currentUserID');
+  }
 
   ngOnInit() {
 
@@ -38,6 +55,40 @@ export class UpdateAccountDocComponent implements OnInit {
       console.log(this.employee);
 
     });
+  }
+
+  detectFiles(event) {
+    this.selectedFile = event.target.files[0];
+  }
+
+  upload() {
+    const file = this.selectedFile;
+    const filePath = `${this.currentUserID}/proPic`;
+    const fileRef = this.afStorage.ref(filePath);
+    this.task = this.afStorage.upload(filePath, file);
+    this.uploadProgress = this.task.percentageChanges();
+  
+    this.task
+      .snapshotChanges()
+      .pipe(
+        finalize(() => {
+          this.downloadURL = fileRef.getDownloadURL();
+          this.downloadURL.subscribe(url => {
+            if (url) {
+              this.fb = url;
+            }
+            this.db.collection("Users").doc(this.currentUserID).update({
+              proPicURL:url
+            })
+            
+          });
+        }),
+      )
+      .subscribe(url => {
+        if (url) {
+          console.log("url from subscribe - ", url);
+        }
+      });  
   }
 
   EditRecord(Record)
@@ -66,5 +117,7 @@ export class UpdateAccountDocComponent implements OnInit {
     this.edit=true;
   }
   hello2 (){}
-
+  passwordreply(){
+    this.reply = "Password Changed Successfully";
+  }
 }

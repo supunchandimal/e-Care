@@ -1,1 +1,47 @@
-<p>payments-doc works!</p>
+<h1>Payments</h1>
+
+
+<mat-form-field class="example-full-width">
+    <mat-label><b>Choose a date</b></mat-label>
+    <!-- <input matInput [min]="minDate" [max]="maxDate" [(ngModel)]="selectedDate" [matDatepicker]="picker" (change)="dateChange()" (dateChange)="Test()"> -->
+    <input matInput  [max]="maxDate" [(ngModel)]="selectedDate" [matDatepicker]="picker" (dateChange)="dateChange()">
+
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+<br><br>
+  <div>
+    <div fxLayout="row" fxLayoutAlign = "space-between center" fxLayoutGap = "20px" class="stat-cards">
+    
+      <mat-card fxFlex=51%>
+        <div fxLayout="row" fxLayoutAlign = "space-between">
+        <b><p id="time" id="time">Date  :   {{selectedDate | date: "yyyy/MM/dd"}}</p></b>
+        <b><p id="time" id="time">Total Payment :   {{sum}}</p></b>
+       
+    </div>
+      </mat-card>
+    
+    </div><br>
+    
+    
+    
+    </div>
+
+<br>
+<div *ngFor="let item of scheduleData">
+    <div fxLayout="row" fxLayoutAlign = "space-between center" fxLayoutGap = "20px" class="stat-cards">
+    
+      <mat-card fxFlex=51%>
+        <div fxLayout="row" fxLayoutAlign = "space-between">
+        <p id="time" id="time">Patient's Name  :   {{item?.patientname}}</p>
+        <p id="time" id="time">Time :   {{item?.time}}</p>
+       
+    </div>
+      </mat-card>
+    
+    </div><br>
+    
+    
+    
+    </div>
+

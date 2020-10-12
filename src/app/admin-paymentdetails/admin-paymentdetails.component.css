@@ -72,3 +72,82 @@ a:hover {
    color: white;
     text-decoration: none;
 }
+
+.tbl_container{
+    padding-top: 30px;
+    
+    padding-right: 50px;
+    padding-left: 380px;
+}
+.graph_wrapper{
+    /* padding-right: 50px;
+    padding-left: 50px;
+    padding-bottom: 20px; */
+    /* max-width:500px; */
+  /* margin: auto;
+  border: 1px solid #29648a; */
+  /* max-width:100%;
+  max-height:100%;
+   */
+  border: 1px solid #92a8d1;
+  /* max-height: 300px; */
+  margin-top: 20px;
+  margin-bottom: 100px;
+  margin-right: 50px;
+  margin-left: 380px;
+  
+}
+
+
+.wrapper{
+    position: absolute;
+    display: flex;
+    margin-right: auto; 
+    margin-left:  auto; 
+    max-width: 960px; 
+    padding-top: 50px;
+    padding-right: 10px;
+    padding-left:  50px; 
+    color: black;
+    left: 50%;
+    transform: translate(100%, 0);
+     
+}
+
+table{
+    width: 800px;
+    table-layout: initial;
+    
+    /* overflow-y:scroll; */
+    /* border-spacing: 40px ; */
+}
+
+th{
+    text-align: left;
+}
+
+table, th, td {
+    border: 1px solid #000;
+    border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  color: black;
+}
+
+caption{
+    text-align: center;
+    font-family: Verdana;
+    font-weight: bold;
+    color: black;
+}
+
+tr:nth-child(even){
+    background-color: #fff;
+}
+
+tr:nth-child(odd){
+    background-color: #ddd;
+}
+
