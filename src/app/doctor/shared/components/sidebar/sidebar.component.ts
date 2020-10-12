@@ -1,5 +1,7 @@
 import { UpdateProfileService } from './../../../services/update-profile.service';
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
@@ -12,7 +14,8 @@ export class SidebarComponent implements OnInit {
   doctorLastName:string;
   doctorEmail:string;
 
-  constructor( public updateprofileservice : UpdateProfileService) { }
+  constructor( public updateprofileservice : UpdateProfileService,private afAuth: AngularFireAuth,
+    private router: Router) { }
 
   ngOnInit() {
     this.updateprofileservice.getDoctorData().subscribe(data => {
@@ -30,6 +33,18 @@ export class SidebarComponent implements OnInit {
       console.log('doctor data - ',this.doctor);
 
     });
+  }
+  
+  signOut(){
+    if(confirm("Are you sure you want to logout?")){
+      this.afAuth.signOut()
+    .then(()=>{
+      console.log('logged out!')
+      this.router.navigate(['/home']);   
+    })
+    }    else{
+      this.router.navigate(['/docHome']);
+    }  
   }
 
 }

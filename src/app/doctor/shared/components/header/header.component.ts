@@ -27,20 +27,34 @@ export class HeaderComponent implements OnInit {
     }, 300);
   }
 
+  // signOut(){
+
+  //   this.afAuth.signOut()
+  //   .then(()=>{
+  //     console.log('logged out!')
+  //     this.router.navigate(['/home']);
+
+  //   })
+  // }
+
   signOut(){
-    this.afAuth.signOut()
+    if(confirm("Are you sure you want to logout?")){
+      this.afAuth.signOut()
     .then(()=>{
       console.log('logged out!')
-      this.router.navigate(['/home']);
+      this.router.navigate(['/home']);   
     })
-  }
+    }    else{
+      this.router.navigate(['/docHome']);
+    }  
+  } 
 
   help(){
-    this.router.navigate(['/help']);
+    this.router.navigate(['/contentDoc']);
   }
 
   goToSettings(){
-    this.router.navigate(['/myaccount']);
+    this.router.navigate(['/updateAccount']);
   }
 
 }
