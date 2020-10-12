@@ -266,7 +266,7 @@ export class AppoinmentsComponent implements OnInit {
     const form = this.createForm({ inputData: data })
     // You have to create hidden(style="display:none") div element with this "submit-form-container" id (id="submit-form-container") in the component
     // <div style="display:none" id="submit-form-container"></div>
-    document.querySelector('#submit-form-container').appendChild(form)
+    document.querySelector('#submitForm').appendChild(form)
     form.submit()
   }
 
