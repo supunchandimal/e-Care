@@ -25,16 +25,26 @@ export interface appointmentDetails {
 export class AppointmentDocComponent implements OnInit {
 
   @ViewChild(MatSort, {static: true}) sort: MatSort;
-  selectedDate: any;
+  today: number = Date.now();
+  now=new Date()
+  selectedDate=new Date(this.now.getFullYear(),this.now.getMonth(),this.now.getDate());
+  minDate: Date;
+  maxDate: Date;
   scheduleData: any;
   currentUserID: string;
 
   constructor(
+    
     private datePipe: DatePipe,
     public AppointmentScheduleService: AppointmentScheduleService,
     private db: AngularFirestore,
     private router: Router
   ){
+    const currentYear = new Date().getFullYear();
+    this.minDate = new Date(this.today);
+    var temp=new Date();
+    temp.setDate(temp.getDate()+7);
+    this.maxDate = temp;
     this.currentUserID = localStorage.getItem("currentUserID");
   }
   

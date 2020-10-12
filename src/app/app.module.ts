@@ -93,15 +93,17 @@ import { HelpComponent } from './patientpages/help/help.component';
 import { AdminPaymentdetailsComponent } from './admin-paymentdetails/admin-paymentdetails.component';
 import { AdminGraphComponent } from './admin/admin-graph/admin-graph.component';
 import { AdminGraphService } from 'src/services/shared/admin-graph.service';
+import {AdminPaymentDetailsService} from 'src/services/shared/admin-payment-details.service';
 import { PayhereComponent } from './patientpages/payhere/payhere.component';
 import { BookedComponent } from './patientpages/appoinments/booked/booked.component';
 
 import { DocvComponent } from './video/docv/docv.component';
+import { PrescriptionpdfComponent } from './patientpages/prescriptionpdf/prescriptionpdf.component';
 import { PaymentSuccessComponent } from './patientpages/payment-success/payment-success.component';
 import { PaymentFailedComponent } from './patientpages/payment-failed/payment-failed.component';
 
 
-
+import { NgxQRCodeModule } from 'ngx-qrcode2';
 
 
 @NgModule({
@@ -155,11 +157,9 @@ import { PaymentFailedComponent } from './patientpages/payment-failed/payment-fa
     ViewDoctorComponent,
     PayhereComponent,
     BookedComponent,
-   
     DocvComponent,
-   
+    PrescriptionpdfComponent,
     PaymentSuccessComponent,
-   
     PaymentFailedComponent,
 
   ],
@@ -190,6 +190,8 @@ import { PaymentFailedComponent } from './patientpages/payment-failed/payment-fa
     DefaultAdminModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    NgxQRCodeModule,
+ 
     NgxAgoraModule.forRoot({ AppID: environment.agora.appId }) ,
   ],
   providers: [
@@ -199,6 +201,7 @@ import { PaymentFailedComponent } from './patientpages/payment-failed/payment-fa
     ManagePatientService,
     PatientDeleteDialogService,
     AdminGraphService,
+    AdminPaymentDetailsService,
     AccountService,
     PpicService,
     MatDatepickerModule,

@@ -15,19 +15,19 @@ export class SidebarComponent implements OnInit {
   constructor( public updateprofileservice : UpdateProfileService) { }
 
   ngOnInit() {
-    this.updateprofileservice.getDoctor().subscribe(data => {
-
-      this.doctor = data.map(e => {
-        return {
-          id: e.payload.doc.id,
+    this.updateprofileservice.getDoctorData().subscribe(data => {
+      this.doctor = data;
+      // this.doctor = data.map(e => {
+      //   return {
+      //     id: e.payload.doc.id,
           
-          doctorFirstName: e.payload.doc.data()['firstName'],
-          doctorLastName: e.payload.doc.data()['lastName'],
-          doctorEmail: e.payload.doc.data()['email'],
+      //     doctorFirstName: e.payload.doc.data()['firstName'],
+      //     doctorLastName: e.payload.doc.data()['lastName'],
+      //     doctorEmail: e.payload.doc.data()['email'],
          
-        };
-      })
-      console.log(this.doctor);
+      //   };
+      // })
+      console.log('doctor data - ',this.doctor);
 
     });
   }

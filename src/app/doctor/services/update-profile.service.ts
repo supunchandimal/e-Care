@@ -15,6 +15,11 @@ export class UpdateProfileService {
     return this.fireservice.collection('hii', ref=>ref.where("docID","==",1)).snapshotChanges();
   }
 
+  getDoctorData()
+  {
+    return this.fireservice.collection('Users').doc(localStorage.getItem('currentUserID')).valueChanges();
+  }
+
   updateDoctor(recordid, record)
   {
     this.fireservice.doc('hii/' + recordid).update(record);
