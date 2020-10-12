@@ -33,7 +33,7 @@
 }
 
 .dropdown{
-    margin-left: 50px;
+    margin-left: 250px;
     margin-bottom: 25px;
 }
 
@@ -59,4 +59,25 @@
     margin-left: 30px;
     padding-left: 20px;
     padding-right: 20px;
+}
+
+.bg-warning{
+    color: white;
+    background-color: #2e9cca;
+    margin-right: 0px;
+    margin-left: 250px;
+    height: 100px;
+}
+.abc{
+    margin-right: 0px;
+}
+
+.card-text{
+    font-size: larger;
+    margin-top: 20px;
+    
+}
+
+.icn{
+    margin-left: 20px;
 }

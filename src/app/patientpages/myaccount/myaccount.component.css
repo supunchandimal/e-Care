@@ -82,6 +82,7 @@
     opacity: 0.8;
     border: 1px solid black;
     height: 120vh;
+    margin-bottom: 20px;
 }
 
 .card:hover {

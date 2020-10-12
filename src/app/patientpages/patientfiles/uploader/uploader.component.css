@@ -50,3 +50,8 @@ progress::-webkit-progress-value {
     margin-left: 19%;
     display: flex;
 }
+
+#previosfilesheader{
+    text-align: center;
+    margin-top: 5%;
+}
