@@ -1,7 +1,6 @@
 <div class="sidebar">
     <button mat-raised-button color="warn" id="leaveButton" (click)="leave()">Leave</button>
-    <button mat-raised-button color="primary" id="presButton">Prescription</button>
-
+    <button mat-raised-button color="primary" id="presButton" (click)="callAPI()">Prescription</button>
 </div>
 
 <div [id]="localCallId" class="local">
@@ -9,20 +8,20 @@
 
 <div *ngFor="let callId of remoteCalls" [id]="callId" style="border: 5px; border-color:black ;" class="remote"></div>
 <div>
-    <button class="" (click)="Oncollapse()">SHOW VITALS</button>
-    <button class="" (click)="Onexpand()">HIDE</button>
+    <!-- <button class="" (click)="Oncollapse()">SHOW VITALS</button>
+    <button class="" (click)="Onexpand()">HIDE</button> -->
     <div *ngIf="mark ==2">
         <h1>dfsdfs</h1>
     </div>
 
     <div class="row">
-        <button mat-button (click)="callAPI()">Open dialog</button>
+        <!-- <button mat-button (click)="callAPI()">Open dialog</button> -->
     </div>
     <ng-template #callAPIDialog>
-   
+
         <div class="modal-body">
-         <app-prescriptionpdf [channelid]="channelID"></app-prescriptionpdf>
+            <app-prescriptionpdf [channelid]="channelID"></app-prescriptionpdf>
         </div>
-       
-      </ng-template>
+
+    </ng-template>
 </div>

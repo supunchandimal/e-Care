@@ -1,6 +1,7 @@
 import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { AgoraClient, ClientEvent, NgxAgoraService, Stream, StreamEvent } from 'ngx-agora';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -23,7 +24,8 @@ export class DocvComponent implements OnInit {
 
   constructor(
     private ngxAgoraService: NgxAgoraService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private router: Router
   ) {
     this.channelID = localStorage.getItem('selectedChannelID_doctor');
     this.uid = Math.floor(Math.random() * 100);
@@ -58,6 +60,10 @@ export class DocvComponent implements OnInit {
     this.assignLocalStreamHandlers();
     // Join and publish methods added in this step
     this.initLocalStream(() => this.join(uid => this.publish(), error => console.error(error)));
+  }
+
+  leave(){
+    this.router.navigate(['/appointments'])
   }
 
   /**

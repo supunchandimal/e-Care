@@ -1,6 +1,11 @@
-<div class="row">
-    <button mat-button (click)="callAPI()">Open dialog</button>
+<div class="sidebar">
+    <button mat-raised-button color="warn" id="leaveButton" (click)="leave()">Leave</button>
+    <button mat-raised-button color="primary" id="presButton" (click)="callAPI()">Create Prescription</button>
 </div>
+
+<!-- <div class="row">
+    <button mat-button (click)="callAPI()" style="position: absolute; right: 10px;">Open dialog</button>
+</div> -->
 
 <div [id]="localCallId" class="local"></div>
 
@@ -8,10 +13,9 @@
 
 
 <ng-template #callAPIDialog>
-   
+
     <div class="modal-body">
-     <app-prescriptionform [channelid]=" channelID"></app-prescriptionform>
+        <app-prescriptionform [channelid]=" channelID"></app-prescriptionform>
     </div>
-   
-  </ng-template>
-  
+
+</ng-template>
