@@ -91,23 +91,10 @@ export class HealthprofileComponent implements OnInit {
         this.currentUser = user;
         console.log('AUTHSTATE USER', user.uid);
 
-
-        this.afs.collection('ppic').doc(this.currentUser.uid).get().toPromise().then((docSnapshot) => {
-          if (docSnapshot.exists) {
-            this.getPpic().subscribe(ppic => {
-              console.log(ppic);
-              this.ppic = ppic;
-            });
-          }
-          else{
-            this.afs.collection('ppic').doc(this.currentUser.uid).set({
-              date:this.getToday(),
-              downloadURL:'a',
-              path:'',
-              
-            })
-          }
+        this.afs.collection('Users').doc(this.currentUser.uid).valueChanges().subscribe((docSnapshot) => {
+          this.ppic = docSnapshot;
         });
+        
         this.afs.collection('Healthpro').doc(this.currentUser.uid).get().toPromise().then((docSnapshot) => {
           if (docSnapshot.exists) {
             this.getYes().subscribe(yes => {

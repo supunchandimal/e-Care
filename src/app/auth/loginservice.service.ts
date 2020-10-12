@@ -39,7 +39,7 @@ export class LoginserviceService {
                   if(data['role']=="admin"){
                     this.router.navigate(['/admin']);
                   }else if(data['role']=="patient"){
-                    this.router.navigate(['/patientHome']);
+                    this.router.navigate(['/patientHome2']);
                 }else if (data['role']=="doctor"){
                   this.router.navigate(['/docHome'])
                 }

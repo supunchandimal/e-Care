@@ -57,7 +57,6 @@ import { PayhereComponent } from './patientpages/payhere/payhere.component';
 import { BookedComponent } from './patientpages/appoinments/booked/booked.component';
 import { DocvComponent } from './video/docv/docv.component';
 import { PrescriptionpdfComponent } from './patientpages/prescriptionpdf/prescriptionpdf.component';
-
 import { PaymentSuccessComponent } from './patientpages/payment-success/payment-success.component';
 import { PaymentFailedComponent } from './patientpages/payment-failed/payment-failed.component';
 
@@ -84,23 +83,16 @@ const routes: Routes = [
   {path:'admin-announcement', component: AdminAnnouncementComponent},
   {path:'admin-paymentdetails', component: AdminPaymentdetailsComponent},
   {path:'patientHome',component:PatientDefaultPageComponent},
-  {path:'healthprofile',component:HealthprofileComponent},
-  {path:'appoinments',component:AppoinmentsComponent},
   {path:'healthrecords',component:HealthrecordsComponent},
   {path:'myproviders',component:MyprovidersComponent},
-  {path:'consultationhistory',component:ConsultationhistoryComponent},
   {path:'whatwetreat', component:WhatwetreatComponent},
   {path:'forgotpass',component:ForgotpassComponent},
   {path:'ourproviders',component:OurproviersComponent},
-  {path:'myaccount',component:MyaccountComponent},
   {path:'adminfeedbacks', component:AdminFeedbacksComponent},
   {path:'patientupload',component:UploaderComponent},
   {path:'video',component:VconferenceComponent},
-  {path:'messages',component:MessagesComponent},
   {path:'payement',component:PayhereComponent},
-  {path:'book',component:BookedComponent},
   {path:'docvideo',component:DocvComponent},
-  {path:'help',component:HelpComponent},
   {path:'payment-completed',component:PaymentSuccessComponent},
   {path:'payment-failed',component:PaymentFailedComponent},
 
@@ -137,6 +129,14 @@ const routes: Routes = [
   {path:'patientHome2',component:PatientDefaultPageComponent},
   {path:'healthrecords2',component:HealthrecordsComponent},
   {path:'healthprofile2',component:HealthprofileComponent},
+  {path:'appoinments',component:AppoinmentsComponent},
+  {path:'book',component:BookedComponent},
+  {path:'messages',component:MessagesComponent},
+  {path:'healthprofile',component:HealthprofileComponent},
+  {path:'help',component:HelpComponent},
+  {path:'myaccount',component:MyaccountComponent},
+  {path:'consultationhistory',component:ConsultationhistoryComponent},
+
                       
             ]
   },

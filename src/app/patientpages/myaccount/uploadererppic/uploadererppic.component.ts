@@ -33,7 +33,7 @@ export class UploadererppicComponent implements OnInit {
         console.log('AUTHSTATE USER', user.uid); 
         this.getPpic().subscribe(allegs =>{
           console.log(allegs);
-        this.allegs= allegs;
+          this.allegs= allegs;
       });
         //this works
         
@@ -63,6 +63,6 @@ export class UploadererppicComponent implements OnInit {
     }
   }
  getPpic(){
-  return this.afs.collection('ppic').doc(this.currentUser.uid).valueChanges();
+  return this.afs.collection('Users').doc(this.currentUser.uid).valueChanges();
  }
 }
