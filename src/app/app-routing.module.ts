@@ -59,7 +59,7 @@ import { DocvComponent } from './video/docv/docv.component';
 import { PrescriptionpdfComponent } from './patientpages/prescriptionpdf/prescriptionpdf.component';
 import { PaymentSuccessComponent } from './patientpages/payment-success/payment-success.component';
 import { PaymentFailedComponent } from './patientpages/payment-failed/payment-failed.component';
-
+import { PrescriptionformComponent } from './doctor/modules/prescriptionform/prescriptionform.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'/home' ,pathMatch:'full'},
@@ -91,7 +91,7 @@ const routes: Routes = [
   {path:'adminfeedbacks', component:AdminFeedbacksComponent},
   {path:'patientupload',component:UploaderComponent},
   {path:'payement',component:PayhereComponent},
-  {path:'docvideo',component:DocvComponent},
+  
   {path:'payment-completed',component:PaymentSuccessComponent},
   {path:'payment-failed',component:PaymentFailedComponent},
 
@@ -105,9 +105,11 @@ const routes: Routes = [
             {path:'appointmentSchedule',component:AppointmentScheduleComponent},
             {path:'announcements',component:AnnouncementsDocComponent},
             {path:'payments',component:PaymentsDocComponent},
-            {path:'patients',component:PatientsDocComponent},          
+            {path:'patients',component:PatientsDocComponent}, 
+            {path:'docvideo',component:DocvComponent},         
             ]
   },
+  {path:'prescriptionform',component:PrescriptionformComponent},
 
 
   //admin's new paths

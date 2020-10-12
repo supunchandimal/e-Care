@@ -14,4 +14,15 @@
     <div *ngIf="mark ==2">
         <h1>dfsdfs</h1>
     </div>
+
+    <div class="row">
+        <button mat-button (click)="callAPI()">Open dialog</button>
+    </div>
+    <ng-template #callAPIDialog>
+   
+        <div class="modal-body">
+         <app-prescriptionpdf [channelid]="channelID"></app-prescriptionpdf>
+        </div>
+       
+      </ng-template>
 </div>
