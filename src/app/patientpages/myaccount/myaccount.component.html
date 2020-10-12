@@ -5,7 +5,7 @@
         <div class="container">
             <div class="ppic">
 
-                <div style="margin-left: 0%;width: 100%;background-color: black;height: 99%;">
+                <div style="margin-left: -5px; margin-top: 20px;width: 100%;background-color: black;height: 99%;">
                     <app-uploadererppic></app-uploadererppic>
                 </div>
                 <div style="margin-left: 45%;margin-top: -12%;">
@@ -17,7 +17,7 @@
                     <div class="formp1">
                         <h1 style="color: black; "><b> UPDATE YOUR PERSONAL DETAILS</b></h1>
 
-                        <div style="width: 35%;">
+                        <div style="width: 35%; margin-top: 10%;">
                             <div class="searchformfld">
                                 <input style="color: black;" width="50vw" type="text" class="email" id="email" name="email" value="{{user.email}}" placeholder=" " disabled />
                                 <label for="email"><b>Email</b></label>
@@ -46,7 +46,7 @@
                     </div>
                     <div class="formp2">
 
-                        <div style="width: 35%;">
+                        <div style="width: 35%; margin-top: 10%;">
                             <div class="searchformfld">
                                 <input [(ngModel)]="item.addr" value={{meds.addr}} width="50vw" type="text" class="addr" id="addr" name="addr" placeholder=" " />
                                 <label for="addr"><b>Address </b></label>
@@ -72,7 +72,7 @@
                         </div>
                         <div style="width: 100%;margin-left: 20%;margin-top: 20%;">
                             <div class="submit">
-                                <input width="10vw" type="submit" class="submit" id="phoneNumber" name="phoneNumber" placeholder=" " (click)="openOtherDialog()" />
+                                <button class="btn btn-primary" style="width: 100px; height: 50px; font-size: large; margin-top: -20%; margin-left: 20px;" type="submit" id="phoneNumber" name="phoneNumber" (click)="openOtherDialog()">Submit</button>
                                 <ng-template #secondDialog>
                                     <h2 matDialogTitle>Profile Updated Successfully</h2>
 
