@@ -97,13 +97,13 @@
     text-align: center;
     height: 45vh;
     margin-top: 15%;
-    margin-left: 18%;
+    margin-left: 12%;
     /* margin-right: 40%; */
 }
 
 .card2 {
     display: grid;
-    margin-left: 30%;
+    margin-left: 20%;
     grid-template-columns: 300px;
     grid-template-rows: 210px 210px 80px;
     grid-template-areas: "image" "text" "stats";

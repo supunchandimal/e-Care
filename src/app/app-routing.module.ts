@@ -90,7 +90,6 @@ const routes: Routes = [
   {path:'ourproviders',component:OurproviersComponent},
   {path:'adminfeedbacks', component:AdminFeedbacksComponent},
   {path:'patientupload',component:UploaderComponent},
-  {path:'video',component:VconferenceComponent},
   {path:'payement',component:PayhereComponent},
   {path:'docvideo',component:DocvComponent},
   {path:'payment-completed',component:PaymentSuccessComponent},
@@ -136,6 +135,8 @@ const routes: Routes = [
   {path:'help',component:HelpComponent},
   {path:'myaccount',component:MyaccountComponent},
   {path:'consultationhistory',component:ConsultationhistoryComponent},
+  {path:'video',component:VconferenceComponent},
+
 
                       
             ]

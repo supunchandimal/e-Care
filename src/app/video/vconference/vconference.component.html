@@ -1,7 +1,13 @@
+<div class="sidebar">
+    <button mat-raised-button color="warn" id="leaveButton" (click)="leave()">Leave</button>
+    <button mat-raised-button color="primary" id="presButton">Prescription</button>
+
+</div>
+
 <div [id]="localCallId" class="local">
 </div>
 
-<div *ngFor="let callId of remoteCalls" [id]="callId" class="remote"></div>
+<div *ngFor="let callId of remoteCalls" [id]="callId" style="border: 5px; border-color:black ;" class="remote"></div>
 <div>
     <button class="" (click)="Oncollapse()">SHOW VITALS</button>
     <button class="" (click)="Onexpand()">HIDE</button>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AgoraClient, ClientEvent, NgxAgoraService, Stream, StreamEvent } from 'ngx-agora';
 
 @Component({
@@ -16,7 +17,7 @@ export class VconferenceComponent implements OnInit {
   private uid: number;
   channelID: string;
 
-  constructor(private ngxAgoraService: NgxAgoraService) {
+  constructor(private ngxAgoraService: NgxAgoraService,private router:Router) {
     this.uid = Math.floor(Math.random() * 100);
     this.channelID = localStorage.getItem("patient_appointmentID")
 
@@ -35,6 +36,10 @@ export class VconferenceComponent implements OnInit {
     this.assignLocalStreamHandlers();
     // Join and publish methods added in this step
     this.initLocalStream(() => this.join(uid => this.publish(), error => console.error(error)));
+  }
+
+  leave(){
+    this.router.navigate(['/patientHome2'])
   }
 
   /**
