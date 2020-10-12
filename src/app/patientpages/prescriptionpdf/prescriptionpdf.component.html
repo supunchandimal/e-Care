@@ -6,14 +6,19 @@
         
        <h1 style="margin-left: 45%;">E care</h1>
             <div style="margin-left: 10%;">
-              issued date: <br>
-              channel id: <br>
-             patient Name:<br>
-              doctor Name:<br>
+              issued date: {{date}}<br>
+              
+             patient Name:{{patientname}}<br>
+              doctor Name:{{docname}}<br>
             </div>
            
-         
+            
           <hr>
+      
+
+        <div *ngFor= "let prescription of prescriptiondata" style="margin-left: 5%;">
+          {{prescription}}
+        </div>
 <!-- QR CODE PART STARTS-->
         <div style="margin-top: 450px;">
           <ngx-qrcode 

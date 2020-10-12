@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AgoraClient, ClientEvent, NgxAgoraService, Stream, StreamEvent } from 'ngx-agora';
+import { MatDialog } from '@angular/material/dialog';
+import { TemplateRef } from '@angular/core';
+import { ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-vconference',
@@ -7,6 +10,7 @@ import { AgoraClient, ClientEvent, NgxAgoraService, Stream, StreamEvent } from '
   styleUrls: ['./vconference.component.css']
 })
 export class VconferenceComponent implements OnInit {
+  @ViewChild('callAPIDialog') callAPIDialog: TemplateRef<any>;
   title = 'angular-video';
   localCallId = 'agora_local';
   remoteCalls: string[] = [];
@@ -16,7 +20,8 @@ export class VconferenceComponent implements OnInit {
   private uid: number;
   channelID: string;
 
-  constructor(private ngxAgoraService: NgxAgoraService) {
+  constructor(private ngxAgoraService: NgxAgoraService
+    , public dialog: MatDialog) {
     this.uid = Math.floor(Math.random() * 100);
     this.channelID = localStorage.getItem("patient_appointmentID")
 
@@ -26,6 +31,15 @@ export class VconferenceComponent implements OnInit {
     console.log('channelIDDDDDDDD - ',this.channelID);
     this.startCall();
   }
+ 
+
+  callAPI() {
+    let dialogRef = this.dialog.open(this.callAPIDialog, {
+      height: '700px',
+      width: '700px',
+    });
+  
+  }
 
   startCall(){
     this.client = this.ngxAgoraService.createClient({ mode: 'rtc', codec: 'h264' });
@@ -33,13 +47,11 @@ export class VconferenceComponent implements OnInit {
 
     this.localStream = this.ngxAgoraService.createStream({ streamID: this.uid, audio: true, video: true, screen: false });
     this.assignLocalStreamHandlers();
-    // Join and publish methods added in this step
+    
     this.initLocalStream(() => this.join(uid => this.publish(), error => console.error(error)));
   }
 
-  /**
-   * Attempts to connect to an online chat room where users can host and receive A/V streams.
-   */
+  
   join(onSuccess?: (uid: number | string) => void, onFailure?: (error: Error) => void): void {
     this.client.join(null, this.channelID, this.uid, onSuccess, onFailure);
   }

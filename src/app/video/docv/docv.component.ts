@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { AgoraClient, ClientEvent, NgxAgoraService, Stream, StreamEvent } from 'ngx-agora';
+import { MatDialog } from '@angular/material/dialog';
+
 
 @Component({
   selector: 'app-docv',
@@ -7,6 +9,8 @@ import { AgoraClient, ClientEvent, NgxAgoraService, Stream, StreamEvent } from '
   styleUrls: ['./docv.component.css']
 })
 export class DocvComponent implements OnInit {
+
+  @ViewChild('callAPIDialog') callAPIDialog: TemplateRef<any>;
 
   title = 'angular-video';
   localCallId = 'agora_local';
@@ -17,17 +21,36 @@ export class DocvComponent implements OnInit {
   private uid: number;
   channelID: string;
 
-  constructor(private ngxAgoraService: NgxAgoraService) {
+  constructor(
+    private ngxAgoraService: NgxAgoraService,
+    public dialog: MatDialog
+  ) {
     this.channelID = localStorage.getItem('selectedChannelID_doctor');
     this.uid = Math.floor(Math.random() * 100);
   }
 
   ngOnInit() {
-    console.log('channelIDDDDDDDDDDDDDDDD - ',this.channelID);
+    console.log('channelIDDDDDDDDDDDDDDDD - ', this.channelID);
     this.startCall();
   }
 
-  startCall(){
+  openDialog() {
+    const dialogRef = this.dialog.open(DialogContentExampleDialog);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+
+  callAPI() {
+    let dialogRef = this.dialog.open(this.callAPIDialog, {
+      height: '600px',
+      width: '600px',
+    });
+  
+  }
+
+  startCall() {
     this.client = this.ngxAgoraService.createClient({ mode: 'rtc', codec: 'h264' });
     this.assignClientHandlers();
 
@@ -130,3 +153,10 @@ export class DocvComponent implements OnInit {
     return `agora_remote-${stream.getId()}`;
   }
 }
+
+
+@Component({
+  selector: 'dialog-content-example-dialog',
+  templateUrl: 'dialog-content-example-dialog.html',
+})
+export class DialogContentExampleDialog { }

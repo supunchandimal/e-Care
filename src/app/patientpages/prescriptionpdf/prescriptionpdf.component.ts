@@ -1,4 +1,5 @@
-import { Component, OnInit  ,ViewChild, ElementRef} from '@angular/core';
+import { Component, OnInit  ,ViewChild, ElementRef, Input} from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
 import jsPDF from 'jspdf'
 
 @Component({
@@ -8,18 +9,28 @@ import jsPDF from 'jspdf'
 })
 export class PrescriptionpdfComponent implements OnInit {
 
-  
-  ngOnInit(): void {
-  }
+  data:any;
+ 
   @ViewChild('htmlData') htmlData:ElementRef;
+  @Input() public channelid;
 
+  constructor(private db:AngularFirestore) {
+   
 
-  constructor() { }
+   }
+   patientname;
+   date;
+   docname;
+   prescriptiondata:[];
+   ngOnInit(): void {
+    this.getApp();
+         
+  }
 
   //qr code part stats
   title = 'app';
   elementType = 'url';
-  value = "doctor id:12345523432 fsdafsdafadsfasfsafsadflksdfjlkfjakfjlkadsjflkajsdfklasjfksdjal";
+  value = "";
   //qr code ends
 
 
@@ -56,6 +67,28 @@ export class PrescriptionpdfComponent implements OnInit {
   
 
     
+  }
+  getApp() {
+    console.log(this.channelid)
+    this.db.collection('prescription', ref => ref.where('channelid', '==', this.channelid)).valueChanges()
+    .subscribe(output => {
+      this.data = output[0];
+
+      this.date = this.data.date;
+      this.patientname = this.data.patientname;
+      this.docname = this.data.doctorname;
+      this.value = this.data.doctorname +" to "+ this.patientname+" and this will be issued by e care";
+      this.prescriptiondata = this.data.prescription;
+
+      if(this.data==null){
+        this.date=""
+        this.date = "";
+      this.patientname = "";
+      this.docname ="";
+      this.value = this.data.doctorname +" to "+ this.patientname+" and this will be issued by e care";
+      this.prescriptiondata
+      }
+    })
   }
 
 }

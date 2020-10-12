@@ -103,6 +103,7 @@ import { PaymentFailedComponent } from './patientpages/payment-failed/payment-fa
 
 
 import { NgxQRCodeModule } from 'ngx-qrcode2';
+import { PrescriptionformComponent } from './doctor/modules/prescriptionform/prescriptionform.component';
 
 
 @NgModule({
@@ -160,6 +161,7 @@ import { NgxQRCodeModule } from 'ngx-qrcode2';
     PrescriptionpdfComponent,
     PaymentSuccessComponent,
     PaymentFailedComponent,
+    PrescriptionformComponent,
 
   ],
   imports: [

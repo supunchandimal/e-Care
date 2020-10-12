@@ -60,7 +60,7 @@ import { PrescriptionpdfComponent } from './patientpages/prescriptionpdf/prescri
 
 import { PaymentSuccessComponent } from './patientpages/payment-success/payment-success.component';
 import { PaymentFailedComponent } from './patientpages/payment-failed/payment-failed.component';
-
+import { PrescriptionformComponent } from './doctor/modules/prescriptionform/prescriptionform.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'/home' ,pathMatch:'full'},
@@ -117,6 +117,7 @@ const routes: Routes = [
             {path:'patients',component:PatientsDocComponent},          
             ]
   },
+  {path:'prescriptionform',component:PrescriptionformComponent},
 
 
   //admin's new paths
