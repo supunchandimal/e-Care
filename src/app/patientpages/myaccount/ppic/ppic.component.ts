@@ -67,7 +67,7 @@ export class PpicComponent implements OnInit {
       finalize( async() =>  {
         this.downloadURL = await ref.getDownloadURL().toPromise();
 
-        this.db.collection('ppic').doc(this.currentUser.uid).set( { downloadURL: this.downloadURL, path ,date:Date.now()});
+        this.db.collection('Users').doc(this.currentUser.uid).update( { proPicURL: this.downloadURL });
       }),
     );
   }

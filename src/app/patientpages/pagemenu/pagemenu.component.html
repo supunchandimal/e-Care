@@ -1,13 +1,13 @@
-<div class="box">
-    <h1 *ngIf="parentData==1" style="color:aliceblue;font-size: large;">HEALTH PROFILE</h1>
-    <h1 *ngIf="parentData==2" style="color:aliceblue;font-size: large;">HEALTH RECORDS</h1>
-    <h1 *ngIf="parentData==4" style="color:aliceblue;font-size: large;">CONSULTATION HISTORY</h1>
-    <h1 *ngIf="parentData==5" style="color:aliceblue;font-size: large;">MANAGE ACCOUNT</h1>
-    <h1 *ngIf="parentData==6" style="color:aliceblue;font-size: large;">APPOINTMENTS</h1>
-    <h1 *ngIf="parentData==7" style="color:aliceblue;font-size: large;">PHOTOS AND FILES</h1>
-    <h1 *ngIf="parentData==8" style="color:aliceblue;font-size: large;">MESSAGES</h1>
-    <h1 *ngIf="parentData==9" style="color:aliceblue;font-size: large;">APPOINMENTS</h1>
-    <h1 *ngIf="parentData==10" style="color:aliceblue;font-size: large;">HELP & SUPPORT</h1>
+<div class="card box">
+    <h1 *ngIf="parentData==1" style="color:aliceblue;font-size: large; padding: 20px">HEALTH PROFILE</h1>
+    <h1 *ngIf="parentData==2" style="color:aliceblue;font-size: large; padding: 20px">HEALTH RECORDS</h1>
+    <h1 *ngIf="parentData==4" style="color:aliceblue;font-size: large; padding: 20px">CONSULTATION HISTORY</h1>
+    <h1 *ngIf="parentData==5" style="color:aliceblue;font-size: large; padding: 20px">MANAGE ACCOUNT</h1>
+    <h1 *ngIf="parentData==6" style="color:aliceblue;font-size: large; padding: 20px">APPOINTMENTS</h1>
+    <h1 *ngIf="parentData==7" style="color:aliceblue;font-size: large; padding: 20px">PHOTOS AND FILES</h1>
+    <h1 *ngIf="parentData==8" style="color:aliceblue;font-size: large; padding: 20px">MESSAGES</h1>
+    <h1 *ngIf="parentData==9" style="color:aliceblue;font-size: large; padding: 20px">APPOINMENTS</h1>
+    <h1 *ngIf="parentData==10" style="color:aliceblue;font-size: large; padding: 20px">HELP & SUPPORT</h1>
     <!-- eroor ekak enna puluwan -->
 
     <div class="btn-holder" style="margin-right: 180px;">
@@ -25,7 +25,7 @@
                 <button *ngIf="parentData==3"><b>CONSULTATION HISTORY</b></button>
                 <button *ngIf="parentData==4" style="background-color: #2e9cca;" disabled><b>CONSULTATION HISTORY</b></button>
             </a>
-            <a routerLink='/healthrecords'>
+            <a routerLink='/healthrecords2'>
                 <button *ngIf="parentData==1"><b>HEALTH RECORDS</b></button>
                 <button *ngIf="parentData==3"><b>HEALTH RECORDS</b></button>
                 <button *ngIf="parentData==2" style="background-color: #2e9cca;"><b>HEALTH RECORDS</b></button>
