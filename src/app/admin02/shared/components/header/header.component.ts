@@ -36,11 +36,11 @@ export class HeaderComponent implements OnInit {
   }
 
   help(){
-    this.router.navigate(['/help']);
+    this.router.navigate(['/contentDoc']);
   }
 
   goToSettings(){
-    this.router.navigate(['/myaccount']);
+    this.router.navigate(['/updateAccount']);
   }
 
 }

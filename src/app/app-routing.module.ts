@@ -92,7 +92,7 @@ const routes: Routes = [
   {path:'patientupload',component:UploaderComponent},
   {path:'video',component:VconferenceComponent},
   {path:'payement',component:PayhereComponent},
-  {path:'docvideo',component:DocvComponent},
+  
   {path:'payment-completed',component:PaymentSuccessComponent},
   {path:'payment-failed',component:PaymentFailedComponent},
 
@@ -106,7 +106,8 @@ const routes: Routes = [
             {path:'appointmentSchedule',component:AppointmentScheduleComponent},
             {path:'announcements',component:AnnouncementsDocComponent},
             {path:'payments',component:PaymentsDocComponent},
-            {path:'patients',component:PatientsDocComponent},          
+            {path:'patients',component:PatientsDocComponent}, 
+            {path:'docvideo',component:DocvComponent},         
             ]
   },
 

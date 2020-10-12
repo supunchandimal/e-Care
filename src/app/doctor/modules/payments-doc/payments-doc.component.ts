@@ -21,6 +21,7 @@ export class PaymentsDocComponent implements OnInit {
   scheduleData: any;
   currentUserID: string;
   countx : number;
+  sum: number = 0;
   constructor(
 
     private datePipe: DatePipe,
@@ -45,6 +46,7 @@ export class PaymentsDocComponent implements OnInit {
     .subscribe(output => {
       
       this.scheduleData = output;
+      this.sum = this.scheduleData.length * 900;
       //  countx = output.length;
     
       console.log("updated scheduleDat - ",this.scheduleData);
