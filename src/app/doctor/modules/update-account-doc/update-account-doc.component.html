@@ -7,7 +7,7 @@
       <table class="example-full-width" cellspacing="0"><tr>
         <td><mat-form-field class="example-full-width">
           <mat-label>First name</mat-label>
-          <input matInput disabled value={{item.doctorFirstName}}> 
+          <input matInput disabled value={{doctor?.firstname}}> 
         </mat-form-field></td> 
         <td><mat-form-field class="example-full-width">
           <mat-label>Last name</mat-label>
@@ -32,7 +32,7 @@
       <table class="example-full-width" cellspacing="0"><tr>
         <td><mat-form-field class="example-full-width">
           <mat-label>Email</mat-label>
-          <input matInput disabled value={{item.doctorEmail}}> 
+          <input matInput disabled value={{doctor?.email}}> 
         </mat-form-field></td>
       </tr></table>
   
@@ -46,18 +46,18 @@
       <table class="example-full-width" cellspacing="0"><tr>
         <td><mat-form-field class="example-full-width">
           <mat-label>First name</mat-label>
-          <input matInput  [(ngModel)]="item.editFirstName"> 
+          <input matInput  disabled value={{doctor?.firstname}}> 
         </mat-form-field></td> 
         <td><mat-form-field class="example-full-width">
           <mat-label>Last name</mat-label>
-          <input matInput   [(ngModel)]="item.editLastName">
+          <input matInput disabled  [(ngModel)]="item.editLastName">
         </mat-form-field></td>
       </tr></table>
   
       <table class="example-full-width" cellspacing="0"><tr>
         <td><mat-form-field class="example-full-width">
           <mat-label>Speciality</mat-label>
-          <input matInput [(ngModel)]="item.editSpeciality"> 
+          <input matInput disabled [(ngModel)]="item.editSpeciality"> 
         </mat-form-field></td>
       </tr></table>
   
@@ -71,7 +71,7 @@
       <table class="example-full-width" cellspacing="0"><tr>
         <td><mat-form-field class="example-full-width">
           <mat-label>Email</mat-label>
-          <input matInput [(ngModel)]="item.editEmail"> 
+          <input matInput disabled value={{doctor?.email}}> 
         </mat-form-field></td>
       </tr></table></h2>
       <button type="button" (click)="item.isedit = false" class="btn btn-danger btn-md">Cancel</button>

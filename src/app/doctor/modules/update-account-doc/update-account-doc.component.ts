@@ -18,7 +18,7 @@ export class UpdateAccountDocComponent implements OnInit {
   task: AngularFireUploadTask;
   fb;
   edit : boolean;
-
+  doctor :any;
   employee: any;
   doctorFirstName:string;
   doctorLastName:string;
@@ -37,6 +37,11 @@ export class UpdateAccountDocComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.updateprofileservice.getDoctorData().subscribe(data => {
+      this.doctor = data;
+      console.log('doctor data - ',this.doctor);
+
+    });
 
     this.edit = false;
     this.updateprofileservice.getDoctor().subscribe(data => {

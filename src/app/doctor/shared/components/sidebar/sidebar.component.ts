@@ -42,9 +42,7 @@ export class SidebarComponent implements OnInit {
       console.log('logged out!')
       this.router.navigate(['/home']);   
     })
-    }    else{
-      this.router.navigate(['/docHome']);
-    }  
+    }
   }
 
 }
