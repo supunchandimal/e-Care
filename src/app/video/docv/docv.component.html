@@ -1,3 +1,17 @@
+<div class="row">
+    <button mat-button (click)="callAPI()">Open dialog</button>
+</div>
+
 <div [id]="localCallId" class="local"></div>
 
 <div *ngFor="let callId of remoteCalls" [id]="callId" class="remote"></div>
+
+
+<ng-template #callAPIDialog>
+   
+    <div class="modal-body">
+     <app-prescriptionform [channelid]=" channelID"></app-prescriptionform>
+    </div>
+   
+  </ng-template>
+  

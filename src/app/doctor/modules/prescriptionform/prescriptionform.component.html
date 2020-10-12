@@ -1,0 +1,41 @@
+
+<div class="priscription_body">
+
+        <h1>Add prescription</h1>
+    <form action="" [formGroup]="prescriptionForm">
+        
+        <div class="form-group row ">
+            <label for="prescription_bar"  class="col-sm-2 col-form-label" >Add a prescription</label>
+            <div class="col-sm-10">
+                <input type="text" name ="prescription_bar" formControlName="content" class="form-control">
+                <button type="button" class="btn btn-primary col-sm-2" (click)="addprescription()">Add </button>
+            </div>
+             
+        </div>
+        
+       
+        
+        <div class="form-group row">
+            <label for="recomendation"  class="col-sm-2 col-form-label">Other recomendation</label>
+            <div class="col-sm-10">
+                <input type="text" name="recomendation" formControlName="other" class="form-control">
+
+                <button type="button" class="btn btn-primary col-sm-2" (click)="addOtherNotes()">Add</button>      
+            </div>
+                   
+
+        </div>
+
+
+
+    </form>
+
+    <div class="issuedPrescriptions">Issued prescriptions</div>
+    <ul>
+        <li *ngFor="let prescription of descripitonArray">
+          {{prescription}}
+        </li>
+    </ul>
+  
+    <button type="button" class="btn btn-primary" (click)="save()">Issue prescription</button>
+</div>
