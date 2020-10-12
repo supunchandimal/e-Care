@@ -1,6 +1,6 @@
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { Component, OnInit,SimpleChanges } from '@angular/core';
+import { Component, OnInit,Output,SimpleChanges } from '@angular/core';
 import { AppointmentScheduleService } from './../../services/appointment-schedule.service';
 import { convertActionBinding } from '@angular/compiler/src/compiler_util/expression_converter';
 import { DatePipe } from '@angular/common';
@@ -87,6 +87,8 @@ export class AppointmentScheduleComponent implements OnInit {
   currentUserEmail: string;
   docData: any;
   scheduleData: any;
+  msg : boolean = false ;
+  scheduleData02:any;
 
   constructor(
     public AppointmentScheduleService : AppointmentScheduleService,
@@ -112,6 +114,15 @@ export class AppointmentScheduleComponent implements OnInit {
       .subscribe(output => {
         this.docData = output[0];
         console.log('docData - ',this.docData)
+
+        this.scheduleData02 = Output;
+      if (this.scheduleData02.length==0){
+        this.msg = false;
+      }else{
+        this.msg = true;
+      }
+
+
       })
       // this.Test();
     }
@@ -122,6 +133,13 @@ export class AppointmentScheduleComponent implements OnInit {
       this.AppointmentScheduleService.getSchedule(date).subscribe(data => {
         this.scheduleData = data
         console.log("updated scheduleDat - ",this.scheduleData)
+
+        this.scheduleData02 = data;
+      if (this.scheduleData02.length==0){
+        this.msg = true;
+      }else{
+        this.msg = false;
+      }
       })
     }
 

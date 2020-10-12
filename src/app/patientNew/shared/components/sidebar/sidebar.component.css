@@ -7,6 +7,13 @@
     padding: 0 20px 20px 20px;
 }
 
+#imgcss {
+  width: 200px;
+  height:200px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
 
 .img-circular{
   text-align: center;
