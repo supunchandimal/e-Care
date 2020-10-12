@@ -1,11 +1,13 @@
 <mat-nav-list>
     <div class="profile-card">
+        <img id="imgcss" src= "{{doctor?.proPicURL}}" alt="Profile Picture">
         <div class="header">
+            <br>
             <h2><p>{{doctor?.firstname}}</p></h2>
-            <h4>{{doctor?.email}}</h4>
+            <!-- <h4>{{doctor?.email}}</h4> -->
         </div>
         <!-- <div class="img-circular"></div> -->
-        <img id="imgcss" src= "{{doctor?.proPicURL}}" alt="Profile Picture">
+        
         <!-- <div class="rounded-circle" [src]="doctor.proPicURL"></div> -->
     </div>
 
@@ -14,7 +16,7 @@
     <a mat-list-item routerLinkActive="list-item-active" routerLink="/docHome"><mat-icon>dashboard</mat-icon>Dashboard</a>
     <a mat-list-item routerLinkActive="list-item-active" routerLink="/appointments"><mat-icon>calendar_today</mat-icon>Appointments</a>
     <a mat-list-item routerLinkActive="list-item-active" routerLink="/appointmentSchedule"><mat-icon>schedule</mat-icon>Appointment Schedule</a>
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/patients"><mat-icon>people</mat-icon>My Patients</a>
+    <!-- <a mat-list-item routerLinkActive="list-item-active" routerLink="/patients"><mat-icon>people</mat-icon>My Patients</a> -->
     <a mat-list-item routerLinkActive="list-item-active" routerLink="/announcements"><mat-icon>announcement</mat-icon>Announcements</a>
     <a mat-list-item routerLinkActive="list-item-active" routerLink="/payments"><mat-icon>payment</mat-icon>Payments</a>
     <a mat-list-item routerLinkActive="list-item-active" routerLink="/contentDoc"><mat-icon> list_alt</mat-icon>Content</a>
