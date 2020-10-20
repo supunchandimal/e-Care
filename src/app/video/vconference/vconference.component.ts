@@ -36,7 +36,7 @@ export class VconferenceComponent implements OnInit {
 
   ngOnInit() {
     console.log('channelIDDDDDDDD - ',this.channelID);
-    // this.startCall();    
+    this.startCall();    
   }
  
 

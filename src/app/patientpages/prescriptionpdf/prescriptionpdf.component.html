@@ -22,7 +22,7 @@
             <hr>
 
             <h4 style="margin-left: 5%;  font-weight: 500;">Prescribed Medicines</h4>
-            <div *ngFor="let prescription of prescriptiondata" style="margin-left: 5%;">
+            <div *ngFor="let prescription of prescriptiondata" style="margin-left: 5%; margin-top: 1%;">
                 {{prescription}}
             </div>
             <!-- QR CODE PART STARTS-->
@@ -30,7 +30,7 @@
                 <ngx-qrcode [elementType]="elementType" [value]="value" cssClass="aclass" errorCorrectionLevel="L">
                 </ngx-qrcode>
             </div>
-            <p>scan qr code check validity of this pdf</p>
+            <p style="margin-left: 4%;">Scan this QR Code to check the validity of this prescription</p>
 
             <!-- QR CODE PART ENDS -->
         </div>

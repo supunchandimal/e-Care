@@ -25,12 +25,20 @@ export class ConsultationhistoryComponent implements OnInit {
 
   startobs = this.startAt.asObservable();
   endobs = this.endAt.asObservable();
+  appoData: any[];
+  currentUserID: string;
 
 
-  constructor(private afs: AngularFirestore) { }
+  constructor(private afs: AngularFirestore) {
+    this.currentUserID = localStorage.getItem('currentUserID');
+   }
   public flag4 = 4;
   ngOnInit(): void {
-
+    this.afs.collection('Appoinments',ref => ref.where('userId','==',this.currentUserID)).valueChanges()
+    .subscribe(output => {
+      this.appoData = output;
+      console.log('apppoo data - ',this.appoData);
+    })
     combineLatest(this.startobs, this.endobs).subscribe((value) => {
       this.getalldocs(value[0], value[1]).subscribe((docs) => {
         this.docs = docs;

@@ -13,6 +13,7 @@ export class PrescriptionformComponent implements OnInit {
   @Input() public channelid;
   prescriptionForm:FormGroup
   descripitonArray=[];
+  otherNotesArray=[];
   
   doctorname="dasith devapriya"
   patientname="supun chandimal"
@@ -35,7 +36,7 @@ export class PrescriptionformComponent implements OnInit {
 
   }
   addOtherNotes(){
-    this.descripitonArray.push(this.prescriptionForm.controls['other'].value)
+    this.otherNotesArray.push(this.prescriptionForm.controls['other'].value)
     this.prescriptionForm.reset()
   }
 
@@ -47,9 +48,8 @@ export class PrescriptionformComponent implements OnInit {
       channelid:this.channelid,
       doctorname:this.data.docName,
       patientname:this.data.patientname,
-      date:this.data.date
-
-      
+      date:this.data.date,
+      otherNotes: this.otherNotesArray      
     })
   }
 

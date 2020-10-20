@@ -21,6 +21,12 @@
     right: 22%;
 }
 
+#profileButton {
+    position: absolute;
+    top: 25%;
+    right: 25%;
+}
+
 .remote {
     position: fixed;
     top: 20;
