@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AgoraClient, ClientEvent, NgxAgoraService, Stream, StreamEvent } from 'ngx-agora';
 import { MatDialog } from '@angular/material/dialog';
 import { TemplateRef } from '@angular/core';
 import { ViewChild } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-vconference',
@@ -19,9 +21,14 @@ export class VconferenceComponent implements OnInit {
   private localStream: Stream;
   private uid: number;
   channelID: string;
+  prescriptionData: any;
 
-  constructor(private ngxAgoraService: NgxAgoraService
-    , public dialog: MatDialog) {
+  constructor(
+    private ngxAgoraService: NgxAgoraService,
+    public dialog: MatDialog,
+    private router:Router,
+    private db:AngularFirestore
+  ) {
     this.uid = Math.floor(Math.random() * 100);
     this.channelID = localStorage.getItem("patient_appointmentID")
 
@@ -29,7 +36,7 @@ export class VconferenceComponent implements OnInit {
 
   ngOnInit() {
     console.log('channelIDDDDDDDD - ',this.channelID);
-    this.startCall();
+    this.startCall();    
   }
  
 
@@ -51,7 +58,13 @@ export class VconferenceComponent implements OnInit {
     this.initLocalStream(() => this.join(uid => this.publish(), error => console.error(error)));
   }
 
-  
+  leave(){
+    this.router.navigate(['/patientHome2'])
+  }
+
+  /**
+   * Attempts to connect to an online chat room where users can host and receive A/V streams.
+   */
   join(onSuccess?: (uid: number | string) => void, onFailure?: (error: Error) => void): void {
     this.client.join(null, this.channelID, this.uid, onSuccess, onFailure);
   }

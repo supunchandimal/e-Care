@@ -1,3 +1,4 @@
+<div style="display: none;" id="submitForm"></div>
 <div style="align-self: flex-start;width: 82vw;margin-left: 3px;" *ngIf="mark==1">
 
     <app-pagemenu [parentData]="flag"></app-pagemenu>
@@ -29,7 +30,7 @@
             <input id="txtBox" class="form-control" [(ngModel)]="searchValue" [ngModelOptions]="{standalone: true}" (keyup)="searchByName()" placeholder="Search" type="text" style="right: 100px;width: 200%;">
         </div>
         <div class="col">
-            <label for="cars" style="margin-left: 500px;">Filter by Speciality :</label>
+            <label for="cars" style="margin-left: 500px;">Filter by Speciality : </label>
 
             <select [(ngModel)]="selectedOption" name="cars" id="cars" (change)="filterSpeciality()">
                 <option value="All">All</option>

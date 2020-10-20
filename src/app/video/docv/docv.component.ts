@@ -1,6 +1,8 @@
 import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { AgoraClient, ClientEvent, NgxAgoraService, Stream, StreamEvent } from 'ngx-agora';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 
 @Component({
@@ -11,6 +13,7 @@ import { MatDialog } from '@angular/material/dialog';
 export class DocvComponent implements OnInit {
 
   @ViewChild('callAPIDialog') callAPIDialog: TemplateRef<any>;
+  @ViewChild('profile') profile: TemplateRef<any>;
 
   title = 'angular-video';
   localCallId = 'agora_local';
@@ -20,10 +23,17 @@ export class DocvComponent implements OnInit {
   private localStream: Stream;
   private uid: number;
   channelID: string;
+  appointmentData: any;
+  patientData: any;
+  operationData: any[];
+  medicineData: any[];
+  allergiesData: any[];
 
   constructor(
     private ngxAgoraService: NgxAgoraService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private router: Router,
+    private db: AngularFirestore
   ) {
     this.channelID = localStorage.getItem('selectedChannelID_doctor');
     this.uid = Math.floor(Math.random() * 100);
@@ -32,6 +42,32 @@ export class DocvComponent implements OnInit {
   ngOnInit() {
     console.log('channelIDDDDDDDDDDDDDDDD - ', this.channelID);
     this.startCall();
+    this.db.collection('Appoinments', ref => ref.where('channelID', '==', this.channelID)).valueChanges()
+      .subscribe(output => {
+        this.appointmentData = output[0];
+        console.log('appointmentIDDDDDDDDDDDDDDDD - ', this.appointmentData);
+        this.db.collection('Users').doc(this.appointmentData.userId).valueChanges()
+          .subscribe(output2 => {
+            this.patientData = output2;
+            console.log('patientIDDDDDDDDDDDDDDDD - ', this.appointmentData);
+            this.db.collection('Opo', ref => ref.where('id', '==', this.appointmentData.userId)).valueChanges()
+              .subscribe(output3 => {
+                this.operationData = output3;
+                console.log('operationIDDDDDDDDDDDDDDDD - ', this.operationData);
+                this.db.collection('Meds', ref => ref.where('id', '==', this.appointmentData.userId)).valueChanges()
+                  .subscribe(output4 => {
+                    this.medicineData = output4;
+                    console.log('medicineIDDDDDDDDDDDDDDDD - ', this.medicineData);
+                    this.db.collection('Allegs', ref => ref.where('did', '==', this.appointmentData.userId)).valueChanges()
+                      .subscribe(output5 => {
+                        this.allergiesData = output5;
+                        console.log('medicineIDDDDDDDDDDDDDDDD - ', this.allergiesData);
+
+                      })
+                  })
+              })
+          })
+      })
   }
 
   openDialog() {
@@ -47,7 +83,14 @@ export class DocvComponent implements OnInit {
       height: '600px',
       width: '600px',
     });
-  
+
+  }
+
+  viewProfile() {
+    let dialogRef = this.dialog.open(this.profile, {
+      height: '600px',
+      width: '600px',
+    });
   }
 
   startCall() {
@@ -58,6 +101,10 @@ export class DocvComponent implements OnInit {
     this.assignLocalStreamHandlers();
     // Join and publish methods added in this step
     this.initLocalStream(() => this.join(uid => this.publish(), error => console.error(error)));
+  }
+
+  leave() {
+    this.router.navigate(['/appointments'])
   }
 
   /**

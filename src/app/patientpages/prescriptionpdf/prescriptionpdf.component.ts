@@ -69,11 +69,11 @@ export class PrescriptionpdfComponent implements OnInit {
     
   }
   getApp() {
-    console.log(this.channelid)
+    console.log('channelIDDDDDDDDDDDDDDDDDDD - ',this.channelid)
     this.db.collection('prescription', ref => ref.where('channelid', '==', this.channelid)).valueChanges()
     .subscribe(output => {
       this.data = output[0];
-
+      console.log('presDataaaaDDDDDDDDDDDDDDDDDDD - ',this.data)
       this.date = this.data.date;
       this.patientname = this.data.patientname;
       this.docname = this.data.doctorname;

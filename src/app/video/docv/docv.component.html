@@ -1,6 +1,13 @@
-<div class="row">
-    <button mat-button (click)="callAPI()">Open dialog</button>
+<div class="sidebar">
+    <button mat-raised-button color="warn" id="leaveButton" (click)="leave()">Leave</button>
+    <button mat-raised-button color="primary" id="presButton" (click)="callAPI()">Create Prescription</button>
+    <button mat-raised-button color="primary" id="profileButton" (click)="viewProfile()">Patient's Profile</button>
+
 </div>
+
+<!-- <div class="row">
+    <button mat-button (click)="callAPI()" style="position: absolute; right: 10px;">Open dialog</button>
+</div> -->
 
 <div [id]="localCallId" class="local"></div>
 
@@ -8,10 +15,69 @@
 
 
 <ng-template #callAPIDialog>
-   
+
     <div class="modal-body">
-     <app-prescriptionform [channelid]=" channelID"></app-prescriptionform>
+        <app-prescriptionform [channelid]=" channelID"></app-prescriptionform>
     </div>
-   
-  </ng-template>
-  
+
+</ng-template>
+
+<ng-template #profile>
+
+    <div class="modal-body">
+        <h1 style="font-weight: bold; margin-left: 35%; margin-bottom: 10%;">Patient's Profile</h1>
+
+        <h1 style="font-weight: bold;">General Details</h1>
+        <p>Name - {{patientData?.firstname}} {{patientData?.secondname}}</p>
+        <p>Date of Birth - {{patientData?.dob}}</p>
+
+        <h1 style="font-weight: bold;margin-top: 10%;">Health Details</h1>
+        <h3 style="font-weight: bold;">Operations</h3>
+        <ul>
+            <li *ngFor="let item of operationData" style="margin-top: 10px;margin-bottom: 10px;">
+                <div layout="row">
+                    <div>
+                        Date - {{item?.date}}
+                    </div>
+                    <div>
+                        Operation - {{item?.name}}
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+        <h3 style="font-weight: bold;margin-top: 5%;">Medicines</h3>
+        <ul>
+            <li *ngFor="let item of medicineData" style="margin-bottom: 10px;">
+                <div layout="row">
+                    <div>
+                        Medicine - {{item?.name}}
+                    </div>
+                    <div>
+                        Frequency - {{item?.description}}
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+        <h3 style="font-weight: bold;margin-top: 5%;">Allergies</h3>
+        <ul>
+            <li *ngFor="let item of allergiesData" style="margin-bottom: 10px;">
+                <div layout="row">
+                    <div>
+                        Allergy - {{item?.name}}
+                    </div>
+                    <div>
+                        Reaction - {{item?.reaction}}
+                    </div>
+                    <div>
+                        Reason - {{item?.source}}
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+
+    </div>
+
+</ng-template>

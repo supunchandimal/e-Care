@@ -1,29 +1,38 @@
 <mat-nav-list>
     <div class="profile-card">
-        <img id="imgcss" src= "{{doctor?.proPicURL}}" alt="Profile Picture">
+        <img id="imgcss" src="{{doctor?.proPicURL}}" alt="Profile Picture">
         <div class="header">
             <br>
-            <h2><p>{{doctor?.firstname}}</p></h2>
+            <h2>
+                <p>{{doctor?.firstname}}</p>
+            </h2>
             <!-- <h4>{{doctor?.email}}</h4> -->
         </div>
         <!-- <div class="img-circular"></div> -->
-        
+
         <!-- <div class="rounded-circle" [src]="doctor.proPicURL"></div> -->
     </div>
 
     <mat-divider></mat-divider>
 
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/docHome"><mat-icon>dashboard</mat-icon>Dashboard</a>
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/appointments"><mat-icon>calendar_today</mat-icon>Appointments</a>
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/appointmentSchedule"><mat-icon>schedule</mat-icon>Appointment Schedule</a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/docHome">
+        <mat-icon>dashboard</mat-icon>Dashboard</a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/appointments">
+        <mat-icon>calendar_today</mat-icon>Appointments</a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/appointmentSchedule">
+        <mat-icon>schedule</mat-icon>Appointment Schedule</a>
     <!-- <a mat-list-item routerLinkActive="list-item-active" routerLink="/patients"><mat-icon>people</mat-icon>My Patients</a> -->
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/announcements"><mat-icon>announcement</mat-icon>Announcements</a>
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/payments"><mat-icon>payment</mat-icon>Payments</a>
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/updateAccount"><mat-icon>account_box</mat-icon>Update Account</a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/announcements">
+        <mat-icon>announcement</mat-icon>Announcements</a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/payments">
+        <mat-icon>payment</mat-icon>Payments</a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/updateAccount">
+        <mat-icon>account_box</mat-icon>Update Account</a>
     <!-- <a mat-list-item routerLinkActive="list-item-active" routerLink="/contentDoc"><mat-icon> list_alt</mat-icon>Help</a> -->
-    <a mat-list-item routerLinkActive="list-item-active" (click)="signOut()"><mat-icon>exit_to_app</mat-icon>Log Out</a>
+    <a mat-list-item routerLinkActive="list-item-active" (click)="signOut()">
+        <mat-icon>exit_to_app</mat-icon>Log Out</a>
 
-    
+
     <mat-divider></mat-divider>
-    
+
 </mat-nav-list>

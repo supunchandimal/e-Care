@@ -12,13 +12,14 @@
 
 .photoholder {
     border-radius: 50%;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     height: 75px;
-    width: 75px;
-    background-color: #bbb;
+    width: 100px;
+    /* background-color: #bbb; */
+    margin-top: 10px;
     margin-left: -55%;
     background-size: contain;
-    padding-right: 40px;
+    /* padding-right: 40px; */
 }
 
 .hovering {
